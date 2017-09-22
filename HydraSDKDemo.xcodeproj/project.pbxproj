@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B92460AE1F7462560007DE4E /* HydraTunnelProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */; };
+		B92460AF1F7462590007DE4E /* HydraApplicationSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */; };
+		B92460B41F7464C20007DE4E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B31F7464C20007DE4E /* libz.tbd */; };
+		B92460B61F7489090007DE4E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B51F7489090007DE4E /* NetworkExtension.framework */; };
+		B92460B71F7489130007DE4E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B51F7489090007DE4E /* NetworkExtension.framework */; };
+		B92460BA1F748ADE0007DE4E /* CountryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92460B91F748ADE0007DE4E /* CountryController.swift */; };
+		B9621BCD1F7443FD00B3AAFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621BCC1F7443FD00B3AAFA /* AppDelegate.swift */; };
+		B9621BCF1F7443FD00B3AAFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621BCE1F7443FD00B3AAFA /* ViewController.swift */; };
+		B9621BD21F7443FD00B3AAFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9621BD01F7443FD00B3AAFA /* Main.storyboard */; };
+		B9621BD41F7443FD00B3AAFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9621BD31F7443FD00B3AAFA /* Assets.xcassets */; };
+		B9621BD71F7443FD00B3AAFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9621BD51F7443FD00B3AAFA /* LaunchScreen.storyboard */; };
+		B9621BE51F74442100B3AAFA /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621BE41F74442100B3AAFA /* PacketTunnelProvider.swift */; };
+		B9621BEA1F74442100B3AAFA /* neprovider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9621BE21F74442100B3AAFA /* neprovider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B9621BE81F74442100B3AAFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9621BC11F7443FD00B3AAFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9621BE11F74442100B3AAFA;
+			remoteInfo = neprovider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B9621BEE1F74442100B3AAFA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B9621BEA1F74442100B3AAFA /* neprovider.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraApplicationSDK.framework; sourceTree = "<group>"; };
+		B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraTunnelProviderSDK.framework; sourceTree = "<group>"; };
+		B92460B11F7464BC0007DE4E /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		B92460B31F7464C20007DE4E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B92460B51F7489090007DE4E /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		B92460B81F7489130007DE4E /* HydraSDKDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HydraSDKDemo.entitlements; sourceTree = "<group>"; };
+		B92460B91F748ADE0007DE4E /* CountryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryController.swift; sourceTree = "<group>"; };
+		B9621BC91F7443FD00B3AAFA /* HydraSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HydraSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9621BCC1F7443FD00B3AAFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B9621BCE1F7443FD00B3AAFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9621BD11F7443FD00B3AAFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B9621BD31F7443FD00B3AAFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B9621BD61F7443FD00B3AAFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B9621BD81F7443FD00B3AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9621BE21F74442100B3AAFA /* neprovider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = neprovider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9621BE41F74442100B3AAFA /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		B9621BE61F74442100B3AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9621BE71F74442100B3AAFA /* neprovider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = neprovider.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B9621BC61F7443FD00B3AAFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B92460AF1F7462590007DE4E /* HydraApplicationSDK.framework in Frameworks */,
+				B92460B71F7489130007DE4E /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9621BDF1F74442100B3AAFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B92460B41F7464C20007DE4E /* libz.tbd in Frameworks */,
+				B92460B61F7489090007DE4E /* NetworkExtension.framework in Frameworks */,
+				B92460AE1F7462560007DE4E /* HydraTunnelProviderSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B92460B01F7464BC0007DE4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B92460B51F7489090007DE4E /* NetworkExtension.framework */,
+				B92460B31F7464C20007DE4E /* libz.tbd */,
+				B92460B11F7464BC0007DE4E /* libz.1.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9621BC01F7443FD00B3AAFA = {
+			isa = PBXGroup;
+			children = (
+				B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */,
+				B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */,
+				B9621BCB1F7443FD00B3AAFA /* HydraSDKDemo */,
+				B9621BE31F74442100B3AAFA /* neprovider */,
+				B9621BCA1F7443FD00B3AAFA /* Products */,
+				B92460B01F7464BC0007DE4E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B9621BCA1F7443FD00B3AAFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9621BC91F7443FD00B3AAFA /* HydraSDKDemo.app */,
+				B9621BE21F74442100B3AAFA /* neprovider.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9621BCB1F7443FD00B3AAFA /* HydraSDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B92460B81F7489130007DE4E /* HydraSDKDemo.entitlements */,
+				B9621BCC1F7443FD00B3AAFA /* AppDelegate.swift */,
+				B9621BCE1F7443FD00B3AAFA /* ViewController.swift */,
+				B92460B91F748ADE0007DE4E /* CountryController.swift */,
+				B9621BD01F7443FD00B3AAFA /* Main.storyboard */,
+				B9621BD31F7443FD00B3AAFA /* Assets.xcassets */,
+				B9621BD51F7443FD00B3AAFA /* LaunchScreen.storyboard */,
+				B9621BD81F7443FD00B3AAFA /* Info.plist */,
+			);
+			path = HydraSDKDemo;
+			sourceTree = "<group>";
+		};
+		B9621BE31F74442100B3AAFA /* neprovider */ = {
+			isa = PBXGroup;
+			children = (
+				B9621BE41F74442100B3AAFA /* PacketTunnelProvider.swift */,
+				B9621BE61F74442100B3AAFA /* Info.plist */,
+				B9621BE71F74442100B3AAFA /* neprovider.entitlements */,
+			);
+			path = neprovider;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B9621BC81F7443FD00B3AAFA /* HydraSDKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9621BDB1F7443FD00B3AAFA /* Build configuration list for PBXNativeTarget "HydraSDKDemo" */;
+			buildPhases = (
+				B9621BC51F7443FD00B3AAFA /* Sources */,
+				B9621BC61F7443FD00B3AAFA /* Frameworks */,
+				B9621BC71F7443FD00B3AAFA /* Resources */,
+				B9621BEE1F74442100B3AAFA /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9621BE91F74442100B3AAFA /* PBXTargetDependency */,
+			);
+			name = HydraSDKDemo;
+			productName = HydraSDKDemo;
+			productReference = B9621BC91F7443FD00B3AAFA /* HydraSDKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B9621BE11F74442100B3AAFA /* neprovider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9621BEB1F74442100B3AAFA /* Build configuration list for PBXNativeTarget "neprovider" */;
+			buildPhases = (
+				B9621BDE1F74442100B3AAFA /* Sources */,
+				B9621BDF1F74442100B3AAFA /* Frameworks */,
+				B9621BE01F74442100B3AAFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = neprovider;
+			productName = neprovider;
+			productReference = B9621BE21F74442100B3AAFA /* neprovider.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B9621BC11F7443FD00B3AAFA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Anchorfree Inc.";
+				TargetAttributes = {
+					B9621BC81F7443FD00B3AAFA = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 1;
+							};
+							com.apple.VPNLite = {
+								enabled = 1;
+							};
+						};
+					};
+					B9621BE11F74442100B3AAFA = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 1;
+							};
+							com.apple.VPNLite = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = B9621BC41F7443FD00B3AAFA /* Build configuration list for PBXProject "HydraSDKDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B9621BC01F7443FD00B3AAFA;
+			productRefGroup = B9621BCA1F7443FD00B3AAFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B9621BC81F7443FD00B3AAFA /* HydraSDKDemo */,
+				B9621BE11F74442100B3AAFA /* neprovider */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B9621BC71F7443FD00B3AAFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9621BD71F7443FD00B3AAFA /* LaunchScreen.storyboard in Resources */,
+				B9621BD41F7443FD00B3AAFA /* Assets.xcassets in Resources */,
+				B9621BD21F7443FD00B3AAFA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9621BE01F74442100B3AAFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B9621BC51F7443FD00B3AAFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B92460BA1F748ADE0007DE4E /* CountryController.swift in Sources */,
+				B9621BCF1F7443FD00B3AAFA /* ViewController.swift in Sources */,
+				B9621BCD1F7443FD00B3AAFA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9621BDE1F74442100B3AAFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9621BE51F74442100B3AAFA /* PacketTunnelProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B9621BE91F74442100B3AAFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9621BE11F74442100B3AAFA /* neprovider */;
+			targetProxy = B9621BE81F74442100B3AAFA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B9621BD01F7443FD00B3AAFA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9621BD11F7443FD00B3AAFA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B9621BD51F7443FD00B3AAFA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9621BD61F7443FD00B3AAFA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B9621BD91F7443FD00B3AAFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B9621BDA1F7443FD00B3AAFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B9621BDC1F7443FD00B3AAFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HydraSDKDemo/HydraSDKDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55M8MNVL6L;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = HydraSDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B9621BDD1F7443FD00B3AAFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HydraSDKDemo/HydraSDKDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55M8MNVL6L;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = HydraSDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B9621BEC1F74442100B3AAFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = neprovider/neprovider.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55M8MNVL6L;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = neprovider/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp.neprovider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B9621BED1F74442100B3AAFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = neprovider/neprovider.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55M8MNVL6L;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = neprovider/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp.neprovider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B9621BC41F7443FD00B3AAFA /* Build configuration list for PBXProject "HydraSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9621BD91F7443FD00B3AAFA /* Debug */,
+				B9621BDA1F7443FD00B3AAFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9621BDB1F7443FD00B3AAFA /* Build configuration list for PBXNativeTarget "HydraSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9621BDC1F7443FD00B3AAFA /* Debug */,
+				B9621BDD1F7443FD00B3AAFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9621BEB1F74442100B3AAFA /* Build configuration list for PBXNativeTarget "neprovider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9621BEC1F74442100B3AAFA /* Debug */,
+				B9621BED1F74442100B3AAFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B9621BC11F7443FD00B3AAFA /* Project object */;
+}
