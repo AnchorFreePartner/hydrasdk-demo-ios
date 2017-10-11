@@ -1,6 +1,8 @@
-# HydraSDK for iOS
+# HydraSDK for iOS & macOS
 
-Download latest SDK: [HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydraKit.framework.zip?alt=media)
+Download latest SDK: 
+- [HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydraSDK-iOS.zip?alt=media)
+- [HydraSDK for macOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydraSDK-macOS.zip?alt=media)
 
 HydraSDK for iOS (The SDK) is a part of AnchorFree SDK. It contains client-side libraries and server-side applications needed to implement custom VPN infrastructure.
 
@@ -8,11 +10,8 @@ The SDK provides API to authorize client users and gives them an ability to conn
 
 # Prerequisites
 
-* Requires iOS 9+
+* Requires iOS 9+ or macOS X 10.12 to run (10.13 if an app is not distributed through AppStore).
 * Xcode 8.3.2
-* To publish an application in AppStore with custom VPN feature you need to obtain special entitlement from Apple. 
-
-> **NOTE:** *(email response from networkextension@apple.com)* ...Please note that as of November 10, 2016 this process is not required for developers who wish to use App Proxy, Content Filter, or Packet Tunnel APIs. To use these services please navigate to your Developer Account at <https://developer.apple.com/account/> and select the Network Extension capability for the App ID you will be using for your app.
 
 Read more about [Network Extensions](https://developer.apple.com/reference/networkextension) on Apple Developer website.
 
@@ -20,11 +19,11 @@ Read more about [Network Extensions](https://developer.apple.com/reference/netwo
 
 ### Creating Packet Tunnel Provider Extension
 
-To start application development, you need to create an Xcode iOS application project. 
+To start application development, you need to create a XCode iOS application project. 
 
-Once application is created, go to *Project > Targets*, and in menu bar select *Editor > Add Target*. Choose *Packet Tunnel Provider Extension*, provide the name and bundle ID for this **Network Extension** target. 
+Once the application is created, go to *Project > Targets*, and in menu bar select *Editor > Add Target*. Choose *Packet Tunnel Provider Extension*, provide the name and bundle ID for this **Network Extension** target. 
 
-> **NOTE:** Xcode 8.2 and newer does not have this template, [see the workaround on Apple Developer Forum](https://forums.developer.apple.com/message/187336#187336).
+> **NOTE:** Xcode 8.2 and newer do not have this template, [see the workaround on Apple Developer Forum](https://forums.developer.apple.com/message/187336#187336).
 
 Read more about [Creating a Packet Tunnel Provider Extension](https://developer.apple.com/reference/networkextension/nepackettunnelprovider#2110153) from Apple docs.
 
@@ -36,7 +35,7 @@ At the end of this step, you have to have at least two targets:
 
 For both, the **Application** and the **Network Extension** targets, do the following
 
-1. Add following system frameworks to your project dependendencies:
+1. Add following system frameworks to your project dependencies:
 - NetworkExtension
 - Security
 - libz.tbd
@@ -77,6 +76,7 @@ Go to [Apple Developer Portal](https://developer.apple.com/) and create (if not 
 Also, enable the following services for both IDs:
 * App Groups (this will be configured in the next step)
 * Network Extensions
+* Personal VPN
 
 > **NOTE:** It is recommended to give distinctive names to your App IDs, for example:
 > * MyApp Application
@@ -96,11 +96,11 @@ For both, **Application**  and **Network Extension** targets, go to *Project > C
 * Network Extensions
 * App Groups
 
-> **NOTE:** Make sure that respecitve **.entitlement** files are added to the project for both, **Application**  and **Network Extension** targets.
+> **NOTE:** Make sure that respective **.entitlement** files are added to the project for both, **Application**  and **Network Extension** targets.
 
 ### Re/Generate Provision Profiles
 
-Application and Network Extension have to have its repsective Provision Profiles generated from the Developer Portal. When creating and/or regenerating Provision Profiles, make sure you select Network Extension entitlement.
+Application and Network Extension have to have its respective Provision Profiles generated from the Developer Portal. When creating and/or regenerating Provision Profiles, make sure you select Network Extension entitlement.
 
 # Start using HydraSDK
 
@@ -141,18 +141,18 @@ See `AFAuthMethod` reference for more authentication methods.
 
 ### Connecting VPN and obtaining status
 
-To connect VPN use AFHydra function `startVpn:(nullable void (^)(NSError * __nullable error))completion`. When VPN is started or error occured, completion will be called. To obtain VPN connection status you need to subscribe to `NSNotificationCenter` provided in `AFHydra` instance. For example:
+To connect VPN use AFHydra function `startVpn:(nullable void (^)(NSError * __nullable error))completion`. When VPN is started or an error occurred, completion will be called. To obtain VPN connection status you need to subscribe to `NSNotificationCenter` provided in `AFHydra` instance. For example:
 
     [self.hydraClient.notificationCenter addObserver:self
                                             selector:@selector(connectionChanged:)
                                                 name:AFVPNStatusDidChangeNotification
                                               object:nil];
 
-When you receieve notification, get updated VPN status from `AFHydra` instance status property and handle this status as designed by your app.
+When you receive notification, get updated VPN status from `AFHydra` instance status property and handle this status as designed by your app.
 
 ### Error Handling
 
-Most of the `AFHydra` calls are accepting completion blocks with errors. If an error occurs, you will recieve non-nil `NSError` object with explanation. Errors could be handled by code, that is defined in `AFHydraApiErrorCode`. See *AFHydra.h* for more info.
+Most of the `AFHydra` calls are accepting completion blocks with errors. If an error occurs, you will receive non-nil `NSError` object with an explanation. Errors could be handled by code, that is defined in `AFHydraApiErrorCode`. See *AFHydra.h* for more info.
 
 If you are just disconnected from VPN session, you could also check `hydraClient.lastError` property, if there was an error during initialization or session management system disconnected VPN remotely, there will be `NSError` object here. You must handle such errors and report if appropriate.
 
@@ -208,7 +208,7 @@ Validates purchase with current backend.
 Obtain last error that occured in current/last session.
 
 `- (void)blockedDomainsCount:(AFHydraDomainsCountCompletion)completion;`  
-**Ad blocking feature**. Get amount of domain hits that were blocked by ad block subsystem.
+**Ad blocking feature**. Get the amount of domain hits that were blocked by ad block subsystem.
 
 ### AFAuthMethod
 
@@ -233,8 +233,6 @@ Authenticate with GitHub SDK.
 `+ (instancetype)custom:(NSString *)methodName token:(NSString *)accessToken;`  
 Custom auth. If you are using custom authentication scheme, use this method.
 
-### Common objects
-
 ### AFConfig
 
 `AFConfig` is a class that configures `AFHydra` instance. Created by `AFConfigBuilder`
@@ -247,16 +245,16 @@ Creates AFConfig instance. There are 4 mandatory properties you need to configur
 Enable or disable debug logging. **Don't forget to disable for release build!**
 
 `@property (strong, nonatomic) NSString *baseUrl;`  
-This is a Host URL of primary server. Provided by Anchorfree Inc.
+This is a Host URL of the primary server. Provided by Anchorfree Inc.
 
 `@property (strong, nonatomic) NSString *carrierId;`  
 This is your unique service identifier. Provided by Anchorfree Inc.
 
 `@property (strong, nonatomic) NSString *groupId;`  
-App Group ID that is created for current application.
+App Group ID that is created for the current application.
 
 `@property (nonatomic) BOOL bypass;`  
-Enable bypass mode. See Appendix for more information about bypass.
+Enable bypass mode. See Appendix for more information about the bypass.
 
 `@property (strong, nonatomic) NSString *networkExtensionBundleId;`  
 Packet Tunnel Provider Extension main target's Bundle Identifier. See Project > [YOUR_TARGET] > Bundle Identifier for more info.
@@ -268,7 +266,11 @@ A list of domains (with wildcards, like *.example.*) that should be blocked by H
 A list of domains (without wildcards) that should not be blocked by blacklist rules.
 
 `@property (strong, nonatomic) NSString *dnsAddr;`  
-Your preffered DNS server to use. If not set, default one will be used.
+Your preferred DNS server to use. If not set, a default one will be used.
+
+`@property (strong, nonatomic) NSArray <NSString *> *bypassDomains;`
+A list of domains to bypass VPN. Wildcards accepted. 
+Example: `cfg.bypassDomains = @[@"*google.com"];` // Google domain and it's subdomains will be accessed directly, without VPN.
 
 ### AFUser
 
@@ -301,10 +303,10 @@ Time when current User is registered.
 Name of User's license.
 
 `@property(strong, nonatomic) NSNumber *bundleId;`  
-Name of purchased bundle.
+Name of a purchased bundle.
 
 `@property(strong, nonatomic) NSString *carrierId;`  
-Name of carrier id where user is registered.
+Name of carrier id where the user is registered.
 
 ### AFCountry
 
@@ -358,7 +360,7 @@ Amount of bytes that is available to User.
 
 # Bypass & Ad blocking
 
-Hydra supports VPN configuration where there is no real VPN server connection. Such connections works in local-only mode, but iOS will treat this VPN connection as a real one. This is a way to implement ad blocking functionality for your application. Below is an example of such configuration.
+Hydra supports VPN configuration where there is no real VPN server connection. Such connections work in local-only mode, but iOS will treat this VPN connection as a real one. This is a way to implement ad blocking functionality for your application. Below is an example of such configuration.
 
     self.hydraClient = [AFHydra withConfig:[AFConfig configWithBlock:^(AFConfigBuilder *builder) {
         builder.bypass = true,
@@ -383,7 +385,7 @@ Note that at `builder.blacklistPath` should be set. If both set as `nil`, then l
 
 # Integration Checklist & Troubleshooting
 
-Configuration of iOS application with HydraSDK could be quite complex since there is a lot to configure. That's why we've created following checklist that should help you to verify correct integration.
+The configuration of iOS application with HydraSDK could be quite complex since there is a lot to configure. That's why we've created following checklist that should help you to verify correct integration.
 
 - Make sure that you've created Packet Tunnel Provider extension
 - Default implementation of PacketTunnelProvider class is removed from .m file
