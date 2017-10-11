@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSString *interfaceName;
 @property (strong, nonatomic) NSString *dnsAddr;
 @property (strong, nonatomic) NSString *serverAddr;
+@property (strong, nonatomic) NSArray <NSString *> *bypassDomains;
 @property (strong, nonatomic) NSDictionary *options;
 @property (strong, nonatomic) NSString *groupId;
 @property (strong, nonatomic) NSString *networkExtensionBundleId;

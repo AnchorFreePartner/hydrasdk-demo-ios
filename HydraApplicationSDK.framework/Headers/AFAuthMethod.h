@@ -11,7 +11,8 @@ typedef NS_ENUM(NSInteger, AFAuthMethodType) {
     AFAuthMethodTypeGoogle,
     AFAuthMethodTypeTwitter,
     AFAuthMethodTypeGithub,
-    AFAuthMethidTypeFirebase
+    AFAuthMethodTypeFirebase,
+    AFAuthMethodTypeCustom
 };
 
 @interface AFAuthMethod : NSObject
@@ -32,6 +33,8 @@ typedef NS_ENUM(NSInteger, AFAuthMethodType) {
 + (instancetype)github:(NSString *)accessToken;
 
 + (instancetype)firebase:(NSString *)accessToken;
+
++ (instancetype)custom:(NSString *)methodName token:(NSString *)accessToken;
 
 - (NSString *)authMethodString;
 @end

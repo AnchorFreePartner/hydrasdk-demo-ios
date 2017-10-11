@@ -25,40 +25,40 @@ typedef NS_ENUM(NSInteger, AFVPNManagerStatus) {
 
 typedef NS_ENUM(NSInteger, AFHydraApiErrorCode) {
     /*! @const AFHydraApiErrorCodeUndefined This is a generic unknown error, please report such errors to developers */
-            AFHydraApiErrorCodeUndefined,
+    AFHydraApiErrorCodeUndefined = 101,
     /*! @const AFHydraApiErrorCodeSessionsExceed Amount of allowed sessions for this user is exceed */
-            AFHydraApiErrorCodeSessionsExceed,
+    AFHydraApiErrorCodeSessionsExceed = 102,
     /*! @const AFHydraApiErrorCodeTrafficExceed Amount of allowed traffic for this user is exceed */
-            AFHydraApiErrorCodeTrafficExceed,
+    AFHydraApiErrorCodeTrafficExceed = 103,
     /*! @const AFHydraApiErrorCodeUnauthorized This user is unauthorized or login operation is still pending */
-            AFHydraApiErrorCodeUnauthorized,
+    AFHydraApiErrorCodeUnauthorized = 104,
     /*! @const AFHydraApiErrorCodeUserSuspended This user is suspended */
-            AFHydraApiErrorCodeUserSuspended,
+    AFHydraApiErrorCodeUserSuspended = 105,
     /*! @const AFHydraApiErrorCodeRequestedVPNServerUnavailable Selected server or country code is not available */
-            AFHydraApiErrorCodeRequestedVPNServerUnavailable,
+    AFHydraApiErrorCodeRequestedVPNServerUnavailable = 106,
     /*! @const AFHydraApiErrorCodeCredentialsInternalError Server was unable to fetch credentials for this country code */
-            AFHydraApiErrorCodeCredentialsInternalError,
+    AFHydraApiErrorCodeCredentialsInternalError = 107,
     /*! @const AFHydraApiErrorCodeDevicesExceed The amount of allowed devices for this user is exceed */
-            AFHydraApiErrorCodeDevicesExceed,
+    AFHydraApiErrorCodeDevicesExceed = 108,
     /*! @const AFHydraApiErrorCodeNetworkError The Internets are not available or network request has failed. Feel free to try again */
-            AFHydraApiErrorCodeNetworkError,
+    AFHydraApiErrorCodeNetworkError = 109,
     /*! @const AFHydraApiErrorCodeUnknownServerResponse This response could mean you don't have latest HydraSDK. Please report to developers.*/
-            AFHydraApiErrorCodeUnknownServerResponse,
+    AFHydraApiErrorCodeUnknownServerResponse = 110,
 };
 
 typedef NS_ENUM(NSInteger, AFVPNManagerErrorCode) {
     /*! @const AFVPNManagerErrorCode This is a generic unknown error, please report such errors to developers */
-    AFVPNManagerErrorCodeUndefined,
+    AFVPNManagerErrorCodeUndefined = 201,
     /*! @const AFVPNManagerErrorCodeTrafficCounters error during retrieving traffic counters */
-    AFVPNManagerErrorCodeTrafficCounters,
+    AFVPNManagerErrorCodeTrafficCounters = 202,
     /*! @const AFVPNManagerErrorCodeStartVPNTunnelFailed NETunnelProviderSession failed to start, see NSUnderlyingErrorKey for detailed reason */
-    AFVPNManagerErrorCodeStartVPNTunnelFailed,
+    AFVPNManagerErrorCodeStartVPNTunnelFailed = 203,
     /*! @const AFVPNManagerErrorCodeNoProfile VPN profile does not exist */
-    AFVPNManagerErrorCodeNoProfile,
+    AFVPNManagerErrorCodeNoProfile = 204,
     /*! @const AFVPNManagerErrorCodeNoProfile VPN is already connected */
-    AFVPNManagerErrorCodeAlreadyConnected,
+    AFVPNManagerErrorCodeAlreadyConnected = 205,
     /*! @const AFVPNManagerErrorCodeNoProfile VPN is already disconnected */
-    AFVPNManagerErrorCodeAlreadyDisconnected
+    AFVPNManagerErrorCodeAlreadyDisconnected = 206
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -86,7 +86,7 @@ typedef void (^AFHydraPurchaseCompletion)(NSError *error);
 
 typedef void (^AFHydraCurrentUserCompletion)(NSError *__nullable error, AFUser *__nullable user);
 
-typedef void (^AFHydraBlockedDomainsCompletion)(NSDictionary *domainsCount);
+typedef void (^AFHydraBlockedDomainsCompletion)(NSDictionary<NSString *, NSNumber *> *domainsCount);
 
 /*!
  * @class AFHydra

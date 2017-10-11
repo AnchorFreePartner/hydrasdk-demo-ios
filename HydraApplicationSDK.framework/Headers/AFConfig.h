@@ -8,6 +8,7 @@
 @class AFCredentials;
 @class AFConfigBuilder;
 @class AFConfig;
+@class AFProvidedCredentials;
 
 typedef void (^AFConfigBlock)(AFConfigBuilder *);
 typedef void (^AFConfigUpdateBlock)(AFConfig *, AFConfigBuilder *);
@@ -21,12 +22,13 @@ typedef void (^AFConfigUpdateBlock)(AFConfig *, AFConfigBuilder *);
 @property (strong, nonatomic) NSString *groupId;
 @property (strong, nonatomic) NSString *blacklistPath;
 @property (strong, nonatomic) NSString *whitelistPath;
+@property (strong, nonatomic) NSArray <NSString *> *bypassDomains;
 @property (strong, nonatomic) NSString *dnsAddr;
 @property (nonatomic) BOOL bypass;
 
 - (instancetype)initWithBuilder:(AFConfigBuilder *)builder;
 
-- (void)updateWithCredentials:(AFCredentials *)credentials;
+- (void)updateWithCredentials:(AFProvidedCredentials *)credentials;
 
 - (NSString *)shareFile:(NSString *)fullPath;
 

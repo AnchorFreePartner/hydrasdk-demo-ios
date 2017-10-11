@@ -5,6 +5,8 @@
 #import <Foundation/Foundation.h>
 #import "AFHydra.h"
 
+@class AFProvidedCredentials;
+
 @interface AFHydra (Credentials)
-@property (strong, nonatomic) AFCredentials *credentials;
+@property (strong, nonatomic) AFProvidedCredentials *credentials;
 @end
