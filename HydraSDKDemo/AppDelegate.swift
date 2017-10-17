@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AFHydra.withConfig(AFConfig.init(block: { (builder) in
             guard let builder = builder else { return } // will be fixed in future releases
             builder.baseUrl = "https://backend.northghost.com";
-            builder.carrierId = "afdemo";
+            builder.carrierId = "bitdefender";
             builder.groupId = "group.com.anchorfree.HydraTestApp";
             builder.networkExtensionBundleId = "com.anchorfree.HydraTestApp.neprovider";
         }))
