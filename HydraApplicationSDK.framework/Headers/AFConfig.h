@@ -2,14 +2,14 @@
 // Copyright (c) 2016 Anchorfree Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import NetworkExtension;
 #import "AFConfigBuilder.h"
 
 @class AFCredentials;
 @class AFConfigBuilder;
 @class AFConfig;
 @class AFProvidedCredentials;
-@class AFOnDemandRules;
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^AFConfigBlock)(AFConfigBuilder *);
@@ -17,9 +17,10 @@ typedef void (^AFConfigUpdateBlock)(AFConfig *, AFConfigBuilder *);
 
 @interface AFConfig : NSObject
 @property (nonatomic) BOOL debugLogging;
+// If onDemand is enabled but `onDemandRules` are not set, default rules will apply to both WiFi and Cellular networks
 @property (nonatomic) BOOL onDemand;
 @property (nonatomic) BOOL advancedOnDemand;
-@property (nullable, nonatomic) AFOnDemandRules *onDemandRules;
+@property (nullable, nonatomic) NSArray<NEOnDemandRule *> *onDemandRules;
 @property (strong, nonatomic, nonnull) NSString *baseUrl;
 @property (strong, nonatomic, nonnull) NSString *carrierId;
 @property (strong, nonatomic, nonnull) NSString *networkExtensionBundleId;

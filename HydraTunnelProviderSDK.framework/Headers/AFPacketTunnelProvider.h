@@ -10,6 +10,7 @@ typedef NS_ENUM(NSInteger, AFNEErrorCode) {
     AFNEErrorCodeNoGroupId = 2,
     AFNEErrorCodeInterfaceDidChange = 11,
 };
+
 typedef NS_ENUM(NSInteger, AFHydraErrorCode) {
     AFHydraErrorCodeTimeout = 10,
     AFHydraErrorCodeIllegalState = 11,

@@ -183,7 +183,7 @@ class ViewController: UIViewController, CountryControllerProtocol {
                     print("remainingTraffic error: \(ex)")
                 }
             } else {
-                print("remainingTraffic success")
+                print("remainingTraffic success: \(String(describing: remainingTraffic?.description()))")
             }
             
             guard let traffic = remainingTraffic else { return }

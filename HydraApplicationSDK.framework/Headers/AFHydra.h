@@ -4,7 +4,8 @@
 //  Copyright (c) 2017 Anchorfree Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
 #import "AFConfig.h"
 #import "AFAuthMethod.h"
 #import "AFUser.h"
@@ -12,7 +13,6 @@
 #import "AFCountry.h"
 #import "AFRemainingTraffic.h"
 #import "AFTrafficCounters.h"
-#import "AFVPNSession.h"
 
 typedef NS_ENUM(NSInteger, AFVPNManagerStatus) {
     AFVPNManagerStatusUndefined = -1,
@@ -43,8 +43,10 @@ typedef NS_ENUM(NSInteger, AFHydraApiErrorCode) {
     AFHydraApiErrorCodeDevicesExceed = 108,
     /*! @const AFHydraApiErrorCodeNetworkError The Internets are not available or network request has failed. Feel free to try again */
     AFHydraApiErrorCodeNetworkError = 109,
+    /*! @const AFHydraApiErrorCodeInvalidPurchase The receipt you are trying to verify is invalid.*/
+    AFHydraApiErrorCodeInvalidPurchase = 110,
     /*! @const AFHydraApiErrorCodeUnknownServerResponse This response could mean you don't have latest HydraSDK. Please report to developers.*/
-    AFHydraApiErrorCodeUnknownServerResponse = 110,
+    AFHydraApiErrorCodeUnknownServerResponse = 111
 };
 
 typedef NS_ENUM(NSInteger, AFVPNManagerErrorCode) {
@@ -84,11 +86,13 @@ typedef void (^AFHydraRemainingTrafficCompletion)(NSError *__nullable error, AFR
 
 typedef void (^AFHydraTrafficCountersCompletion)(NSError *__nullable error, AFTrafficCounters *__nullable trafficCounters);
 
-typedef void (^AFHydraPurchaseCompletion)(NSError *error);
+typedef void (^AFHydraPurchaseCompletion)(NSError *__nullable error);
 
 typedef void (^AFHydraCurrentUserCompletion)(NSError *__nullable error, AFUser *__nullable user);
 
-typedef void (^AFHydraBlockedDomainsCompletion)(NSDictionary<NSString *, NSNumber *> *domainsCount);
+typedef void (^AFHydraBlockedDomainsCompletion)(NSDictionary<NSString *, NSNumber *> *__nullable domainsCount);
+
+typedef void (^AFHydraCheckBypassCompletion)(BOOL enabled);
 
 extern NSString *AFHydraVersion;
 
@@ -99,7 +103,6 @@ extern NSString *AFHydraVersion;
 @interface AFHydra : NSObject
 @property(strong, nonatomic, readonly) NSNotificationCenter *notificationCenter;
 @property(strong, nonatomic, readonly) AFConfig *config;
-@property(readonly) AFVPNSession *vpnSession;
 
 - (nonnull instancetype)initWithConfig:(AFConfig *)config;
 
@@ -154,11 +157,11 @@ extern NSString *AFHydraVersion;
  * @description Removes VPN profile from device. Current VPN connection will be interrupted. Useful for troubleshooting end-user issues.
  * @param completion NSError is of kAFVPNManagerErrorDomain.
  */
-- (void)removeProfile:(void (^)(NSError *))completion;
+- (void)removeProfile:(void (^)(NSError *__nullable error))completion;
 
 - (AFVPNManagerStatus)vpnStatus;
 
-- (NSError *)lastError;
+- (nullable NSError *)lastError;
 
 // Purchase server validation
 
@@ -174,9 +177,18 @@ extern NSString *AFHydraVersion;
  */
 - (void)blockedDomains:(AFHydraBlockedDomainsCompletion)completion;
 
+/*!
+ * @method checkBypassEnabled
+ * @description checks if current VPN session is in bypass mode
+ * Completion always returns `false` if VPN is not in connected state.
+ * @param completion completion block
+ */
+- (void)isBypassEnabled:(AFHydraCheckBypassCompletion)completion;
+
 - (nullable NSString *)accessToken;
 
 - (nonnull NSString *)deviceId;
 @end
 
 NS_ASSUME_NONNULL_END
+

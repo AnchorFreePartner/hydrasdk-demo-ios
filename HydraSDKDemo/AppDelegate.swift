@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) {(accepted, error) in
             if !accepted {
-                print("Notification access denied. VPN errors won't appear.")
+                print("Notification access denied. VPN notifications won't appear.")
             }
         }
         

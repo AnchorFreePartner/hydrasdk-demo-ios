@@ -2,7 +2,8 @@
 // Copyright (c) 2017 Anchorfree Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
 NS_ASSUME_NONNULL_BEGIN
 @interface AFBundle : NSObject <NSCoding>
 @property(strong, nonatomic) NSString *registrationTime;
@@ -27,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(strong, nonatomic) NSNumber *activeSessions;
 @property(strong, nonatomic) NSString *name;
 @property(strong, nonatomic, nullable) NSDictionary *socialProfiles;
+@property(strong, nonatomic) NSString *extref;
 
 - (instancetype)initWithCoder:(NSCoder *)coder;
 

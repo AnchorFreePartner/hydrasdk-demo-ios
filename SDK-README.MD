@@ -148,9 +148,9 @@ See `AFAuthMethod` reference for more authentication methods.
 
 ### Connecting VPN and obtaining status
 
-To connect VPN use AFHydra function `startVpn:(nullable void (^)(NSError * __nullable error))completion`. When VPN is started or an error occurred, completion will be called. To obtain VPN connection status you need to subscribe to `NSNotificationCenter` provided in `AFHydra` instance. For example:
+To connect VPN use AFHydra function `startVpn:(nullable void (^)(NSError * __nullable error))completion`. When VPN is started or an error occurred, completion will be called. To obtain VPN connection status you need to subscribe to the default `NSNotificationCenter`. For example:
 
-    [self.hydraClient.notificationCenter addObserver:self
+    [[NSNotificationCenter defaultCenter] addObserver:self
                                             selector:@selector(connectionChanged:)
                                                 name:AFVPNStatusDidChangeNotification
                                               object:nil];
@@ -173,9 +173,7 @@ Default behavior leaves VPN icon visible to user, everything looks like the user
 
 Advanced behavior removes VPN icon from user, but keeps Network Extension running (required by iOS on-demand rule). Advanced on-demand should be enabled in `AFConfig` (`advancedOnDemand` property).
 
-Whenever app starts, it's highly recommended to check if VPN is connected and if user is out of traffic limit. In this case, it's necessary to disconnect current VPN session and optionally show user the message. To check if current VPN connection is running in bypass mode for some reason is with `AFVPNSession` object (see AFVPNSession documentation below).
-
-The reason of disconnection/error is available with `lastError` method of AFHydra object.
+Whenever app starts, it's highly recommended to check if VPN is connected and if user is out of traffic limit. In this case, it's necessary to disconnect current VPN session and optionally show user the message. To check if current VPN connection is running in bypass mode call `isBypassEnabled:` method of `AFHydra`.
 
 In order to catch situation when user is out of traffic without main App running, see `AFPacketTunnelProvider` documentation and it's callbacks. 
 
@@ -212,7 +210,6 @@ If you are just disconnected from VPN session, you could also check `hydraClient
 
 ### AFHydra
 
-
 `- (nonnull instancetype)initWithConfig:(AFConfig * __nonnull)config;`
 `+ (nonnull instancetype)withConfig:(AFConfig * __nonnull)config;`
 
@@ -229,7 +226,6 @@ Log out.
 
 `- (BOOL)isLoggedIn;`  
 Check if user has logged in.
-
 
 `- (void)availableCountries:(nonnull AFHydraCountriesCompletion)completion;`  
 Retrieve a list of available countries to connect to. Returns `NSArray <AFCountry *>.`
@@ -264,22 +260,11 @@ Validates purchase with current backend.
 `- (NSError *)lastError;`  
 Obtain last error that occured in current/last session.
 
+`- (void)isBypassEnabled:(AFHydraCheckBypassCompletion)completion;`
+Checks if current VPN session is in bypass mode. Completion always returns `false` if VPN is not in connected state.
+
 `- (void)blockedDomainsCount:(AFHydraDomainsCountCompletion)completion;`  
 **Ad blocking feature**. Get the amount of domain hits that were blocked by ad block subsystem.
-
-`@property(strong, nonatomic, readonly) NSNotificationCenter *notificationCenter;`
-Notification center that receives vpn state change notification (AFVPNStatusDidChangeNotification)
-
-`@property(readonly) AFVPNSession *vpnSession;`
-Information about current VPN session. If there is no active VPN session (status is disconnected or invalid), vpnSession is `nil`.
-
-### AFVPNSession
-
-`@property(nonatomic) BOOL bypassEnabled;`
-If `bypassEnabled` is true, it means that either it was enabled with AFConfig or bypass mode was enabled because of VPN error (like traffic exceed).
-
-`@property(nonatomic) AFVPNManagerStatus status;`
-Current VPN status.
 
 ### AFAuthMethod
 
