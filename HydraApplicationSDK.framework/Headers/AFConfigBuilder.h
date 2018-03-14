@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) NSDictionary *options;
 @property (strong, nonatomic) NSString *groupId;
 @property (strong, nonatomic) NSString *networkExtensionBundleId;
+@property (strong, nonatomic, nullable) NSString *vpnProfileName;
 @property (strong, nonatomic, nullable) NSArray<NEIPv4Route *> *excludeRoute; // NEIPv4Route *
 @property (nonatomic) BOOL bypass;
 

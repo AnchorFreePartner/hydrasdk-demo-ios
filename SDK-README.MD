@@ -298,41 +298,44 @@ Custom auth. If you are using custom authentication scheme, use this method.
 
 Creates AFConfig instance. There are 4 mandatory properties you need to configure:
 
-`@property (nonatomic) BOOL debugLogging;`  
+`@property BOOL debugLogging;`  
 Enable or disable debug logging. **Don't forget to disable for release build!**
 
-`@property (strong, nonatomic) NSString *baseUrl;`  
+`@property NSString *baseUrl;`  
 This is a Host URL of the primary server. Provided by Anchorfree Inc.
 
-`@property (strong, nonatomic) NSString *carrierId;`  
+`@property NSString *carrierId;`  
 This is your unique service identifier. Provided by Anchorfree Inc.
 
-`@property (strong, nonatomic) NSString *groupId;`  
+`@property NSString *groupId;`  
 App Group ID that is created for the current application.
 
-`@property (nonatomic) BOOL bypass;`  
+`@property BOOL bypass;`  
 Enable bypass mode. See Appendix for more information about the bypass.
 
-`@property (strong, nonatomic) NSString *networkExtensionBundleId;`  
+`@property NSString *networkExtensionBundleId;`  
 Packet Tunnel Provider Extension main target's Bundle Identifier. See Project > [YOUR_TARGET] > Bundle Identifier for more info.
 
-`@property (strong, nonatomic) NSString *blacklistPath;`  
+`@property NSString *vpnProfileName`
+Sets the name for VPN profile that is visible in Settings > General > VPN (Title of profile, subtitle will always be the application name).
+
+`@property NSString *blacklistPath;`  
 A list of domains (with wildcards, like *.example.*) that should be blocked by Hydra. To obtain amount of blocked domains by these rules, see `AFHydra.blockedDomainsCount` method.
 
-`@property (strong, nonatomic) NSString *whitelistPath;`  
+`@property NSString *whitelistPath;`  
 A list of domains (without wildcards) that should not be blocked by blacklist rules.
 
-`@property (strong, nonatomic) NSString *dnsAddr;`  
+`@property NSString *dnsAddr;`  
 Your preferred DNS server to use. If not set, a default one will be used.
 
-`@property (strong, nonatomic) NSArray <NSString *> *bypassDomains;`
+`@property NSArray <NSString *> *bypassDomains;`
 A list of domains to bypass VPN. Wildcards accepted. 
 Example: `cfg.bypassDomains = @[@"*google.com"];` // Google domain and it's subdomains will be accessed directly, without VPN.
 
-`@property (nonatomic) BOOL onDemand;`
+`@property BOOL onDemand;`
 Enables on-demand VPN feature. VPN will be triggered automatically by the system after `startVpn` is triggered. Calling `stopVpn` from application is required to disable on-demand VPN. If VPN connection could not be established because of network environment or interrupted by out of traffic error code, then VPN will switch to bypass mode automatically until user reconnects VPN from main application, VPN icon will be visible in the status bar. 
 
-`@property (nonatomic) BOOL advancedOnDemand;`
+`@property BOOL advancedOnDemand;`
 If on-demand is enabled and VPN connection could not be established because of network environment or interrupted by out of traffic error code, then VPN will switch to bypass mode automatically until user reconnects VPN from main application, VPN icon will NOT be visible in the status bar. Note that VPN will be visible as `ON` in system Settings app. 
 
 ### AFUser

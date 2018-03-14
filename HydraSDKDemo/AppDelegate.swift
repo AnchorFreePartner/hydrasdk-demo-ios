@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AFHydra.withConfig(AFConfig.init(block: { (builder) in
             builder.baseUrl = "https://backend.northghost.com";
             builder.carrierId = "afdemo";
+            builder.vpnProfileName = "Awesome VPN!";
             builder.groupId = "group.com.anchorfree.HydraTestApp";
             builder.networkExtensionBundleId = "com.anchorfree.HydraTestApp.neprovider";
         }))
