@@ -5,6 +5,24 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.3.8] - 2018-04-10
+### Added
+- PKI support is enabled by default
+- Timezone support for login method to make traffic counting more precise
+
+## [0.3.7] - 2018-04-03
+### Added
+- VPN protocol library versioning
+
+### Removed
+- IDFA usage is removed from both UCR and HydraSDK
+
+### Updated
+- UCR library updated
+
+## [0.3.6] - 2018-03-30
+### Fixed
+- Updated VPN protocol library
 
 ## [0.3.5] - 2018-03-15
 ### Added
