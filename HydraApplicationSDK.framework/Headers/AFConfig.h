@@ -31,6 +31,8 @@ typedef void (^AFConfigUpdateBlock)(AFConfig *, AFConfigBuilder *);
 @property (copy, nonatomic, nullable) NSString *dnsAddr;
 @property (copy, nonatomic, nullable) NSString *vpnProfileName;
 @property (nonatomic) BOOL bypass;
+// Experimental feature that may help with Wi-Fi/VPN icon disappearance when on-demand is ON
+@property (nonatomic) BOOL forceInterface;
 
 - (instancetype)initWithBuilder:(AFConfigBuilder *)builder;
 
@@ -39,5 +41,9 @@ typedef void (^AFConfigUpdateBlock)(AFConfig *, AFConfigBuilder *);
 - (NSString *)shareFile:(NSString *)fullPath;
 
 + (instancetype)configWithBlock:(AFConfigBlock)block;
+
+- (NSString *)pkiCert;
+
+- (NSString *)jsonString;
 @end
 NS_ASSUME_NONNULL_END

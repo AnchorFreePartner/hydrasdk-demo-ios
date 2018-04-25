@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) NSString *vpnProfileName;
 @property (strong, nonatomic, nullable) NSArray<NEIPv4Route *> *excludeRoute; // NEIPv4Route *
 @property (nonatomic) BOOL bypass;
+// Experimental feature that may help with Wi-Fi/VPN icon disappearance when on-demand is ON
+@property (nonatomic) BOOL forceInterface;
 
 - (AFConfig *)build;
 @end
