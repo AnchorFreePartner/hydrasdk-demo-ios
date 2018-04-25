@@ -7,7 +7,6 @@
 //
 
 import NetworkExtension
-import HydraTunnelProviderSDK
 import UserNotifications
 
 class VPNDelegate : NSObject, AFNetworkExtensionDelegate {

@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		B90505EE1FDA1BCC005E6862 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */; };
 		B90505EF1FDA1BD3005E6862 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */; };
-		B92460AE1F7462560007DE4E /* HydraTunnelProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */; };
-		B92460AF1F7462590007DE4E /* HydraApplicationSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */; };
 		B92460B41F7464C20007DE4E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B31F7464C20007DE4E /* libz.tbd */; };
 		B92460B61F7489090007DE4E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B51F7489090007DE4E /* NetworkExtension.framework */; };
 		B92460B71F7489130007DE4E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B51F7489090007DE4E /* NetworkExtension.framework */; };
 		B92460BA1F748ADE0007DE4E /* CountryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92460B91F748ADE0007DE4E /* CountryController.swift */; };
+		B940C2C420900D7900716B02 /* libHydraApplicationSDKLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B940C2AE20900D7900716B02 /* libHydraApplicationSDKLib.a */; };
+		B940C2C620900D8000716B02 /* libHydraTunnelProviderSDKLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B940C2C120900D7900716B02 /* libHydraTunnelProviderSDKLib.a */; };
 		B9621BCD1F7443FD00B3AAFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621BCC1F7443FD00B3AAFA /* AppDelegate.swift */; };
 		B9621BCF1F7443FD00B3AAFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621BCE1F7443FD00B3AAFA /* ViewController.swift */; };
 		B9621BD21F7443FD00B3AAFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9621BD01F7443FD00B3AAFA /* Main.storyboard */; };
@@ -50,13 +50,33 @@
 
 /* Begin PBXFileReference section */
 		B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraApplicationSDK.framework; sourceTree = "<group>"; };
-		B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraTunnelProviderSDK.framework; sourceTree = "<group>"; };
 		B92460B11F7464BC0007DE4E /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		B92460B31F7464C20007DE4E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B92460B51F7489090007DE4E /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		B92460B81F7489130007DE4E /* HydraSDKDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HydraSDKDemo.entitlements; sourceTree = "<group>"; };
 		B92460B91F748ADE0007DE4E /* CountryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryController.swift; sourceTree = "<group>"; };
+		B940C2AE20900D7900716B02 /* libHydraApplicationSDKLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHydraApplicationSDKLib.a; sourceTree = "<group>"; };
+		B940C2AF20900D7900716B02 /* AFOnDemandRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOnDemandRules.h; sourceTree = "<group>"; };
+		B940C2B020900D7900716B02 /* AFCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCredentials.h; sourceTree = "<group>"; };
+		B940C2B120900D7900716B02 /* AFVPNSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFVPNSession.h; sourceTree = "<group>"; };
+		B940C2B220900D7900716B02 /* AFDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDeviceInfo.h; sourceTree = "<group>"; };
+		B940C2B420900D7900716B02 /* AFHydra+Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHydra+Credentials.h"; sourceTree = "<group>"; };
+		B940C2B520900D7900716B02 /* AFHydraCategorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHydraCategorization.h; sourceTree = "<group>"; };
+		B940C2B620900D7900716B02 /* AFAuthMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAuthMethod.h; sourceTree = "<group>"; };
+		B940C2B720900D7900716B02 /* AFCountry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCountry.h; sourceTree = "<group>"; };
+		B940C2B820900D7900716B02 /* AFTrafficCounters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTrafficCounters.h; sourceTree = "<group>"; };
+		B940C2B920900D7900716B02 /* AFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFUser.h; sourceTree = "<group>"; };
+		B940C2BA20900D7900716B02 /* AFRemainingTraffic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFRemainingTraffic.h; sourceTree = "<group>"; };
+		B940C2BB20900D7900716B02 /* AFConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFConfig.h; sourceTree = "<group>"; };
+		B940C2BC20900D7900716B02 /* AFConfigBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFConfigBuilder.h; sourceTree = "<group>"; };
+		B940C2BD20900D7900716B02 /* HydraApplicationSDKLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HydraApplicationSDKLib.h; sourceTree = "<group>"; };
+		B940C2BE20900D7900716B02 /* AFHydra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHydra.h; sourceTree = "<group>"; };
+		B940C2C020900D7900716B02 /* AFNetworkExtensionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkExtensionDelegate.h; sourceTree = "<group>"; };
+		B940C2C120900D7900716B02 /* libHydraTunnelProviderSDKLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHydraTunnelProviderSDKLib.a; sourceTree = "<group>"; };
+		B940C2C220900D7900716B02 /* AFHydraCategorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHydraCategorization.h; sourceTree = "<group>"; };
+		B940C2C320900D7900716B02 /* HydraTunnelProviderSDKLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HydraTunnelProviderSDKLib.h; sourceTree = "<group>"; };
+		B940C2C720900DC000716B02 /* HydraSDKDemo-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HydraSDKDemo-bridge.h"; sourceTree = "<group>"; };
+		B940C2C820900E0900716B02 /* HydraSDKDemoNE-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HydraSDKDemoNE-bridge.h"; sourceTree = "<group>"; };
 		B9621BC91F7443FD00B3AAFA /* HydraSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HydraSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9621BCC1F7443FD00B3AAFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9621BCE1F7443FD00B3AAFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B90505EF1FDA1BD3005E6862 /* UserNotifications.framework in Frameworks */,
-				B92460AF1F7462590007DE4E /* HydraApplicationSDK.framework in Frameworks */,
+				B940C2C420900D7900716B02 /* libHydraApplicationSDKLib.a in Frameworks */,
 				B92460B71F7489130007DE4E /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,8 +107,8 @@
 			files = (
 				B90505EE1FDA1BCC005E6862 /* UserNotifications.framework in Frameworks */,
 				B92460B41F7464C20007DE4E /* libz.tbd in Frameworks */,
+				B940C2C620900D8000716B02 /* libHydraTunnelProviderSDKLib.a in Frameworks */,
 				B92460B61F7489090007DE4E /* NetworkExtension.framework in Frameworks */,
-				B92460AE1F7462560007DE4E /* HydraTunnelProviderSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,11 +126,47 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B940C2AD20900D7900716B02 /* HydraApplicationSDKLib */ = {
+			isa = PBXGroup;
+			children = (
+				B940C2AE20900D7900716B02 /* libHydraApplicationSDKLib.a */,
+				B940C2AF20900D7900716B02 /* AFOnDemandRules.h */,
+				B940C2B020900D7900716B02 /* AFCredentials.h */,
+				B940C2B120900D7900716B02 /* AFVPNSession.h */,
+				B940C2B220900D7900716B02 /* AFDeviceInfo.h */,
+				B940C2B420900D7900716B02 /* AFHydra+Credentials.h */,
+				B940C2B520900D7900716B02 /* AFHydraCategorization.h */,
+				B940C2B620900D7900716B02 /* AFAuthMethod.h */,
+				B940C2B720900D7900716B02 /* AFCountry.h */,
+				B940C2B820900D7900716B02 /* AFTrafficCounters.h */,
+				B940C2B920900D7900716B02 /* AFUser.h */,
+				B940C2BA20900D7900716B02 /* AFRemainingTraffic.h */,
+				B940C2BB20900D7900716B02 /* AFConfig.h */,
+				B940C2BC20900D7900716B02 /* AFConfigBuilder.h */,
+				B940C2BD20900D7900716B02 /* HydraApplicationSDKLib.h */,
+				B940C2BE20900D7900716B02 /* AFHydra.h */,
+			);
+			path = HydraApplicationSDKLib;
+			sourceTree = "<group>";
+		};
+		B940C2BF20900D7900716B02 /* HydraTunnelProviderSDKLib */ = {
+			isa = PBXGroup;
+			children = (
+				B940C2C020900D7900716B02 /* AFNetworkExtensionDelegate.h */,
+				B940C2C120900D7900716B02 /* libHydraTunnelProviderSDKLib.a */,
+				B940C2C220900D7900716B02 /* AFHydraCategorization.h */,
+				B940C2C320900D7900716B02 /* HydraTunnelProviderSDKLib.h */,
+			);
+			path = HydraTunnelProviderSDKLib;
+			sourceTree = "<group>";
+		};
 		B9621BC01F7443FD00B3AAFA = {
 			isa = PBXGroup;
 			children = (
-				B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */,
-				B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */,
+				B940C2C820900E0900716B02 /* HydraSDKDemoNE-bridge.h */,
+				B940C2C720900DC000716B02 /* HydraSDKDemo-bridge.h */,
+				B940C2AD20900D7900716B02 /* HydraApplicationSDKLib */,
+				B940C2BF20900D7900716B02 /* HydraTunnelProviderSDKLib */,
 				B9621BCB1F7443FD00B3AAFA /* HydraSDKDemo */,
 				B9621BE31F74442100B3AAFA /* neprovider */,
 				B9621BCA1F7443FD00B3AAFA /* Products */,
@@ -444,9 +500,15 @@
 				INFOPLIST_FILE = HydraSDKDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HydraApplicationSDKLib",
+					"$(PROJECT_DIR)/HydraTunnelProviderSDKLib",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HydraSDKDemo-bridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -468,9 +530,15 @@
 				INFOPLIST_FILE = HydraSDKDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HydraApplicationSDKLib",
+					"$(PROJECT_DIR)/HydraTunnelProviderSDKLib",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HydraSDKDemo-bridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -490,10 +558,15 @@
 				INFOPLIST_FILE = neprovider/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HydraTunnelProviderSDKLib",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp.neprovider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "HydraSDKDemoNE-bridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -513,10 +586,15 @@
 				INFOPLIST_FILE = neprovider/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HydraTunnelProviderSDKLib",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp.neprovider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "HydraSDKDemoNE-bridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

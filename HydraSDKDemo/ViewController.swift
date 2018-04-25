@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HydraApplicationSDK
 
 class ViewController: UIViewController, CountryControllerProtocol {
     @IBOutlet weak var loginButton: UIButton!

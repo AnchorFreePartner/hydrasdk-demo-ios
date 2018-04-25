@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HydraApplicationSDK
 
 protocol CountryControllerProtocol {
     func countryChanged(newCountry: AFCountry)

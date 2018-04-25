@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HydraApplicationSDK
 import UserNotifications
 
 @UIApplicationMain
