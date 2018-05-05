@@ -5,6 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.3.9.1] - 2018-05-05
+- Added support for code 186
+- Updated libhydra to the latest patch version fixing upload issue
+
+## [0.3.9] - 2018-04-19
+### Fixed
+- Prevent multiple startVPN calls
+- Fixed sleepTunnel.. call in NetworkExtension - shouldn't generate crash on tunnel sleep anymore
+
 ## [0.3.8] - 2018-04-10
 ### Added
 - PKI support is enabled by default

@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, AFHydraErrorCode) {
     AFHydraErrorCodeIllegalState = 11,
     AFHydraErrorCodeConnectionDisrupted = 181,
     AFHydraErrorCodeConnectionNotEstablished = 182,
+    AFHydraErrorCodeTokenInvalid = 186,
     AFHydraErrorCodeTrafficExceed = 191
 };
 

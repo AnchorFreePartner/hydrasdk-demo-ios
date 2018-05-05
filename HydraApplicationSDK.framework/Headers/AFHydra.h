@@ -58,10 +58,12 @@ typedef NS_ENUM(NSInteger, AFVPNManagerErrorCode) {
     AFVPNManagerErrorCodeStartVPNTunnelFailed = 203,
     /*! @const AFVPNManagerErrorCodeNoProfile VPN profile does not exist */
     AFVPNManagerErrorCodeNoProfile = 204,
-    /*! @const AFVPNManagerErrorCodeNoProfile VPN is already connected */
+    /*! @const AFVPNManagerErrorCodeAlreadyConnected VPN is already connected */
     AFVPNManagerErrorCodeAlreadyConnected = 205,
-    /*! @const AFVPNManagerErrorCodeNoProfile VPN is already disconnected */
-    AFVPNManagerErrorCodeAlreadyDisconnected = 206
+    /*! @const AFVPNManagerErrorCodeAlreadyDisconnected VPN is already disconnected */
+    AFVPNManagerErrorCodeAlreadyDisconnected = 206,
+    /*! @const AFVPNManagerErrorCodeConnectionInProgress VPN is already connecting */
+    AFVPNManagerErrorCodeConnectionInProgress = 207
 };
 
 NS_ASSUME_NONNULL_BEGIN
