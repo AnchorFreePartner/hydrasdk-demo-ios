@@ -51,7 +51,7 @@ class CountryController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell", for: indexPath)
         guard let countryList = self.countryList else { return cell }
         let country = countryList[indexPath.row]
-        var labelString: String = country.countryCode as String!
+        var labelString: String = country.countryCode as! String
         if self.currentCountry?.countryCode == country.countryCode {
             labelString += " (selected)"
         }

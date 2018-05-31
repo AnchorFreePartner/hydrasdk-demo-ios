@@ -6,6 +6,34 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.9.9] - 2018-05-31
+### Fixed
+- Misc improvements macOS SDK
+
+## [0.3.9.8] - 2018-05-30
+### Added
+- Default willStop implementation of tunnel provider delegate
+
+## [0.3.9.7] - 2018-05-25
+### Fixed
+- Fix crash during hydra state logging
+
+## [0.3.9.6] - 2018-05-22
+### Added
+- GDPR support
+
+## [0.3.9.5] - 2018-05-22
+### Fixed
+- Fix `Exception: +[NSError neStopReason:]: unrecognized selector sent to class`
+
+## [0.3.9.4] - 2018-05-22
+### Fixed
+- Update libHydra
+
+## [0.3.9.3] - 2018-05-10
+### Fixed
+- Fix invalid token error processing
+
 ## [0.3.9.2] - 2018-05-09
 ### Fixed
 - Update libHydra

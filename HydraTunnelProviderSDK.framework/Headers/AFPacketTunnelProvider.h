@@ -16,8 +16,8 @@ typedef NS_ENUM(NSInteger, AFHydraErrorCode) {
     AFHydraErrorCodeIllegalState = 11,
     AFHydraErrorCodeConnectionDisrupted = 181,
     AFHydraErrorCodeConnectionNotEstablished = 182,
-    AFHydraErrorCodeTokenInvalid = 186,
-    AFHydraErrorCodeTrafficExceed = 191
+    AFHydraErrorCodeTrafficExceed = 191,
+    AFHydraErrorCodeTokenInvalid = 196
 };
 
 static NSString *const AFHydraDomain = @"AFHydraDomain";
@@ -26,5 +26,6 @@ static NSString *const AFNEErrorDomain = @"AFNEErrorDomain";
 @interface AFPacketTunnelProvider : NEPacketTunnelProvider
 - (void)vpnWillStart;
 - (void)vpnDidStart;
+- (void)vpnWillStop;
 - (void)vpnError:(NSError *)error;
 @end

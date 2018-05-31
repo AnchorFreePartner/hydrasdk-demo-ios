@@ -1,5 +1,7 @@
 # HydraSDK for iOS & macOS
 
+HydraSDK for iOS and macOS provides client API to authorize users and connect then to backend VPN services.
+
 Changelog:
 
 - [HydraSDK for iOS & macOS changelog](https://raw.githubusercontent.com/AnchorFreePartner/hydrasdk-demo-ios/master/SDK-CHANGELOG.MD)
@@ -9,56 +11,50 @@ Download latest SDK:
 - [HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydraSDK-iOS.zip?alt=media)
 - [HydraSDK for macOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydraSDK-macOS.zip?alt=media)
 
-HydraSDK for iOS (The SDK) is a part of AnchorFree SDK. It contains client-side libraries and server-side applications needed to implement custom VPN infrastructure.
-
-The SDK provides API to authorize client users and gives them an ability to connect to backend VPN services.
-
 # Prerequisites
 
-* Requires iOS 9+ or macOS X 10.12 to run (10.13 if an app is not distributed through AppStore).
-* Xcode 9.1
-
-Read more about [Network Extensions](https://developer.apple.com/reference/networkextension) on Apple Developer website.
+* Requires iOS 9+ or macOS 10.12+
+* Xcode 9.3
 
 # Setup
 
 ### Creating Packet Tunnel Provider Extension
 
-To start application development, you need to create a XCode iOS application project. 
+To start application development, you need to create a Xcode iOS/macOS application project. 
 
-Once the application is created, go to *Project > Targets*, and in menu bar select *Editor > Add Target*. Choose *Packet Tunnel Provider Extension*, provide the name and bundle ID for this **Network Extension** target. 
+Once the application is created, go to *Project > Targets*, and in menu bar select *Editor > Add Target*. Choose *Packet Tunnel Provider Extension*, provide the name and bundle ID for this [**Network Extension**](https://developer.apple.com/reference/networkextension) target. 
 
 > **NOTE:** Xcode 8.2 and newer do not have this template, [see the workaround on Apple Developer Forum](https://forums.developer.apple.com/message/187336#187336).
-
-Read more about [Creating a Packet Tunnel Provider Extension](https://developer.apple.com/reference/networkextension/nepackettunnelprovider#2110153) from Apple docs.
 
 At the end of this step, you have to have at least two targets: 
 * **Application** target
 * **Network Extension** target
 
+Read more about [Creating a Packet Tunnel Provider Extension](https://developer.apple.com/reference/networkextension/nepackettunnelprovider#2110153) from Apple docs.
+
 ### Configure Build Settings
 
 For both, the **Application** and the **Network Extension** targets, do the following
 
-1. Add following system frameworks to your project dependencies:
+1. Add these system frameworks to your project dependencies:
 - NetworkExtension
 - Security
 - libz.tbd
 
 2. In your project: *Project > Build Settings*:
 - Set *Enable Bitcode* to "NO"
-- Set *Other Linker Flags* to `-ObjC`.
+- [Set](https://developer.apple.com/library/content/qa/qa1490/_index.html) *Other Linker Flags* to `$(OTHER_LDFLAGS) -ObjC`.
 
 ### Add HydraSDK
 
-The consists of two frameworks:
-* **HydraApplicationSDK.framework** (for **Application** target)
-* **HydraTunnelProviderSDK.framework** (for **Network Extension** target)
+The SDK consists of two frameworks:
+* **HydraApplicationSDK.framework** (*iOS*) or **HydraApplicationSDKmacOS.framework** (*macOS*) for **Application** target
+* **HydraTunnelProviderSDK.framework** (*iOS*) or **HydraTunnelProviderSDKmacOS.framework** (*macOS*) for **Network Extension** target
 
-To integrate HydraSDK to your project, do the following:
+To integrate HydraSDK into your project, do the following:
 
-1. Add **HydraApplicationSDK.framework** to the Xcode project, and add this framework for your **Application** target. 
-2. Add **HydraTunnelProviderSDK.framework** to your project and then add this framework for your **Network Extension** target. 
+1. Add **HydraApplicationSDK.framework** (or **HydraApplicationSDKmacOS.framework** for macOS) to the Xcode project, and add this framework to your **Application** target. 
+2. Add **HydraTunnelProviderSDK.framework** (or **HydraTunnelProviderSDKmacOS.framework** for macOS) to your project and then add this framework to your **Network Extension** target. 
 3. Make sure both of these frameworks are properly added by going to *Project > General*, and double-checking that frameworks are in place under *Linked Frameworks and Libraries* section of respective targets.
 
 ### Subclassing Packet Tunnel Provider
@@ -78,36 +74,76 @@ Remove Xcode-generated empty `PacketTunnelProvider`'s implementation inside *.m*
 
 It is required to have two separate application IDs created on Apple Developer Portal, one for the **Application** target and other for the **Network Extension** target. 
 
-Go to [Apple Developer Portal](https://developer.apple.com/) and create (if not yet created) two application IDs under *Identifiers > App IDs* section.
+In the *Certificates, Identifiers & Profiles* section of the [developer web site](https://developer.apple.com/), when you add or edit an App ID, you’ll see *Network Extensions* service.  You should enable that service in your App ID:
+
+#### iOS
+
+Make sure *iOS, tvOS, watchOS* filter is selected and create (if not yet created) two application IDs under *Identifiers > App IDs* section.
 
 Also, enable the following services for both IDs:
 * App Groups (this will be configured in the next step)
 * Network Extensions
 * Personal VPN
 
+#### macOS
+
+Select *macOS* filter and create (if not yet created) two application IDs under *Identifiers > App IDs* section.
+
+Enable the following services for both IDs:
+* Network Extensions
+* Personal VPN
+
+#### iOS & macOS
+
 > **NOTE:** It is recommended to give distinctive names to your App IDs, for example:
 > * MyApp Application
 > * MyApp NetworkExtension
 
-### Creating App Group
+### Creating App Group 
+
+#### iOS
 
 Since HydraSDK is mostly a Network Extension you also have to create an App Group and provide group ID to the SDK to allow Hydra to interact with Packet Tunnel Provider Extension. See [Adding an App to an App Group](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19) for more information about how to create app group. 
 
 You need to assign this group to both, the **Application** and the **Network Extension** targets and App IDs.
 
+#### macOS
+
+For *macOS* this step is not needed.
+
 ### Enabling Capabilities
 
 For both, **Application**  and **Network Extension** targets, go to *Project > Capabilities* and Enable the following capabilities:
+
+#### iOS
 
 * Personal VPN
 * Network Extensions
 * App Groups
 
+#### macOS
+
+* App Sandbox
+  * Incoming Connections (Server)
+  * Outgoing Connections (Client)
+* Personal VPN
+* Network Extensions
+  * App Proxy
+  * Packet Tunnel
+
+#### iOS & macOS
+
 > **NOTE:** Make sure that respective **.entitlement** files are added to the project for both, **Application**  and **Network Extension** targets.
 
 ### Re/Generate Provision Profiles
 
-Application and Network Extension have to have its respective Provision Profiles generated from the Developer Portal. When creating and/or regenerating Provision Profiles, make sure you select Network Extension entitlement.
+Application and Network Extension, both have to have its respective Provision Profiles generated from the Developer Portal. When creating and/or regenerating Provision Profiles, make sure you select Network Extension entitlement.
+
+> **NOTE:** The Provision Profiles' Network Extension entitlements must corresponds to Network Extension entitlements configured through Xcode's project Capabilities tab. If there is a missconfiguration between the two, VPN connection will not be established.
+
+#### macOS
+
+> **NOTE:** On the Mac, Developer ID apps cannot host Network Extension providers. Only Mac App Store apps can host Network Extension providers. That's why, you cannot create a Developer ID Provision Profile with Network Extension entitlements attached to it.
 
 # Start using HydraSDK
 
@@ -128,6 +164,8 @@ To initialize Hydra do the following:
         builder.groupId = @"group.MY_APP_GROUP";
         builder.networkExtensionBundleId = @"BUNDLE_ID";
     }]];
+
+> **NOTE:** for macOS even though you don't need to enable App Groups, `groupId` property still has to have a value, starting with `group.`.
 
 The best place to put initialization code is you AppDelegate's `application:didFinishLaunchingWithOptions:`.
 
@@ -159,7 +197,7 @@ When you receive notification, get updated VPN status from `AFHydra` instance st
 
 ### Using on-demand mode
 
-iOS system provides a way when VPN will be triggered by network activity. It's possible to configure on-demand mode with AFConfig, using `onDemand` property. The SDK could be initialized with this parameter or this property could be changed at any time in the app before VPN connection (see hydraClient.config.onDemand).
+iOS/macOS systems provide a way when VPN will be triggered by network activity. It's possible to configure on-demand mode with AFConfig, using `onDemand` property. The SDK could be initialized with this parameter or this property could be changed at any time in the app before VPN connection (see hydraClient.config.onDemand).
 
 #### On-demand and users with limited traffic
 
