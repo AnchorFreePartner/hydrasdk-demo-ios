@@ -16,3 +16,7 @@ FOUNDATION_EXPORT const unsigned char hydrasdkVersionString[];
 #import <HydraApplicationSDK/AFRemainingTraffic.h>
 #import <HydraApplicationSDK/AFTrafficCounters.h>
 #import <HydraApplicationSDK/AFUser.h>
+#import <HydraApplicationSDK/AFVPNSession.h>
+#import <HydraApplicationSDK/AFHydraCategorization.h>
+#import <HydraApplicationSDK/AFConstants.h>
+#import <HydraApplicationSDK/AFProvidedCredentials.h>

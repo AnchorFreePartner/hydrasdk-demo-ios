@@ -4,7 +4,6 @@
 
 @import Foundation;
 @import NetworkExtension;
-#import "AFConfigBuilder.h"
 
 @class AFCredentials;
 @class AFConfigBuilder;
@@ -14,6 +13,13 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^AFConfigBlock)(AFConfigBuilder *);
 typedef void (^AFConfigUpdateBlock)(AFConfig *, AFConfigBuilder *);
+
+typedef NS_ENUM(NSUInteger, AFConfigFireshieldMode) {
+    AFConfigFireshieldModeDisabled,
+    AFConfigFireshieldModeEnabled,
+    AFConfigFireshieldModeEnabledSilent,
+    AFConfigFireshieldModeEnabledVPN,
+};
 
 @interface AFConfig : NSObject
 @property (nonatomic) BOOL debugLogging;
@@ -31,6 +37,10 @@ typedef void (^AFConfigUpdateBlock)(AFConfig *, AFConfigBuilder *);
 @property (copy, nonatomic, nullable) NSString *dnsAddr;
 @property (copy, nonatomic, nullable) NSString *vpnProfileName;
 @property (nonatomic) BOOL bypass;
+// Experimental feature that may help with Wi-Fi/VPN icon disappearance when on-demand is ON
+@property (nonatomic) BOOL forceInterface;
+
+@property (nonatomic, assign) AFConfigFireshieldMode fireshieldMode;
 
 - (instancetype)initWithBuilder:(AFConfigBuilder *)builder;
 
@@ -39,5 +49,9 @@ typedef void (^AFConfigUpdateBlock)(AFConfig *, AFConfigBuilder *);
 - (NSString *)shareFile:(NSString *)fullPath;
 
 + (instancetype)configWithBlock:(AFConfigBlock)block;
+
+- (NSString *)pkiCert;
+
+- (NSString *)jsonString;
 @end
 NS_ASSUME_NONNULL_END
