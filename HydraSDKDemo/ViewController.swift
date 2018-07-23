@@ -10,6 +10,7 @@ import UIKit
 import HydraApplicationSDK
 
 class ViewController: UIViewController, CountryControllerProtocol {
+    typealias UpdateCompletion = () -> ()
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var changeCountryButton: UIButton!
     @IBOutlet weak var loginStatus: UILabel!
@@ -20,6 +21,10 @@ class ViewController: UIViewController, CountryControllerProtocol {
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var trafficLimitLabel: UILabel!
     @IBOutlet weak var trafficStatsLabel: UILabel!
+    @IBOutlet weak var fireshieldSwitch: UISwitch!
+    @IBOutlet weak var connectionsCountLabel: UILabel!
+    
+    private var isUpdatingScannedConnections: Bool = false
     
     var countryConnectedTo: AFCountry?
     
@@ -68,6 +73,22 @@ class ViewController: UIViewController, CountryControllerProtocol {
         }
     }
     
+    private var isFireshieldEnabled: Bool {
+        return fireshieldSwitch.isOn
+    }
+    
+    private var fireshieldMode: AFConfigFireshieldMode {
+        let flags = (isVpnConnected, isFireshieldEnabled)
+        switch flags {
+        case (false, true):
+            return .enabledSilent
+        case (true, true):
+            return .enabledVPN
+        default:
+            return .disabled
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateUi()
@@ -75,8 +96,27 @@ class ViewController: UIViewController, CountryControllerProtocol {
         hydraClient.notificationCenter.addObserver(forName: NSNotification.Name.AFVPNStatusDidChange, object: nil, queue: nil) { [unowned self] (notification) in
             self.updateUi()
             if self.isVpnConnected {
-                self.updateTrafficStats()
-                self.updateTrafficLimits()
+                self.startUpdatingScannedConnections()
+            }
+            
+            switch self.hydraClient.vpnStatus() {
+            case .invalid, .undefined, .disconnected:
+                self.stopUpdatingScannedConnections()
+            default: break
+            }
+            
+            self.reloadData()
+        }
+    }
+    
+    private func reloadData() {
+        guard isVpnConnected else { return }
+        
+        self.updateTrafficStats() {
+            self.updateTrafficLimits() {
+                self.updateScannedConnections() {
+                    self.reloadData()
+                }
             }
         }
     }
@@ -115,40 +155,51 @@ class ViewController: UIViewController, CountryControllerProtocol {
     
     @IBAction func toggleVPN(_ sender: UISwitch) {
         if !self.isVpnConnected {
-            hydraClient.startVpn(with: self.country, completion: { (country, e) in
-                if let ex = e {
-                    print("Start VPN error: \(ex)")
-                } else {
-                    print("Start VPN success, country: \(country?.countryCode ?? "unknown")")
-                }
-                
-                self.countryConnectedTo = country
-                self.updateUi()
-            })
+            startVPN()
+        } else if isFireshieldEnabled {
+            presentDisableOptionsAlert()
         } else {
-            hydraClient.stopVpn({ (e) in
-                if let ex = e {
-                    print("Stop VPN error: \(ex)")
-                } else {
-                    print("Stop VPN success")
-                }
-            })
+            stopVPN()
+        }
+    }
+    
+    private func presentDisableOptionsAlert() {
+        let alertController = UIAlertController(title: "VPN Connection",
+                                                message: "Fireshiled is still enabled\ndo you want to run VPN in silent mode with Fireshield? ",
+                                                preferredStyle: .alert)
+        
+        let enabledAction = UIAlertAction(title: "Enable silent VPN", style: .default) { _ in
+            self.restartConnectionWithFireshield()
+        }
+        let disableAction = UIAlertAction(title: "Disable VPN and Fireshield", style: .destructive) { _ in
+            self.stopVPN()
+            self.fireshieldSwitch.isOn = false
+            self.updateHydraConfig()
+        }
+        
+        [enabledAction, disableAction].forEach { alertController.addAction($0) }
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func restartConnectionWithFireshield() {
+        stopVPN {
+            self.updateHydraConfigAndRestartIfNeeded()
         }
     }
     
     @IBAction func onDemandChanged(_ sender: UISwitch) {
         if self.hydraClient.config.onDemand != sender.isOn && self.isVpnConnected {
-            hydraClient.stopVpn({ (e) in
-                if let ex = e {
-                    print("Stop VPN error: \(ex)")
-                } else {
-                    print("Stop VPN success")
-                }
-            })
+            stopVPN()
         }
         
         self.hydraClient.config.onDemand = sender.isOn
     }
+    
+    @IBAction func toggleFireshield(_ sender: UISwitch) {
+        updateHydraConfigAndRestartIfNeeded()
+    }
+    
     
     func updateUi() {
         self.loginButton.setTitle(self.isLoggedIn ? "Log out" : "Log in", for: .normal)
@@ -165,11 +216,15 @@ class ViewController: UIViewController, CountryControllerProtocol {
         }
     }
     
-    @objc func updateTrafficStats() {
-        if !isVpnConnected { return }
+    @objc func updateTrafficStats(completion: UpdateCompletion? = nil) {
+        guard isVpnConnected else {
+            completion?()
+            return
+        }
+        
         hydraClient.trafficCounters { [unowned self] (e, counters) in
             guard let counters = counters else {
-                self.perform(#selector(self.updateTrafficStats), with: nil, afterDelay: 2.0)
+                self.completeUpdate(with: completion)
                 return
             }
         
@@ -177,11 +232,16 @@ class ViewController: UIViewController, CountryControllerProtocol {
             let dl = ByteCountFormatter.string(fromByteCount: counters.bytesRx.int64Value, countStyle: .file)
             let string = "UL: \(ul), DL: \(dl)"
             self.trafficStatsLabel.text = string
-            self.perform(#selector(self.updateTrafficStats), with: nil, afterDelay: 2.0)
+            self.completeUpdate(with: completion)
         }
     }
     
-    @objc func updateTrafficLimits() {
+    @objc func updateTrafficLimits(completion: UpdateCompletion? = nil) {
+        guard isVpnConnected else {
+            completion?()
+            return
+        }
+        
         self.hydraClient.remainingTraffic { (e, remainingTraffic) in
             if let ex = e {
                 if ex.localizedDescription == "UNLIMITED" {
@@ -193,13 +253,16 @@ class ViewController: UIViewController, CountryControllerProtocol {
                 print("remainingTraffic success: \(String(describing: remainingTraffic?.description()))")
             }
             
-            guard let traffic = remainingTraffic else { return }
+            guard let traffic = remainingTraffic else {
+                self.completeUpdate(with: completion)
+                return
+            }
             var string : String = ByteCountFormatter.string(fromByteCount: traffic.trafficRemaining.int64Value, countStyle: .file)
             string += " of "
             string += ByteCountFormatter.string(fromByteCount: traffic.trafficUsageLimit.int64Value, countStyle: .file)
             string += " remaining"
             self.trafficLimitLabel.text = string
-            self.perform(#selector(self.updateTrafficLimits), with: nil, afterDelay: 2.0)
+            self.completeUpdate(with: completion)
         }
     }
     
@@ -207,6 +270,93 @@ class ViewController: UIViewController, CountryControllerProtocol {
         self.country = newCountry
         updateUi()
     }
-
+    
+    //MARK: Fireshield
+    
+    private func updateHydraConfigAndRestartIfNeeded() {
+        self.updateHydraConfig()
+        if !self.isVpnConnected {
+            self.startVPN()
+        } else {
+            self.restartVPN()
+        }
+    }
+    
+    private func restartVPN() {
+        hydraClient.stopVpn({ (e) in
+            if let ex = e {
+                print("Stop VPN error: \(ex)")
+            } else {
+                self.updateUi()
+                self.startVPN()
+            }
+        })
+    }
+    
+    private func startVPN() {
+        self.hydraClient.startVpn({ (country, e) in
+            if let ex = e {
+                print("Restart VPN error: \(ex)")
+            } else {
+                print("Restart VPN success, country: \(country?.countryCode ?? "unknown")")
+            }
+            self.countryConnectedTo = country
+            self.updateUi()
+        })
+    }
+    
+    private func stopVPN(completion: (() ->())? = nil) {
+        hydraClient.stopVpn({ (e) in
+            if let ex = e {
+                print("Stop VPN error: \(ex)")
+            } else {
+                print("Stop VPN success")
+            }
+            completion?()
+        })
+    }
+    
+    private func updateHydraConfig() {
+        self.hydraClient.updateConfig(AFConfig.init(block: { [weak self] (builder) in
+            guard let `self` = self else { return }
+            builder.fireshieldMode = self.fireshieldMode
+        }))
+    }
+    
+    private func startUpdatingScannedConnections() {
+        if isFireshieldEnabled {
+            isUpdatingScannedConnections = true
+        }
+    }
+    
+    private func stopUpdatingScannedConnections() {
+        isUpdatingScannedConnections = false
+        self.connectionsCountLabel.text = "--"
+    }
+    
+    private func updateScannedConnections(completion: UpdateCompletion? = nil) {
+        guard isFireshieldEnabled, isUpdatingScannedConnections else {
+            completion?()
+            return
+        }
+        
+        hydraClient.getScannedConnections { [unowned self] (connections, error) in
+            if let e = error {
+                self.connectionsCountLabel.text = "Error: \(e.localizedDescription)"
+                self.completeUpdate(with: completion)
+                return
+            }
+            self.connectionsCountLabel.text = "\(connections)"
+            
+            self.completeUpdate(with: completion)
+        }
+    }
+    
+    private func completeUpdate(with completion: UpdateCompletion?) {
+        guard let completion = completion else { return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            completion()
+        }
+    }
 }
 
