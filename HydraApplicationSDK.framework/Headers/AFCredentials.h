@@ -14,7 +14,6 @@
 @property (strong, nonatomic) NSString *country;
 @property (strong, nonatomic) NSString *ip;
 @property (strong, nonatomic) NSString *userIP;
-@property (strong, nonatomic) NSString *hydraCert;
 
 - (void)save;
 

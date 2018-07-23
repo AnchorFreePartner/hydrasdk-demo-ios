@@ -5,7 +5,11 @@
 //  Copyright (c) 2017 Anchorfree Inc. All rights reserved.
 //
 
-#import <HydraTunnelProviderSDK/AFPacketTunnelProvider.h>
+@import Foundation;
 
 FOUNDATION_EXPORT double hydrasdkVersionNumber;
 FOUNDATION_EXPORT const unsigned char hydrasdkVersionString[];
+
+#import <HydraTunnelProviderSDK/AFNetworkExtensionDelegate.h>
+#import <HydraTunnelProviderSDK/AFHydraCategorization.h>
+

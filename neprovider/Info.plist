@@ -25,7 +25,9 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.networkextension.packet-tunnel</string>
 		<key>NSExtensionPrincipalClass</key>
-		<string>$(PRODUCT_MODULE_NAME).PacketTunnelProvider</string>
+		<string>AFHydraTunnelProvider</string>
 	</dict>
+	<key>AFNetworkExtensionDelegate</key>
+	<string>$(PRODUCT_MODULE_NAME).PacketTunnelProviderDelegate</string>
 </dict>
 </plist>

@@ -20,7 +20,7 @@
 		B9621BD21F7443FD00B3AAFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9621BD01F7443FD00B3AAFA /* Main.storyboard */; };
 		B9621BD41F7443FD00B3AAFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9621BD31F7443FD00B3AAFA /* Assets.xcassets */; };
 		B9621BD71F7443FD00B3AAFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9621BD51F7443FD00B3AAFA /* LaunchScreen.storyboard */; };
-		B9621BE51F74442100B3AAFA /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621BE41F74442100B3AAFA /* PacketTunnelProvider.swift */; };
+		B9621BE51F74442100B3AAFA /* PacketTunnelProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621BE41F74442100B3AAFA /* PacketTunnelProviderDelegate.swift */; };
 		B9621BEA1F74442100B3AAFA /* neprovider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9621BE21F74442100B3AAFA /* neprovider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,7 @@
 		B9621BD61F7443FD00B3AAFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9621BD81F7443FD00B3AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9621BE21F74442100B3AAFA /* neprovider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = neprovider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9621BE41F74442100B3AAFA /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		B9621BE41F74442100B3AAFA /* PacketTunnelProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProviderDelegate.swift; sourceTree = "<group>"; };
 		B9621BE61F74442100B3AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9621BE71F74442100B3AAFA /* neprovider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = neprovider.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,7 +145,7 @@
 		B9621BE31F74442100B3AAFA /* neprovider */ = {
 			isa = PBXGroup;
 			children = (
-				B9621BE41F74442100B3AAFA /* PacketTunnelProvider.swift */,
+				B9621BE41F74442100B3AAFA /* PacketTunnelProviderDelegate.swift */,
 				B9621BE61F74442100B3AAFA /* Info.plist */,
 				B9621BE71F74442100B3AAFA /* neprovider.entitlements */,
 			);
@@ -287,7 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9621BE51F74442100B3AAFA /* PacketTunnelProvider.swift in Sources */,
+				B9621BE51F74442100B3AAFA /* PacketTunnelProviderDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
