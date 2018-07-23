@@ -11,10 +11,10 @@ import HydraApplicationSDK
 
 class ViewController: UIViewController, CountryControllerProtocol {
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var changeCountryButton: UIButton!
     @IBOutlet weak var loginStatus: UILabel!
     @IBOutlet weak var connectionStatus: UILabel!
+    @IBOutlet weak var vpnStateSwitch: UISwitch!
     @IBOutlet weak var onDemandSwitch: UISwitch!
     @IBOutlet weak var onDemandLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
@@ -105,7 +105,15 @@ class ViewController: UIViewController, CountryControllerProtocol {
         }
     }
     
-    @IBAction func toggleConnect(_ sender: UIButton) {
+    @IBAction func changeCountry(_ sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "CountryController") as! CountryController
+        controller.currentCountry = self.country
+        controller.delegate = self
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func toggleVPN(_ sender: UISwitch) {
         if !self.isVpnConnected {
             hydraClient.startVpn(with: self.country, completion: { (country, e) in
                 if let ex = e {
@@ -128,13 +136,6 @@ class ViewController: UIViewController, CountryControllerProtocol {
         }
     }
     
-    @IBAction func changeCountry(_ sender: UIButton) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "CountryController") as! CountryController
-        controller.currentCountry = self.country
-        controller.delegate = self
-        self.present(controller, animated: true, completion: nil)
-    }
-    
     @IBAction func onDemandChanged(_ sender: UISwitch) {
         if self.hydraClient.config.onDemand != sender.isOn && self.isVpnConnected {
             hydraClient.stopVpn({ (e) in
@@ -152,10 +153,16 @@ class ViewController: UIViewController, CountryControllerProtocol {
     func updateUi() {
         self.loginButton.setTitle(self.isLoggedIn ? "Log out" : "Log in", for: .normal)
         self.loginStatus.text = self.isLoggedIn ? "Logged in" : "Logged out"
-        self.connectButton.setTitle(self.isVpnConnected ? "Stop VPN" : "Start VPN", for: .normal)
+        self.vpnStateSwitch.isOn = self.isVpnConnected || self.hydraClient.vpnStatus() == .connecting
         self.connectionStatus.text = self.isVpnConnected ? "\(self.statusString) [\(self.countryConnectedTo?.countryCode ?? "???")]" : self.statusString
         self.countryLabel.text = self.country?.countryCode ?? "Optimal"
         self.onDemandLabel.text = self.onDemandSwitch.isOn ? "On-demand enabled" : "On-demand disabled"
+        switch self.hydraClient.vpnStatus() {
+        case .connecting, .disconnecting, .reconnecting:
+            vpnStateSwitch.isEnabled = false
+        default:
+            vpnStateSwitch.isEnabled = true
+        }
     }
     
     @objc func updateTrafficStats() {
