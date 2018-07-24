@@ -56,17 +56,4 @@ fileprivate extension AFHydraCategorization {
         content.body = "\(self.actionEmoji)\(categoryText) SRC: \(sourcesText);\(timestampText)"
         return content
     }
-    
-    private var actionEmoji: String {
-        switch self.action {
-        case .proxy:
-            return "🅿️"
-        case .VPN:
-            return "🛡"
-        case .bypass:
-            return "✅"
-        case .block:
-            return "🛑"
-        }
-    }
 }

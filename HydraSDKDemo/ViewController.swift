@@ -24,6 +24,8 @@ class ViewController: UIViewController, CountryControllerProtocol {
     @IBOutlet weak var trafficLimitLabel: UILabel!
     @IBOutlet weak var trafficStatsLabel: UILabel!
     @IBOutlet weak var fireshieldSwitch: UISwitch!
+    
+    @IBOutlet weak var fireshieldCategoryzationLabel: UILabel!
     @IBOutlet weak var connectionsCountLabel: UILabel!
     
     @IBOutlet weak var fireshiledNotificationsSwitch: UISwitch!
@@ -95,7 +97,11 @@ class ViewController: UIViewController, CountryControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateUi()
-
+        self.observerStatusChange()
+        self.observerApplicationDidBecomeActive()
+    }
+    
+    private func observerStatusChange() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AFVPNStatusDidChange, object: nil, queue: nil) { [unowned self] (notification) in
             self.updateUi()
             if self.isVpnConnected {
@@ -110,6 +116,20 @@ class ViewController: UIViewController, CountryControllerProtocol {
             
             self.reloadData()
         }
+    }
+    
+    private func observerApplicationDidBecomeActive() {
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) { _ in
+            self.updateCategorizationLabel()
+        }
+    }
+    
+    private func updateCategorizationLabel() {
+        guard let categorizationResource = hydraClient.lastCategorization().resource else { return }
+        let categorization = hydraClient.lastCategorization()
+        let categoriationDescription = "\(categorization.actionEmoji) \(categorizationResource)"
+        
+        self.fireshieldCategoryzationLabel.text = categoriationDescription
     }
     
     private func reloadData() {
@@ -233,6 +253,7 @@ class ViewController: UIViewController, CountryControllerProtocol {
         self.connectionStatus.text = self.isVpnConnected ? "\(self.statusString) [\(self.countryConnectedTo?.countryCode ?? "???")]" : self.statusString
         self.countryLabel.text = self.country?.countryCode ?? "Optimal"
         self.onDemandLabel.text = self.onDemandSwitch.isOn ? "On-demand enabled" : "On-demand disabled"
+        self.fireshiledNotificationsSwitch.isOn = Preferences.isFireshieldNotificationsEnabled
         switch self.hydraClient.vpnStatus() {
         case .connecting, .disconnecting, .reconnecting:
             vpnStateSwitch.isEnabled = false
