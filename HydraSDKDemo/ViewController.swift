@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import UserNotifications
 import HydraApplicationSDK
 
 class ViewController: UIViewController, CountryControllerProtocol {
     typealias UpdateCompletion = () -> ()
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var changeCountryButton: UIButton!
     @IBOutlet weak var loginStatus: UILabel!
@@ -24,6 +26,7 @@ class ViewController: UIViewController, CountryControllerProtocol {
     @IBOutlet weak var fireshieldSwitch: UISwitch!
     @IBOutlet weak var connectionsCountLabel: UILabel!
     
+    @IBOutlet weak var fireshiledNotificationsSwitch: UISwitch!
     private var isUpdatingScannedConnections: Bool = false
     
     var countryConnectedTo: AFCountry?
@@ -164,22 +167,23 @@ class ViewController: UIViewController, CountryControllerProtocol {
     }
     
     private func presentDisableOptionsAlert() {
-        let alertController = UIAlertController(title: "VPN Connection",
-                                                message: "Fireshiled is still enabled\ndo you want to run VPN in silent mode with Fireshield? ",
-                                                preferredStyle: .alert)
-        
-        let enabledAction = UIAlertAction(title: "Enable silent VPN", style: .default) { _ in
+        let actionHandler: AlertController.ActionHandler = {
             self.restartConnectionWithFireshield()
         }
-        let disableAction = UIAlertAction(title: "Disable VPN and Fireshield", style: .destructive) { _ in
+        
+        let cancelHandler: AlertController.ActionHandler = {
             self.stopVPN()
             self.fireshieldSwitch.isOn = false
             self.updateHydraConfig()
         }
         
-        [enabledAction, disableAction].forEach { alertController.addAction($0) }
-        
-        self.present(alertController, animated: true, completion: nil)
+        AlertController.presentAlert(withTitle: "VPN Connection",
+                                     body: "Fireshiled is still enabled\ndo you want to run VPN in silent mode with Fireshield?",
+                                     in: self,
+                                     actionButtonTitle: "Enable silent VPN",
+                                     cancelButtonTitle: "Disable VPN and Fireshield",
+                                     actionHandler: actionHandler,
+                                     cancelActionHandler: cancelHandler)
     }
     
     private func restartConnectionWithFireshield() {
@@ -200,6 +204,27 @@ class ViewController: UIViewController, CountryControllerProtocol {
         updateHydraConfigAndRestartIfNeeded()
     }
     
+    @IBAction func toggleFireshieldNotifications(_ sender: UISwitch) {
+        Preferences.isFireshieldNotificationsEnabled = sender.isOn
+        if Preferences.isFireshieldNotificationsEnabled {
+            requestUserNotificationsPermissionsIfNeeded {
+                if $0 == false {
+                    self.presentDisableOptionsAlert()
+                }
+            }
+        }
+    }
+    
+    private func presentNotificationsAccessDeclinedAlert() {
+        AlertController.presentAlert(withTitle: "Notification Presmission",
+                                     body: "Notification access is declined, please change access in Settings to enable Fireshield notifications",
+                                     in: self,
+                                     cancelButtonTitle: "Ok",
+                                     cancelActionHandler: {
+                                        Preferences.isFireshieldNotificationsEnabled = false
+                                        self.fireshieldSwitch.isOn = false
+        })
+    }
     
     func updateUi() {
         self.loginButton.setTitle(self.isLoggedIn ? "Log out" : "Log in", for: .normal)
@@ -358,5 +383,15 @@ class ViewController: UIViewController, CountryControllerProtocol {
             completion()
         }
     }
+    
+    private func requestUserNotificationsPermissionsIfNeeded(_ completion: @escaping (Bool) -> ()) {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (isGranted, error) in
+            if let error = error {
+                print("Unable to request authorization: \(error)")
+            }
+            
+            completion(isGranted)
+        }
+    }
 }
-

@@ -25,13 +25,6 @@
                                     <action selector="toggleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ceX-M2-sFM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrz-QZ-kRm">
-                                <rect key="frame" x="16" y="231" width="45" height="30"/>
-                                <state key="normal" title="Server"/>
-                                <connections>
-                                    <action selector="changeCountry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fcx-CR-B3U"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G87-zg-fas">
                                 <rect key="frame" x="70" y="42" width="37.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -74,12 +67,6 @@
                                     <action selector="toggleVPN:" destination="BYZ-38-t0r" eventType="valueChanged" id="D6x-bO-hhz"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McP-ks-Gnt">
-                                <rect key="frame" x="72" y="236.5" width="37.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fireshield" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0B1-JI-OnJ">
                                 <rect key="frame" x="72" y="159" width="66.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -92,32 +79,59 @@
                                     <action selector="toggleFireshield:" destination="BYZ-38-t0r" eventType="valueChanged" id="gxr-sk-gYl"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fireshield  Connections" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWD-Cg-3SU">
-                                <rect key="frame" x="16" y="198" width="160.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XN-Fy-K7s">
+                                <rect key="frame" x="184" y="237" width="14" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fireshield notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxN-MG-7v2">
+                                <rect key="frame" x="72" y="198" width="154.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XN-Fy-K7s">
-                                <rect key="frame" x="184.5" y="198" width="14" height="18"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VeZ-QV-LGY">
+                                <rect key="frame" x="16" y="191" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleFireshieldNotifications:" destination="BYZ-38-t0r" eventType="valueChanged" id="iSr-pW-QDe"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrz-QZ-kRm">
+                                <rect key="frame" x="16" y="270" width="45" height="30"/>
+                                <state key="normal" title="Server"/>
+                                <connections>
+                                    <action selector="changeCountry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fcx-CR-B3U"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McP-ks-Gnt">
+                                <rect key="frame" x="71" y="279" width="37.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fireshield  Connections" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWD-Cg-3SU">
+                                <rect key="frame" x="16" y="237" width="160.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="meJ-Sy-qTK" secondAttribute="leading" constant="-16" id="2Js-wy-SSb"/>
+                            <constraint firstItem="VeZ-QV-LGY" firstAttribute="leading" secondItem="Dvn-6p-Rd8" secondAttribute="leading" id="4Ay-5t-KQ5"/>
                             <constraint firstItem="M7P-Qc-qKb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6Gy-HG-OoR"/>
+                            <constraint firstItem="pxN-MG-7v2" firstAttribute="centerY" secondItem="VeZ-QV-LGY" secondAttribute="centerY" id="9zR-Lj-JJ2"/>
                             <constraint firstItem="Yrz-QZ-kRm" firstAttribute="top" secondItem="DWD-Cg-3SU" secondAttribute="bottom" constant="15" id="CvB-lu-BtX"/>
                             <constraint firstItem="YXc-3O-hvb" firstAttribute="leading" secondItem="PcL-Ld-l4B" secondAttribute="trailing" constant="7" id="I8S-fs-6hg"/>
                             <constraint firstItem="YXc-3O-hvb" firstAttribute="centerY" secondItem="PcL-Ld-l4B" secondAttribute="centerY" id="J4i-Ha-vii"/>
                             <constraint firstItem="G87-zg-fas" firstAttribute="leading" secondItem="SXB-W1-7RI" secondAttribute="trailing" constant="8" id="MX3-lK-JW3"/>
                             <constraint firstItem="8XN-Fy-K7s" firstAttribute="leading" secondItem="DWD-Cg-3SU" secondAttribute="trailing" constant="8" id="PhQ-rK-dnl"/>
-                            <constraint firstItem="8XN-Fy-K7s" firstAttribute="top" secondItem="DWD-Cg-3SU" secondAttribute="top" id="Pis-FH-wkI"/>
                             <constraint firstItem="Dvn-6p-Rd8" firstAttribute="trailing" secondItem="PcL-Ld-l4B" secondAttribute="trailing" id="Pv7-cF-ffg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="D2P-G2-XeF" secondAttribute="leading" constant="-16" id="QRg-tE-xl1"/>
                             <constraint firstItem="PcL-Ld-l4B" firstAttribute="top" secondItem="M7P-Qc-qKb" secondAttribute="bottom" constant="8" id="TRF-vO-LeL"/>
+                            <constraint firstItem="8XN-Fy-K7s" firstAttribute="top" secondItem="DWD-Cg-3SU" secondAttribute="top" id="Uxy-We-DMU"/>
                             <constraint firstItem="Dvn-6p-Rd8" firstAttribute="leading" secondItem="PcL-Ld-l4B" secondAttribute="leading" id="X9S-BE-XrE"/>
                             <constraint firstItem="0B1-JI-OnJ" firstAttribute="leading" secondItem="Dvn-6p-Rd8" secondAttribute="trailing" constant="7" id="YK6-dF-Jdc"/>
                             <constraint firstItem="G87-zg-fas" firstAttribute="centerY" secondItem="SXB-W1-7RI" secondAttribute="centerY" id="dpA-At-jHW"/>
@@ -125,17 +139,19 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="Yrz-QZ-kRm" secondAttribute="leading" constant="-16" id="eEq-uN-nIH"/>
                             <constraint firstItem="QnZ-8o-hDG" firstAttribute="top" secondItem="G87-zg-fas" secondAttribute="bottom" constant="17" id="fxi-5I-BUT"/>
                             <constraint firstItem="McP-ks-Gnt" firstAttribute="leading" secondItem="Yrz-QZ-kRm" secondAttribute="trailing" constant="11" id="gQa-Tq-4pz"/>
+                            <constraint firstItem="DWD-Cg-3SU" firstAttribute="top" secondItem="VeZ-QV-LGY" secondAttribute="bottom" constant="15" id="iSq-ne-tEM"/>
                             <constraint firstItem="meJ-Sy-qTK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-41" id="ibe-f4-gQY"/>
                             <constraint firstItem="Dvn-6p-Rd8" firstAttribute="top" secondItem="PcL-Ld-l4B" secondAttribute="bottom" constant="8" id="jNv-6k-9Ty"/>
                             <constraint firstItem="McP-ks-Gnt" firstAttribute="centerY" secondItem="Yrz-QZ-kRm" secondAttribute="centerY" id="jus-Sr-5dK"/>
                             <constraint firstItem="meJ-Sy-qTK" firstAttribute="top" secondItem="D2P-G2-XeF" secondAttribute="bottom" constant="8" id="lzk-r2-Koi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="SXB-W1-7RI" secondAttribute="leading" constant="-16" id="nfi-2E-cHP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="SXB-W1-7RI" secondAttribute="bottom" constant="-46" id="nwU-6T-zjp"/>
-                            <constraint firstItem="DWD-Cg-3SU" firstAttribute="top" secondItem="Dvn-6p-Rd8" secondAttribute="bottom" constant="15" id="qE4-2r-VGU"/>
                             <constraint firstItem="M7P-Qc-qKb" firstAttribute="top" secondItem="SXB-W1-7RI" secondAttribute="bottom" constant="8" id="qin-7J-vmn"/>
                             <constraint firstItem="DWD-Cg-3SU" firstAttribute="leading" secondItem="Dvn-6p-Rd8" secondAttribute="leading" id="rON-ip-fdV"/>
+                            <constraint firstItem="VeZ-QV-LGY" firstAttribute="top" secondItem="Dvn-6p-Rd8" secondAttribute="bottom" constant="8" id="s90-mz-wkc"/>
                             <constraint firstItem="PcL-Ld-l4B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tNK-Ti-0xR"/>
                             <constraint firstItem="QnZ-8o-hDG" firstAttribute="leading" secondItem="M7P-Qc-qKb" secondAttribute="trailing" constant="7" id="wgt-h7-dZU"/>
+                            <constraint firstItem="pxN-MG-7v2" firstAttribute="leading" secondItem="VeZ-QV-LGY" secondAttribute="trailing" constant="7" id="z5g-Vd-FNg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -145,6 +161,7 @@
                         <outlet property="connectionsCountLabel" destination="8XN-Fy-K7s" id="llb-3Y-nFK"/>
                         <outlet property="countryLabel" destination="McP-ks-Gnt" id="Agt-n8-siT"/>
                         <outlet property="fireshieldSwitch" destination="Dvn-6p-Rd8" id="EYl-aq-Cfn"/>
+                        <outlet property="fireshiledNotificationsSwitch" destination="VeZ-QV-LGY" id="qhP-Fb-Zjl"/>
                         <outlet property="loginButton" destination="SXB-W1-7RI" id="rRd-mn-NvL"/>
                         <outlet property="loginStatus" destination="G87-zg-fas" id="fyJ-OA-ozW"/>
                         <outlet property="onDemandLabel" destination="YXc-3O-hvb" id="JX9-ef-Fj1"/>
