@@ -36,6 +36,7 @@ typedef NS_ENUM(NSUInteger, AFConfigFireshieldMode) {
 @property (strong, nonatomic, nullable) NSArray <NSString *> *bypassDomains;
 @property (copy, nonatomic, nullable) NSString *dnsAddr;
 @property (copy, nonatomic, nullable) NSString *vpnProfileName;
+@property (copy, nonatomic, nullable) NSString *serverAddressDisplayName;
 @property (nonatomic) BOOL bypass;
 // Experimental feature that may help with Wi-Fi/VPN icon disappearance when on-demand is ON
 @property (nonatomic) BOOL forceInterface;

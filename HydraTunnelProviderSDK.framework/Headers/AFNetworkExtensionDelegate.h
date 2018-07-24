@@ -1,9 +1,8 @@
 //
-// Created by Igor Glotov on 1/19/18.
-// Copyright (c) 2018 northghost. All rights reserved.
+// Copyright (c) 2017 Anchorfree Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 @class AFHydraCategorization;
 
 typedef NS_ENUM(NSInteger, AFNEErrorCode) {
@@ -11,17 +10,17 @@ typedef NS_ENUM(NSInteger, AFNEErrorCode) {
     AFNEErrorCodeNoGroupId = 2,
     AFNEErrorCodeInterfaceDidChange = 11,
 };
+
 typedef NS_ENUM(NSInteger, AFHydraErrorCode) {
+    // custom
     AFHydraErrorCodeTimeout = 10,
     AFHydraErrorCodeIllegalState = 11,
+    // hydra
     AFHydraErrorCodeConnectionDisrupted = 181,
     AFHydraErrorCodeConnectionNotEstablished = 182,
     AFHydraErrorCodeTokenInvalid = 186,
     AFHydraErrorCodeTrafficExceed = 191
 };
-
-static NSString *const AFHydraDomain = @"AFHydraDomain";
-static NSString *const AFNEErrorDomain = @"AFNEErrorDomain";
 
 @protocol AFNetworkExtensionDelegate <NSObject>
 @optional

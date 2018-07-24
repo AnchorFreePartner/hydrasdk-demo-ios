@@ -6,7 +6,6 @@
 
 @import Foundation;
 
-#import "AFVPNSession.h"
 #import "AFHydraCategorization.h"
 #import "AFConstants.h"
 
@@ -22,13 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
  * @description All NSError objects are of kAFHydraApiErrorDomain domain by default, if not declared otherwise.
  */
 @interface AFHydra : NSObject
-@property(strong, nonatomic, readonly) NSNotificationCenter *notificationCenter;
+
 @property(strong, nonatomic, readonly) AFConfig *config;
-@property(readonly) AFVPNSession *vpnSession;
+@property(assign, nonatomic, readonly) BOOL isBypassEnabled;
 
-- (nonnull instancetype)initWithConfig:(AFConfig *)config;
-
-+ (nonnull instancetype)withConfig:(AFConfig *)config;
+- (instancetype)initWithConfig:(AFConfig *)config;
++ (instancetype)withConfig:(AFConfig *)config;
 
 /*!
  * @method updateConfig

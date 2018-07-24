@@ -1,9 +1,5 @@
 //
-//  AFConstants.h
-//  hydrasdk
-//
-//  Created by Igor Glotov on 2/1/18.
-//  Copyright © 2018 northghost. All rights reserved.
+// Copyright (c) 2017 Anchorfree Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -85,8 +81,9 @@ typedef NS_ENUM(NSInteger, AFVPNManagerErrorCode) {
     /*! @const AFVPNManagerErrorCodeAlreadyDisconnected VPN is already disconnected */
     AFVPNManagerErrorCodeAlreadyDisconnected = 206,
     /*! @const AFVPNManagerErrorCodeConnectionInProgress VPN is already connecting */
-    AFVPNManagerErrorCodeConnectionInProgress = 207
-
+    AFVPNManagerErrorCodeConnectionInProgress = 207,
+    /*! @const AFVPNManagerErrorCodePreparingConnectionInProgress VPN is already trying to prepare a connection */
+    AFVPNManagerErrorCodePreparingConnectionInProgress = 208
 };
 
 

@@ -92,8 +92,8 @@ class ViewController: UIViewController, CountryControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateUi()
-        
-        hydraClient.notificationCenter.addObserver(forName: NSNotification.Name.AFVPNStatusDidChange, object: nil, queue: nil) { [unowned self] (notification) in
+
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AFVPNStatusDidChange, object: nil, queue: nil) { [unowned self] (notification) in
             self.updateUi()
             if self.isVpnConnected {
                 self.startUpdatingScannedConnections()

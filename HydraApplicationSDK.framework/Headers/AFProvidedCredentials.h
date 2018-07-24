@@ -1,6 +1,5 @@
 //
-// Created by Igor Glotov on 9/18/17.
-// Copyright (c) 2017 northghost. All rights reserved.
+// Copyright (c) 2017 Anchorfree Inc. All rights reserved.
 //
 
 @import Foundation;
