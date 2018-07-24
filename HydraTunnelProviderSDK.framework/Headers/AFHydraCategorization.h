@@ -2,8 +2,9 @@
 //  AFHydraCategorization.h
 //  HydraSDK
 //
-//  Created by Sean Ghiocel on 12/18/17.
-//  Copyright © 2017 Sean Ghiocel. All rights reserved.
+//
+// Copyright (c) 2017 Anchorfree Inc. All rights reserved.
+//
 //
 
 #import <Foundation/Foundation.h>

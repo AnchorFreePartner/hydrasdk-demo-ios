@@ -19,3 +19,4 @@ FOUNDATION_EXPORT const unsigned char hydrasdkVersionString[];
 #import <HydraApplicationSDK/AFHydraCategorization.h>
 #import <HydraApplicationSDK/AFConstants.h>
 #import <HydraApplicationSDK/AFProvidedCredentials.h>
+#import <HydraApplicationSDK/AFDeviceInfo.h>
