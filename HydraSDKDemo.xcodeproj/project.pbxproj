@@ -22,6 +22,12 @@
 		B9621BD71F7443FD00B3AAFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9621BD51F7443FD00B3AAFA /* LaunchScreen.storyboard */; };
 		B9621BE51F74442100B3AAFA /* PacketTunnelProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621BE41F74442100B3AAFA /* PacketTunnelProviderDelegate.swift */; };
 		B9621BEA1F74442100B3AAFA /* neprovider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9621BE21F74442100B3AAFA /* neprovider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E16AE9E12107A3E8004487DB /* CategorizationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E02107A3E8004487DB /* CategorizationProcessor.swift */; };
+		E16AE9E42107A617004487DB /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E32107A617004487DB /* Preferences.swift */; };
+		E16AE9E52107A79A004487DB /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E32107A617004487DB /* Preferences.swift */; };
+		E16AE9E72107AB03004487DB /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E62107AB03004487DB /* AlertController.swift */; };
+		E16AE9EA2107B513004487DB /* CategorizationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E92107B513004487DB /* CategorizationActions.swift */; };
+		E16AE9EB2107B532004487DB /* CategorizationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E92107B513004487DB /* CategorizationActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +74,10 @@
 		B9621BE41F74442100B3AAFA /* PacketTunnelProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProviderDelegate.swift; sourceTree = "<group>"; };
 		B9621BE61F74442100B3AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9621BE71F74442100B3AAFA /* neprovider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = neprovider.entitlements; sourceTree = "<group>"; };
+		E16AE9E02107A3E8004487DB /* CategorizationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorizationProcessor.swift; sourceTree = "<group>"; };
+		E16AE9E32107A617004487DB /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		E16AE9E62107AB03004487DB /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		E16AE9E92107B513004487DB /* CategorizationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorizationActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				B92460B81F7489130007DE4E /* HydraSDKDemo.entitlements */,
+				E16AE9E22107A601004487DB /* Common */,
+				E16AE9E82107B4FE004487DB /* Extensions */,
 				B9621BCC1F7443FD00B3AAFA /* AppDelegate.swift */,
 				B9621BCE1F7443FD00B3AAFA /* ViewController.swift */,
 				B92460B91F748ADE0007DE4E /* CountryController.swift */,
@@ -148,8 +160,26 @@
 				B9621BE41F74442100B3AAFA /* PacketTunnelProviderDelegate.swift */,
 				B9621BE61F74442100B3AAFA /* Info.plist */,
 				B9621BE71F74442100B3AAFA /* neprovider.entitlements */,
+				E16AE9E02107A3E8004487DB /* CategorizationProcessor.swift */,
 			);
 			path = neprovider;
+			sourceTree = "<group>";
+		};
+		E16AE9E22107A601004487DB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E16AE9E32107A617004487DB /* Preferences.swift */,
+				E16AE9E62107AB03004487DB /* AlertController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E16AE9E82107B4FE004487DB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E16AE9E92107B513004487DB /* CategorizationActions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +308,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B92460BA1F748ADE0007DE4E /* CountryController.swift in Sources */,
+				E16AE9E72107AB03004487DB /* AlertController.swift in Sources */,
+				E16AE9EA2107B513004487DB /* CategorizationActions.swift in Sources */,
 				B9621BCF1F7443FD00B3AAFA /* ViewController.swift in Sources */,
+				E16AE9E42107A617004487DB /* Preferences.swift in Sources */,
 				B9621BCD1F7443FD00B3AAFA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +320,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16AE9E12107A3E8004487DB /* CategorizationProcessor.swift in Sources */,
 				B9621BE51F74442100B3AAFA /* PacketTunnelProviderDelegate.swift in Sources */,
+				E16AE9EB2107B532004487DB /* CategorizationActions.swift in Sources */,
+				E16AE9E52107A79A004487DB /* Preferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +527,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "-D NETWORK_EXTENSION_TARGET";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp.neprovider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -514,6 +551,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "-D NETWORK_EXTENSION_TARGET";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp.neprovider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
