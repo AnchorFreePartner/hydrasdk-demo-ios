@@ -6,6 +6,76 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.3] - 2018-07-24
+### Updated
+- `vpnProfileName` is now a required parameter for Hydra iOS SDK configuration
+
+## [0.4.2] - 2018-07-23
+### Updated
+- Small updates to public interface documentation
+
+## [0.4.1] - 2018-07-23
+### Updated
+- Put it all together
+
+## [0.4.0] - 2018-07-11
+### Added
+- Categorization service (aka Fireshield) client API
+
+## [0.3.9.21] - 2018-07-10
+### Fixed
+- Fix gaming issue
+
+## [0.3.9.20] - 2018-07-05
+### Fixed
+- Temp workaround for fast disconnected state that might be received from the SDK during Connecting
+
+## [0.3.9.19] - 2018-07-04
+### Fixed
+- Happy 4th of July!
+
+## [0.3.9.18] - 2018-07-03
+### Fixed
+- Fix "Disconnecting" state is sent after "Connecting" has been sent (via workaround, for now)
+
+## [0.3.9.17] - 2018-07-03
+### Removed
+- Revert to old approach, where SDK analyzes only last session's error and switches to bypass accordingly
+
+## [0.3.9.16] - 2018-07-03
+### Fixed
+- Fix "Disconnecting" state is sent after "Connecting" has been sent (more improvements)
+
+## [0.3.9.15] - 2018-07-02
+### Fixed
+- Fix "Disconnecting" state is sent after "Connecting" has been sent
+
+## [0.3.9.14] - 2018-06-22
+### Fixed
+- `-isBypassEnabled` now returns correct value
+
+## [0.3.9.13] - 2018-06-18
+### Added
+- SDK switches to bypass after numer of sessions with errors exceedes 3 (three). This behavior is only applied to configurations with On-Demand rules.
+
+## [0.3.9.12] - 2018-06-14
+### Fixed
+- Fix correctly handle traffic exceed (191) error
+
+## [0.3.9.11] - 2018-06-11
+### Added
+- Add `-shouldStartVPN` method
+- Add `AFNEErrorCodeCancelled` error
+### Fixed
+- Fix correctly handle token expired (196) error
+### Updated
+- Change `-vpnDidStart` to `-vpnDidStartWithOptions:` 
+
+## [0.3.9.10] - 2018-06-01
+### Fixed
+- Fix vpnWillStop is called upon network interface change
+- Fix exception due to unbalanced KVO call
+
 ## [0.3.9.9] - 2018-05-31
 ### Fixed
 - Misc improvements macOS SDK
@@ -58,10 +128,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.3.7] - 2018-04-03
 ### Added
 - VPN protocol library versioning
-
 ### Removed
 - IDFA usage is removed from both UCR and HydraSDK
-
 ### Updated
 - UCR library updated
 
@@ -76,13 +144,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.3.4] - 2018-02-13
 ### Changed
 - On-demand is now configured with NetworkExtension API
- 
 ### Fixed
 - String config parameters are now copied by default
-
 ### Removed
 - Removed AFOnDemandRules
- 
+
 ## [0.3.3] - 2018-02-07
 ### Fixed
 - Fixed an issue when bypass mode switched back to non-bypass in out of traffic situation
