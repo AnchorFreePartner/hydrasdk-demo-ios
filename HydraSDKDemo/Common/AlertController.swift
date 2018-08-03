@@ -24,7 +24,7 @@ class AlertController {
         }
         
         if let cancelTitle = cancelButtonTitle, let cancelHandler = cancelActionHandler {
-            let cancelAction = UIAlertAction(title: cancelTitle, style: .destructive) { _ in
+            let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { _ in
                 cancelHandler()
         }
             actions.append(cancelAction)

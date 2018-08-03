@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             builder.vpnProfileName = "Awesome VPN!"
             builder.groupId = "group.com.anchorfree.HydraTestApp"
             builder.networkExtensionBundleId = "com.anchorfree.HydraTestApp.neprovider"
+            builder.debugLogging = true
         }))
     }()
 
