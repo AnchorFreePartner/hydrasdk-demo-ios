@@ -14,22 +14,26 @@ class ViewController: UIViewController, CountryControllerProtocol {
     typealias UpdateCompletion = () -> ()
     
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var changeCountryButton: UIButton!
     @IBOutlet weak var loginStatus: UILabel!
+
     @IBOutlet weak var connectionStatus: UILabel!
     @IBOutlet weak var vpnSwitch: UISwitch!
     @IBOutlet weak var onDemandSwitch: UISwitch!
-    @IBOutlet weak var onDemandLabel: UILabel!
-    @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var trafficLimitLabel: UILabel!
-    @IBOutlet weak var trafficStatsLabel: UILabel!
     @IBOutlet weak var fireshieldSwitch: UISwitch!
+    @IBOutlet weak var connectButton: UIButton!
+
     @IBOutlet weak var fireshieldCategoryzationLabel: UILabel!
     @IBOutlet weak var connectionsCountLabel: UILabel!
     @IBOutlet weak var fireshiledNotificationsSwitch: UISwitch!
 
+    @IBOutlet weak var changeCountryButton: UIButton!
+    @IBOutlet weak var countryLabel: UILabel!
+
+    @IBOutlet weak var trafficLimitLabel: UILabel!
+    @IBOutlet weak var trafficStatsLabel: UILabel!
+
     private var isUpdatingScannedConnections: Bool = false
-    
+    private var updateConnectionControlsToken: Bool = false
     private var countryConnectedTo: AFCountry?
     
     private var hydraClient : AFHydra {
@@ -97,6 +101,8 @@ class ViewController: UIViewController, CountryControllerProtocol {
             }
             
             self.reloadData()
+
+            self.updateConnectionControlsOnceIfNeeded()
         }
     }
     
@@ -126,6 +132,31 @@ class ViewController: UIViewController, CountryControllerProtocol {
         }
     }
 
+    private func updateConnectionControlsOnceIfNeeded() {
+        guard !updateConnectionControlsToken else {
+            return
+        }
+
+        updateConnectionControlsToken = true
+
+        let currentIsOnDemand = self.hydraClient.isOnDemandEnabled
+        let currentFireshieldMode = self.hydraClient.currentFireshieldMode;
+
+        self.onDemandSwitch.setOn(currentIsOnDemand, animated: false)
+
+        if currentFireshieldMode == .disabled {
+            vpnSwitch.setOn((hydraClient.vpnStatus() == .connected), animated: false)
+        }
+        else if currentFireshieldMode == .enabledVPN {
+            vpnSwitch.setOn(true, animated: false)
+            fireshieldSwitch.setOn(true, animated: false)
+        }
+        else if currentFireshieldMode == .enabledSilent || currentFireshieldMode == .enabled {
+            vpnSwitch.setOn(false, animated: false)
+            fireshieldSwitch.setOn(true, animated: false)
+        }
+    }
+
     // MARK: Interface Builder Actions
 
     @IBAction func toggleLogin(_ sender: UIButton) {
@@ -151,7 +182,66 @@ class ViewController: UIViewController, CountryControllerProtocol {
             })
         }
     }
+
+    private func isSupportedConnectionConfiguration() -> Bool {
+        let isVPN = vpnSwitch.isOn
+        let isFireshield = fireshieldSwitch.isOn
+        if (!isVPN && !isFireshield) {
+            AlertController.presentAlert(withTitle: "Cannot Connect", body: "Either VPN or Fireshield switch (or both) should be turned ON", in: self, cancelButtonTitle: "OK", cancelActionHandler: {
+                /* do nothing */
+            })
+            return false
+        }
+        return true
+    }
     
+    @IBAction func connectButtonDidPress(_ sender: Any) {
+        if (!hydraClient.isLoggedIn()) {
+            print("Login before starting a connection")
+            return
+        }
+
+        if (!isSupportedConnectionConfiguration()) {
+            return
+        }
+
+        let hydraConnectionState = self.hydraClient.vpnStatus()
+        switch hydraConnectionState {
+        case .connected:
+            self.updateConnectionControlsToken = true
+            self.connectButton.isEnabled = false
+            self.hydraClient.stopVpn { [unowned self] error in
+                self.connectButton.isEnabled = true
+                guard error == nil else {
+                    print("Failed to disconnect from Hydra. Error was: \(error!)")
+                    self.updateUI()
+                    return
+                }
+                self.unlockConnectionConfigurationControls()
+                self.updateUI()
+            }
+        case .disconnected, .invalid:
+            self.updateConnectionControlsToken = true
+            self.connectButton.isEnabled = false
+            lockConnectionConfigurationControls()
+            self.hydraClient.startVpn { [unowned self] (country, error) in
+                self.connectButton.isEnabled = true
+                guard error == nil else {
+                    print("Failed to connect to Hydra. Error was: \(error!)")
+                    self.unlockConnectionConfigurationControls()
+                    self.updateUI()
+                    return
+                }
+                print("Connected to Hydra with server location country code: \(country?.countryCode ?? "<unknown>")")
+                self.countryConnectedTo = country
+                self.updateUI()
+            }
+        default:
+            print("Ignore -connectButtonDidPress action")
+            return
+        }
+    }
+
     @IBAction func changeCountry(_ sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "CountryController") as! CountryController
         controller.currentCountry = self.country
@@ -160,16 +250,6 @@ class ViewController: UIViewController, CountryControllerProtocol {
     }
 
     @IBAction func hydraPreferencesValueChanged(_ sender: UISwitch) {
-        guard sender == fireshieldSwitch || sender == onDemandSwitch || sender == vpnSwitch else {
-            return
-        }
-
-        func _restoreState(of control: UISwitch, animated: Bool) {
-            DispatchQueue.main.async {
-                control.setOn(!control.isOn, animated: animated)
-            }
-        }
-
         func _updateHydraConfig(with props: (isVPN: Bool, isFireshield: Bool, isOnDemand: Bool) ) {
             var fireshieldMode: AFConfigFireshieldMode = .disabled
             switch props {
@@ -181,28 +261,20 @@ class ViewController: UIViewController, CountryControllerProtocol {
                 fireshieldMode = .disabled
             }
 
-            self.hydraClient.config.onDemand = props.isOnDemand
             self.hydraClient.updateConfig(AFConfig.init(block: { builder in
                 builder.fireshieldMode = fireshieldMode
+                builder.onDemand = props.isOnDemand
             }))
 
             print("Did update Hydra config")
         }
 
-        func _connectToHydra() {
-            self.lockControls()
-            self.hydraClient.startVpn { [unowned self] (country, error) in
-                if let e = error {
-                    print("Failed to connect to Hydra. Error was: \(e)")
-                    _restoreState(of: sender, animated: false)
-                }
-                else {
-                    print("Connected to Hydra with server location country code: \(country?.countryCode ?? "<unknown>")")
-                    self.countryConnectedTo = country
-                }
-                self.unlockControls()
-                self.updateUI()
-            }
+        guard sender == fireshieldSwitch || sender == onDemandSwitch || sender == vpnSwitch else {
+            return
+        }
+
+        if (!hydraClient.isLoggedIn()) {
+            return
         }
 
         let isVPN = vpnSwitch.isOn
@@ -211,27 +283,11 @@ class ViewController: UIViewController, CountryControllerProtocol {
 
         let hydraConnectionState = self.hydraClient.vpnStatus()
         switch hydraConnectionState {
-        case .connected:
-            self.lockControls()
-            self.hydraClient.stopVpn { [unowned self] error in
-                guard error == nil else {
-                    print("Failed to disconnect from Hydra. Error was: \(error!)")
-                    _restoreState(of: sender, animated: false)
-                    self.unlockControls()
-                    self.updateUI()
-                    return
-                }
-                _updateHydraConfig(with: (isVPN, isFireshield, isOnDemand))
-                _connectToHydra()
-            }
-            break
         case .disconnected, .invalid:
             _updateHydraConfig(with: (isVPN, isFireshield, isOnDemand))
-            _connectToHydra()
-            break
         default:
-            _restoreState(of: sender, animated: false)
-            return
+            print("Ignore -connectButtonDidPress action")
+            break
         }
     }
     
@@ -253,19 +309,21 @@ class ViewController: UIViewController, CountryControllerProtocol {
         self.loginStatus.text = hydraClient.isLoggedIn() ? "Logged in" : "Logged out"
         self.connectionStatus.text = self.isVpnConnected ? "\(self.statusString) [\(self.countryConnectedTo?.countryCode ?? "???")]" : self.statusString
         self.countryLabel.text = self.country?.countryCode ?? "Optimal"
-        self.onDemandLabel.text = self.onDemandSwitch.isOn ? "On-demand enabled" : "On-demand disabled"
         self.fireshiledNotificationsSwitch.isOn = Preferences.isFireshieldNotificationsEnabled
+        let connectbuttonTitle = self.isVpnConnected ? "Disconnect" : "Connect"
+        self.connectButton.setTitle(connectbuttonTitle, for: .normal)
+        self.connectButton.setTitle(connectbuttonTitle, for: .highlighted)
     }
 
-    private func lockControls() {
+    private func lockConnectionConfigurationControls() {
         self.vpnSwitch.isEnabled = false
-        self.onDemandLabel.isEnabled = false
+        self.onDemandSwitch.isEnabled = false
         self.fireshieldSwitch.isEnabled = false
     }
 
-    private func unlockControls() {
+    private func unlockConnectionConfigurationControls() {
         self.vpnSwitch.isEnabled = true
-        self.onDemandLabel.isEnabled = true
+        self.onDemandSwitch.isEnabled = true
         self.fireshieldSwitch.isEnabled = true
     }
     

@@ -12,11 +12,9 @@ FOUNDATION_EXPORT const unsigned char hydrasdkVersionString[];
 #import <HydraApplicationSDK/AFConfig.h>
 #import <HydraApplicationSDK/AFConfigBuilder.h>
 #import <HydraApplicationSDK/AFCountry.h>
-#import <HydraApplicationSDK/AFCredentials.h>
 #import <HydraApplicationSDK/AFRemainingTraffic.h>
 #import <HydraApplicationSDK/AFTrafficCounters.h>
 #import <HydraApplicationSDK/AFUser.h>
 #import <HydraApplicationSDK/AFHydraCategorization.h>
 #import <HydraApplicationSDK/AFConstants.h>
-#import <HydraApplicationSDK/AFProvidedCredentials.h>
 #import <HydraApplicationSDK/AFDeviceInfo.h>

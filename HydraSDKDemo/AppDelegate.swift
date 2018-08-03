@@ -17,10 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var hydraClient : AFHydra = {
         AFHydra.withConfig(AFConfig.init(block: { (builder) in
             builder.baseUrl = "https://backend.northghost.com"
-            builder.carrierId = "afdemo"
+            builder.carrierId = "afdemo_fstest"
             builder.vpnProfileName = "Awesome VPN!"
             builder.groupId = "group.com.anchorfree.HydraTestApp"
             builder.networkExtensionBundleId = "com.anchorfree.HydraTestApp.neprovider"
+            builder.debugLogging = true
         }))
     }()
 

@@ -23,16 +23,20 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AFHydra : NSObject
 
 @property(strong, nonatomic, readonly) AFConfig *config;
-@property(assign, nonatomic, readonly) BOOL isBypassEnabled;
 
-- (instancetype)initWithConfig:(AFConfig *)config;
+@property(assign, nonatomic, readonly) BOOL isBypassEnabled;
+@property(assign, nonatomic, readonly) BOOL isOnDemandEnabled;
+@property(assign, nonatomic, readonly) AFConfigFireshieldMode currentFireshieldMode;
+
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithConfig:(AFConfig *)config NS_DESIGNATED_INITIALIZER;
 + (instancetype)withConfig:(AFConfig *)config;
 
 /*!
  * @method updateConfig
- * @description Updates VPN configuration in realtime without restarting VPN session.
- * Only blacklistPath, whitelistPath and fireshieldMode are now supported.
- * @param config A config with parameters to update. If you want to remove some parameter, set it to `nil`.
+ * @brief It updates certain VPN configuration parameters.
+ * @remark Only @c fireshieldMode and @c onDemand are supported currently. Updating other parameter has not effect.
+ * @param config A config with parameters to update. If you want to remove some parameter, set it to @c nil.
  */
 - (BOOL)updateConfig:(AFConfig *)config;
 

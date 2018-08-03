@@ -162,6 +162,7 @@ To initialize Hydra do the following:
         builder.carrierId = @"MY_CARRIER_ID";
         builder.groupId = @"group.MY_APP_GROUP";
         builder.networkExtensionBundleId = @"BUNDLE_ID";
+        builder.vpnProfileName = @"YOUR_VPN_PROFILE_NAME";
     }]];
 
 > **NOTE:** for macOS even though you don't need to enable App Groups, `groupId` property still has to have a value, starting with `group.`.
@@ -194,48 +195,23 @@ To connect VPN use AFHydra function `startVpn:(nullable void (^)(NSError * __nul
 
 When you receive notification, get updated VPN status from `AFHydra` instance status property and handle this status as designed by your app.
 
-### Using on-demand mode
+### Using On Demand mode
 
-iOS/macOS systems provide a way when VPN will be triggered by network activity. It's possible to configure on-demand mode with AFConfig, using `onDemand` property. The SDK could be initialized with this parameter or this property could be changed at any time in the app before VPN connection (see hydraClient.config.onDemand).
+iOS and macOS, both provide an ability to connect to VPN automatically when certain (preconfigured) coditions are met. This functionality is called "On Demand". 
 
-#### On-demand and users with limited traffic
+Hydra SDK can be configured for On Demand mode with `AFConfig` via `onDemand` property. The SDK could be initialized with this parameter or this property can be changed at any time before VPN connection (via `-updateConfig:` of `AFHydra`).
 
-If your service provides limited traffic or transport error occurs (e.g. unable to reach VPN node while on-demand rule is enabled), there are few changes in on-demand behavior. In the case of connection errors the session will be killed with AFHydraErrorCode code (`AFHydraErrorCodeTrafficExceed` for traffic limit error). It's not possible to disable VPN/Network Extension without main application, and VPN connection has to be reconnected by iOS system (on-demand rule). For such users we're disabling real tunneling, leaving Network Extension work in Bypass mode. This mode allows Network Extension to be launched at any time but traffic is routed locally, without VPN server. It means that user will have their IP address and there will be no traffic protection.
+#### On Demand and users with limited traffic
 
-There are two on-demand behaviors for this situation:
-1. Default
-2. Advanced
+If your service provides limited traffic or a transport error occurs (e.g. credentials to VPN nodes are expired), current session will be killed with `AFHydraErrorCode` code (for instance, `AFHydraErrorCodeTrafficExceed` or `AFHydraErrorCodeTokenInvalid`). If On Demand mode conditions are met, the System will try to restart Network Extension process, until it is up and running. Due to NetworkExtension framework's limitation, it is not possible to disable On Demand mode from Custom Tunnel Provider extension upon receiving these errors. This makes System trying endlessly reconnect to VPN, while Network Extension is unable to provide VPN service due to the error.
 
-Default behavior leaves VPN icon visible to user, everything looks like the user has VPN connection, but traffic is routed locally. It's recommended to give user a visual notification that the traffic limits are exceeded.
+In order to overcome this issue, Hydra SDK dissables real tunneling, leaving Network Extension running in Bypass mode. By doing this, iOS can meet On Demand mode conditions while the traffic is routed locally, without VPN server. It means that user will have their real IP address and there will be no traffic protection.
 
-Advanced behavior removes VPN icon from user, but keeps Network Extension running (required by iOS on-demand rule). Advanced on-demand should be enabled in `AFConfig` (`advancedOnDemand` property).
+Whenever app starts, it's highly recommended to check if VPN is connected and if user is out of traffic limit. In this case, it's necessary to disconnect current VPN session and optionally show user a message. To check if current VPN connection is running in Bypass mode read `AFHydra`'s' `isBypassEnabled` property.
 
-Whenever app starts, it's highly recommended to check if VPN is connected and if user is out of traffic limit. In this case, it's necessary to disconnect current VPN session and optionally show user the message. To check if current VPN connection is running in bypass mode call `isBypassEnabled:` method of `AFHydra`.
+In order to catch situation when user is out of traffic without main App running, see `AFNetworkExtensionDelegate` documentation.
 
-In order to catch situation when user is out of traffic without main App running, see `AFPacketTunnelProvider` documentation and it's callbacks. 
-
-Example of handling errors from your `PacketTunnelProvider` extension:
-
-    override func vpnError(_ error: Error!) {
-        let nserror = error as NSError
-        print("Oops, it's a VPN error code \(nserror.code)")
-        
-        let content = UNMutableNotificationContent()
-        content.title = "VPN Event"
-        content.body = "VPN error: \(nserror.description)"
-
-        // Additionaly you can check nserror.code against AFHydraErrorCode codes to show detailed explanation
-        
-        let request = UNNotificationRequest(identifier: "vpnError", content: content, trigger: nil)
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        UNUserNotificationCenter.current().add(request) {(error) in
-            if let error = error {
-                print("Uh oh! We had an error: \(error)")
-            }
-        }
-    }
-
-See test application project for more code examples.
+See Demo application project for code examples.
 
 ### Categorization service (aka Fireshield)
 
@@ -264,7 +240,8 @@ Later, during runtime, Fireshield mode can be changed or disabled at all. Becaus
         builder.fireshieldMode = .disabled
     }))
 
-> *NOTE:* `updateConfig(_ config: AFConfig)` only support `blacklistPath`, `whitelistPath` and `fireshieldMode`. Updating other parameter has not effect.
+> *NOTE:* Only `fireshieldMode` and `onDemand` are supported currently with `updateConfig(_ config: AFConfig)`. Updating other parameter has not effect.
+
 #### Modes
 
 Fireshield can work in various modes, adding flexibility to your application. For instance, you can blend VPN and Fireshield functionality or hide VPN icon in iOS Status Bar. The modes are represented by `AFConfigFireshieldMode` type.
@@ -293,6 +270,27 @@ Most of the `AFHydra` calls are accepting completion blocks with errors. If an e
 
 If you are just disconnected from VPN session, you could also check `hydraClient.lastError` property, if there was an error during initialization or session management system disconnected VPN remotely, there will be `NSError` object here. You must handle such errors and report if appropriate.
 
+### Crash Reporting
+
+Some project might consider crash reporting integration (such as, [Crashlytics](https://try.crashlytics.com)) for Network Extension side. If your crash reporting framework supports Application Extensions and requires additional code to setup it, put the configuration code inside `AFNetworkExtensionDelegate`'s `-init` override:
+
+    @interface MYNEDelegate : NSObject <AFNetworkExtensionDelegate>
+
+    - (instancetype)init {
+        self = [super init];
+        if (self) {
+            [Fabric with:@[[Crashlytics class]]];
+            // ...
+        }
+        return self;
+    }
+        
+    // ...
+
+    @end
+
+
+
 # API Documentation
 
 ### AFHydra
@@ -303,7 +301,7 @@ If you are just disconnected from VPN session, you could also check `hydraClient
 Main constructor and factory. AFHydra instance should be a singleton instance. Use AFConfig object instance to initialize HydraSDK. The fastest way to create AFConfig object instance is to use `[AFConfig configWithBlock:]`.
 
 `- (BOOL)updateConfig:(AFConfig *)config;`  
-Update Hydra configuration without restarting VPN session. **NOTE** currently works only with blacklistPath and whitelistPath.
+Update Hydra configuration without restarting VPN session. **NOTE** Only `fireshieldMode` and `onDemand` are supported currently. Updating other parameter has not effect.
 
 `- (void)login:(AFAuthMethod * __nonnull)method completion:(nonnull AFHydraLoginCompletion)completion;`  
 Login and obtain AFUser object that describes Hydra VPN user.
@@ -400,12 +398,6 @@ Packet Tunnel Provider Extension main target's Bundle Identifier. See Project > 
 `@property NSString *vpnProfileName`
 Sets the name for VPN profile that is visible in Settings > General > VPN (Title of profile, subtitle will always be the application name).
 
-`@property NSString *blacklistPath;`  
-A list of domains (with wildcards, like *.example.*) that should be blocked by Hydra. To obtain amount of blocked domains by these rules, see `AFHydra.blockedDomainsCount` method.
-
-`@property NSString *whitelistPath;`  
-A list of domains (without wildcards) that should not be blocked by blacklist rules.
-
 `@property NSString *dnsAddr;`  
 Your preferred DNS server to use. If not set, a default one will be used.
 
@@ -414,10 +406,7 @@ A list of domains to bypass VPN. Wildcards accepted.
 Example: `cfg.bypassDomains = @[@"*google.com"];` // Google domain and it's subdomains will be accessed directly, without VPN.
 
 `@property BOOL onDemand;`
-Enables on-demand VPN feature. VPN will be triggered automatically by the system after `startVpn` is triggered. Calling `stopVpn` from application is required to disable on-demand VPN. If VPN connection could not be established because of network environment or interrupted by out of traffic error code, then VPN will switch to bypass mode automatically until user reconnects VPN from main application, VPN icon will be visible in the status bar. 
-
-`@property BOOL advancedOnDemand;`
-If on-demand is enabled and VPN connection could not be established because of network environment or interrupted by out of traffic error code, then VPN will switch to bypass mode automatically until user reconnects VPN from main application, VPN icon will NOT be visible in the status bar. Note that VPN will be visible as `ON` in system Settings app. 
+Enables On Demand VPN feature. VPN will be triggered automatically by the System after `startVpn` is triggered. Calling `stopVpn` from application is required to disable On Demand VPN. If VPN connection could not be established because of network environment or interrupted by out of traffic error code, then VPN will switch to bypass mode automatically until user reconnects VPN from main application, VPN icon will not be visible in the status bar. 
 
 `@property NSString *serverAddressDisplayName`
 Sets the name for VPN server address that is visible in Settings > General > VPN (Server field).
@@ -531,31 +520,6 @@ Error domain: `AFHydraDomain`
 `AFHydraErrorCodeTrafficExceed` VPN connection disrupted because the user is out of traffic. NOTE: If `ondemand` feature is used, VPN will be switched to `bypass` mode until user disconnects VPN connection from the application.
 
 # Appendix
-
-# Bypass & Ad blocking
-
-Hydra supports VPN configuration where there is no real VPN server connection. Such connections work in local-only mode, but iOS will treat this VPN connection as a real one. This is a way to implement ad blocking functionality for your application. Below is an example of such configuration.
-
-    self.hydraClient = [AFHydra withConfig:[AFConfig configWithBlock:^(AFConfigBuilder *builder) {
-        builder.bypass = true,
-        builder.groupId = @"group.MY_APP_GROUP";
-        builder.networkExtensionBundleId = @"BUNDLE_ID";
-        builder.blacklistPath = [[NSBundle mainBundle] pathForResource:@"blocklist"
-                                                                ofType:@"txt"];
-        builder.whitelistPath = [[NSBundle mainBundle] pathForResource:@"whitelist"
-                                                                ofType:@"txt"];
-    }]];
-
-Note, that `builder.bypass` should be `true`, and at least `builder.blacklistPath` should be set with an initial list of rules. If you need to update your lists without VPN reconnection, use `AFHydra.updateConfig` method. Below is an example of updating lists.
-
-    [AppDelegate.instance.hydraClient updateConfig:[AFConfig configWithBlock:^(AFConfigBuilder *builder) {
-        builder.blacklistPath = [[NSBundle mainBundle] pathForResource:@"blocklist_update"
-                                                                ofType:@"txt"];
-        builder.whitelistPath = [[NSBundle mainBundle] pathForResource:@"whitelist_update"
-                                                                  ofType:@"txt"];
-    }]];
-
-Note that at `builder.blacklistPath` should be set. If both set as `nil`, then lists are removed from VPN configuration and blocking functionality stops working.
 
 # Integration Checklist & Troubleshooting
 
