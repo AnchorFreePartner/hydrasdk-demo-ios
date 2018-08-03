@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.6] - 2018-08-03
+### Updated
+- Public API improvements
+- `updateConfig:` can be used to change Fireshield mode and On Demand value
+
+## [0.4.5] - 2018-07-31
+### Fixed
+- Earlier NE delegate instantiation
+
+## [0.4.4] - 2018-07-24
+### Updated
+- Fireshield server response timeout fix (for cases, when Fireshield is not supported on the server-side)
+
 ## [0.4.3] - 2018-07-24
 ### Updated
 - `vpnProfileName` is now a required parameter for Hydra iOS SDK configuration
