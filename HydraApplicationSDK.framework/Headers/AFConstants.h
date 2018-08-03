@@ -7,18 +7,14 @@
 #import "AFConfig.h"
 #import "AFAuthMethod.h"
 #import "AFUser.h"
-#import "AFCredentials.h"
 #import "AFCountry.h"
 #import "AFRemainingTraffic.h"
 #import "AFTrafficCounters.h"
-#import "AFProvidedCredentials.h"
 #import "AFPurchaseResponse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^AFHydraLoginCompletion)(NSError *__nullable error, AFUser *__nullable user);
-
-typedef void (^AFHydraCredentialsCompletion)(NSError *__nullable error, AFCredentials *__nullable credentials);
 
 typedef void (^AFHydraCountriesCompletion)(NSError *__nullable error, NSArray<AFCountry *> *__nullable countries);
 

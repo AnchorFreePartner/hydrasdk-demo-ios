@@ -5,15 +5,10 @@
 @import Foundation;
 @import NetworkExtension;
 
-@class AFCredentials;
 @class AFConfigBuilder;
-@class AFConfig;
-@class AFProvidedCredentials;
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^AFConfigBlock)(AFConfigBuilder *);
-typedef void (^AFConfigUpdateBlock)(AFConfig *, AFConfigBuilder *);
-
 typedef NS_ENUM(NSUInteger, AFConfigFireshieldMode) {
     AFConfigFireshieldModeDisabled,
     AFConfigFireshieldModeEnabled,
@@ -22,37 +17,26 @@ typedef NS_ENUM(NSUInteger, AFConfigFireshieldMode) {
 };
 
 @interface AFConfig : NSObject
-@property (nonatomic) BOOL debugLogging;
+@property (assign, nonatomic, readonly) BOOL debugLogging;
 // If onDemand is enabled but `onDemandRules` are not set, default rules will apply to both WiFi and Cellular networks
-@property (nonatomic) BOOL onDemand;
-@property (nonatomic) BOOL advancedOnDemand;
-@property (nullable, nonatomic) NSArray<NEOnDemandRule *> *onDemandRules;
-@property (copy, nonatomic, nonnull) NSString *baseUrl;
-@property (copy, nonatomic, nonnull) NSString *carrierId;
-@property (copy, nonatomic, nonnull) NSString *networkExtensionBundleId;
-@property (copy, nonatomic, nonnull) NSString *groupId;
-@property (copy, nonatomic, nullable) NSString *blacklistPath;
-@property (copy, nonatomic, nullable) NSString *whitelistPath;
-@property (strong, nonatomic, nullable) NSArray <NSString *> *bypassDomains;
-@property (copy, nonatomic, nullable) NSString *dnsAddr;
-@property (copy, nonatomic, nullable) NSString *vpnProfileName;
-@property (copy, nonatomic, nullable) NSString *serverAddressDisplayName;
-@property (nonatomic) BOOL bypass;
+@property (assign, nonatomic, readonly) BOOL onDemand;
+@property (strong, nonatomic, nullable, readonly) NSArray<NEOnDemandRule *> *onDemandRules;
+@property (copy, nonatomic, nonnull, readonly) NSString *baseUrl;
+@property (copy, nonatomic, nonnull, readonly) NSString *carrierId;
+@property (copy, nonatomic, nonnull, readonly) NSString *networkExtensionBundleId;
+@property (copy, nonatomic, nonnull, readonly) NSString *groupId;
+@property (strong, nonatomic, nullable, readonly) NSArray <NSString *> *bypassDomains;
+@property (copy, nonatomic, nullable, readonly) NSString *dnsAddr;
+@property (copy, nonatomic, nullable, readonly) NSString *vpnProfileName;
+@property (copy, nonatomic, nullable, readonly) NSString *serverAddressDisplayName;
+@property (assign, nonatomic, readonly) BOOL bypass;
 // Experimental feature that may help with Wi-Fi/VPN icon disappearance when on-demand is ON
-@property (nonatomic) BOOL forceInterface;
+@property (assign, nonatomic, readonly) BOOL forceInterface;
 
-@property (nonatomic, assign) AFConfigFireshieldMode fireshieldMode;
+@property (assign, nonatomic, readonly) AFConfigFireshieldMode fireshieldMode;
 
-- (instancetype)initWithBuilder:(AFConfigBuilder *)builder;
-
-- (void)updateWithCredentials:(AFProvidedCredentials *)credentials;
-
-- (NSString *)shareFile:(NSString *)fullPath;
-
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithBuilder:(AFConfigBuilder *)builder NS_DESIGNATED_INITIALIZER;
 + (instancetype)configWithBlock:(AFConfigBlock)block;
-
-- (NSString *)pkiCert;
-
-- (NSString *)jsonString;
 @end
 NS_ASSUME_NONNULL_END
