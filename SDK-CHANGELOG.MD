@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.7] - 2018-08-09
+### Fixed
+- Completion block is called upon Permission Denied error
+
 ## [0.4.6] - 2018-08-03
 ### Updated
 - Public API improvements
