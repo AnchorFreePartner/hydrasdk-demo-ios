@@ -51,11 +51,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)remainingTraffic:(nonnull AFHydraRemainingTrafficCompletion)completion;
 
 /*!
- * @method trafficCounters
+ * @property trafficCounters
  * @description Provides traffic counters for current session, in bytes.
- * @param completion NSError is of kAFVPNManagerErrorDomain.
  */
-- (void)trafficCounters:(nonnull AFHydraTrafficCountersCompletion)completion;
+@property (strong, nonatomic, nullable, readonly) AFTrafficCounters *trafficCounters;
 
 - (void)currentUser:(nonnull AFHydraCurrentUserCompletion)completion;
 

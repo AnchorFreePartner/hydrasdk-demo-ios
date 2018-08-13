@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, AFHydraCategorizationResourceActionType) {
     AFHydraCategorizationResourceActionTypeBlock = 3
 };
 
-@interface AFHydraCategorization : NSObject
+@interface AFHydraCategorization : NSObject <NSSecureCoding>
 
 @property (nonatomic, strong) NSString* resource;
 @property (nonatomic) AFHydraCategorizationResourceType type;
