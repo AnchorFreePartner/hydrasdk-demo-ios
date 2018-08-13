@@ -257,7 +257,7 @@ Hydra SDK reports its content categorization service's work through `AFHydra`'s 
 
 Call `getScannedConnections(_ completion: @escaping (UInt, Error?)` to receive number of network connection that have been scanned.
 
-Subscribe to `AFVPNCategorizationDidChange` notification. The notification will be sent on every categorization done by the SDK. Call `lastCategorization()` to get the latest result of categorization upon receiving `AFVPNCategorizationDidChange` notification.
+Subscribe to `AFVPNCategorizationDidChange` notification. The notification will be sent on every categorization done by the SDK. Call `lastCategorization()` to get the latest result of categorization upon receiving `AFVPNCategorizationDidChange` notification. Alternativelly, ready the notification's `userInfo` under `categorization` key.
 
 Implement  `resourceBlocked(_ categorization: AFHydraCategorization!)` delegate method in your `AFNetworkExtensionDelegate` to get the categorization result of latest connection. Hydra SDK will automatically call back on every new categorization being processed. 
 
@@ -295,6 +295,9 @@ Some project might consider crash reporting integration (such as, [Crashlytics](
 
 ### AFHydra
 
+`@property (strong, nonatomic, nullable, readonly) AFTrafficCounters *trafficCounters;`
+Retrieve current traffic counters.
+
 `- (nonnull instancetype)initWithConfig:(AFConfig * __nonnull)config;`
 `+ (nonnull instancetype)withConfig:(AFConfig * __nonnull)config;`
 
@@ -317,9 +320,6 @@ Retrieve a list of available countries to connect to. Returns `NSArray <AFCountr
 
 `- (void)remainingTraffic:(nonnull AFHydraRemainingTrafficCompletion)completion;`  
 Retrieve current traffic limits.
-
-`- (void)trafficCounters:(nonnull AFHydraTrafficCountersCompletion)completion;`  
-Retrieve current traffic counters.
 
 `- (void)installVpnProfile:(nullable void (^)(NSError *__nullable))completion;`
 Triggers iOS VPN subsystem to create/update VPN profile, showing user permission "Allow / Don't Allow" dialog.

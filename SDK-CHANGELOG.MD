@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.8] - 2018-09-05
+### Updated
+- `trafficCounters` is now a read-only property 
+- `AFVPNCategorizationDidChangeNotification` notification's user info now contains `AFHydraCategorization` object
+
 ## [0.4.7] - 2018-08-09
 ### Fixed
 - Completion block is called upon Permission Denied error
