@@ -85,7 +85,7 @@ class ViewController: UIViewController, CountryControllerProtocol {
         super.viewDidLoad()
         self.updateUI()
         self.observerStatusChange()
-        self.observerApplicationDidBecomeActive()
+        self.observerCategorizationDidChange()
     }
     
     private func observerStatusChange() {
@@ -105,29 +105,32 @@ class ViewController: UIViewController, CountryControllerProtocol {
             self.updateConnectionControlsOnceIfNeeded()
         }
     }
-    
-    private func observerApplicationDidBecomeActive() {
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) { _ in
-            self.updateCategorizationLabel()
+
+    private func observerCategorizationDidChange() {
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AFVPNCategorizationDidChange, object: nil, queue: OperationQueue.main) { [unowned self] notification in
+            guard notification.userInfo != nil else {
+                self.updateCategorizationLabel(with: self.hydraClient.lastCategorization())
+                return
+            }
+            guard let payloadCategorization: AFHydraCategorization = notification.userInfo?["categorization"] as? AFHydraCategorization else { return }
+            self.updateCategorizationLabel(with: payloadCategorization)
         }
     }
     
-    private func updateCategorizationLabel() {
-        guard let categorizationResource = hydraClient.lastCategorization().resource else { return }
-        let categorization = hydraClient.lastCategorization()
+    private func updateCategorizationLabel(with categorization: AFHydraCategorization?) {
+        guard let categorization = categorization else { return }
+        guard let categorizationResource: String = categorization.resource else { return }
         let categoriationDescription = "\(categorization.actionEmoji) \(categorizationResource)"
-        
         self.fireshieldCategoryzationLabel.text = categoriationDescription
     }
     
     private func reloadData() {
         guard isVpnConnected else { return }
         
-        self.updateTrafficStats() {
-            self.updateTrafficLimits() {
-                self.updateScannedConnections() {
-                    self.reloadData()
-                }
+        self.updateTrafficStats()
+        self.updateTrafficLimits() {
+            self.updateScannedConnections() {
+                self.reloadData()
             }
         }
     }
@@ -327,24 +330,19 @@ class ViewController: UIViewController, CountryControllerProtocol {
         self.fireshieldSwitch.isEnabled = true
     }
     
-    @objc func updateTrafficStats(completion: UpdateCompletion? = nil) {
+    private func updateTrafficStats() {
         guard isVpnConnected else {
-            completion?()
             return
         }
-        
-        hydraClient.trafficCounters { [unowned self] (e, counters) in
-            guard let counters = counters else {
-                self.completeUpdate(with: completion)
-                return
-            }
-        
-            let ul = ByteCountFormatter.string(fromByteCount: counters.bytesTx.int64Value, countStyle: .file)
-            let dl = ByteCountFormatter.string(fromByteCount: counters.bytesRx.int64Value, countStyle: .file)
-            let string = "UL: \(ul), DL: \(dl)"
-            self.trafficStatsLabel.text = string
-            self.completeUpdate(with: completion)
+
+        guard let counters: AFTrafficCounters = hydraClient.trafficCounters else {
+            return
         }
+
+        let ul = ByteCountFormatter.string(fromByteCount: counters.bytesTx.int64Value, countStyle: .file)
+        let dl = ByteCountFormatter.string(fromByteCount: counters.bytesRx.int64Value, countStyle: .file)
+        let string = "UL: \(ul), DL: \(dl)"
+        self.trafficStatsLabel.text = string
     }
     
     @objc func updateTrafficLimits(completion: UpdateCompletion? = nil) {

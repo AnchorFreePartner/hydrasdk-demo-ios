@@ -22,8 +22,6 @@ typedef void (^AFHydraLogoutCompletion)(NSError *__nullable error);
 
 typedef void (^AFHydraRemainingTrafficCompletion)(NSError *__nullable error, AFRemainingTraffic *__nullable remainingTraffic);
 
-typedef void (^AFHydraTrafficCountersCompletion)(NSError *__nullable error, AFTrafficCounters *__nullable trafficCounters);
-
 typedef void (^AFHydraPurchaseCompletion)(NSError *__nullable error);
 
 typedef void (^AFHydraCurrentUserCompletion)(NSError *__nullable error, AFUser *__nullable user);
