@@ -265,7 +265,7 @@ class ViewController: UIViewController, CountryControllerProtocol {
             }
 
             self.hydraClient.updateConfig(AFConfig.init(block: { builder in
-                builder.fireshieldMode = fireshieldMode
+                builder.fireshieldConfig.fireshieldMode = fireshieldMode
                 builder.onDemand = props.isOnDemand
             }))
 

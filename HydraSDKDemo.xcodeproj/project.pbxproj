@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A864A9B2181CA6C000DDF0D /* whitelist.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0A864A9A2181CA6B000DDF0D /* whitelist.txt */; };
 		B90505EE1FDA1BCC005E6862 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */; };
 		B90505EF1FDA1BD3005E6862 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */; };
 		B92460AE1F7462560007DE4E /* HydraTunnelProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */; };
@@ -55,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A864A9A2181CA6B000DDF0D /* whitelist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = whitelist.txt; sourceTree = "<group>"; };
 		B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraApplicationSDK.framework; sourceTree = "<group>"; };
 		B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraTunnelProviderSDK.framework; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		B9621BCB1F7443FD00B3AAFA /* HydraSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0A864A9A2181CA6B000DDF0D /* whitelist.txt */,
 				B92460B81F7489130007DE4E /* HydraSDKDemo.entitlements */,
 				E16AE9E22107A601004487DB /* Common */,
 				E16AE9E82107B4FE004487DB /* Extensions */,
@@ -287,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A864A9B2181CA6C000DDF0D /* whitelist.txt in Resources */,
 				B9621BD71F7443FD00B3AAFA /* LaunchScreen.storyboard in Resources */,
 				B9621BD41F7443FD00B3AAFA /* Assets.xcassets in Resources */,
 				B9621BD21F7443FD00B3AAFA /* Main.storyboard in Resources */,

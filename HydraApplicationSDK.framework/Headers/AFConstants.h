@@ -85,12 +85,31 @@ extern NSString *kAFHydraApiErrorDomain;
 extern NSString *kAFVPNManagerErrorDomain;
 extern NSString *kAFPacketTunnelProviderErrorDomain;
 extern NSNotificationName const AFVPNStatusDidChangeNotification;
+/*!
+ * @brief A name of notification which is sent, when categorization data is updated
+ * @description When the notification is received, @c userInfo @c will likely contain
+ * an instance of @c AFHydraCategorization @c class under @c categorization @c key.
+ * You can read it directly from there or from @c AFHydra @c instance's @c lastCategorization @c property.
+ * @code
+ * NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+ * [center addObserver:self selector:@selector(categorizationDidChange:) name:AFVPNCategorizationDidChangeNotification object:nil];
+ * // ...
+ * - (void)categorizationDidChange:(NSNotification *)notification {
+ *     AFHydraCategorization *categorization = notification.userInfo[@"categorization"];
+ *     if (categorization) {
+ *         // use the object
+ *     }
+ *     else {
+ *         // read from AFHydra instance's lastCategorization property
+ *     }
+ * }
+ @endcode
+ */
 extern NSNotificationName const AFVPNCategorizationDidChangeNotification;
-
-extern NSString *AFHydraVersion;
 
 /*! @const AFPurchaseTypeApple Default purchase type for iOS devices. Production or development environment will be detected automatically */
 extern NSString *AFPurchaseTypeApple;
+
 extern NSString *AFHydraCommit;
 extern NSString *AFHydraVersion;
 

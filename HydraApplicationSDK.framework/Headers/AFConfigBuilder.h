@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic, nullable) NSString *serverAddressDisplayName;
 @property (assign, nonatomic) BOOL bypass;
 @property (assign, nonatomic) BOOL forceInterface;
-@property (assign, nonatomic) AFConfigFireshieldMode fireshieldMode;
+@property (strong, nonatomic, nonnull) AFFireshieldConfig *fireshieldConfig;
 
 - (AFConfig *)build;
 @end

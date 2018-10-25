@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             builder.groupId = "group.com.anchorfree.HydraTestApp"
             builder.networkExtensionBundleId = "com.anchorfree.HydraTestApp.neprovider"
             builder.debugLogging = true
+            
+            let fireshieldConfig = AFFireshieldConfig(fireshieldMode: .disabled)
+            let unsafeCategory = AFFireshieldCategory.block(.unsafe)
+            fireshieldConfig.addCategory(category: unsafeCategory)
+            builder.fireshieldConfig = fireshieldConfig
         }))
     }()
 
