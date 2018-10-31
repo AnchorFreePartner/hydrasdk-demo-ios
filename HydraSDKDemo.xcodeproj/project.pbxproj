@@ -10,8 +10,6 @@
 		0A864A9B2181CA6C000DDF0D /* whitelist.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0A864A9A2181CA6B000DDF0D /* whitelist.txt */; };
 		B90505EE1FDA1BCC005E6862 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */; };
 		B90505EF1FDA1BD3005E6862 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */; };
-		B92460AE1F7462560007DE4E /* HydraTunnelProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */; };
-		B92460AF1F7462590007DE4E /* HydraApplicationSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */; };
 		B92460B41F7464C20007DE4E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B31F7464C20007DE4E /* libz.tbd */; };
 		B92460B61F7489090007DE4E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B51F7489090007DE4E /* NetworkExtension.framework */; };
 		B92460B71F7489130007DE4E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B51F7489090007DE4E /* NetworkExtension.framework */; };
@@ -29,6 +27,8 @@
 		E16AE9E72107AB03004487DB /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E62107AB03004487DB /* AlertController.swift */; };
 		E16AE9EA2107B513004487DB /* CategorizationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E92107B513004487DB /* CategorizationActions.swift */; };
 		E16AE9EB2107B532004487DB /* CategorizationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E92107B513004487DB /* CategorizationActions.swift */; };
+		E1C25324218A05C400CAC690 /* HydraApplicationSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C25322218A05C400CAC690 /* HydraApplicationSDK.framework */; };
+		E1C25325218A05E600CAC690 /* HydraTunnelProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C25321218A05C400CAC690 /* HydraTunnelProviderSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +58,6 @@
 /* Begin PBXFileReference section */
 		0A864A9A2181CA6B000DDF0D /* whitelist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = whitelist.txt; sourceTree = "<group>"; };
 		B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraApplicationSDK.framework; sourceTree = "<group>"; };
-		B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraTunnelProviderSDK.framework; sourceTree = "<group>"; };
 		B92460B11F7464BC0007DE4E /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		B92460B31F7464C20007DE4E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B92460B51F7489090007DE4E /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
@@ -80,6 +78,8 @@
 		E16AE9E32107A617004487DB /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		E16AE9E62107AB03004487DB /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		E16AE9E92107B513004487DB /* CategorizationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorizationActions.swift; sourceTree = "<group>"; };
+		E1C25321218A05C400CAC690 /* HydraTunnelProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraTunnelProviderSDK.framework; sourceTree = "<group>"; };
+		E1C25322218A05C400CAC690 /* HydraApplicationSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraApplicationSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +88,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B90505EF1FDA1BD3005E6862 /* UserNotifications.framework in Frameworks */,
-				B92460AF1F7462590007DE4E /* HydraApplicationSDK.framework in Frameworks */,
 				B92460B71F7489130007DE4E /* NetworkExtension.framework in Frameworks */,
+				E1C25324218A05C400CAC690 /* HydraApplicationSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,8 +99,8 @@
 			files = (
 				B90505EE1FDA1BCC005E6862 /* UserNotifications.framework in Frameworks */,
 				B92460B41F7464C20007DE4E /* libz.tbd in Frameworks */,
+				E1C25325218A05E600CAC690 /* HydraTunnelProviderSDK.framework in Frameworks */,
 				B92460B61F7489090007DE4E /* NetworkExtension.framework in Frameworks */,
-				B92460AE1F7462560007DE4E /* HydraTunnelProviderSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +114,8 @@
 				B92460B51F7489090007DE4E /* NetworkExtension.framework */,
 				B92460B31F7464C20007DE4E /* libz.tbd */,
 				B92460B11F7464BC0007DE4E /* libz.1.tbd */,
+				E1C25322218A05C400CAC690 /* HydraApplicationSDK.framework */,
+				E1C25321218A05C400CAC690 /* HydraTunnelProviderSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,8 +123,6 @@
 		B9621BC01F7443FD00B3AAFA = {
 			isa = PBXGroup;
 			children = (
-				B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */,
-				B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */,
 				B9621BCB1F7443FD00B3AAFA /* HydraSDKDemo */,
 				B9621BE31F74442100B3AAFA /* neprovider */,
 				B9621BCA1F7443FD00B3AAFA /* Products */,

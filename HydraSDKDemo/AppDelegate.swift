@@ -25,7 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let fireshieldConfig = AFFireshieldConfig(fireshieldMode: .disabled)
             let unsafeCategory = AFFireshieldCategory.block(.unsafe)
+            let whitelistRule = AFFireshieldRule.fileRule("whitelist.txt", withCategory: .safe)
             fireshieldConfig.addCategory(category: unsafeCategory)
+            fireshieldConfig.addRule(rule: whitelistRule)
             builder.fireshieldConfig = fireshieldConfig
         }))
     }()

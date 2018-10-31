@@ -73,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)stopVpn:(nullable void (^)(NSError *__nullable error))completion;
 
-- (NSDate *)connectedDate;
+- (nullable NSDate *)connectedDate;
 
 /*!
  * @method removeProfile
