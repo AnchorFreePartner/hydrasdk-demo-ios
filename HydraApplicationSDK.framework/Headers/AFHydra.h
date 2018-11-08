@@ -95,6 +95,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (AFHydraCategorization *)lastCategorization;
 - (void)getScannedConnections:(nonnull void (^)(NSUInteger scannedConnections, NSError *__nullable error))completion;
 
+- (void)requestSupportAddresses:(nullable void (^)(NSError *__nullable error, NSArray<NSString *>* addresses))completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

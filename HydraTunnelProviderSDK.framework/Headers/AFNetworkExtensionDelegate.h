@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, AFHydraErrorCode) {
 @optional
 - (void)vpnWillStart;
 - (void)vpnDidStart;
+- (void)vpnWillStop;
 - (void)vpnError:(NSError *)error;
 - (void)resourceBlocked:(AFHydraCategorization *)categorization;
 @end

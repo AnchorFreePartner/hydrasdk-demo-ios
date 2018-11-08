@@ -39,6 +39,7 @@ extension PacketTunnelProviderDelegate: AFNetworkExtensionDelegate {
         }
     }
 
+
     func resourceBlocked(_ categorization: AFHydraCategorization!) {
         if Preferences.isFireshieldNotificationsEnabled {
             categorizationProcess.process(categorization)

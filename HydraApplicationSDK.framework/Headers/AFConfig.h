@@ -34,5 +34,6 @@ typedef void (^AFConfigBlock)(AFConfigBuilder *);
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithBuilder:(AFConfigBuilder *)builder NS_DESIGNATED_INITIALIZER;
 + (instancetype)configWithBlock:(AFConfigBlock)block;
+
 @end
 NS_ASSUME_NONNULL_END

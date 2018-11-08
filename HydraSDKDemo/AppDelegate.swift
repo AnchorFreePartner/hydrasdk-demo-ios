@@ -23,11 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             builder.networkExtensionBundleId = "com.anchorfree.HydraTestApp.neprovider"
             builder.debugLogging = true
             
-            let fireshieldConfig = AFFireshieldConfig(fireshieldMode: .disabled)
+            let fireshieldConfig = AFFireshieldConfig.defaultConfig(with: .enabledVPN)
             let unsafeCategory = AFFireshieldCategory.block(.unsafe)
             let whitelistRule = AFFireshieldRule.fileRule("whitelist.txt", withCategory: .safe)
+            let services: [AFFireshieldService] = [.bitdefender, .sophos, .IP]
+
             fireshieldConfig.addCategory(category: unsafeCategory)
             fireshieldConfig.addRule(rule: whitelistRule)
+            services.forEach { fireshieldConfig.addService(service: $0) }
             builder.fireshieldConfig = fireshieldConfig
         }))
     }()
