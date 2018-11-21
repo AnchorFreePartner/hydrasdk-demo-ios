@@ -13,10 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AFFireshieldRule : NSObject
 
-@property (nonatomic, copy, readonly) NSString *fileName;
+@property (nonatomic, copy, readonly) NSString *filePath;
 @property (nonatomic, assign, readonly) AFFireshieldCategories category;
 
 + (instancetype)fileRule:(NSString *)fileName withCategory:(AFFireshieldCategories)category;
++ (instancetype)domainsRule:(NSArray<NSString *> *)domains withCategory:(AFFireshieldCategories)category;
 
 @end
 
