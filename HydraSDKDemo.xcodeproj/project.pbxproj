@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A864A9B2181CA6C000DDF0D /* whitelist.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0A864A9A2181CA6B000DDF0D /* whitelist.txt */; };
 		B90505EE1FDA1BCC005E6862 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */; };
 		B90505EF1FDA1BD3005E6862 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */; };
-		B92460AE1F7462560007DE4E /* HydraTunnelProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */; };
-		B92460AF1F7462590007DE4E /* HydraApplicationSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */; };
 		B92460B41F7464C20007DE4E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B31F7464C20007DE4E /* libz.tbd */; };
 		B92460B61F7489090007DE4E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B51F7489090007DE4E /* NetworkExtension.framework */; };
 		B92460B71F7489130007DE4E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92460B51F7489090007DE4E /* NetworkExtension.framework */; };
@@ -22,6 +21,8 @@
 		B9621BD71F7443FD00B3AAFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9621BD51F7443FD00B3AAFA /* LaunchScreen.storyboard */; };
 		B9621BE51F74442100B3AAFA /* PacketTunnelProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621BE41F74442100B3AAFA /* PacketTunnelProviderDelegate.swift */; };
 		B9621BEA1F74442100B3AAFA /* neprovider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9621BE21F74442100B3AAFA /* neprovider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E1149C4621A596D2003EB1CB /* HydraApplicationSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1149C4521A596D2003EB1CB /* HydraApplicationSDK.framework */; };
+		E1149C4821A596DA003EB1CB /* HydraTunnelProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1149C4721A596DA003EB1CB /* HydraTunnelProviderSDK.framework */; };
 		E16AE9E12107A3E8004487DB /* CategorizationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E02107A3E8004487DB /* CategorizationProcessor.swift */; };
 		E16AE9E42107A617004487DB /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E32107A617004487DB /* Preferences.swift */; };
 		E16AE9E52107A79A004487DB /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AE9E32107A617004487DB /* Preferences.swift */; };
@@ -55,9 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A864A9A2181CA6B000DDF0D /* whitelist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = whitelist.txt; sourceTree = "<group>"; };
 		B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraApplicationSDK.framework; sourceTree = "<group>"; };
-		B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraTunnelProviderSDK.framework; sourceTree = "<group>"; };
 		B92460B11F7464BC0007DE4E /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		B92460B31F7464C20007DE4E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B92460B51F7489090007DE4E /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
@@ -74,6 +74,8 @@
 		B9621BE41F74442100B3AAFA /* PacketTunnelProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProviderDelegate.swift; sourceTree = "<group>"; };
 		B9621BE61F74442100B3AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9621BE71F74442100B3AAFA /* neprovider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = neprovider.entitlements; sourceTree = "<group>"; };
+		E1149C4521A596D2003EB1CB /* HydraApplicationSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraApplicationSDK.framework; sourceTree = "<group>"; };
+		E1149C4721A596DA003EB1CB /* HydraTunnelProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HydraTunnelProviderSDK.framework; sourceTree = "<group>"; };
 		E16AE9E02107A3E8004487DB /* CategorizationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorizationProcessor.swift; sourceTree = "<group>"; };
 		E16AE9E32107A617004487DB /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		E16AE9E62107AB03004487DB /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -86,7 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B90505EF1FDA1BD3005E6862 /* UserNotifications.framework in Frameworks */,
-				B92460AF1F7462590007DE4E /* HydraApplicationSDK.framework in Frameworks */,
+				E1149C4621A596D2003EB1CB /* HydraApplicationSDK.framework in Frameworks */,
 				B92460B71F7489130007DE4E /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,8 +99,8 @@
 			files = (
 				B90505EE1FDA1BCC005E6862 /* UserNotifications.framework in Frameworks */,
 				B92460B41F7464C20007DE4E /* libz.tbd in Frameworks */,
+				E1149C4821A596DA003EB1CB /* HydraTunnelProviderSDK.framework in Frameworks */,
 				B92460B61F7489090007DE4E /* NetworkExtension.framework in Frameworks */,
-				B92460AE1F7462560007DE4E /* HydraTunnelProviderSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +110,8 @@
 		B92460B01F7464BC0007DE4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1149C4521A596D2003EB1CB /* HydraApplicationSDK.framework */,
+				E1149C4721A596DA003EB1CB /* HydraTunnelProviderSDK.framework */,
 				B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */,
 				B92460B51F7489090007DE4E /* NetworkExtension.framework */,
 				B92460B31F7464C20007DE4E /* libz.tbd */,
@@ -119,8 +123,6 @@
 		B9621BC01F7443FD00B3AAFA = {
 			isa = PBXGroup;
 			children = (
-				B92460AC1F7462450007DE4E /* HydraApplicationSDK.framework */,
-				B92460AD1F7462450007DE4E /* HydraTunnelProviderSDK.framework */,
 				B9621BCB1F7443FD00B3AAFA /* HydraSDKDemo */,
 				B9621BE31F74442100B3AAFA /* neprovider */,
 				B9621BCA1F7443FD00B3AAFA /* Products */,
@@ -140,6 +142,7 @@
 		B9621BCB1F7443FD00B3AAFA /* HydraSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0A864A9A2181CA6B000DDF0D /* whitelist.txt */,
 				B92460B81F7489130007DE4E /* HydraSDKDemo.entitlements */,
 				E16AE9E22107A601004487DB /* Common */,
 				E16AE9E82107B4FE004487DB /* Extensions */,
@@ -287,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A864A9B2181CA6C000DDF0D /* whitelist.txt in Resources */,
 				B9621BD71F7443FD00B3AAFA /* LaunchScreen.storyboard in Resources */,
 				B9621BD41F7443FD00B3AAFA /* Assets.xcassets in Resources */,
 				B9621BD21F7443FD00B3AAFA /* Main.storyboard in Resources */,

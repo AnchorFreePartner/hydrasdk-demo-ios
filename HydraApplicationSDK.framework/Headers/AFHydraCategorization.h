@@ -1,10 +1,8 @@
 //
 //  AFHydraCategorization.h
-//  HydraSDK
+//  AFHydra
 //
-//
-// Copyright (c) 2017 Anchorfree Inc. All rights reserved.
-//
+//  Copyright © 2018 AnchorFree. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -30,7 +28,10 @@ typedef NS_ENUM(NSInteger, AFHydraCategorizationResourceActionType) {
 @property (nonatomic, strong) NSString* category_label;
 @property (nonatomic) NSUInteger category_id;
 @property (nonatomic, strong) NSArray<NSString*>* sources;
+@property (nonatomic, strong) NSArray<NSString*>* vendor_labels;
 @property (nonatomic) AFHydraCategorizationResourceActionType action;
+@property (nonatomic) NSUInteger proto;
+@property (nonatomic) NSUInteger port;
 @property (nonatomic, strong) NSDate* timestamp;
 
 - (NSString*) stringRepresentationForType;

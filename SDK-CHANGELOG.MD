@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.10] - 2018-12-12
+### Updated
+- Rewrited fireshield configuration, now it's more flexible
+- Implemented Remote config feature, now Hydra config can be overwritten via remote config
+
+## [0.4.9] - 2018-09-11
+### Fixed
+- Preparing connection state management
+
 ## [0.4.8] - 2018-09-05
 ### Updated
 - `trafficCounters` is now a read-only property 

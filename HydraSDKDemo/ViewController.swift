@@ -227,7 +227,7 @@ class ViewController: UIViewController, CountryControllerProtocol {
             self.updateConnectionControlsToken = true
             self.connectButton.isEnabled = false
             lockConnectionConfigurationControls()
-            self.hydraClient.startVpn { [unowned self] (country, error) in
+            self.hydraClient.startVpn(with: self.country) { [unowned self] (country, error) in
                 self.connectButton.isEnabled = true
                 guard error == nil else {
                     print("Failed to connect to Hydra. Error was: \(error!)")
@@ -265,7 +265,7 @@ class ViewController: UIViewController, CountryControllerProtocol {
             }
 
             self.hydraClient.updateConfig(AFConfig.init(block: { builder in
-                builder.fireshieldMode = fireshieldMode
+                builder.fireshieldConfig.fireshieldMode = fireshieldMode
                 builder.onDemand = props.isOnDemand
             }))
 

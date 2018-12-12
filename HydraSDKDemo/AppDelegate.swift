@@ -14,7 +14,19 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    lazy var hydraClient : AFHydra = {
+
+    lazy var fireshieldConfig: AFFireshieldConfig = {
+        let fireshieldConfig = AFFireshieldConfig.default() // by default Fireshield is set to .enabledVPN
+        let whitelistRule = AFFireshieldRule.fileRule("whitelist.txt", withCategory: .safe)
+        let services: [AFFireshieldService] = [.sophos, .IP]
+
+        fireshieldConfig.addRule(rule: whitelistRule)
+        services.forEach { fireshieldConfig.addService(service: $0) }
+
+        return fireshieldConfig
+    }()
+
+    lazy var hydraClient: AFHydra = {
         AFHydra.withConfig(AFConfig.init(block: { (builder) in
             builder.baseUrl = "https://backend.northghost.com"
             builder.carrierId = "afdemo"
@@ -22,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             builder.groupId = "group.com.anchorfree.HydraTestApp"
             builder.networkExtensionBundleId = "com.anchorfree.HydraTestApp.neprovider"
             builder.debugLogging = true
+            builder.fireshieldConfig = self.fireshieldConfig
         }))
     }()
 

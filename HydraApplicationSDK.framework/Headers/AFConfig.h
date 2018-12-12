@@ -7,14 +7,10 @@
 
 @class AFConfigBuilder;
 
+#import "AFFireshieldConfig.h"
+
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^AFConfigBlock)(AFConfigBuilder *);
-typedef NS_ENUM(NSUInteger, AFConfigFireshieldMode) {
-    AFConfigFireshieldModeDisabled,
-    AFConfigFireshieldModeEnabled,
-    AFConfigFireshieldModeEnabledSilent,
-    AFConfigFireshieldModeEnabledVPN,
-};
 
 @interface AFConfig : NSObject
 @property (assign, nonatomic, readonly) BOOL debugLogging;
@@ -33,10 +29,11 @@ typedef NS_ENUM(NSUInteger, AFConfigFireshieldMode) {
 // Experimental feature that may help with Wi-Fi/VPN icon disappearance when on-demand is ON
 @property (assign, nonatomic, readonly) BOOL forceInterface;
 
-@property (assign, nonatomic, readonly) AFConfigFireshieldMode fireshieldMode;
+@property (strong, nonatomic, nullable, readonly) AFFireshieldConfig *fireshieldConfig;
 
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithBuilder:(AFConfigBuilder *)builder NS_DESIGNATED_INITIALIZER;
 + (instancetype)configWithBlock:(AFConfigBlock)block;
+
 @end
 NS_ASSUME_NONNULL_END

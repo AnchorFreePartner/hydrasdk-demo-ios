@@ -8,8 +8,8 @@ Changelog:
 
 Download latest SDK: 
 
-- [HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydraSDK%20for%20iOS%20version%200.4.9.zip?alt=media&token=8467b786-4c18-490b-a61b-582667c818a8)
-- [HydraSDK for macOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydraSDK%20for%20macOS%20version%200.4.9.zip?alt=media&token=a8a3a8c1-9749-4f2a-b2d6-b4d7792946bf)
+- [HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydra%20iOS SDK_v0_4_10.zip?alt=media)
+- [HydraSDK for macOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydra%20macOS%20SDK_v0_4_10.zip?alt=media)
 
 # Prerequisites
 
@@ -61,10 +61,10 @@ To integrate HydraSDK into your project, do the following:
 
 After the **Network Extension** target is created, you should observe that new class is added to your project (file *PacketTunnelProvider.h*/*.m*). Go to the *PacketTunnelProvider.h* (which extends `NETunnelProvider`) and make this class extends `AFPacketTunnelProvider` instead of `NETunnelProvider`. It should now look like:
 
-    #import <HydraTunnelProviderSDK/HydraTunnelProviderSDK.h>
-    @interface PacketTunnelProvider : AFPacketTunnelProvider
-    // ...
-    @end
+#import <HydraTunnelProviderSDK/HydraTunnelProviderSDK.h>
+@interface PacketTunnelProvider : AFPacketTunnelProvider
+// ...
+@end
 
 Remove Xcode-generated empty `PacketTunnelProvider`'s implementation inside *.m* file.
 
@@ -124,11 +124,11 @@ For both, **Application**  and **Network Extension** targets, go to *Project > C
 #### macOS
 
 * App Sandbox
-  * Incoming Connections (Server)
-  * Outgoing Connections (Client)
+* Incoming Connections (Server)
+* Outgoing Connections (Client)
 * Personal VPN
 * Network Extensions
-  * Packet Tunnel
+* Packet Tunnel
 
 #### iOS & macOS
 
@@ -152,18 +152,18 @@ To start using the SDK, you need to import `#import <HydraApplicationSDK/HydraAp
 
 To initialize Hydra do the following:
 
-    #import <HydraApplicationSDK/AFHydra.h>
-    #import <HydraApplicationSDK/AFConfig.h>
-    
-    // ...
-    
-    self.hydraClient = [AFHydra withConfig:[AFConfig configWithBlock:^(AFConfigBuilder \*builder) {
-        builder.baseUrl = @"MY_HOST_URL";
-        builder.carrierId = @"MY_CARRIER_ID";
-        builder.groupId = @"group.MY_APP_GROUP";
-        builder.networkExtensionBundleId = @"BUNDLE_ID";
-        builder.vpnProfileName = @"YOUR_VPN_PROFILE_NAME";
-    }]];
+#import <HydraApplicationSDK/AFHydra.h>
+#import <HydraApplicationSDK/AFConfig.h>
+
+// ...
+
+self.hydraClient = [AFHydra withConfig:[AFConfig configWithBlock:^(AFConfigBuilder \*builder) {
+builder.baseUrl = @"MY_HOST_URL";
+builder.carrierId = @"MY_CARRIER_ID";
+builder.groupId = @"group.MY_APP_GROUP";
+builder.networkExtensionBundleId = @"BUNDLE_ID";
+builder.vpnProfileName = @"YOUR_VPN_PROFILE_NAME";
+}]];
 
 > **NOTE:** for macOS even though you don't need to enable App Groups, `groupId` property still has to have a value, starting with `group.`.
 
@@ -171,16 +171,16 @@ The best place to put initialization code is you AppDelegate's `application:didF
 
 After SDK is initialized, you need to login to be able to start VPN. If you are using OAuth authentication, provide your own OAuth dialogs UI and receive OAuth access token. Login example with OAuth token:
 
-    #import <HydraApplicationSDK/HydraApplicationSDK.h>
-    // ...
-    @property (nonatomic, strong, nonnull) AFHydra *hydraClient;
-    
-    // ...
-    
-    [self.hydraClient login:[AFAuthMethod OAuth:@"OAUTH_ACCESS_TOKEN"]
-                                   completion:^(NSError *error, AFUser *user) {
-        NSLog(@"App login success: %d", error == nil);
-    }];
+#import <HydraApplicationSDK/HydraApplicationSDK.h>
+// ...
+@property (nonatomic, strong, nonnull) AFHydra *hydraClient;
+
+// ...
+
+[self.hydraClient login:[AFAuthMethod OAuth:@"OAUTH_ACCESS_TOKEN"]
+completion:^(NSError *error, AFUser *user) {
+NSLog(@"App login success: %d", error == nil);
+}];
 
 See `AFAuthMethod` reference for more authentication methods.
 
@@ -188,10 +188,10 @@ See `AFAuthMethod` reference for more authentication methods.
 
 To connect VPN use AFHydra function `startVpn:(nullable void (^)(NSError * __nullable error))completion`. When VPN is started or an error occurred, completion will be called. To obtain VPN connection status you need to subscribe to the default `NSNotificationCenter`. For example:
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                            selector:@selector(connectionChanged:)
-                                                name:AFVPNStatusDidChangeNotification
-                                              object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self
+selector:@selector(connectionChanged:)
+name:AFVPNStatusDidChangeNotification
+object:nil];
 
 When you receive notification, get updated VPN status from `AFHydra` instance status property and handle this status as designed by your app.
 
@@ -217,39 +217,66 @@ See Demo application project for code examples.
 
 Additionally to VPN services, Hydra SDK provides a content categorization service, namely Fireshield. When the SDK is configured to work with Fireshield enabled, the websites' URLs that user visits are checked agains a blacklist. If a website's URL is listed in the blacklist, the traffic to/from it is blocked, otherwise it is passed through. Hydra SDK provides API to configure Fireshield and monitor its work.
 
-#### Configuration
+#### Create fireshield config
 
-Fireshield can be either disabled or enabled with particular mode. The mode is set with `fireshieldMode` property of `AFConfig` instance. Initialize `AFhydra` instance with respective config (e.g. during the application launch):
+Categorization configuration based on specification of categories and rules for categories
 
-    lazy var hydraClient : AFHydra = {
-            AFHydra.withConfig(AFConfig.init(block: { (builder) in
-                builder.baseUrl = <your_base_URL>;
-                builder.carrierId = <your_carrier_id>;
-                builder.groupId = <your_group_id>;
-                builder.networkExtensionBundleId = <your_ne_bundle_id>;
-                // ... 
-                // other config parameters
-                // ...
-                builder.fireshieldMode = .enabled
-            }))
-        }()
+To create categories you can use one of factory methods of `AFFireshieldCategory` class
 
-Later, during runtime, Fireshield mode can be changed or disabled at all. Because `AFHydra` is already instanciated at this time, `AFHydra`'s `updateConfig(_ config: AFConfig)` function has to be used instead. Pass an `AFConfig` instance where `fireshieldMode` is set to desired value. If VPN state is `.connected`, before updating the configuration, VPN should be stopped. Then, VPN can be started again. After sucessfull start, Hydra SDK will work in respective Fireshield mode. 
+* `+ (AFFireshieldCategory *)block:(AFFireshieldCategories)category;` - will create category, with action block(traffic gets blocked)
+* `+ (AFFireshieldCategory *)proxy:(AFFireshieldCategories)category;` - will create category, with action proxy(traffic (encrypted) goes through the tunnel just as payload (for TCP only))
+* `+ (AFFireshieldCategory *)bypass:(AFFireshieldCategories)category;` - will create category, with action bypass(traffic goes directly to its destination, without vpn tunnel)
+* `+ (AFFireshieldCategory *)alert:(AFFireshieldCategories)category;` - will create category, with action block(traffic gets blocked) and redirection to Alert Page specified(works for http only)
 
-    hydraClient.updateConfig(AFConfig.init(block: { (builder) in
-        builder.fireshieldMode = .disabled
-    }))
+To create category rules(which domains gets to specified category) you can use factory method of `AFFireshieldRule` class
 
-> *NOTE:* Only `fireshieldMode` and `onDemand` are supported currently with `updateConfig(_ config: AFConfig)`. Updating other parameter has not effect.
+`+ (instancetype)fileRule:(NSString *)fileName withCategory:(AFFireshieldCategories)category;` - create category rules from file in the application bundle
+
+To addition to category file configuration its possible to use online categorization services
+
+Possible values defined as constants in `AFFireshieldConfig.h` header file
+
+#### Fireshield configuration
+
+Fireshield can be either disabled or enabled with particular mode. The mode is set with `fireshieldMode` property of `AFFireshieldConfig` instance. Initialize `AFHydra` instance with respective config (e.g. during the application launch):
+
+[AFHydra withConfig:[AFConfig configWithBlock:^(AFConfigBuilder *builder) {
+/////
+AFFireshieldConfig *fireshieldConfig = [[AFFireshieldConfig alloc] initWithFireshieldMode:AFConfigFireshieldModeEnabledVPN];
+
+AFFireshieldCategory *safeCategory = [AFFireshieldCategory bypass:AFFireshieldCategorySafe]; //need to add safe category to allow safe traffic
+AFFireshieldCategory *unsafeCategory = [AFFireshieldCategory alert:AFFireshieldCategoryUnsafe];
+AFFireshieldRule *safeRule = [AFFireshieldRule fileRule:@"bitdefender-whitelist.txt" withCategory:AFFireshieldCategorySafe];
+
+[fireshieldConfig addCategory:safeCategory];
+[fireshieldConfig addCategory:unsafeCategory];
+[fireshieldConfig addRule:safeRule];
+[fireshieldConfig addService:AFFireshieldServiceBitdefender];
+
+builder.fireshieldConfig = fireshieldConfig;
+////
+}]];
+
+##### Important note: You always need to add a safe category to FireshieldConfig to allow safe traffic. 
+
+Later, during runtime, Fireshield mode can be changed or disabled at all. Because `AFHydra` is already instanciated at this time, `AFHydra`'s `- (BOOL)updateConfig:(AFConfig *)config` function has to be used instead. Pass an `AFConfig` instance where `fireshieldConfig.fireshieldMode` is set to desired value. If VPN state is `.connected`, before updating the configuration, VPN should be stopped. Then, VPN can be started again. After sucessfull start, Hydra SDK will work in respective Fireshield mode. 
+
+[hydraClient updateConfig:[AFConfig configWithBlock:^(AFConfigBuilder *builder) {
+builder.fireshieldMode = AFConfigFireshieldModeDisabled;
+}];
+
+> *NOTE:* Only `fireshieldMode` and `onDemand` are supported currently with `- (BOOL)updateConfig:(AFConfig *)config`. Updating other parameter has not effect.
 
 #### Modes
 
 Fireshield can work in various modes, adding flexibility to your application. For instance, you can blend VPN and Fireshield functionality or hide VPN icon in iOS Status Bar. The modes are represented by `AFConfigFireshieldMode` type.
 
-* `.disabled` — Fireshield is disabled. Default value.
+* `.disabled` — Fireshield is disabled.
 * `.enabled` — Fireshield is enabled. The VPN icon in Status Bar is displayed, however, the traffic does not go through VPN.
 * `.enabledSilent` — Fireshield is enabled but VPN icon in Status Bar is hidden. The traffic does not go through VPN.
-* `.enabledVPN` — Blend Fireshield and VPN together. All traffic goes through VPN, while Fireshield blocks access to websites in the blacklist. The VPN icon is Status Bar is displayed.
+* `.enabledVPN` — Blend Fireshield and VPN together. All traffic goes through VPN, while Fireshield blocks access to websites in the blacklist. The VPN icon is Status Bar is displayed. **Default value.**
+
+##### Important note: Fireshield config settings may be overwritten by remote config.
 
 #### Monitoring
 
@@ -274,20 +301,20 @@ If you are just disconnected from VPN session, you could also check `hydraClient
 
 Some project might consider crash reporting integration (such as, [Crashlytics](https://try.crashlytics.com)) for Network Extension side. If your crash reporting framework supports Application Extensions and requires additional code to setup it, put the configuration code inside `AFNetworkExtensionDelegate`'s `-init` override:
 
-    @interface MYNEDelegate : NSObject <AFNetworkExtensionDelegate>
+@interface MYNEDelegate : NSObject <AFNetworkExtensionDelegate>
 
-    - (instancetype)init {
-        self = [super init];
-        if (self) {
-            [Fabric with:@[[Crashlytics class]]];
-            // ...
-        }
-        return self;
-    }
-        
-    // ...
+- (instancetype)init {
+self = [super init];
+if (self) {
+[Fabric with:@[[Crashlytics class]]];
+// ...
+}
+return self;
+}
 
-    @end
+// ...
+
+@end
 
 
 
@@ -543,7 +570,7 @@ The configuration of iOS application with HydraSDK could be quite complex since 
 There are no required changes
 
 ## AFPacketTunnelProvider
- 
+
 1. There is no `AFPacketTunnelProvider` now to extend, so your PacketTunnelProvider class is not needed anymore (it will be replaced by Delegate, see 2)
 2. Create your Delegate class implementing `AFNetworkExtensionDelegate`, the functions will remain the same as in AFPacketTunnelProvider (`vpnWillStart` etc.)
 3. Your Network Extension Info.plist should always have `NSExtensionPrincipalClass` set to `AFHydraTunnelProvider`
@@ -552,27 +579,27 @@ There are no required changes
 
 This is how your class may look:
 
-    // Swift 4.x
-    
-    import HydraTunnelProviderSDK
-    
-    class PacketTunnelProviderDelegate: NSObject { }
-    
-    extension PacketTunnelProviderDelegate: AFNetworkExtensionDelegate {
-        func vpnWillStart() {
-            print("Reporing vpnWillStart")
-        }
-    
-        func vpnDidStart() {
-            print("Reporing vpnDidStart")
-        }
-    
-        func vpnError(_ error: Error!) {
-            print("Reporing vpnError: \(error.localizedDescription)")
-        }
-    
-        func resourceBlocked(_ categorization: AFHydraCategorization!) {
-            print("Reporing resourceBlocked: \(categorization.prettyDescription())")
-        }
-    }
+// Swift 4.x
+
+import HydraTunnelProviderSDK
+
+class PacketTunnelProviderDelegate: NSObject { }
+
+extension PacketTunnelProviderDelegate: AFNetworkExtensionDelegate {
+func vpnWillStart() {
+print("Reporing vpnWillStart")
+}
+
+func vpnDidStart() {
+print("Reporing vpnDidStart")
+}
+
+func vpnError(_ error: Error!) {
+print("Reporing vpnError: \(error.localizedDescription)")
+}
+
+func resourceBlocked(_ categorization: AFHydraCategorization!) {
+print("Reporing resourceBlocked: \(categorization.prettyDescription())")
+}
+}
 

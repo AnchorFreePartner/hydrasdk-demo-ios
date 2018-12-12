@@ -1,0 +1,4 @@
+google.com
+apple.com
+android.com
+github.com
