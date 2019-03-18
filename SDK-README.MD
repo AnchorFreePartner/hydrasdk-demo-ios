@@ -8,7 +8,8 @@ Changelog:
 
 Download latest SDK: 
 
-- [HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydra%20iOS SDK_v0_4_10.zip?alt=media)
+- [HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydraSDK%20iOS%200.4.14.zip?alt=media&token=136bd098-72f5-44b5-9ac3-653d563e0976)
+
 - [HydraSDK for macOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FHydra%20macOS%20SDK_v0_4_10.zip?alt=media)
 
 # Prerequisites
