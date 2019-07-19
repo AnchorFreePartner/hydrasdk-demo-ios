@@ -9,7 +9,9 @@
 import VPNTunnelProviderSDK
 import UserNotifications
 
-class PacketTunnelProviderDelegate: NSObject { }
+class PacketTunnelProviderDelegate: NSObject {
+    private let categorizationProcess = CategorizationProcessor()
+}
 
 extension PacketTunnelProviderDelegate: AFNetworkExtensionDelegate {
     func vpnWillStart() {
@@ -37,7 +39,10 @@ extension PacketTunnelProviderDelegate: AFNetworkExtensionDelegate {
         }
     }
 
+
     func resourceBlocked(_ categorization: AFHydraCategorization!) {
-        print("Reporing resourceBlocked: \(categorization.prettyDescription())")
+        if Preferences.isFireshieldNotificationsEnabled {
+            categorizationProcess.process(categorization)
+        }
     }
 }
