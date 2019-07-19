@@ -1,6 +1,0 @@
-framework module HydraApplicationSDK {
-  umbrella header "HydraApplicationSDK.h"
-
-  export *
-  module * { export * }
-}

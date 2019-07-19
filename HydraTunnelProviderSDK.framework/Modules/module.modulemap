@@ -1,6 +1,0 @@
-framework module HydraTunnelProviderSDK {
-  umbrella header "HydraTunnelProviderSDK.h"
-
-  export *
-  module * { export * }
-}

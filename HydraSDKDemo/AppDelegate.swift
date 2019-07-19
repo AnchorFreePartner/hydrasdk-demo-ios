@@ -7,24 +7,44 @@
 //
 
 import UIKit
-import HydraApplicationSDK
+import VPNApplicationSDK
 import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    lazy var hydraClient : AFHydra = {
-        AFHydra.withConfig(AFConfig.init(block: { (builder) in
-            builder.baseUrl = "https://backend.northghost.com";
-            builder.carrierId = "afdemo";
-            builder.vpnProfileName = "Awesome VPN!";
-            builder.groupId = "group.com.anchorfree.HydraTestApp";
-            builder.networkExtensionBundleId = "com.anchorfree.HydraTestApp.neprovider";
-        }))
+
+    lazy var hydraClient : HydraSDK = {
+        let configuration = self.configuration()
+
+        return HydraSDK(configuration: configuration)
     }()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+    public func configuration(onDemandEnabled: Bool = true,
+                              fireshieldMode: FireshieldConfig.Mode = .enabled) -> HydraConfiguration {
+        return HydraConfiguration(hostURL: "https://backend.northghost.com",
+                                  carrierID: "af_demo",
+                                  extensionBundleID: "com.anchorfree.HydraTestApp.neprovider",
+                                  groupID: "group.com.anchorfree.HydraTestAp",
+                                  fireshieldConfig: buildFirehsieldConfig(mode: fireshieldMode),
+                                  isOnDemandEnabled: onDemandEnabled)
+    }
+
+    private func buildFirehsieldConfig(mode: FireshieldConfig.Mode) -> FireshieldConfig {
+        let config = FireshieldConfig(mode: mode)
+
+        config.add(service: .bitdefender)
+        config.add(service: .sophos)
+        config.add(service: .ip)
+
+        config.add(category: .block(category: .unsafe))
+        config.add(category: .proxy(category: .safe))
+        return config
+    }
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) {(accepted, error) in
