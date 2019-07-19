@@ -7,18 +7,18 @@
 //
 
 import UIKit
-import HydraApplicationSDK
+import VPNApplicationSDK
 
 protocol CountryControllerProtocol {
-    func countryChanged(newCountry: AFCountry)
+    func countryChanged(newCountry: VirtualLocation)
 }
 
 class CountryController: UITableViewController {
     var delegate: CountryControllerProtocol?
-    var currentCountry: AFCountry?
-    var countryList: Array<AFCountry>?
+    var currentCountry: VirtualLocation?
+    var countryList: [VirtualLocation]?
     
-    var hydraClient : AFHydra {
+    var hydraClient : HydraSDK {
         get {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             return appDelegate.hydraClient
@@ -27,7 +27,7 @@ class CountryController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        hydraClient.availableCountries { [weak self] (e, countries) in
+        hydraClient.virtualLocations { [weak self] (e, countries) in
             if let ex = e {
                 print("Countries error: \(ex)")
             } else {
@@ -51,8 +51,8 @@ class CountryController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell", for: indexPath)
         guard let countryList = self.countryList else { return cell }
         let country = countryList[indexPath.row]
-        var labelString: String = country.countryCode as! String
-        if self.currentCountry?.countryCode == country.countryCode {
+        var labelString: String = country.code
+        if self.currentCountry?.code == country.code {
             labelString += " (selected)"
         }
         cell.textLabel?.text = labelString

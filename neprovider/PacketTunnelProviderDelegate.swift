@@ -6,7 +6,7 @@
 //  Copyright © 2017 Anchorfree Inc. All rights reserved.
 //
 
-import HydraTunnelProviderSDK
+import VPNTunnelProviderSDK
 import UserNotifications
 
 class PacketTunnelProviderDelegate: NSObject {
