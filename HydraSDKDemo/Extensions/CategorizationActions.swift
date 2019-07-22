@@ -1,5 +1,4 @@
-import HydraTunnelProviderSDK
-import HydraApplicationSDK
+import VPNTunnelProviderSDK
 
 public extension AFHydraCategorization {
     var actionEmoji: String {
@@ -12,6 +11,8 @@ public extension AFHydraCategorization {
             return "✅"
         case .block:
             return "🛑"
+        @unknown default:
+            return ""
         }
     }
 }

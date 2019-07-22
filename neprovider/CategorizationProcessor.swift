@@ -1,5 +1,5 @@
 import Foundation
-import HydraTunnelProviderSDK.AFHydraCategorization
+import VPNTunnelProviderSDK.AFHydraCategorization
 import UserNotifications
 
 class CategorizationProcessor {
