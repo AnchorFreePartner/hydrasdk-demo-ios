@@ -108,6 +108,8 @@
                     "default": 1
                 }],
                 "plugin-chain": [{
+                    "name": "vpr-rules"
+                }, {
                     "name": "gnrprx"
                 }],
                 "session-table-size": "32768"
@@ -129,11 +131,7 @@
                 "categ-cache-size": 1000,
                 "service-enabled": 0,
                 "whitelist-size": 10000,
-                "categories": [{
-                    "type": "proxy_peer",
-                    "category": "safe",
-                    "id": 1
-                }],
+                "categories": [],
                 "categ-request-timeout": 750,
                 "alertpage_server": "%IP%:8000",
                 "scanned-conns-stats": {

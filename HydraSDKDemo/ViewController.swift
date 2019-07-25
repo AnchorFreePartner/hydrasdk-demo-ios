@@ -8,6 +8,7 @@
 
 import UIKit
 import VPNApplicationSDK
+import UserNotifications
 
 class ViewController: UIViewController, CountryControllerProtocol {
     typealias UpdateCompletion = () -> ()
@@ -15,14 +16,17 @@ class ViewController: UIViewController, CountryControllerProtocol {
     @IBOutlet weak var changeCountryButton: UIButton!
     @IBOutlet weak var loginStatus: UILabel!
     @IBOutlet weak var connectionStatus: UILabel!
-    @IBOutlet weak var vpnStateSwitch: UISwitch!
+    @IBOutlet weak var vpnSwitch: UISwitch!
     @IBOutlet weak var onDemandSwitch: UISwitch!
     @IBOutlet weak var onDemandLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var trafficLimitLabel: UILabel!
     @IBOutlet weak var trafficStatsLabel: UILabel!
+    @IBOutlet weak var fireshieldCategoryzationLabel: UILabel!
+    @IBOutlet weak var fireshiledNotificationsSwitch: UISwitch! 
     @IBOutlet weak var fireshieldSwitch: UISwitch!
     @IBOutlet weak var connectionsCountLabel: UILabel!
+    @IBOutlet weak var connectButton: UIButton!
     
     private var isUpdatingScannedConnections: Bool = false
     
@@ -76,15 +80,7 @@ class ViewController: UIViewController, CountryControllerProtocol {
     }
     
     private var fireshieldMode: FireshieldConfig.Mode {
-        let flags = (isVpnConnected, isFireshieldEnabled)
-        switch flags {
-        case (false, true):
-            return .silent
-        case (true, true):
-            return .vpn
-        default:
-            return .disabled
-        }
+        return isFireshieldEnabled ? .vpn : .disabled
     }
     
     override func viewDidLoad() {
@@ -222,15 +218,15 @@ class ViewController: UIViewController, CountryControllerProtocol {
     func updateUi() {
         self.loginButton.setTitle(self.isLoggedIn ? "Log out" : "Log in", for: .normal)
         self.loginStatus.text = self.isLoggedIn ? "Logged in" : "Logged out"
-        self.vpnStateSwitch.isOn = self.isVpnConnected || self.hydraClient.state == .connecting
+        self.vpnSwitch.isOn = self.isVpnConnected || self.hydraClient.state == .connecting
         self.connectionStatus.text = self.isVpnConnected ? "\(self.statusString) [\(self.countryConnectedTo?.code ?? "???")]" : self.statusString
         self.countryLabel.text = self.country?.code ?? "Optimal"
         self.onDemandLabel.text = self.onDemandSwitch.isOn ? "On-demand enabled" : "On-demand disabled"
         switch self.hydraClient.state {
         case .connecting, .disconnecting:
-            vpnStateSwitch.isEnabled = false
+            vpnSwitch.isEnabled = false
         default:
-            vpnStateSwitch.isEnabled = true
+            vpnSwitch.isEnabled = true
         }
     }
     
@@ -377,6 +373,107 @@ class ViewController: UIViewController, CountryControllerProtocol {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             completion()
         }
+    }
+
+    @IBAction func hydraPreferencesValueChanged(_ sender: UISwitch) {
+        func _updateHydraConfig(with props: (isVPN: Bool, isFireshield: Bool, isOnDemand: Bool) ) {
+
+           set(onDemandEnabled: onDemandSwitch.isOn)
+
+            print("Did update Hydra config")
+        }
+
+        guard sender == fireshieldSwitch || sender == onDemandSwitch || sender == vpnSwitch else {
+            return
+        }
+
+        if (!hydraClient.isLoggedIn) {
+            return
+        }
+
+        let isVPN = vpnSwitch.isOn
+        let isFireshield = fireshieldSwitch.isOn
+        let isOnDemand = onDemandSwitch.isOn
+
+        let hydraConnectionState = self.hydraClient.state
+        switch hydraConnectionState {
+        case .disconnected, .invalid:
+            _updateHydraConfig(with: (isVPN, isFireshield, isOnDemand))
+        default:
+            print("Ignore -connectButtonDidPress action")
+            break
+        }
+    }
+
+    @IBAction func connectButtonDidPress(_ sender: Any) {
+        if (!hydraClient.isLoggedIn) {
+            print("Login before starting a connection")
+            return
+        }
+
+        let hydraConnectionState = self.hydraClient.state
+        switch hydraConnectionState {
+        case .connected:
+            self.connectButton.isEnabled = false
+            self.hydraClient.stop { [unowned self] error in
+                self.connectButton.isEnabled = true
+                guard error == nil else {
+                    print("Failed to disconnect from Hydra. Error was: \(error!)")
+                    self.updateUi()
+                    return
+                }
+                self.updateUi()
+            }
+        case .disconnected, .invalid:
+            self.connectButton.isEnabled = false
+            self.hydraClient.start(location: self.country) { [unowned self] error in
+                self.connectButton.isEnabled = true
+                guard error == nil else {
+                    print("Failed to connect to Hydra. Error was: \(error!)")
+                    self.updateUi()
+                    return
+                }
+                print("Connected to Hydra with server location country code: \(self.country?.code ?? "<unknown>")")
+                self.updateUi()
+            }
+        default:
+            print("Ignore -connectButtonDidPress action")
+            return
+        }
+    }
+
+    @IBAction func toggleFireshieldNotifications(_ sender: UISwitch) {
+        Preferences.isFireshieldNotificationsEnabled = sender.isOn
+        if Preferences.isFireshieldNotificationsEnabled {
+            requestUserNotificationsPermissionsIfNeeded {
+                if $0 == false {
+                    self.presentNotificationsAccessDeclinedAlert()
+                }
+            }
+        }
+    }
+
+    // MARK: User Notifications
+    private func requestUserNotificationsPermissionsIfNeeded(_ completion: @escaping (Bool) -> ()) {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (isGranted, error) in
+            if let error = error {
+                print("Unable to request authorization: \(error)")
+            }
+
+            completion(isGranted)
+        }
+    }
+
+    private func presentNotificationsAccessDeclinedAlert() {
+        AlertController.presentAlert(withTitle: "Notification Presmission",
+                                     body: "Notification access is declined, please change access in Settings to enable Fireshield notifications",
+                                     in: self,
+                                     cancelButtonTitle: "OK",
+                                     cancelActionHandler: {
+                                        Preferences.isFireshieldNotificationsEnabled = false
+                                        self.fireshieldSwitch.isOn = false
+        })
     }
 }
 

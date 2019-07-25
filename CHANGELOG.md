@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 # [Unreleased]
 
 
-## [3.0.1] - 2019-2-07
+## [3.0.2] - 2019-25-07
+## Implemented
+- Implemented deviceType variable in Hydra configuration.
+
+## Fixed
+- Fixed issue with Fireshield, that not blocking unsafe sites.
+- Fixed `vpnDataCounterDidUpdate` delegate method in network extension target.
+
+## [3.0.1] - 2019-22-07
 ## Updated
 - Updated error messsage representation for connection error event report.
 
