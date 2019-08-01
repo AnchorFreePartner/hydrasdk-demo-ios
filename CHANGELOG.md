@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+## [3.0.3] - 2019-01-08
+## Implemented
+- Implemented currentFireshieldMode variable in HydraSDK class
+
+## Fixed 
+- Fixed issue with visible VPN icon when Fireshield mode is set to .silent
+- Fixed issue with FireshieldController variable assigment in Network Extension Delegate.
 
 ## [3.0.2] - 2019-25-07
 ## Implemented
