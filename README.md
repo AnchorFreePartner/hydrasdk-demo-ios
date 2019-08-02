@@ -9,7 +9,7 @@ This is a demo application for iOS with basic usage of Hydra VPN SDK.
 
 # SDK Quick Installation Guide
 
-Download latest SDK: [HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20iOS%203.0.3.zip?)
+Download latest SDK: [HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20iOS%203.0.3.zip?alt=media)
 
 ## Prepare Application
 Create iOS application and additional Network Extension target, so you'll have:
