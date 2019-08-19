@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+## [3.0.4] - 2019-19-08
+## Fixed
+- Fixed issue with mapping RemainingTraffic object after spending all traffic.
+
 ## [3.0.3] - 2019-01-08
 ## Implemented
 - Implemented currentFireshieldMode variable in HydraSDK class
