@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+## [3.0.7] - 2019-09-09
+## Fixed
+- Fixed token migrating from previous version of SDK.
+
+## [3.0.6] - 2019-09-09
+## Updated
+- Updated logic in storing failed errors in network extension target.
+
+## [3.0.5] - 2019-05-09
+## Fixed
+- Fixed issue remote configuration mapping.
+
 ## [3.0.4] - 2019-19-08
 ## Fixed
 - Fixed issue with mapping RemainingTraffic object after spending all traffic.
