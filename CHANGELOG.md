@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+## [3.0.8] - 2019-23-10
+## Updated
+- Updated remote-config logic to resolve issue with alert-page.
+- Removed usage of UIWebViwe in analytics library.
+
 ## [3.0.7] - 2019-09-09
 ## Fixed
 - Fixed token migrating from previous version of SDK.
