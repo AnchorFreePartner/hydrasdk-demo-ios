@@ -6,10 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
-## [3.0.8] - 2019-23-10
+## [3.0.9] - 2019-31-10
+## Updated
+- Updated logic to update credentials during sleep to resolve issue with 196 error.
+- Disabled silentMode in Fireshield configuration, setting the Fireshield mode to .silent will not affect on the configuration.
+
+## [3.0.8] - 2019-09-09
 ## Updated
 - Updated remote-config logic to resolve issue with alert-page.
-- Removed usage of UIWebViwe in analytics library.
 
 ## [3.0.7] - 2019-09-09
 ## Fixed
