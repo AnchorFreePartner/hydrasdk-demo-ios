@@ -8,7 +8,7 @@ Changelog:
 
 Download latest SDK: 
 
-- [HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPN%20SDK%20iOS%203.0.9.zip?alt=media&token=0a87f55f-4628-4846-9344-e04369a4c911)
+- [HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20iOS%203.0.9%20swift%205.1.2.zip?alt=media&token=61ec0465-a6b3-4710-8d84-f62c7e2ccc7d)
 
 # Prerequisites
 
