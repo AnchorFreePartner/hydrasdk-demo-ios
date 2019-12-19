@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+
+## [3.1.0] - 2019-19-12
+## Impemented
+- Added ad-mob section to remote config.
+
+## Fixed
+- Fixed issue with parsing subscriber model during login.
+
 ## [3.0.9] - 2019-31-10
 ## Updated
 - Updated logic to update credentials during sleep to resolve issue with 196 error.
