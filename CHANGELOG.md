@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+## [3.1.1] - 2020-04-02
+## Updated
+- Updated Hydra library with added battery saving mode, which enables Fireshield is DNS-only mode, this option can be found in `FireshieldConfig`.
 
 ## [3.1.0] - 2019-19-12
 ## Impemented
