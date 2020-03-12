@@ -11,7 +11,7 @@ This is a demo application for iOS with basic usage of Hydra VPN SDK.
 
 Download latest SDK:
 
-[HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20iOS%203.1.1.zip?alt=media&token=d650984d-4929-4fa3-9ba6-9fecadd4a724)
+[HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20iOS%203.1.2.zip?alt=media&token=f3896455-6e94-4c48-b2c1-0a3a341e16c0)
 
 [HydraSDK for macOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20macOS%203.1.1.zip?alt=media&token=17c0f5d5-1996-4c2e-ac0d-fa15110f4c60)
 
