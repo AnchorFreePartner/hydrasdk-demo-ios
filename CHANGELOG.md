@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+## [3.1.2] - 2020-11-03
+## Updated
+- Improved `FireshieldController` and Fireshield categories, implemented the possibility of adding custom categories to the fireshield.
+
+- Enabled BitCode support.
+
+- Added `StartupOptions` to the `vpnWillStart` delegate method.
+
+## Updated
+- Updated Hydra library with fixed whitelisting crash.
+
 ## [3.1.1] - 2020-04-02
 ## Updated
 - Updated Hydra library with added battery saving mode, which enables Fireshield is DNS-only mode, this option can be found in `FireshieldConfig`.
