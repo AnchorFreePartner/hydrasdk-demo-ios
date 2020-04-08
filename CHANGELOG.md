@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+
+## [3.1.3] - 2020-08-04
+## Implemented
+
+- Implemented the KillSwitch feature. 
+When Hydra has occurred error and if the delegate method `vpnWillStopWith:(nonnull void(^)(BOOL restart))completion` is implemented, then until completion callback is called Hydra will run in the killswitch mode, please refer to the documentation about the restart parameter.
+
+- Implemented providing of the `VirtualLocation` in the callback of `startVPN` function.
+
+## Fixed
+- Fixed the receiving of Hydra state from proper `VPNManger` object.
+
+- Fixed issue with Fireshield when users unble to use netowkr messengers (stuck in the Connecting state).
+
 ## [3.1.2] - 2020-11-03
 ## Updated
 - Improved `FireshieldController` and Fireshield categories, implemented the possibility of adding custom categories to the fireshield.
