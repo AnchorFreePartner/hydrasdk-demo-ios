@@ -8,7 +8,7 @@ Changelog:
 
 Download latest SDK:
 
-[HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20iOS%203.1.2.zip?alt=media&token=f3896455-6e94-4c48-b2c1-0a3a341e16c0)
+[HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20iOS%203.1.3.zip?alt=media&token=723e9c44-fe7a-490d-b1e0-889f53dca9b2)
 
 [HydraSDK for macOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20macOS%203.1.1.zip?alt=media&token=17c0f5d5-199)
 
@@ -524,11 +524,12 @@ Amount of bytes that is available to User.
 
 Your app's Network Extension provider must implement this protocol. In order to be able to track certain actions like VPN start or errors inside Network Extension, following functions can be overriden:
 
-`- (void)vpnWillStart;` // Called right before VPN start attempt  
+`- (void)vpnWillStartWithOptions:;` // Called right before VPN start attempt  
 `- (void)vpnDidStart;` // Called after successful VPN start  
 `- (void)vpnError:(NSError *)error;` // Called when VPN error occured. Do not call long-running async operations here as the process will shut down  
 `- (void)resourceBlocked:(AFHydraCategorization *)categorization;` // Caled when resource is blocked by Fireshield  
 `- (void)vpnDataCounterDidUpdate:(AFHydraDataCounter *)dataCounter;` // Called when VPN traffic counters did update  
+`- (void)vpnWillStopWith:(nonnull void(^)(BOOL restart))completion;` // Called when an error has occurred during the VPN connection until the completion callback will be called Hydra will run in the killswitch mode.   
 
 ## Error codes
 
