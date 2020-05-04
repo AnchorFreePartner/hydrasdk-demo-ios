@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+## [3.1.4] - 2020-04-05
+## Implemented
+
+## Fixed
+- Fixed the `Connecting` state issue which can occur right after updating from the older SDK (3.0.x) if the VPN connection was established.
 
 ## [3.1.3] - 2020-08-04
 ## Implemented
