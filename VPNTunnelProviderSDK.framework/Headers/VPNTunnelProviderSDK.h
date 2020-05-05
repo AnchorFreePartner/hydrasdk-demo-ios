@@ -6,7 +6,7 @@
 //  Copyright © 2019 Anchorfree Inc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for VPNSDK_NE.
 FOUNDATION_EXPORT double VPNSDK_NEVersionNumber;
@@ -14,7 +14,7 @@ FOUNDATION_EXPORT double VPNSDK_NEVersionNumber;
 //! Project version string for VPNSDK_NE.
 FOUNDATION_EXPORT const unsigned char VPNSDK_NEVersionString[];
 
-static NSString *const _Nonnull AFTunnelProviderVersion = @"3.0.2";
+static NSString *const _Nonnull AFTunnelProviderVersion = @"3.1.4";
 
 // In this header, you should import all the public headers of your framework using statements like #import <VPNSDK_NE/PublicHeader.h>
 
@@ -25,7 +25,7 @@ static NSString *const _Nonnull AFTunnelProviderVersion = @"3.0.2";
 #import "AFHydraTunnelProviderConstants.h"
 #import "AFHydraNetworkInfo.h"
 #import "AFResolver.h"
-#import "GCDAsyncSocket.h"
 #import "AFNetworkExtensionDelegate.h"
 #import "UCRTracker.h"
 #import "AFHydraDataCounter.h"
+#import "AFFireshieldController.h"

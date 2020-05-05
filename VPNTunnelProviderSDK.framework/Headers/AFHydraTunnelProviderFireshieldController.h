@@ -21,4 +21,9 @@ typedef NS_ENUM(NSInteger, AFHydraCustomListResourceType) {
 
 - (nullable NSError*) updateCustomListWithItems: (NSArray<NSString*>*) items withCommand:(AFHydraCustomListCommandType) command withResourceType:(AFHydraCustomListResourceType) resourceType forCategory:(NSString*) category;
 
+// Used to reconfigure hydra during runtime with new routing rules - expects a dictionary that will be converted to JSON and given directly to hydra.
+- (nullable NSError*) hydraReconfigure:(NSMutableDictionary *)newHydraConfig;
+
+- (NSUInteger) scannedConnections;
+
 @end

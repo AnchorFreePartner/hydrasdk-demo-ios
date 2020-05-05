@@ -34,5 +34,10 @@ NS_ERROR_ENUM(AFHydraErrorDomain)
     AFHydraErrorFireshieldCustomListFailedToAddRule = 15,
     AFHydraErrorFireshieldCustomListFailedToApplyRules = 16,
     
-    AFHydraErrorUnknownFailure = 17
+    // Hydra reconfigure errors
+    AFHydraErrorReconfigureInvalidJSON = 17,
+    AFHydraErrorReconfigureHydraNotRunning = 18,
+    AFHydraErrorReconfigureHydraError = 19,
+    
+    AFHydraErrorUnknownFailure = 20
 };

@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)unregisterSuperProperty:(NSString *)propertyName;
 - (void)clearSuperProperties;
 - (void)flush;
+- (void)flush:(void(^)(void))completion;
 - (void)archive;
 - (NSString *)IFA;
 - (NSString *)libVersion;

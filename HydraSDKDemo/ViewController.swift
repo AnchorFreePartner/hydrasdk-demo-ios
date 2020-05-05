@@ -312,7 +312,7 @@ class ViewController: UIViewController, CountryControllerProtocol {
     }
     
     private func startVPN() {
-        self.hydraClient.start(location: country) { (e) in
+        self.hydraClient.start(location: country) { (e, _) in
             if let ex = e {
                 print("Restart VPN error: \(ex)")
             } else {
@@ -426,7 +426,7 @@ class ViewController: UIViewController, CountryControllerProtocol {
             }
         case .disconnected, .invalid:
             self.connectButton.isEnabled = false
-            self.hydraClient.start(location: self.country) { [unowned self] error in
+            self.hydraClient.start(location: self.country) { [unowned self] error, _ in
                 self.connectButton.isEnabled = true
                 guard error == nil else {
                     print("Failed to connect to Hydra. Error was: \(error!)")

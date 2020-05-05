@@ -21,7 +21,6 @@ FOUNDATION_EXPORT const unsigned char HydraSDKVersionString[];
 #import "AFHydraCategorization.h"
 #import "AFHydraNetworkInfo.h"
 #import "AFResolver.h"
-#import "GCDAsyncSocket.h"
 
 
 

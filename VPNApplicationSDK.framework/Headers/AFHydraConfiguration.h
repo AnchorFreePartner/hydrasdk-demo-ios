@@ -68,6 +68,9 @@ typedef NS_OPTIONS(NSInteger, AFHydraLoggingType) {
 // (OPTIONAL) Bypass all traffic by not accepting any packets from the system (no routes to utun) (no VPN icon)
 @property (nonatomic) BOOL tunBypassMode;
 
+// (OPTIONAL) Bypass all traffic except for DNS (only DNS will be routed to tun)
+@property (nonatomic) BOOL dnsOnlyMode;
+
 // (OPTIONAL) Hard connection time limit for hydra to connect (default will be 0 - no timeout)
 @property (nonatomic) NSUInteger timeoutSeconds;
 
@@ -76,6 +79,9 @@ typedef NS_OPTIONS(NSInteger, AFHydraLoggingType) {
 
 // (OPTIONAL) Provide custom cert for hydra connection
 @property (nonatomic, strong) NSString* hydraCert;
+
+// (OPTIONAL) Provide custom session id for hydra (This field should be a 15-byte session id encoded into base64 string)
+@property (nonatomic, strong) NSString* sessionId;
 
 // (OPTIONAL) Hydra should stay connected during sleep and not shut down the plugin. Default is NO.
 // By settings this to YES, the result will be that hydra transport tcp keep alive sent from server will cause the device to wake up to handle them, then go back to sleep. Current defaults have this at around ~1 minute.

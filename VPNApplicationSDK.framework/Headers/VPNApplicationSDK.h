@@ -17,9 +17,8 @@ FOUNDATION_EXPORT const unsigned char VPNSDKVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <VPNSDK/PublicHeader.h>
 
 static NSString *const AFAPIErrorDomain = @"VPNSDK.APIError";
-static NSString *const AFVPNStateDidChangeNotification = @"hydrasdk.hydraStateDidChange";
+static NSString *const HydraStatusDidChange = @"hydrasdk.hydraStateDidChange";
 
 #import "AFHydraSDK.h"
 #import "AFHydraTunnelProviderConstants.h"
-#import "GCDAsyncUdpSocket.h"
 #import "UCRTracker.h"

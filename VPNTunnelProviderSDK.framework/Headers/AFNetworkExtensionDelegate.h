@@ -10,6 +10,7 @@
 @class AFHydraCategorization;
 @class AFHydraDataCounter;
 @class AFFireshieldController;
+@class StartupOptions;
 
 typedef NS_ENUM(NSInteger, AFNEErrorCode) {
     AFNEErrorCodeNoConfig = 1,
@@ -32,10 +33,20 @@ typedef NS_ENUM(NSInteger, AFHydraErrorCode) {
 @optional
 @property (strong, nonatomic) AFFireshieldController *fireshieldController;
 
-- (void)vpnWillStart;
+- (void)vpnWillStartWithOptions:(StartupOptions *)options;
 - (void)vpnDidStart;
 - (void)vpnWillStop;
+- (void)vpnWillGoToSleep;
+- (void)vpnWillWakeUpFromSleep;
 - (void)vpnError:(NSError *)error;
 - (void)resourceBlocked:(AFHydraCategorization *)categorization;
 - (void)vpnDataCounterDidUpdate:(AFHydraDataCounter *)dataCounter;
+
+/*!
+   @discussion This method only will be called if VPN is stopped with an error until completion block will be called, the extension will be in killswitch feature (no out/in going network packets will be delivered/received.
+   If this method isn't implemented, then by default method `vpnWillStop` will be called without the killswitch feature.
+   @param  completion pass `true` to the completion block if you want to restart the VPN extension without killing and using the same delegate object, otherwise, the new delegate object will be created.
+
+*/
+- (void)vpnWillStopWith:(nonnull void(^)(BOOL restart))completion;
 @end
