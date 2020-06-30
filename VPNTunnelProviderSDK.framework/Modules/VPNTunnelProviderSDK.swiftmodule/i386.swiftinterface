@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VPNTunnelProviderSDK
 import SystemConfiguration.CaptiveNetwork
 import Foundation
@@ -91,15 +91,6 @@ extension FireshieldCategory.CategoryType : Swift.Hashable {
   @objc public static func categoryName(from category: VPNTunnelProviderSDK.AFCategoryType) -> Swift.String
   @objc deinit
   @objc override dynamic public init()
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class VPNTracker : ObjectiveC.NSObject {
-  @objc public static let instance: VPNTunnelProviderSDK.VPNTracker
-  @objc public func setFlushInterval(interval: Swift.UInt)
-  @objc public func reportConnectionStart()
-  @objc public func reportConnectionEnd()
-  @objc public func flush()
-  @objc public func flush(completion: @escaping (() -> Swift.Void))
-  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class AFClientNetworkList : ObjectiveC.NSObject {
   @objc public var configurations: [VPNTunnelProviderSDK.AFClientNetworkConfiguration] {

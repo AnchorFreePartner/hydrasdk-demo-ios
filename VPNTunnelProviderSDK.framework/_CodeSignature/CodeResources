@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/AFHydraTunnelProviderFireshieldController.h</key>
 		<data>
-		udbcFXIxbNQzaFmD7F/0FwReSwI=
+		e1rBqCX4dfevj1M6L7cu+6vUMeA=
 		</data>
 		<key>Headers/AFHydraTunnelProviderInfo.h</key>
 		<data>
@@ -60,101 +60,101 @@
 		<data>
 		w53V2Y+2Lzhut+2+vMu4O8QZAU8=
 		</data>
-		<key>Headers/UCRTracker.h</key>
+		<key>Headers/AFUCRTracker.h</key>
 		<data>
-		iB+IqiLRkui9g5mEq+Oj2PTyd2M=
+		N90jARK/mShcSBcA13eZ6MK0KnA=
 		</data>
 		<key>Headers/VPNTunnelProviderSDK-Swift.h</key>
 		<data>
-		guirOSu10MJULm2/TAwzwB1xhCI=
+		rKQY5Bil9ayJivgTMmp4BVSysn8=
 		</data>
 		<key>Headers/VPNTunnelProviderSDK.h</key>
 		<data>
-		WkYzY9R+sRQf8SfPule7axAUA0c=
+		nL9rs/VNTeYkzQm6rAweCVLcxj0=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		nqtUjcskm1Ju5GPJdsEwoAM/Uho=
+		PMA5Owqk7wgnrKELsJc8Cw+M8kY=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/Project/arm.swiftsourceinfo</key>
 		<data>
-		TDiTIrTe1fcm8XY2WuEBVrhleOw=
+		36SPiiwhZh3TvJLZTyI8tt6OZR0=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		umaA/3Q6swk9yisheatLRJu1CeY=
+		QtPHLIaws9+x5uPa+ko53BepRQY=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		umaA/3Q6swk9yisheatLRJu1CeY=
+		QtPHLIaws9+x5uPa+ko53BepRQY=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/Project/armv7-apple-ios.swiftsourceinfo</key>
 		<data>
-		TDiTIrTe1fcm8XY2WuEBVrhleOw=
+		36SPiiwhZh3TvJLZTyI8tt6OZR0=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/Project/armv7.swiftsourceinfo</key>
 		<data>
-		TDiTIrTe1fcm8XY2WuEBVrhleOw=
+		36SPiiwhZh3TvJLZTyI8tt6OZR0=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
-		quFsdSYyYaRmxWE9IxNC9SIA7wU=
+		d87BuPwtv7zm/rSFJBIEAWM75pg=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm.swiftinterface</key>
 		<data>
-		ljocMpE+icGQE436VOGxTiOzfqY=
+		X7VU7C1My7CFN6OSHyo/SyASgfw=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		Kkd0Nl7fdGeiO8Zru9ZiTOpSZMM=
+		jRf/337vrYWDsknAz2t476FC9O0=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		Tx7LcO3yUvzE2urvNyFpOHjbOCY=
+		PnJLHgO8CRv9/t4SUw6H7FCqsVY=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		AJeRlNlRRbToaL2tUhuCcKCZ3L8=
+		/Q8ABQPo78RFEH4Lpl4AVw0qMf8=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		ysSXhmSC3xfxXr/0vvRp01M9Ff4=
+		k+31df7jgFrSbtl7GfKUT45sTQc=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		Tx7LcO3yUvzE2urvNyFpOHjbOCY=
+		PnJLHgO8CRv9/t4SUw6H7FCqsVY=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		AJeRlNlRRbToaL2tUhuCcKCZ3L8=
+		/Q8ABQPo78RFEH4Lpl4AVw0qMf8=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		ysSXhmSC3xfxXr/0vvRp01M9Ff4=
+		k+31df7jgFrSbtl7GfKUT45sTQc=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
-		quFsdSYyYaRmxWE9IxNC9SIA7wU=
+		d87BuPwtv7zm/rSFJBIEAWM75pg=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		ljocMpE+icGQE436VOGxTiOzfqY=
+		X7VU7C1My7CFN6OSHyo/SyASgfw=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		Kkd0Nl7fdGeiO8Zru9ZiTOpSZMM=
+		jRf/337vrYWDsknAz2t476FC9O0=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7.swiftdoc</key>
 		<data>
-		quFsdSYyYaRmxWE9IxNC9SIA7wU=
+		d87BuPwtv7zm/rSFJBIEAWM75pg=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7.swiftinterface</key>
 		<data>
-		ljocMpE+icGQE436VOGxTiOzfqY=
+		X7VU7C1My7CFN6OSHyo/SyASgfw=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		Kkd0Nl7fdGeiO8Zru9ZiTOpSZMM=
+		jRf/337vrYWDsknAz2t476FC9O0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -270,11 +270,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			udbcFXIxbNQzaFmD7F/0FwReSwI=
+			e1rBqCX4dfevj1M6L7cu+6vUMeA=
 			</data>
 			<key>hash2</key>
 			<data>
-			sybd/FCeEeoI+jLkzLsJyG/vE17eLjXvmcj3Ep3qCiw=
+			WD8W2gbIEl+jnU8iPRF8lsdOdjVDiMw4T5c3U8JKWEQ=
 			</data>
 		</dict>
 		<key>Headers/AFHydraTunnelProviderInfo.h</key>
@@ -321,257 +321,257 @@
 			lbxNgEI2vnSrhSHokG9a5bgeTzw1kSRLKw8dT3mJTEE=
 			</data>
 		</dict>
-		<key>Headers/UCRTracker.h</key>
+		<key>Headers/AFUCRTracker.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iB+IqiLRkui9g5mEq+Oj2PTyd2M=
+			N90jARK/mShcSBcA13eZ6MK0KnA=
 			</data>
 			<key>hash2</key>
 			<data>
-			WHjeMJG9+kkWVGwihuFjFFFvdgLJCf67OMMohQgNI38=
+			G7Uf9kXXxw6YCa8QmTQRPhJKjHP8WDaMp1zJFBV+FhI=
 			</data>
 		</dict>
 		<key>Headers/VPNTunnelProviderSDK-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			guirOSu10MJULm2/TAwzwB1xhCI=
+			rKQY5Bil9ayJivgTMmp4BVSysn8=
 			</data>
 			<key>hash2</key>
 			<data>
-			Fellwr+NSV49KVmGC4CF9oLRkEdcYFj5Vmzh1+Hom8U=
+			3NJ/9VDx7LtCV4ayqt0hZ4U87kfies5EBpn7h62Ec0o=
 			</data>
 		</dict>
 		<key>Headers/VPNTunnelProviderSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WkYzY9R+sRQf8SfPule7axAUA0c=
+			nL9rs/VNTeYkzQm6rAweCVLcxj0=
 			</data>
 			<key>hash2</key>
 			<data>
-			D6wC0l1tRZlLScZt5lESOXKrY051CDTaLcXH8Ew9rag=
+			JAFHfJFuTnYAr4C8C1p8toH5steiyCQTnoClX3Tse/Q=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/Project/arm.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TDiTIrTe1fcm8XY2WuEBVrhleOw=
+			36SPiiwhZh3TvJLZTyI8tt6OZR0=
 			</data>
 			<key>hash2</key>
 			<data>
-			StQ0zJWFT++5qFrBYEcyQOAgCxUVr0aJkGPEVdsPKV4=
+			kxX+CILK9tGiCL6/1F8Q6RutSWYxNNnOCmHHHPoVhAk=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			umaA/3Q6swk9yisheatLRJu1CeY=
+			QtPHLIaws9+x5uPa+ko53BepRQY=
 			</data>
 			<key>hash2</key>
 			<data>
-			mVOmcPxLxTT9P3PHHbWavOHg6aOZHz/fA/qpVh4mT6Y=
+			EukZopyBjir4FF+YXJ1SlgHKV412BZO6mpixU9JoFvE=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			umaA/3Q6swk9yisheatLRJu1CeY=
+			QtPHLIaws9+x5uPa+ko53BepRQY=
 			</data>
 			<key>hash2</key>
 			<data>
-			mVOmcPxLxTT9P3PHHbWavOHg6aOZHz/fA/qpVh4mT6Y=
+			EukZopyBjir4FF+YXJ1SlgHKV412BZO6mpixU9JoFvE=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/Project/armv7-apple-ios.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TDiTIrTe1fcm8XY2WuEBVrhleOw=
+			36SPiiwhZh3TvJLZTyI8tt6OZR0=
 			</data>
 			<key>hash2</key>
 			<data>
-			StQ0zJWFT++5qFrBYEcyQOAgCxUVr0aJkGPEVdsPKV4=
+			kxX+CILK9tGiCL6/1F8Q6RutSWYxNNnOCmHHHPoVhAk=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/Project/armv7.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TDiTIrTe1fcm8XY2WuEBVrhleOw=
+			36SPiiwhZh3TvJLZTyI8tt6OZR0=
 			</data>
 			<key>hash2</key>
 			<data>
-			StQ0zJWFT++5qFrBYEcyQOAgCxUVr0aJkGPEVdsPKV4=
+			kxX+CILK9tGiCL6/1F8Q6RutSWYxNNnOCmHHHPoVhAk=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			quFsdSYyYaRmxWE9IxNC9SIA7wU=
+			d87BuPwtv7zm/rSFJBIEAWM75pg=
 			</data>
 			<key>hash2</key>
 			<data>
-			gve7CITM+YksGIvSrvgobVpALZHqjyacHAF+s6EzHTo=
+			U8RunLeQqvrAm8xRypNlTHKNAKLpPdGYZRl7yTnVv8w=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ljocMpE+icGQE436VOGxTiOzfqY=
+			X7VU7C1My7CFN6OSHyo/SyASgfw=
 			</data>
 			<key>hash2</key>
 			<data>
-			2bkJUhxVOPOLrwo1G/8G0eeJzt1zOyr4vOUmVLbxDNQ=
+			/Iug/CJJbmAArFoR1dlVJyCi8cHOydpwn388+prTA60=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Kkd0Nl7fdGeiO8Zru9ZiTOpSZMM=
+			jRf/337vrYWDsknAz2t476FC9O0=
 			</data>
 			<key>hash2</key>
 			<data>
-			UhB2uVVJ4/QDz4hCxEh49klG+ejQpUbcV0XXRJeS+LI=
+			bYmzSjqbgoNTGE3APlQBdLJgbAqsWgQmMc2XLuP7NIU=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Tx7LcO3yUvzE2urvNyFpOHjbOCY=
+			PnJLHgO8CRv9/t4SUw6H7FCqsVY=
 			</data>
 			<key>hash2</key>
 			<data>
-			JbQ2D2UM0P4L+3485x4OncW0QmqsfXgyub7XmKMz+L0=
+			lL22MB0Df0gCuZ90toSyUkMJzh8sa0wEn5rOdC2TlzI=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AJeRlNlRRbToaL2tUhuCcKCZ3L8=
+			/Q8ABQPo78RFEH4Lpl4AVw0qMf8=
 			</data>
 			<key>hash2</key>
 			<data>
-			c87I6uq0cOQ4UPUO7RG3ObOBmYJTIG9Uh5LKa5Ea7Ak=
+			88II/c9sqaq0vReo/DAXS++6vwS0ZRBtc9cJ6gRbKt4=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ysSXhmSC3xfxXr/0vvRp01M9Ff4=
+			k+31df7jgFrSbtl7GfKUT45sTQc=
 			</data>
 			<key>hash2</key>
 			<data>
-			/MHIyC3Tk+dvfh/Dj6HvBlA9/dmZn6Ehzs3w7mUEg0c=
+			Xc/zGq1Hlk+6cieIGSwuJBrKPJzonwexRB+cK9tWQzQ=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Tx7LcO3yUvzE2urvNyFpOHjbOCY=
+			PnJLHgO8CRv9/t4SUw6H7FCqsVY=
 			</data>
 			<key>hash2</key>
 			<data>
-			JbQ2D2UM0P4L+3485x4OncW0QmqsfXgyub7XmKMz+L0=
+			lL22MB0Df0gCuZ90toSyUkMJzh8sa0wEn5rOdC2TlzI=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AJeRlNlRRbToaL2tUhuCcKCZ3L8=
+			/Q8ABQPo78RFEH4Lpl4AVw0qMf8=
 			</data>
 			<key>hash2</key>
 			<data>
-			c87I6uq0cOQ4UPUO7RG3ObOBmYJTIG9Uh5LKa5Ea7Ak=
+			88II/c9sqaq0vReo/DAXS++6vwS0ZRBtc9cJ6gRbKt4=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ysSXhmSC3xfxXr/0vvRp01M9Ff4=
+			k+31df7jgFrSbtl7GfKUT45sTQc=
 			</data>
 			<key>hash2</key>
 			<data>
-			/MHIyC3Tk+dvfh/Dj6HvBlA9/dmZn6Ehzs3w7mUEg0c=
+			Xc/zGq1Hlk+6cieIGSwuJBrKPJzonwexRB+cK9tWQzQ=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			quFsdSYyYaRmxWE9IxNC9SIA7wU=
+			d87BuPwtv7zm/rSFJBIEAWM75pg=
 			</data>
 			<key>hash2</key>
 			<data>
-			gve7CITM+YksGIvSrvgobVpALZHqjyacHAF+s6EzHTo=
+			U8RunLeQqvrAm8xRypNlTHKNAKLpPdGYZRl7yTnVv8w=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ljocMpE+icGQE436VOGxTiOzfqY=
+			X7VU7C1My7CFN6OSHyo/SyASgfw=
 			</data>
 			<key>hash2</key>
 			<data>
-			2bkJUhxVOPOLrwo1G/8G0eeJzt1zOyr4vOUmVLbxDNQ=
+			/Iug/CJJbmAArFoR1dlVJyCi8cHOydpwn388+prTA60=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Kkd0Nl7fdGeiO8Zru9ZiTOpSZMM=
+			jRf/337vrYWDsknAz2t476FC9O0=
 			</data>
 			<key>hash2</key>
 			<data>
-			UhB2uVVJ4/QDz4hCxEh49klG+ejQpUbcV0XXRJeS+LI=
+			bYmzSjqbgoNTGE3APlQBdLJgbAqsWgQmMc2XLuP7NIU=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			quFsdSYyYaRmxWE9IxNC9SIA7wU=
+			d87BuPwtv7zm/rSFJBIEAWM75pg=
 			</data>
 			<key>hash2</key>
 			<data>
-			gve7CITM+YksGIvSrvgobVpALZHqjyacHAF+s6EzHTo=
+			U8RunLeQqvrAm8xRypNlTHKNAKLpPdGYZRl7yTnVv8w=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ljocMpE+icGQE436VOGxTiOzfqY=
+			X7VU7C1My7CFN6OSHyo/SyASgfw=
 			</data>
 			<key>hash2</key>
 			<data>
-			2bkJUhxVOPOLrwo1G/8G0eeJzt1zOyr4vOUmVLbxDNQ=
+			/Iug/CJJbmAArFoR1dlVJyCi8cHOydpwn388+prTA60=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Kkd0Nl7fdGeiO8Zru9ZiTOpSZMM=
+			jRf/337vrYWDsknAz2t476FC9O0=
 			</data>
 			<key>hash2</key>
 			<data>
-			UhB2uVVJ4/QDz4hCxEh49klG+ejQpUbcV0XXRJeS+LI=
+			bYmzSjqbgoNTGE3APlQBdLJgbAqsWgQmMc2XLuP7NIU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

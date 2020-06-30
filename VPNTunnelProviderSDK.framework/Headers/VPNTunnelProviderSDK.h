@@ -26,6 +26,6 @@ static NSString *const _Nonnull AFTunnelProviderVersion = @"3.1.4";
 #import "AFHydraNetworkInfo.h"
 #import "AFResolver.h"
 #import "AFNetworkExtensionDelegate.h"
-#import "UCRTracker.h"
 #import "AFHydraDataCounter.h"
 #import "AFFireshieldController.h"
+#import "AFUCRTracker.h"
