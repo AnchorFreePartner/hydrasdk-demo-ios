@@ -6,9 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
-## [3.1.4] - 2020-04-05
+## [3.1.5] - 2020-25-09
 ## Implemented
+- Using system DNS server if it not set in HydraConfiguration.
+- Added support of newer remote fierdshield config.
+- Added detailed logging system for the tunnel provider.
 
+## [3.1.4] - 2020-04-05
 ## Fixed
 - Fixed the `Connecting` state issue which can occur right after updating from the older SDK (3.0.x) if the VPN connection was established.
 

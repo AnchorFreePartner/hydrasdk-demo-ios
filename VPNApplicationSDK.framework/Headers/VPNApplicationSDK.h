@@ -21,4 +21,4 @@ static NSString *const HydraStatusDidChange = @"hydrasdk.hydraStateDidChange";
 
 #import "AFHydraSDK.h"
 #import "AFHydraTunnelProviderConstants.h"
-#import "UCRTracker.h"
+#import "AFUCRTracker.h"

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VPNApplicationSDK
 import SystemConfiguration.CaptiveNetwork
 import CoreTelephony
@@ -101,8 +101,18 @@ public struct ClientNetworkConfiguration : Swift.Codable {
       get
     }
   }
+  public enum NetworkType : Swift.String, Swift.Codable {
+    case wwan
+    case lan
+    case wifi
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
   public let action: VPNApplicationSDK.ClientNetworkConfiguration.Action
-  public let networkType: Swift.String?
+  public let networkType: VPNApplicationSDK.ClientNetworkConfiguration.NetworkType?
   public let ssid: [Swift.String]?
   public let bssid: [Swift.String]?
   public var isCommonConfig: Swift.Bool {
@@ -247,15 +257,6 @@ extension Hooks {
 }
 public struct PrimitiveSequence<Trait, Element> {
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class VPNTracker : ObjectiveC.NSObject {
-  @objc public static let instance: VPNApplicationSDK.VPNTracker
-  @objc public func setFlushInterval(interval: Swift.UInt)
-  @objc public func reportConnectionStart()
-  @objc public func reportConnectionEnd()
-  @objc public func flush()
-  @objc public func flush(completion: @escaping (() -> Swift.Void))
-  @objc deinit
-}
 public enum SubjectLifetimeScope {
   case whileConnected
   case forever
@@ -264,6 +265,9 @@ public enum SubjectLifetimeScope {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
+}
+public struct FireshieldRemoteConfig : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct ServerNode : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
@@ -351,9 +355,6 @@ public struct HistoricalSchedulerTimeConverter {
   @objc public var carrierID: Swift.String {
     @objc get
   }
-  @objc public var hostURL: Swift.String {
-    @objc get
-  }
   @objc public var isBypassEnabled: Swift.Bool {
     @objc get
   }
@@ -394,8 +395,8 @@ public struct HistoricalSchedulerTimeConverter {
   @available(swift, obsoleted: 1.0)
   @objc(availableLocations:) public func availableLocations(completion: @escaping (Swift.Error?, [VPNApplicationSDK.AFVirtualLocation]?) -> Swift.Void)
   @available(swift, obsoleted: 1.0)
-  @objc public func purchase(token: Swift.String?, completion: @escaping (Swift.Error?, [Swift.String : Any]?) -> Swift.Void)
-  public func purchase(purchaseToken: Swift.String?, completion: @escaping VPNApplicationSDK.PurchaseCompletion)
+  @objc public func purchase(token: Swift.String?, type: Swift.String = "apple", completion: @escaping (Swift.Error?, [Swift.String : Any]?) -> Swift.Void)
+  public func purchase(purchaseToken: Swift.String?, type: Swift.String = "apple", completion: @escaping VPNApplicationSDK.PurchaseCompletion)
   public func loadCredentials(location: VPNApplicationSDK.VirtualLocation, completion: @escaping VPNApplicationSDK.CredentialsCompletion)
   @objc public func fetchRemoteConfig(completion: @escaping (Swift.Error?, VPNApplicationSDK.AFRemoteConfig?) -> Swift.Void)
   public func installProfile(completion: @escaping VPNApplicationSDK.ProfileCompletion)
@@ -484,6 +485,9 @@ public struct FireshieldCategory {
   public static func proxy(category: VPNApplicationSDK.FireshieldCategory.CategoryType) -> VPNApplicationSDK.FireshieldCategory
   public static func bypass(category: VPNApplicationSDK.FireshieldCategory.CategoryType) -> VPNApplicationSDK.FireshieldCategory
   public static func alert(category: VPNApplicationSDK.FireshieldCategory.CategoryType) -> VPNApplicationSDK.FireshieldCategory
+}
+extension FireshieldCategory : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
 }
 extension FireshieldCategory.CategoryType : Swift.Hashable {
   public func hash(into hasher: inout Swift.Hasher)
@@ -726,6 +730,7 @@ public struct RemoteConfig : Swift.Decodable {
   public var supportEmails: [Swift.String] {
     get
   }
+  public var fireshieldConfig: VPNApplicationSDK.FireshieldRemoteConfig?
   public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc public class AFRemoteConfig : ObjectiveC.NSObject, Foundation.NSCoding {
@@ -825,6 +830,9 @@ extension VPNApplicationSDK.ClientNetworkList : Swift.Decodable {}
 extension VPNApplicationSDK.ClientNetworkConfiguration.Action : Swift.Equatable {}
 extension VPNApplicationSDK.ClientNetworkConfiguration.Action : Swift.Hashable {}
 extension VPNApplicationSDK.ClientNetworkConfiguration.Action : Swift.RawRepresentable {}
+extension VPNApplicationSDK.ClientNetworkConfiguration.NetworkType : Swift.Equatable {}
+extension VPNApplicationSDK.ClientNetworkConfiguration.NetworkType : Swift.Hashable {}
+extension VPNApplicationSDK.ClientNetworkConfiguration.NetworkType : Swift.RawRepresentable {}
 extension VPNApplicationSDK.TakeUntilBehavior : Swift.Equatable {}
 extension VPNApplicationSDK.TakeUntilBehavior : Swift.Hashable {}
 extension VPNApplicationSDK.VPNState : Swift.Equatable {}

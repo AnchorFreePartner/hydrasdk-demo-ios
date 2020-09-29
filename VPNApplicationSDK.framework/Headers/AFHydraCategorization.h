@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, AFHydraCategorizationResourceActionType) {
 @property (nonatomic, strong) NSString* category_label;
 @property (nonatomic) NSUInteger category_id;
 @property (nonatomic, strong) NSArray<NSString*>* sources;
-@property (nonatomic, strong) NSArray<NSString*>* vendor_labels;
+@property (nonatomic, strong) NSArray<NSString*>* custom_labels;
 @property (nonatomic) AFHydraCategorizationResourceActionType action;
 @property (nonatomic) NSUInteger proto;
 @property (nonatomic) NSUInteger port;

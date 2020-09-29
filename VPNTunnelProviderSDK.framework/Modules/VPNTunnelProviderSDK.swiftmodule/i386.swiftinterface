@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VPNTunnelProviderSDK
 import SystemConfiguration.CaptiveNetwork
 import Foundation
@@ -52,6 +52,9 @@ public struct FireshieldCategory {
   public static func proxy(category: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) -> VPNTunnelProviderSDK.FireshieldCategory
   public static func bypass(category: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) -> VPNTunnelProviderSDK.FireshieldCategory
   public static func alert(category: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) -> VPNTunnelProviderSDK.FireshieldCategory
+}
+extension FireshieldCategory : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
 }
 extension FireshieldCategory.CategoryType : Swift.Hashable {
   public func hash(into hasher: inout Swift.Hasher)
@@ -141,8 +144,18 @@ public struct ClientNetworkConfiguration : Swift.Codable {
       get
     }
   }
+  public enum NetworkType : Swift.String, Swift.Codable {
+    case wwan
+    case lan
+    case wifi
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
   public let action: VPNTunnelProviderSDK.ClientNetworkConfiguration.Action
-  public let networkType: Swift.String?
+  public let networkType: VPNTunnelProviderSDK.ClientNetworkConfiguration.NetworkType?
   public let ssid: [Swift.String]?
   public let bssid: [Swift.String]?
   public var isCommonConfig: Swift.Bool {
@@ -161,3 +174,6 @@ extension VPNTunnelProviderSDK.ClientNetworkList : Swift.Decodable {}
 extension VPNTunnelProviderSDK.ClientNetworkConfiguration.Action : Swift.Equatable {}
 extension VPNTunnelProviderSDK.ClientNetworkConfiguration.Action : Swift.Hashable {}
 extension VPNTunnelProviderSDK.ClientNetworkConfiguration.Action : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDK.ClientNetworkConfiguration.NetworkType : Swift.Equatable {}
+extension VPNTunnelProviderSDK.ClientNetworkConfiguration.NetworkType : Swift.Hashable {}
+extension VPNTunnelProviderSDK.ClientNetworkConfiguration.NetworkType : Swift.RawRepresentable {}
