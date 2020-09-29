@@ -12,8 +12,11 @@ Pod::Spec.new do |spec|
   spec.framework    = 'NetworkExtension'
   spec.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
   spec.ios.vendored_frameworks = 'VPNTunnelProviderSDK.framework'
-  spec.library = 'z'
+  spec.libraries = 'z', 'resolv'
   spec.swift_version = '5.0'
+
+  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 # Adding tests with a swift dependency is a workaround in order to make pod lib lint work
 # See: https://github.com/CocoaPods/CocoaPods/issues/8649
