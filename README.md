@@ -8,7 +8,7 @@ Changelog:
 
 Download latest SDK:
 
-[HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20iOS%203.1.4.zip?alt=media&token=b013d6ea-6fa0-4411-8408-d51ae9ad42da)
+[HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20iOS%203.1.5.zip?alt=media&token=e91d7308-e881-4331-8712-fb4128b74cf6)
 
 [HydraSDK for macOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20macOS%203.1.1.zip?alt=media&token=17c0f5d5-199)
 
@@ -25,7 +25,7 @@ To start application development, you need to create a Xcode iOS/macOS applicati
 
 Once the application is created, go to *Project > Targets*, and in menu bar select *Editor > Add Target*. Choose *Network Extension*, provide the name and bundle ID for this [**Network Extension**](https://developer.apple.com/reference/networkextension) target. 
 
-Set `NSExtensionPrincipalClass` in `NSExtension` dictionary of `Info.plist` to `AFHydraTunnelProvider`, also add new key to a plist root: `AFNetworkExtensionDelegate` with a value that is your VPN Delegate class. For example, if your delegate named VPNDelegate, then the value would be `(PRODUCT_MODULE_NAME).VPNDelegate`
+Set `NSExtensionPrincipalClass` in `NSExtension` dictionary of `Info.plist` to `AFHydraTunnelProvider`, also add new key to a plist root: `AFNetworkExtensionDelegate` with a value that is your VPN Delegate class. For example, if your delegate named VPNDelegate, then the value would be `$(PRODUCT_MODULE_NAME).VPNDelegate`
 
 At the end of this step, you have to have at least two targets: 
 * **Application** target
@@ -54,6 +54,7 @@ To integrate VPNSDSK into your project, do the following:
 1. Add ** VPNSDK.framework** (or **VPNApplicationSDKmacOS.framework** for macOS) to the Xcode project, and add this framework to your **Application** target. 
 2. Add **VPNTunnelProviderSDK.framework** (or **VPNTunnelProviderSDKmacOS.framework** for macOS) to your project and then add this framework to your **Network Extension** target. 
 3. Make sure both of these frameworks are properly added by going to *Project > General*, and double-checking that frameworks are in place under *Embedded Binaries* and *Linked Frameworks and Libraries* section of respective targets.
+4. Link **libz.tbd** and **libresolv.tbd** libraries to the **Network Extension** target 
 
 ### Subclassing Packet Tunnel Provider
 
@@ -566,7 +567,7 @@ The configuration of iOS application with HydraSDK could be quite complex since 
 
 - Make sure that you've created Network extension
 - **VPNApplicationSDK.framework** is added to the Application target, **VPNTunnelProviderSDK.framework** is added to the Extension target
-- **libz.tbd** is added to the Extension target
+- **libz.tbd** and **libresolv.tbd** added to the Extension target
 - *Enable Bitcode* is set to "No" and `-ObjC` is present in "Other linker flags" for both targets
 - You have created and enabled App Groups (General > Capabilities) for both targets, active App Group is set to "builder.groupId" (App Groups is enabled for both bundle ids (Application and Extension) in Apple Developer Portal)
 - Personal VPN (General > Capabilities) is enabled for both targets (Personal VPN is enabled for both bundle ids (Application and Extension) in Apple Developer Portal)

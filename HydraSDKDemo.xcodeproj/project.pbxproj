@@ -30,6 +30,7 @@
 		E11B32A122E66A62003B324D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11B329D22E66A5B003B324D /* Preferences.swift */; };
 		E14D31BD22E66B8F003AD651 /* VPNApplicationSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14D31BC22E66B8F003AD651 /* VPNApplicationSDK.framework */; };
 		E14D31BE22E66B8F003AD651 /* VPNApplicationSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E14D31BC22E66B8F003AD651 /* VPNApplicationSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E16E10BA2523310500CE73B8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E16E10B8252330FE00CE73B8 /* libresolv.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		E11B329D22E66A5B003B324D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		E11B329E22E66A5B003B324D /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		E14D31BC22E66B8F003AD651 /* VPNApplicationSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VPNApplicationSDK.framework; sourceTree = "<group>"; };
+		E16E10B8252330FE00CE73B8 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			files = (
 				B90505EE1FDA1BCC005E6862 /* UserNotifications.framework in Frameworks */,
 				B92460B41F7464C20007DE4E /* libz.tbd in Frameworks */,
+				E16E10BA2523310500CE73B8 /* libresolv.tbd in Frameworks */,
 				B92460B61F7489090007DE4E /* NetworkExtension.framework in Frameworks */,
 				E11B328D22E23A74003B324D /* VPNTunnelProviderSDK.framework in Frameworks */,
 			);
@@ -123,6 +126,7 @@
 		B92460B01F7464BC0007DE4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E16E10B8252330FE00CE73B8 /* libresolv.tbd */,
 				E11B328C22E23A74003B324D /* VPNTunnelProviderSDK.framework */,
 				B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */,
 				B92460B51F7489090007DE4E /* NetworkExtension.framework */,
