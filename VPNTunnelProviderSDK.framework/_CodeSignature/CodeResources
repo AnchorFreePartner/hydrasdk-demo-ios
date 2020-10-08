@@ -74,7 +74,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		wY04UppUqQOjCvQARrp1huTXilU=
+		ggz4pZ5Ci/qUtM4AYWDFllObBtQ=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/Project/arm.swiftsourceinfo</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		08kb2+T6JTtyey7UuIXt2l9QfFc=
+		l75bo/7sEmysWR+00wSFQnyZFaA=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		T0z7F28psb43ea9cag/ZLneNW5o=
+		D2mGFkNcxsCOWuQy9pZ9M6t1+Bo=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		T0z7F28psb43ea9cag/ZLneNW5o=
+		D2mGFkNcxsCOWuQy9pZ9M6t1+Bo=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		08kb2+T6JTtyey7UuIXt2l9QfFc=
+		l75bo/7sEmysWR+00wSFQnyZFaA=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7.swiftdoc</key>
 		<data>
@@ -154,7 +154,7 @@
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		08kb2+T6JTtyey7UuIXt2l9QfFc=
+		l75bo/7sEmysWR+00wSFQnyZFaA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -435,11 +435,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			08kb2+T6JTtyey7UuIXt2l9QfFc=
+			l75bo/7sEmysWR+00wSFQnyZFaA=
 			</data>
 			<key>hash2</key>
 			<data>
-			/iz64eckohWNYL1cHNJ0HQ3qE6Df8KUL1DO5L5yMGfI=
+			0o30PIseUFq3XvlXBUpczPGn9iLP6IXlaQrrZ0R5eIM=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -468,11 +468,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			T0z7F28psb43ea9cag/ZLneNW5o=
+			D2mGFkNcxsCOWuQy9pZ9M6t1+Bo=
 			</data>
 			<key>hash2</key>
 			<data>
-			yqMIU58qE1sA35WW/8XZfczYzrPGD8uh3PFXdResZYk=
+			sCNyw123oe+chwLqZo5bGY8SzY3ogCJaWCcm+tFLtRg=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
@@ -501,11 +501,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			T0z7F28psb43ea9cag/ZLneNW5o=
+			D2mGFkNcxsCOWuQy9pZ9M6t1+Bo=
 			</data>
 			<key>hash2</key>
 			<data>
-			yqMIU58qE1sA35WW/8XZfczYzrPGD8uh3PFXdResZYk=
+			sCNyw123oe+chwLqZo5bGY8SzY3ogCJaWCcm+tFLtRg=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
@@ -534,11 +534,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			08kb2+T6JTtyey7UuIXt2l9QfFc=
+			l75bo/7sEmysWR+00wSFQnyZFaA=
 			</data>
 			<key>hash2</key>
 			<data>
-			/iz64eckohWNYL1cHNJ0HQ3qE6Df8KUL1DO5L5yMGfI=
+			0o30PIseUFq3XvlXBUpczPGn9iLP6IXlaQrrZ0R5eIM=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/armv7.swiftdoc</key>
@@ -567,11 +567,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			08kb2+T6JTtyey7UuIXt2l9QfFc=
+			l75bo/7sEmysWR+00wSFQnyZFaA=
 			</data>
 			<key>hash2</key>
 			<data>
-			/iz64eckohWNYL1cHNJ0HQ3qE6Df8KUL1DO5L5yMGfI=
+			0o30PIseUFq3XvlXBUpczPGn9iLP6IXlaQrrZ0R5eIM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
