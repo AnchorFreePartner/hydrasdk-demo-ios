@@ -18,7 +18,6 @@ typedef NS_ENUM(NSInteger, AFHydraCustomListResourceType) {
 };
 
 @protocol AFHydraTunnelProviderFireshieldController
-NS_ASSUME_NONNULL_BEGIN
 
 - (nullable NSError*) updateCustomListWithItems: (NSArray<NSString*>*) items withCommand:(AFHydraCustomListCommandType) command withResourceType:(AFHydraCustomListResourceType) resourceType forCategory:(NSString*) category;
 
@@ -27,5 +26,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSUInteger) scannedConnections;
 
-NS_ASSUME_NONNULL_END
 @end
