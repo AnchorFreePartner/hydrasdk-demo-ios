@@ -6,8 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+## [3.1.7] - 2020-01-12
+## Fixed
+
+- Fixed merging policy issue between local and remote Fireshield config.
+
 ## [3.1.6] - 2020-30-10
 ## Fixed
+
 - Fixed issue with second DNS request added in iOS 14, which causes blocked sites to open.
 
 ## [3.1.5] - 2020-25-09
