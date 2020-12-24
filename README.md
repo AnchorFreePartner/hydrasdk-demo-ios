@@ -6,12 +6,6 @@ Changelog:
 
 - [HydraSDK for iOS ](https://raw.githubusercontent.com/AnchorFreePartner/hydrasdk-demo-ios/master/CHANGELOG.md)
 
-Download latest SDK:
-
-[HydraSDK for iOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20iOS%203.1.6.zip?alt=media&token=6fafe33d-4aba-4dd2-b28e-8cd921159c45)
-
-[HydraSDK for macOS](https://firebasestorage.googleapis.com/v0/b/web-portal-for-partners.appspot.com/o/products%2FVPNSDK%20macOS%203.1.6.zip?alt=media&token=17c0f5d5-199)
-
 # Prerequisites
 
 * Requires iOS 10+ or macOS 10.12+
@@ -51,7 +45,7 @@ The SDK consists of two frameworks:
 
 To integrate VPNSDSK into your project, do the following:
 
-1. Add **VPNApplicationSDK.framework** (or **VPNApplicationSDKmacOS.framework** for macOS) to the Xcode project, and add this framework to your **Application** target. 
+1. Add ** VPNSDK.framework** (or **VPNApplicationSDKmacOS.framework** for macOS) to the Xcode project, and add this framework to your **Application** target. 
 2. Add **VPNTunnelProviderSDK.framework** (or **VPNTunnelProviderSDKmacOS.framework** for macOS) to your project and then add this framework to your **Network Extension** target. 
 3. Make sure both of these frameworks are properly added by going to *Project > General*, and double-checking that frameworks are in place under *Embedded Binaries* and *Linked Frameworks and Libraries* section of respective targets.
 4. Link **libz.tbd** and **libresolv.tbd** libraries to the **Network Extension** target 
@@ -530,7 +524,7 @@ Your app's Network Extension provider must implement this protocol. In order to 
 `- (void)vpnError:(NSError *)error;` // Called when VPN error occured. Do not call long-running async operations here as the process will shut down  
 `- (void)resourceBlocked:(AFHydraCategorization *)categorization;` // Caled when resource is blocked by Fireshield  
 `- (void)vpnDataCounterDidUpdate:(AFHydraDataCounter *)dataCounter;` // Called when VPN traffic counters did update  
-`- (void)vpnWillStopWith:(nonnull void(^)(BOOL restart))completion;` // Called when an error has occurred during the VPN connection until the completion callback will be called Hydra will run in the killswitch mode.   
+`- (void)vpnWillStopWith:(nonnull void(^)(BOOL restart))completion;` // Called when an error has occurred during the VPN connection until the completion callback will be called Hydra will run in the killswitch mode. 
 
 ## Error codes
 

@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+## [3.1.8] - 2020-24-12
+## Implemented
+
+- Added support of host fallback, now setting host in the configuration is optional, fallback hosts could be configured via the dashboard, by default if none of the hosts are specified in HydraConfiguration, hardcoded hosts will be used.  
+
+## Fixed
+
+- Fixed reconnecting issue which could occur right after calling start function from stop callback (POSIX error).
+
 ## [3.1.7] - 2020-01-12
 ## Fixed
 

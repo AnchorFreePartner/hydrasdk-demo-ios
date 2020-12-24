@@ -1,0 +1,178 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target x86_64-apple-macos10.12 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VPNTunnelProviderSDKmacOS
+import SystemConfiguration.CaptiveNetwork
+import Cocoa
+import Foundation
+import Swift
+import SystemConfiguration
+@_exported import VPNTunnelProviderSDKmacOS
+public enum PartnerAPI {
+}
+@_hasMissingDesignatedInitializers @objc public class AFClientNetworkList : ObjectiveC.NSObject {
+  @objc public var configurations: [VPNTunnelProviderSDKmacOS.AFClientNetworkConfiguration] {
+    @objc get
+  }
+  @objc public func find(ssid: Swift.String) -> VPNTunnelProviderSDKmacOS.AFClientNetworkConfiguration?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class AFClientNetworkConfiguration : ObjectiveC.NSObject {
+  @objc public enum AFClientNetworkConfigurationAction : Swift.Int {
+    case enable, disable, empty
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public var action: VPNTunnelProviderSDKmacOS.AFClientNetworkConfiguration.AFClientNetworkConfigurationAction {
+    @objc get
+  }
+  @objc public var networkType: Swift.String? {
+    @objc get
+  }
+  @objc public var ssid: [Swift.String]? {
+    @objc get
+  }
+  @objc public var bssid: [Swift.String]? {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+public struct ClientNetworkList : Swift.Encodable {
+  public var configurations: [VPNTunnelProviderSDKmacOS.ClientNetworkConfiguration]
+  public init(from decoder: Swift.Decoder) throws
+  public func find(ssid: Swift.String, bssid: Swift.String) -> VPNTunnelProviderSDKmacOS.ClientNetworkConfiguration?
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct ClientNetworkConfiguration : Swift.Codable {
+  public enum Action : Swift.String, Swift.Codable {
+    case enable
+    case disable
+    case empty
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum NetworkType : Swift.String, Swift.Codable {
+    case wwan
+    case lan
+    case wifi
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let action: VPNTunnelProviderSDKmacOS.ClientNetworkConfiguration.Action
+  public let networkType: VPNTunnelProviderSDKmacOS.ClientNetworkConfiguration.NetworkType?
+  public let ssid: [Swift.String]?
+  public let bssid: [Swift.String]?
+  public var isCommonConfig: Swift.Bool {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct FireshieldCategory {
+  public enum CategoryType {
+    case safe
+    case unsafe
+    case unsafeCustom(_: Swift.String)
+    case custom(_: Swift.String)
+  }
+  public let type: VPNTunnelProviderSDKmacOS.FireshieldCategory.CategoryType
+  public static func block(category: VPNTunnelProviderSDKmacOS.FireshieldCategory.CategoryType) -> VPNTunnelProviderSDKmacOS.FireshieldCategory
+  public static func proxy(category: VPNTunnelProviderSDKmacOS.FireshieldCategory.CategoryType) -> VPNTunnelProviderSDKmacOS.FireshieldCategory
+  public static func bypass(category: VPNTunnelProviderSDKmacOS.FireshieldCategory.CategoryType) -> VPNTunnelProviderSDKmacOS.FireshieldCategory
+  public static func alert(category: VPNTunnelProviderSDKmacOS.FireshieldCategory.CategoryType) -> VPNTunnelProviderSDKmacOS.FireshieldCategory
+}
+extension FireshieldCategory : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+extension FireshieldCategory.CategoryType : Swift.Hashable {
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+  public static func == (a: VPNTunnelProviderSDKmacOS.FireshieldCategory.CategoryType, b: VPNTunnelProviderSDKmacOS.FireshieldCategory.CategoryType) -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers @objc public class AFCategoryType : ObjectiveC.NSObject {
+  @objc public static var safe: VPNTunnelProviderSDKmacOS.AFCategoryType {
+    @objc get
+  }
+  @objc public static var unsafe: VPNTunnelProviderSDKmacOS.AFCategoryType {
+    @objc get
+  }
+  @objc public var representation: Swift.String {
+    @objc get
+  }
+  @objc public init(custom: Swift.String)
+  @objc public init(unsafeCustom: Swift.String)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class AFFireshieldCategory : ObjectiveC.NSObject {
+  @objc public enum Action : Swift.Int {
+    case proxy, bypass, block, alert
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public static func block(category: VPNTunnelProviderSDKmacOS.AFCategoryType) -> VPNTunnelProviderSDKmacOS.AFFireshieldCategory
+  @objc public static func proxy(category: VPNTunnelProviderSDKmacOS.AFCategoryType) -> VPNTunnelProviderSDKmacOS.AFFireshieldCategory
+  @objc public static func bypass(category: VPNTunnelProviderSDKmacOS.AFCategoryType) -> VPNTunnelProviderSDKmacOS.AFFireshieldCategory
+  @objc public static func alert(category: VPNTunnelProviderSDKmacOS.AFCategoryType) -> VPNTunnelProviderSDKmacOS.AFFireshieldCategory
+  @objc public static func categoryName(from category: VPNTunnelProviderSDKmacOS.AFCategoryType) -> Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension PartnerAPI {
+  public enum APIError : Swift.Error {
+    case unauthorized
+    case notAuthorized
+    case vpnServerUnavailable
+    case userSuspended
+    case sessionExceed
+    case trafficExceed
+    case internalServerError
+    case deviceExceed
+    case invalidPurchase
+    case unknownServerResponse
+    case badRequest(message: Swift.String?)
+    case failedResult(resultString: Swift.String)
+    case networkError(Swift.Error)
+  }
+}
+public struct ServerNode : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct ServerCredentials : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers @objc public class StartupOptions : ObjectiveC.NSObject {
+  @objc final public let isBypassEnabled: Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension VPNTunnelProviderSDKmacOS.AFClientNetworkConfiguration.AFClientNetworkConfigurationAction : Swift.Equatable {}
+extension VPNTunnelProviderSDKmacOS.AFClientNetworkConfiguration.AFClientNetworkConfigurationAction : Swift.Hashable {}
+extension VPNTunnelProviderSDKmacOS.AFClientNetworkConfiguration.AFClientNetworkConfigurationAction : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDKmacOS.ClientNetworkList : Swift.Decodable {}
+extension VPNTunnelProviderSDKmacOS.ClientNetworkConfiguration.Action : Swift.Equatable {}
+extension VPNTunnelProviderSDKmacOS.ClientNetworkConfiguration.Action : Swift.Hashable {}
+extension VPNTunnelProviderSDKmacOS.ClientNetworkConfiguration.Action : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDKmacOS.ClientNetworkConfiguration.NetworkType : Swift.Equatable {}
+extension VPNTunnelProviderSDKmacOS.ClientNetworkConfiguration.NetworkType : Swift.Hashable {}
+extension VPNTunnelProviderSDKmacOS.ClientNetworkConfiguration.NetworkType : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDKmacOS.AFFireshieldCategory.Action : Swift.Equatable {}
+extension VPNTunnelProviderSDKmacOS.AFFireshieldCategory.Action : Swift.Hashable {}
+extension VPNTunnelProviderSDKmacOS.AFFireshieldCategory.Action : Swift.RawRepresentable {}
