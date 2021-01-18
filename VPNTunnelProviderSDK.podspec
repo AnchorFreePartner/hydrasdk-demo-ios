@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
 
   spec.framework    = 'NetworkExtension'
   spec.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
-  spec.ios.vendored_frameworks = 'VPNTunnelProviderSDK.framework'
+  spec.ios.vendored_frameworks = 'VPNTunnelProviderSDK.xcframework'
   spec.libraries = 'z', 'resolv'
   spec.swift_version = '5.0'
 

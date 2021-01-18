@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
 
   spec.framework    = 'SystemConfiguration'
   spec.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
-  spec.ios.vendored_frameworks = 'VPNApplicationSDK.framework'
+  spec.ios.vendored_frameworks = 'VPNApplicationSDK.xcframework'
   spec.swift_version = '5.0'
 
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
