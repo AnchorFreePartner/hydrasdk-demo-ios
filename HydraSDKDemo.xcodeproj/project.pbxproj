@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,7 +20,6 @@
 		B9621BD71F7443FD00B3AAFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9621BD51F7443FD00B3AAFA /* LaunchScreen.storyboard */; };
 		B9621BE51F74442100B3AAFA /* PacketTunnelProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621BE41F74442100B3AAFA /* PacketTunnelProviderDelegate.swift */; };
 		B9621BEA1F74442100B3AAFA /* neprovider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9621BE21F74442100B3AAFA /* neprovider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E11B328D22E23A74003B324D /* VPNTunnelProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11B328C22E23A74003B324D /* VPNTunnelProviderSDK.framework */; };
 		E11B328F22E23A82003B324D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		E11B329022E23A82003B324D /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E11B329822E66A00003B324D /* CategorizationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11B329722E66A00003B324D /* CategorizationProcessor.swift */; };
@@ -28,9 +27,11 @@
 		E11B329F22E66A5B003B324D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11B329D22E66A5B003B324D /* Preferences.swift */; };
 		E11B32A022E66A5B003B324D /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11B329E22E66A5B003B324D /* AlertController.swift */; };
 		E11B32A122E66A62003B324D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11B329D22E66A5B003B324D /* Preferences.swift */; };
-		E14D31BD22E66B8F003AD651 /* VPNApplicationSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14D31BC22E66B8F003AD651 /* VPNApplicationSDK.framework */; };
-		E14D31BE22E66B8F003AD651 /* VPNApplicationSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E14D31BC22E66B8F003AD651 /* VPNApplicationSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E16E10BA2523310500CE73B8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E16E10B8252330FE00CE73B8 /* libresolv.tbd */; };
+		E1AEF5B325B5F06300918642 /* VPNApplicationSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AEF5B225B5F06300918642 /* VPNApplicationSDK.xcframework */; };
+		E1AEF5B425B5F06300918642 /* VPNApplicationSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1AEF5B225B5F06300918642 /* VPNApplicationSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1AEF5B725B5F06900918642 /* VPNTunnelProviderSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AEF5B625B5F06900918642 /* VPNTunnelProviderSDK.xcframework */; };
+		E1AEF5B825B5F06900918642 /* VPNTunnelProviderSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1AEF5B625B5F06900918642 /* VPNTunnelProviderSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,14 +56,25 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E1AEF5B925B5F06900918642 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E1AEF5B825B5F06900918642 /* VPNTunnelProviderSDK.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1EA27C022DFAA8600F7597B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E1AEF5B425B5F06300918642 /* VPNApplicationSDK.xcframework in Embed Frameworks */,
 				E11B329022E23A82003B324D /* (null) in Embed Frameworks */,
-				E14D31BE22E66B8F003AD651 /* VPNApplicationSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,13 +99,13 @@
 		B9621BE41F74442100B3AAFA /* PacketTunnelProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProviderDelegate.swift; sourceTree = "<group>"; };
 		B9621BE61F74442100B3AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9621BE71F74442100B3AAFA /* neprovider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = neprovider.entitlements; sourceTree = "<group>"; };
-		E11B328C22E23A74003B324D /* VPNTunnelProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VPNTunnelProviderSDK.framework; sourceTree = "<group>"; };
 		E11B329722E66A00003B324D /* CategorizationProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorizationProcessor.swift; sourceTree = "<group>"; };
 		E11B329A22E66A27003B324D /* CategorizationActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorizationActions.swift; sourceTree = "<group>"; };
 		E11B329D22E66A5B003B324D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		E11B329E22E66A5B003B324D /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
-		E14D31BC22E66B8F003AD651 /* VPNApplicationSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VPNApplicationSDK.framework; sourceTree = "<group>"; };
 		E16E10B8252330FE00CE73B8 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		E1AEF5B225B5F06300918642 /* VPNApplicationSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = VPNApplicationSDK.xcframework; sourceTree = "<group>"; };
+		E1AEF5B625B5F06900918642 /* VPNTunnelProviderSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = VPNTunnelProviderSDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +114,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B90505EF1FDA1BD3005E6862 /* UserNotifications.framework in Frameworks */,
-				E14D31BD22E66B8F003AD651 /* VPNApplicationSDK.framework in Frameworks */,
 				B92460B71F7489130007DE4E /* NetworkExtension.framework in Frameworks */,
+				E1AEF5B325B5F06300918642 /* VPNApplicationSDK.xcframework in Frameworks */,
 				E11B328F22E23A82003B324D /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,10 +125,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B90505EE1FDA1BCC005E6862 /* UserNotifications.framework in Frameworks */,
+				E1AEF5B725B5F06900918642 /* VPNTunnelProviderSDK.xcframework in Frameworks */,
 				B92460B41F7464C20007DE4E /* libz.tbd in Frameworks */,
 				E16E10BA2523310500CE73B8 /* libresolv.tbd in Frameworks */,
 				B92460B61F7489090007DE4E /* NetworkExtension.framework in Frameworks */,
-				E11B328D22E23A74003B324D /* VPNTunnelProviderSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,8 +138,9 @@
 		B92460B01F7464BC0007DE4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1AEF5B625B5F06900918642 /* VPNTunnelProviderSDK.xcframework */,
+				E1AEF5B225B5F06300918642 /* VPNApplicationSDK.xcframework */,
 				E16E10B8252330FE00CE73B8 /* libresolv.tbd */,
-				E11B328C22E23A74003B324D /* VPNTunnelProviderSDK.framework */,
 				B90505ED1FDA1BCC005E6862 /* UserNotifications.framework */,
 				B92460B51F7489090007DE4E /* NetworkExtension.framework */,
 				B92460B31F7464C20007DE4E /* libz.tbd */,
@@ -139,7 +152,6 @@
 		B9621BC01F7443FD00B3AAFA = {
 			isa = PBXGroup;
 			children = (
-				E14D31BC22E66B8F003AD651 /* VPNApplicationSDK.framework */,
 				B9621BCB1F7443FD00B3AAFA /* HydraSDKDemo */,
 				B9621BE31F74442100B3AAFA /* neprovider */,
 				B9621BCA1F7443FD00B3AAFA /* Products */,
@@ -232,6 +244,7 @@
 				B9621BDE1F74442100B3AAFA /* Sources */,
 				B9621BDF1F74442100B3AAFA /* Frameworks */,
 				B9621BE01F74442100B3AAFA /* Resources */,
+				E1AEF5B925B5F06900918642 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -485,7 +498,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -504,8 +518,11 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HydraSDKDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -528,8 +545,11 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HydraSDKDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -550,8 +570,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = neprovider/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp.neprovider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -573,8 +597,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = neprovider/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp.neprovider;
 				PRODUCT_NAME = "$(TARGET_NAME)";

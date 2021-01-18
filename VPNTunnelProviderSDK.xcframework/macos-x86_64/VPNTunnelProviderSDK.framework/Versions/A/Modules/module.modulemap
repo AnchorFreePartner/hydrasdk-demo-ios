@@ -1,0 +1,11 @@
+framework module VPNTunnelProviderSDK {
+  umbrella header "VPNTunnelProviderSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module VPNTunnelProviderSDK.Swift {
+    header "VPNTunnelProviderSDK-macOS-Swift.h"
+    requires objc
+}

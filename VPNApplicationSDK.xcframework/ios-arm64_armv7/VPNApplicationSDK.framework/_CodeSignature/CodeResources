@@ -40,9 +40,9 @@
 		<data>
 		N90jARK/mShcSBcA13eZ6MK0KnA=
 		</data>
-		<key>Headers/VPNApplicationSDK-Swift.h</key>
+		<key>Headers/VPNApplicationSDK-iOS-Swift.h</key>
 		<data>
-		WDhHoXjNMzQMW9TVdSpr4bUyWnY=
+		nwrV+omRVLdvzI5HMNSKGndv6EM=
 		</data>
 		<key>Headers/VPNApplicationSDK.h</key>
 		<data>
@@ -50,91 +50,71 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		r6DnlSX2DnuoH9XUh6RCnykkQME=
-		</data>
-		<key>Modules/VPNApplicationSDK.swiftmodule/Project/arm.swiftsourceinfo</key>
-		<data>
-		TcPrRA2fqv63VReg5a/sifn4Suc=
-		</data>
-		<key>Modules/VPNApplicationSDK.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
-		<data>
-		6kZ3KKwovf0xCtS5TQXEnwiY4Gs=
-		</data>
-		<key>Modules/VPNApplicationSDK.swiftmodule/Project/arm64.swiftsourceinfo</key>
-		<data>
-		6kZ3KKwovf0xCtS5TQXEnwiY4Gs=
-		</data>
-		<key>Modules/VPNApplicationSDK.swiftmodule/Project/armv7-apple-ios.swiftsourceinfo</key>
-		<data>
-		TcPrRA2fqv63VReg5a/sifn4Suc=
-		</data>
-		<key>Modules/VPNApplicationSDK.swiftmodule/Project/armv7.swiftsourceinfo</key>
-		<data>
-		TcPrRA2fqv63VReg5a/sifn4Suc=
+		FfkfoxNu8sGJtBbsd+fIT4P/4U8=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
-		XgsWWvEiiY6hUpxdD9gaNyK7m4o=
+		NL5jEOAVSg21QMPH2OX5AYnxbPY=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm.swiftinterface</key>
 		<data>
-		vCZ2dEewSKY1BAd94IkTZ4GlQQs=
+		GlBqBfz0o1I/qwOJIxlVQ1mMFZQ=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		TvgwdP1erCRuxQpY9ryy8QgczOc=
+		+a+gBlF0sRHj5hSCwrkh6EAqNEo=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		62+gHTvHPtL7WQ4UjMa9XI9VfEo=
+		LiYws2rj0G9Z5aOSVfIb7/pCI+M=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		mW3MNFDaOVSU3eyYNK8JlMxYeiA=
+		eHBd0yYfPKaC+3n54yx6oQzTdYQ=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		qKDkrXUWVsnxPkizn2RSepjpJZs=
+		+93NoIg74Rwf9IvswPXFOk1KLlI=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		62+gHTvHPtL7WQ4UjMa9XI9VfEo=
+		LiYws2rj0G9Z5aOSVfIb7/pCI+M=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		mW3MNFDaOVSU3eyYNK8JlMxYeiA=
+		eHBd0yYfPKaC+3n54yx6oQzTdYQ=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		qKDkrXUWVsnxPkizn2RSepjpJZs=
+		+93NoIg74Rwf9IvswPXFOk1KLlI=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
-		XgsWWvEiiY6hUpxdD9gaNyK7m4o=
+		NL5jEOAVSg21QMPH2OX5AYnxbPY=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		vCZ2dEewSKY1BAd94IkTZ4GlQQs=
+		GlBqBfz0o1I/qwOJIxlVQ1mMFZQ=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		TvgwdP1erCRuxQpY9ryy8QgczOc=
+		+a+gBlF0sRHj5hSCwrkh6EAqNEo=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7.swiftdoc</key>
 		<data>
-		XgsWWvEiiY6hUpxdD9gaNyK7m4o=
+		NL5jEOAVSg21QMPH2OX5AYnxbPY=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7.swiftinterface</key>
 		<data>
-		vCZ2dEewSKY1BAd94IkTZ4GlQQs=
+		GlBqBfz0o1I/qwOJIxlVQ1mMFZQ=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		TvgwdP1erCRuxQpY9ryy8QgczOc=
+		+a+gBlF0sRHj5hSCwrkh6EAqNEo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		aTTj+EuyStSUButFu9mYOKK9K8o=
+		X1B8MgNXC8Najx3Ct9GsqfRUQi4=
 		</data>
 		<key>default_config.json</key>
 		<data>
@@ -246,15 +226,15 @@
 			G7Uf9kXXxw6YCa8QmTQRPhJKjHP8WDaMp1zJFBV+FhI=
 			</data>
 		</dict>
-		<key>Headers/VPNApplicationSDK-Swift.h</key>
+		<key>Headers/VPNApplicationSDK-iOS-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WDhHoXjNMzQMW9TVdSpr4bUyWnY=
+			nwrV+omRVLdvzI5HMNSKGndv6EM=
 			</data>
 			<key>hash2</key>
 			<data>
-			ozzyR2wenrAJALtxO7uQv/VF3ZdyjBtSBOJvrMQNjhs=
+			OGcvRJb7GTAjj2arNJyCONbCWFvH8v45d2rG1xO1d4E=
 			</data>
 		</dict>
 		<key>Headers/VPNApplicationSDK.h</key>
@@ -268,235 +248,180 @@
 			pB/yTOTm3KsuDpnQK3oE0YcTRkd9NH43VQrlHYTP94Q=
 			</data>
 		</dict>
-		<key>Modules/VPNApplicationSDK.swiftmodule/Project/arm.swiftsourceinfo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			TcPrRA2fqv63VReg5a/sifn4Suc=
-			</data>
-			<key>hash2</key>
-			<data>
-			D6Tee1W9g9rnMgLjRT6dv72XW3SU2TR2RQSahepAGI4=
-			</data>
-		</dict>
-		<key>Modules/VPNApplicationSDK.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			6kZ3KKwovf0xCtS5TQXEnwiY4Gs=
-			</data>
-			<key>hash2</key>
-			<data>
-			/vo+g3+cRsk5FYdUDC+Tz0EK903zp30Lrk7+64279mQ=
-			</data>
-		</dict>
-		<key>Modules/VPNApplicationSDK.swiftmodule/Project/arm64.swiftsourceinfo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			6kZ3KKwovf0xCtS5TQXEnwiY4Gs=
-			</data>
-			<key>hash2</key>
-			<data>
-			/vo+g3+cRsk5FYdUDC+Tz0EK903zp30Lrk7+64279mQ=
-			</data>
-		</dict>
-		<key>Modules/VPNApplicationSDK.swiftmodule/Project/armv7-apple-ios.swiftsourceinfo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			TcPrRA2fqv63VReg5a/sifn4Suc=
-			</data>
-			<key>hash2</key>
-			<data>
-			D6Tee1W9g9rnMgLjRT6dv72XW3SU2TR2RQSahepAGI4=
-			</data>
-		</dict>
-		<key>Modules/VPNApplicationSDK.swiftmodule/Project/armv7.swiftsourceinfo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			TcPrRA2fqv63VReg5a/sifn4Suc=
-			</data>
-			<key>hash2</key>
-			<data>
-			D6Tee1W9g9rnMgLjRT6dv72XW3SU2TR2RQSahepAGI4=
-			</data>
-		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XgsWWvEiiY6hUpxdD9gaNyK7m4o=
+			NL5jEOAVSg21QMPH2OX5AYnxbPY=
 			</data>
 			<key>hash2</key>
 			<data>
-			5Ow+bZIZ77N7CvIzZIhrz++2p5vMo1baQXDX8TG879k=
+			nEH5RYRz4uhAZwO0ff3vBmmoFI4m6rFBK1Pa3osOuRs=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vCZ2dEewSKY1BAd94IkTZ4GlQQs=
+			GlBqBfz0o1I/qwOJIxlVQ1mMFZQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			k5pFUx38pNdVi7gdO0uDbpIKkTrD3kEWti+VDS8+D9I=
+			BSMHqY//Xo/2gknB8aJ/7SpfSdvYmDm47SAz0tToJAo=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TvgwdP1erCRuxQpY9ryy8QgczOc=
+			+a+gBlF0sRHj5hSCwrkh6EAqNEo=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ik5lmB8rFip7GFvqc+sh3dJr2/HmE7TIdCqShpmerGA=
+			y4ITEtKPBsVT72n5rxwomWTDx686wNF8IKbJFDoR3zw=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			62+gHTvHPtL7WQ4UjMa9XI9VfEo=
+			LiYws2rj0G9Z5aOSVfIb7/pCI+M=
 			</data>
 			<key>hash2</key>
 			<data>
-			T2ONmSAY3+yD84Z1erjtt15kidvCWyYTnmxQhe4z8ng=
+			ZL6aBZ/7QDcde/Zr8iwS/8Xlwqrfu0Z7RmwMX6rGulo=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mW3MNFDaOVSU3eyYNK8JlMxYeiA=
+			eHBd0yYfPKaC+3n54yx6oQzTdYQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			UvnlvWCabvBeYyxPcgOWK4pVWTBEAuayh/Orw1XCyRg=
+			NiQnguXtK/J9EMg4zdoAaxaMzE9vP61oSaX/nfLlMQA=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qKDkrXUWVsnxPkizn2RSepjpJZs=
+			+93NoIg74Rwf9IvswPXFOk1KLlI=
 			</data>
 			<key>hash2</key>
 			<data>
-			vOyWyh0avC4KQzH8wp1NMUJVV6tIbfkDDL+uc+Q1W6Y=
+			dgCGtxIrRcnJeIIa9bzEPU8dUXufNaRhZpmmmOU38Ew=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			62+gHTvHPtL7WQ4UjMa9XI9VfEo=
+			LiYws2rj0G9Z5aOSVfIb7/pCI+M=
 			</data>
 			<key>hash2</key>
 			<data>
-			T2ONmSAY3+yD84Z1erjtt15kidvCWyYTnmxQhe4z8ng=
+			ZL6aBZ/7QDcde/Zr8iwS/8Xlwqrfu0Z7RmwMX6rGulo=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mW3MNFDaOVSU3eyYNK8JlMxYeiA=
+			eHBd0yYfPKaC+3n54yx6oQzTdYQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			UvnlvWCabvBeYyxPcgOWK4pVWTBEAuayh/Orw1XCyRg=
+			NiQnguXtK/J9EMg4zdoAaxaMzE9vP61oSaX/nfLlMQA=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qKDkrXUWVsnxPkizn2RSepjpJZs=
+			+93NoIg74Rwf9IvswPXFOk1KLlI=
 			</data>
 			<key>hash2</key>
 			<data>
-			vOyWyh0avC4KQzH8wp1NMUJVV6tIbfkDDL+uc+Q1W6Y=
+			dgCGtxIrRcnJeIIa9bzEPU8dUXufNaRhZpmmmOU38Ew=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XgsWWvEiiY6hUpxdD9gaNyK7m4o=
+			NL5jEOAVSg21QMPH2OX5AYnxbPY=
 			</data>
 			<key>hash2</key>
 			<data>
-			5Ow+bZIZ77N7CvIzZIhrz++2p5vMo1baQXDX8TG879k=
+			nEH5RYRz4uhAZwO0ff3vBmmoFI4m6rFBK1Pa3osOuRs=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vCZ2dEewSKY1BAd94IkTZ4GlQQs=
+			GlBqBfz0o1I/qwOJIxlVQ1mMFZQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			k5pFUx38pNdVi7gdO0uDbpIKkTrD3kEWti+VDS8+D9I=
+			BSMHqY//Xo/2gknB8aJ/7SpfSdvYmDm47SAz0tToJAo=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TvgwdP1erCRuxQpY9ryy8QgczOc=
+			+a+gBlF0sRHj5hSCwrkh6EAqNEo=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ik5lmB8rFip7GFvqc+sh3dJr2/HmE7TIdCqShpmerGA=
+			y4ITEtKPBsVT72n5rxwomWTDx686wNF8IKbJFDoR3zw=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XgsWWvEiiY6hUpxdD9gaNyK7m4o=
+			NL5jEOAVSg21QMPH2OX5AYnxbPY=
 			</data>
 			<key>hash2</key>
 			<data>
-			5Ow+bZIZ77N7CvIzZIhrz++2p5vMo1baQXDX8TG879k=
+			nEH5RYRz4uhAZwO0ff3vBmmoFI4m6rFBK1Pa3osOuRs=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vCZ2dEewSKY1BAd94IkTZ4GlQQs=
+			GlBqBfz0o1I/qwOJIxlVQ1mMFZQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			k5pFUx38pNdVi7gdO0uDbpIKkTrD3kEWti+VDS8+D9I=
+			BSMHqY//Xo/2gknB8aJ/7SpfSdvYmDm47SAz0tToJAo=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/armv7.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TvgwdP1erCRuxQpY9ryy8QgczOc=
+			+a+gBlF0sRHj5hSCwrkh6EAqNEo=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ik5lmB8rFip7GFvqc+sh3dJr2/HmE7TIdCqShpmerGA=
+			y4ITEtKPBsVT72n5rxwomWTDx686wNF8IKbJFDoR3zw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			aTTj+EuyStSUButFu9mYOKK9K8o=
+			X1B8MgNXC8Najx3Ct9GsqfRUQi4=
 			</data>
 			<key>hash2</key>
 			<data>
-			8BxzRp4oSH+yvRUayMQZMR7Jcto0elAvOix/cSJzJYQ=
+			JfBuqPbns/Nodr7QIFXIFlaXMplAh7ZpWCixvlNc3pI=
 			</data>
 		</dict>
 		<key>default_config.json</key>

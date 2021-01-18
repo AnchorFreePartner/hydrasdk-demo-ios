@@ -40,13 +40,13 @@ For both, the **Application** and the **Network Extension** targets, do the foll
 ### Add HydraSDK
 
 The SDK consists of two frameworks:
-* **VPNApplicationSDK.framework** (*iOS*) or **VPNApplicationSDKmacOS.framework** (*macOS*) for **Application** target
-* **VPNTunnelProviderSDK.framework** (*iOS*) or **VPNTunnelProviderSDKmacOS.framework** (*macOS*) for **Network Extension** target
+* **VPNApplicationSDK.framework** for **Application** target
+* **VPNTunnelProviderSDK.framework** for **Network Extension** target
 
 To integrate VPNSDSK into your project, do the following:
 
-1. Add ** VPNSDK.framework** (or **VPNApplicationSDKmacOS.framework** for macOS) to the Xcode project, and add this framework to your **Application** target. 
-2. Add **VPNTunnelProviderSDK.framework** (or **VPNTunnelProviderSDKmacOS.framework** for macOS) to your project and then add this framework to your **Network Extension** target. 
+1. Add **VPNApplicationSDK.framework** to the Xcode project, and add this framework to your **Application** target. 
+2. Add **VPNTunnelProviderSDK.framework** to your project and then add this framework to your **Network Extension** target. 
 3. Make sure both of these frameworks are properly added by going to *Project > General*, and double-checking that frameworks are in place under *Embedded Binaries* and *Linked Frameworks and Libraries* section of respective targets.
 4. Link **libz.tbd** and **libresolv.tbd** libraries to the **Network Extension** target 
 

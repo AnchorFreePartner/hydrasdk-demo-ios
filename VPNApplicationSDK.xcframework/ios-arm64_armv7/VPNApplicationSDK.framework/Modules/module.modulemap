@@ -6,6 +6,6 @@ framework module VPNApplicationSDK {
 }
 
 module VPNApplicationSDK.Swift {
-    header "VPNApplicationSDK-Swift.h"
+    header "VPNApplicationSDK-iOS-Swift.h"
     requires objc
 }
