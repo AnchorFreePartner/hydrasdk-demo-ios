@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+## [3.1.9] - 2021-18-01
+## Fixed
+
+- Fixed crash issue with handling state notification from NEVPNProtocolIPSec. 
+
+
+## Updated
+
+- Expanded VPNSDKError for better Objective-C compatibility.
+- Removed platform prefix from framework name. (example fro macOS platform "import VPNApplicationSDK" )
+
 ## [3.1.8] - 2020-24-12
 ## Implemented
 

@@ -1,13 +1,13 @@
 Pod::Spec.new do |spec|
   spec.platform     = :ios, '12.2'
   spec.name         = 'VPNTunnelProviderSDK'
-  spec.version      = '3.1.8'
+  spec.version      = '3.1.9'
   spec.license      = { :type => 'BSD' }
   spec.homepage     = 'https://github.com/AnchorFreePartner/hydrasdk-demo-ios'
   spec.authors      = { 'Dmitry Denyak' => 'dmitrydenyak@gmail.com' }
   spec.summary      = 'VPN Tunnel Provider SDK.'
 
-  spec.source       = { :git => 'https://github.com/AnchorFreePartner/hydrasdk-demo-ios.git', :tag => '3.1.8' }
+  spec.source       = { :git => 'https://github.com/AnchorFreePartner/hydrasdk-demo-ios.git', :tag => spec.version }
 
   spec.framework    = 'NetworkExtension'
   spec.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
