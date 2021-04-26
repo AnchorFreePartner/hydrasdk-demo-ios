@@ -1,0 +1,183 @@
+{
+    "modules": {
+        "nevpn": {
+            "raddr": "172.31.0.2",
+            "mask": "255.255.0.0",
+            "ifname": "nevpntunnel",
+            "laddr": "172.31.0.1"
+        },
+        "tranceport": {
+            "hash": "FIXME",
+            "auth_string": "FIXME",
+            "channel": "HSSCNL000005",
+            "dequeue": 1,
+            "dequeue_r": 1,
+            "enqueue": 3,
+            "max_postponed": 16777216,
+            "backend": {
+                "pools": [{
+                    "id": 0,
+                    "state_ring_sz": 24,
+                    "err_ring_sz": 128,
+                    "preconnect": 1,
+                    "impl": "remote",
+                    "link": "evssl",
+                    "prealloc": 64,
+                    "max_var_frame_size": 4096,
+                    "reliable_delivery": 1,
+                    "frame_size": 4096,
+                    "allocate": 1,
+                    "ip": "1.1.1.1",
+                    "cbo": {
+                        "enable": 1,
+                        "probe_timeout": 5
+                    },
+                    "port": 440
+                }],
+                "flush": 1,
+                "flush_type": 1,
+                "max_queue": 262144
+            },
+            "version": "354",
+            "ssl": {
+                "server_auth": 2
+            },
+            "frontend": {
+                "pools": [{
+                    "impl": "local",
+                    "max_cnt": 1024,
+                    "port": 8082,
+                    "id": 5,
+                    "prealloc": 512,
+                    "local_proxy": 0,
+                    "link": "bev_gnrprx",
+                    "ltv_est": 3600000,
+                    "ltv_close": 10000,
+                    "ip": "127.0.0.1"
+                }, {
+                    "impl": "local",
+                    "max_cnt": 1024,
+                    "port": 8083,
+                    "id": 3,
+                    "prealloc": 512,
+                    "local_proxy": 0,
+                    "link": "bev_lproxy",
+                    "ltv_est": 3600000,
+                    "ltv_close": 10000,
+                    "ip": "127.0.0.1"
+                }, {
+                    "impl": "local",
+                    "max_cnt": 1024,
+                    "preconnect": 16,
+                    "id": 8,
+                    "prealloc": 512,
+                    "link": "packet",
+                    "ltv_est": 1800000,
+                    "ltv_clo": 5000,
+                    "ip": "172.31.0.1"
+                }],
+                "flush": 1,
+                "flush_type": 1,
+                "max_queue": 65536
+            },
+            "enqueue_r": 3
+        },
+        "viper": {
+            "dns-proxy": {
+                "port": "1053",
+                "session-table-inactivity-timeout-udp": "30",
+                "io-timeout": "15",
+                "fqdn-to-ip-table-size": "32768",
+                "session-table-inactivity-timeout-tcp": "60",
+                "fqdn-to-nr-ip-table-size": "32768",
+                "proxy-rules": [{
+                    "type": "proxy_peer",
+                    "default": 1
+                }],
+                "session-table-size": "1024"
+            },
+            "generic-proxy": {
+                "generic-port": "1617",
+                "https-port": "1443",
+                "session-table-inactivity-timeout-udp": "1200",
+                "io-timeout": "30",
+                "session-table-inactivity-timeout-tcp": "1200",
+                "http-port": "1080",
+                "proxy-rules": [{
+                    "type": "proxy_peer",
+                    "default": 1
+                }],
+                "plugin-chain": [{
+                    "name": "vpr-rules"
+                }, {
+                    "name": "gnrprx"
+                }],
+                "session-table-size": "32768"
+            },
+            "nat": {
+                "conntrack-inactivity-timeout": "600",
+                "netmask": "255.255.0.0",
+                "laddr": "172.31.0.1",
+                "conntrack-table-size": "1024",
+                "mtu": "1500",
+                "nr-ip-to-fqdn-table-size": "1024",
+                "ip-to-fqdn-table-size": "32768",
+                "conntrack-table-max-count": "1024",
+                "raddr": "172.31.0.2",
+                "log-level": "DEBUG"
+            },
+            "categorization": {
+                "categ-cache-timeout": 30,
+                "categ-cache-size": 1000,
+                "service-enabled": 0,
+                "whitelist-size": 10000,
+                "categ-request-timeout": 750,
+                "alertpage_server": "%IP%:8000",
+                "scanned-conns-stats": {
+                    "slide-wnd-length": 86400,
+                    "enabled": 1,
+                    "slide-wnd-precision": 3600,
+                    "slide-wnd-file": "scanned_stats"
+                }
+            }
+        }
+    },
+    "extension_dnsAddr": "1.1.1.1",
+    "afvpn": {
+        "err_ring_sz": 256,
+        "netns": "client_ns",
+        "loop": "external"
+    },
+    "sd": {
+        "file": {
+            "server_time_created": 1491423469,
+            "version": "v1"
+        },
+        "session": {
+            "start": {
+                "min_max_start_ips": [1, 2],
+                "min_max_delay_next_section": [2000, 4000]
+            },
+            "continue": {
+                "percent_new_transports_per_file": 50,
+                "min_max_transports": {
+                    "min": [1, 2, 4, 4, 4],
+                    "max": [7, 9, 6, 7, 10]
+                },
+                "fuzz": 10
+            }
+        },
+        "SNIs": {
+            "default": ["taobao.com", "mozilla.org", "emirates.com", "emiratesnbd.com", "haraj.com.sa", "get.adobe.com", "sabq.org", "imgur.com", "blogspot.com"],
+            "social": ["twitter.com", "facebook.com"]
+        },
+        "defaults": {
+            "random_server": 1
+        },
+        "routes": {
+            "default": {
+                "sections": []
+            }
+        }
+    }
+}

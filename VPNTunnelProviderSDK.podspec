@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'VPNTunnelProviderSDK'
-  spec.version      = '3.1.9'
+  spec.version      = '3.2.0'
   spec.license      = { :type => 'BSD' }
   spec.homepage     = 'https://github.com/AnchorFreePartner/hydrasdk-demo-ios'
   spec.authors      = { 'Dmitry Denyak' => 'dmitrydenyak@gmail.com' }
@@ -16,11 +16,11 @@ Pod::Spec.new do |spec|
 
   spec.ios.deployment_target = '10.0'
   spec.ios.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  spec.ios.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.ios.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'SWIFT_INCLUDE_PATHS' => '${PODS_ROOT}/VPNTunnelProviderSDK/VPNTunnelProviderSDK.xcframework/AdditionalModules/ios/** ${PODS_ROOT}/VPNTunnelProviderSDK/VPNTunnelProviderSDK.xcframework/AdditionalModules/ios-simulator/**' }
 
   spec.osx.deployment_target = '10.12'
   spec.osx.pod_target_xcconfig = { 'EXCLUDED_ARCHS' => 'arm64' }
-  spec.osx.user_target_xcconfig = { 'EXCLUDED_ARCHS' => 'arm64' }
+  spec.osx.user_target_xcconfig = { 'EXCLUDED_ARCHS' => 'arm64', 'SWIFT_INCLUDE_PATHS' => '${PODS_ROOT}/VPNTunnelProviderSDK/VPNTunnelProviderSDK.xcframework/AdditionalModules/macos/** }' }
 
 # Adding tests with a swift dependency is a workaround in order to make pod lib lint work
 # See: https://github.com/CocoaPods/CocoaPods/issues/8649
