@@ -99,6 +99,7 @@
 		B9621BE41F74442100B3AAFA /* PacketTunnelProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProviderDelegate.swift; sourceTree = "<group>"; };
 		B9621BE61F74442100B3AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9621BE71F74442100B3AAFA /* neprovider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = neprovider.entitlements; sourceTree = "<group>"; };
+		E10FDEDD264BCF8300A3EC7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E11B329722E66A00003B324D /* CategorizationProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorizationProcessor.swift; sourceTree = "<group>"; };
 		E11B329A22E66A27003B324D /* CategorizationActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorizationActions.swift; sourceTree = "<group>"; };
 		E11B329D22E66A5B003B324D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -138,6 +139,7 @@
 		B92460B01F7464BC0007DE4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E10FDEDD264BCF8300A3EC7C /* Foundation.framework */,
 				E1AEF5B625B5F06900918642 /* VPNTunnelProviderSDK.xcframework */,
 				E1AEF5B225B5F06300918642 /* VPNApplicationSDK.xcframework */,
 				E16E10B8252330FE00CE73B8 /* libresolv.tbd */,
@@ -523,9 +525,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/VPNApplicationSDK.xcframework/AdditionalModules/**";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -550,9 +552,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/VPNApplicationSDK.xcframework/AdditionalModules/**";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -580,6 +582,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp.neprovider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/VPNTunnelProviderSDK.xcframework/AdditionalModules/**";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -607,6 +610,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.anchorfree.HydraTestApp.neprovider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/VPNTunnelProviderSDK.xcframework/AdditionalModules/**";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
