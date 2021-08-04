@@ -62,71 +62,67 @@
 		</data>
 		<key>Headers/VPNTunnelProviderSDK-Swift.h</key>
 		<data>
-		VNWUVvwBIy1eDfSh//scnkILeeU=
+		NP7CM1bEwk5DasL1IMPFrFjX9WM=
 		</data>
 		<key>Headers/VPNTunnelProviderSDK.h</key>
 		<data>
-		hq4zYAQdH8GpIKC89p9EIKbPV0o=
+		H5eP+hhWSyu+ZWNgJ645yt9DWhc=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		lO4UYV0xR/lJyrHfOjaoGLSOv/o=
+		hc99olgpXnVMVHGZ1aqqMgCjBG4=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		d+G8tCCIh4bBZhimcbdz3Yhbsts=
+		5fggYGEViSaCwS7PiVHJKfgii0E=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		etNXT791QvorowLbB79O1FoC7L0=
+		dPBxLR98fZVsaaivlOtS4CjjqgI=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		3QXlpdLCGtlUApS66CVariER+Ek=
+		+uObGoMBjp5seQWhSIZcLbux+Us=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		d+G8tCCIh4bBZhimcbdz3Yhbsts=
+		5fggYGEViSaCwS7PiVHJKfgii0E=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		etNXT791QvorowLbB79O1FoC7L0=
+		dPBxLR98fZVsaaivlOtS4CjjqgI=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		3QXlpdLCGtlUApS66CVariER+Ek=
+		+uObGoMBjp5seQWhSIZcLbux+Us=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		YCgVAbcv30ce1BCvbpATINuUgJ0=
+		Agj7Tf+T0HDd6sy5tLFfX6LNFh0=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		nVdNOa9c5m9k1i+gNmcnwCO73/w=
+		vRLo5C6Eood6niCEXK9yein1gHk=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		obYJ3WewRD8uH99EFEZx52kjHxk=
+		tb1yl0Gnlq/lBzedZoyttnoK39c=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		YCgVAbcv30ce1BCvbpATINuUgJ0=
+		Agj7Tf+T0HDd6sy5tLFfX6LNFh0=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		nVdNOa9c5m9k1i+gNmcnwCO73/w=
+		vRLo5C6Eood6niCEXK9yein1gHk=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		obYJ3WewRD8uH99EFEZx52kjHxk=
+		tb1yl0Gnlq/lBzedZoyttnoK39c=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		qLlVMoG+CR+TkfLQhjzfD9tNWn0=
-		</data>
-		<key>strip-frameworks.sh</key>
-		<data>
-		RkekhAREbYk0Uzfte8IdEjOiUpU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -289,154 +285,154 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VNWUVvwBIy1eDfSh//scnkILeeU=
+			NP7CM1bEwk5DasL1IMPFrFjX9WM=
 			</data>
 			<key>hash2</key>
 			<data>
-			EYh87F+/wlc45HmglZ/cSGjzNwueheWjyle2q+jdtmM=
+			3bxIGEY6OwgFTBXDxNI8O0o3efAwPRxju8ymKs2Bcvw=
 			</data>
 		</dict>
 		<key>Headers/VPNTunnelProviderSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hq4zYAQdH8GpIKC89p9EIKbPV0o=
+			H5eP+hhWSyu+ZWNgJ645yt9DWhc=
 			</data>
 			<key>hash2</key>
 			<data>
-			4Jskh+z0UCodepFP5uRRvsliI+MCl1BPOsEC4OG+QRY=
+			uAe/DCFV4dDMVTz76bDr3S3nx1Hczz7EoiLxo7INgj0=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			d+G8tCCIh4bBZhimcbdz3Yhbsts=
+			5fggYGEViSaCwS7PiVHJKfgii0E=
 			</data>
 			<key>hash2</key>
 			<data>
-			f6OFdIl+aWrmHzOFrZIrSfn8Ad6aL4cyeL6w9UOGgrk=
+			YeTntyHoLqkJCHc9HqP3XJpwpTvl1hDQv5rMvZbpn4s=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			etNXT791QvorowLbB79O1FoC7L0=
+			dPBxLR98fZVsaaivlOtS4CjjqgI=
 			</data>
 			<key>hash2</key>
 			<data>
-			L+WinA4+n8T3t27w5vkRRUJCRSoZZhP1x3XMwDuXYYM=
+			/dDh9ji1GSuKy/frnNt4UER3/ecc+04CNEy7HVgya3s=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3QXlpdLCGtlUApS66CVariER+Ek=
+			+uObGoMBjp5seQWhSIZcLbux+Us=
 			</data>
 			<key>hash2</key>
 			<data>
-			OWlziJH2qB/LOD3KBHke0+P38KDjspQ5D+T0BcJ6aLo=
+			xme/NsjXU+cWfmBzkbR4HHc51iVIcpDBLFS4CeF4Vc4=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			d+G8tCCIh4bBZhimcbdz3Yhbsts=
+			5fggYGEViSaCwS7PiVHJKfgii0E=
 			</data>
 			<key>hash2</key>
 			<data>
-			f6OFdIl+aWrmHzOFrZIrSfn8Ad6aL4cyeL6w9UOGgrk=
+			YeTntyHoLqkJCHc9HqP3XJpwpTvl1hDQv5rMvZbpn4s=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			etNXT791QvorowLbB79O1FoC7L0=
+			dPBxLR98fZVsaaivlOtS4CjjqgI=
 			</data>
 			<key>hash2</key>
 			<data>
-			L+WinA4+n8T3t27w5vkRRUJCRSoZZhP1x3XMwDuXYYM=
+			/dDh9ji1GSuKy/frnNt4UER3/ecc+04CNEy7HVgya3s=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3QXlpdLCGtlUApS66CVariER+Ek=
+			+uObGoMBjp5seQWhSIZcLbux+Us=
 			</data>
 			<key>hash2</key>
 			<data>
-			OWlziJH2qB/LOD3KBHke0+P38KDjspQ5D+T0BcJ6aLo=
+			xme/NsjXU+cWfmBzkbR4HHc51iVIcpDBLFS4CeF4Vc4=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YCgVAbcv30ce1BCvbpATINuUgJ0=
+			Agj7Tf+T0HDd6sy5tLFfX6LNFh0=
 			</data>
 			<key>hash2</key>
 			<data>
-			bguEvofXlYKaXftGwek7943fEkUJ3ciJj5VRfPEvV+g=
+			kfcMB/tAdBe5nrkY4Wq+XEn+9xuPymDXYRtSCW3MpRI=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nVdNOa9c5m9k1i+gNmcnwCO73/w=
+			vRLo5C6Eood6niCEXK9yein1gHk=
 			</data>
 			<key>hash2</key>
 			<data>
-			Bm8tHd0ImuTgLfrLX3zgHUnOWvzCaSCJ+gEgYtW4WII=
+			jIIG/XTxR8Pv6TW1RCQdaZi2Vnm/wqizReGZc5PySGc=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			obYJ3WewRD8uH99EFEZx52kjHxk=
+			tb1yl0Gnlq/lBzedZoyttnoK39c=
 			</data>
 			<key>hash2</key>
 			<data>
-			vyUGK2a2CzXvFnAVQuLNFQMfXt3CVQSORS6MzcRcFjY=
+			mmTEK7ltha8tL+oSaaRFm5Dyj8NKdFz3uLyeIQLT894=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YCgVAbcv30ce1BCvbpATINuUgJ0=
+			Agj7Tf+T0HDd6sy5tLFfX6LNFh0=
 			</data>
 			<key>hash2</key>
 			<data>
-			bguEvofXlYKaXftGwek7943fEkUJ3ciJj5VRfPEvV+g=
+			kfcMB/tAdBe5nrkY4Wq+XEn+9xuPymDXYRtSCW3MpRI=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nVdNOa9c5m9k1i+gNmcnwCO73/w=
+			vRLo5C6Eood6niCEXK9yein1gHk=
 			</data>
 			<key>hash2</key>
 			<data>
-			Bm8tHd0ImuTgLfrLX3zgHUnOWvzCaSCJ+gEgYtW4WII=
+			jIIG/XTxR8Pv6TW1RCQdaZi2Vnm/wqizReGZc5PySGc=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			obYJ3WewRD8uH99EFEZx52kjHxk=
+			tb1yl0Gnlq/lBzedZoyttnoK39c=
 			</data>
 			<key>hash2</key>
 			<data>
-			vyUGK2a2CzXvFnAVQuLNFQMfXt3CVQSORS6MzcRcFjY=
+			mmTEK7ltha8tL+oSaaRFm5Dyj8NKdFz3uLyeIQLT894=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -448,17 +444,6 @@
 			<key>hash2</key>
 			<data>
 			fktGy+kp2/oUgxrTValZt318UaDFL2lSyqx4Se2T9Hc=
-			</data>
-		</dict>
-		<key>strip-frameworks.sh</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			RkekhAREbYk0Uzfte8IdEjOiUpU=
-			</data>
-			<key>hash2</key>
-			<data>
-			U2NLNUfSubHQ9xH51SOpJyMApwBLADdXnaLWp4/wnrM=
 			</data>
 		</dict>
 	</dict>

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target x86_64-apple-macos10.12 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VPNApplicationSDK
 import SystemConfiguration.CaptiveNetwork
 import Cocoa
@@ -39,8 +39,8 @@ public struct VirtualLocation : Swift.Codable, Swift.Equatable {
   }
   @objc public static func locationWith(code: Swift.String) -> VPNApplicationSDK.AFVirtualLocation
   @objc public static func optimal() -> VPNApplicationSDK.AFVirtualLocation
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public struct TrafficCounters : Swift.Decodable {
   public let received: Swift.UInt64
@@ -54,8 +54,8 @@ public struct TrafficCounters : Swift.Decodable {
   @objc public var transmitted: Swift.UInt64 {
     @objc get
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public enum PartnerAPI {
 }
@@ -83,10 +83,10 @@ extension FireshieldCategory : Swift.Decodable {
 }
 extension FireshieldCategory.CategoryType : Swift.Hashable {
   public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: VPNApplicationSDK.FireshieldCategory.CategoryType, b: VPNApplicationSDK.FireshieldCategory.CategoryType) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
-  public static func == (a: VPNApplicationSDK.FireshieldCategory.CategoryType, b: VPNApplicationSDK.FireshieldCategory.CategoryType) -> Swift.Bool
 }
 @_hasMissingDesignatedInitializers @objc public class AFCategoryType : ObjectiveC.NSObject {
   @objc public static var safe: VPNApplicationSDK.AFCategoryType {
@@ -100,14 +100,14 @@ extension FireshieldCategory.CategoryType : Swift.Hashable {
   }
   @objc public init(custom: Swift.String)
   @objc public init(unsafeCustom: Swift.String)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class AFFireshieldCategory : ObjectiveC.NSObject {
   @objc public enum Action : Swift.Int {
     case proxy, bypass, block, alert
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -117,19 +117,19 @@ extension FireshieldCategory.CategoryType : Swift.Hashable {
   @objc public static func bypass(category: VPNApplicationSDK.AFCategoryType) -> VPNApplicationSDK.AFFireshieldCategory
   @objc public static func alert(category: VPNApplicationSDK.AFCategoryType) -> VPNApplicationSDK.AFFireshieldCategory
   @objc public static func categoryName(from category: VPNApplicationSDK.AFCategoryType) -> Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public struct FireshieldRemoteConfig : Swift.Decodable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct ServerNode : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct ServerCredentials : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @objc public enum VPNSDKError : Swift.Int, Swift.Error {
   case emptyToken
@@ -140,12 +140,12 @@ public struct ServerCredentials : Swift.Codable {
   case logoutWhileConnected
   case notPermitted
   case configurationMismatch
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
-  public var rawValue: Swift.Int {
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
     get
   }
-  public static var _nsErrorDomain: Swift.String {
+  public var rawValue: Swift.Int {
     get
   }
 }
@@ -176,8 +176,8 @@ public typealias ScannedConnectionsCompletion = (Swift.Error?, Swift.UInt?) -> S
   case notAuthorized = 112
   case badRequest = 113
   case failedResult = 114
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -212,10 +212,10 @@ extension AFHydraConfiguration {
 public enum HydraError : Swift.Error {
   case notConfigured
   public static func == (a: VPNApplicationSDK.HydraError, b: VPNApplicationSDK.HydraError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public struct RemoteConfig : Swift.Decodable {
   public let isOptimalLocationDisabled: Swift.Bool
@@ -244,8 +244,8 @@ public struct RemoteConfig : Swift.Decodable {
   @objc required public init?(coder aDecoder: Foundation.NSCoder)
   @objc public func encode(with aCoder: Foundation.NSCoder)
   @objc public func supportEmails() -> [Swift.String]
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension Bool {
   public var intValue: Swift.Int {
@@ -280,8 +280,8 @@ extension RemainingTraffic : Swift.Decodable {
   }
   @objc required public init?(coder aDecoder: Foundation.NSCoder)
   @objc public func encode(with aCoder: Foundation.NSCoder)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public class HydraSDK : ObjectiveC.NSObject {
   public var configuration: VPNApplicationSDK.HydraConfiguration {
@@ -373,8 +373,8 @@ extension RemainingTraffic : Swift.Decodable {
   @objc(scannedConnections:) public func requestScannedConnections(completion: @escaping (Swift.Error?, Swift.UInt) -> Swift.Void)
   public func update(configuration: VPNApplicationSDK.HydraConfiguration) throws
   @objc public func update(configuration: VPNApplicationSDK.HydraSDKConfiguration) throws
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension NSNotification.Name {
   public static let HydraCategorizationDidChange: Foundation.Notification.Name
@@ -406,8 +406,8 @@ public struct Purchase {
     case sophos
     case bitdefender
     case ip
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
     }
@@ -418,23 +418,23 @@ public struct Purchase {
     case silent
     case vpn
     public static func == (a: VPNApplicationSDK.FireshieldConfig.Mode, b: VPNApplicationSDK.FireshieldConfig.Mode) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   @objc public enum FireshieldMode : Swift.Int {
     case disabled, enabled, silent, vpn
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
   }
   @objc public enum FireshieldService : Swift.Int {
     case sophos, bitdefender, ip
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -451,8 +451,8 @@ public struct Purchase {
   @objc(addCategory:) public func add(fireshieldCategory: VPNApplicationSDK.AFFireshieldCategory)
   public func add(rule: VPNApplicationSDK.FireshieldRule)
   @objc(addRule:) public func add(fireshieldRule: VPNApplicationSDK.AFFireshieldRule)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public enum AuthMethodType : Swift.RawRepresentable {
   public typealias RawValue = Swift.String
@@ -471,8 +471,8 @@ public enum AuthMethodType : Swift.RawRepresentable {
 }
 @objc public enum AFAuthMethodType : Swift.Int {
   case anonymous, oauth, facebook, google, twitter, github, firebase
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -490,8 +490,8 @@ public struct AuthMethod {
   @objc public static func github(token: Swift.String?) -> VPNApplicationSDK.AFAuthMethod
   @objc public static func firebase(token: Swift.String?) -> VPNApplicationSDK.AFAuthMethod
   @objc public static func custom(methodName: Swift.String, token: Swift.String?) -> VPNApplicationSDK.AFAuthMethod
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class AFClientNetworkList : ObjectiveC.NSObject {
   @objc public var configurations: [VPNApplicationSDK.AFClientNetworkConfiguration] {
@@ -504,8 +504,8 @@ public struct AuthMethod {
 @_hasMissingDesignatedInitializers @objc public class AFClientNetworkConfiguration : ObjectiveC.NSObject {
   @objc public enum AFClientNetworkConfigurationAction : Swift.Int {
     case enable, disable, empty
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -522,8 +522,8 @@ public struct AuthMethod {
   @objc public var bssid: [Swift.String]? {
     @objc get
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public struct ClientNetworkList : Swift.Encodable {
   public var configurations: [VPNApplicationSDK.ClientNetworkConfiguration]
@@ -536,8 +536,8 @@ public struct ClientNetworkConfiguration : Swift.Codable {
     case enable
     case disable
     case empty
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
     }
@@ -546,8 +546,8 @@ public struct ClientNetworkConfiguration : Swift.Codable {
     case wwan
     case lan
     case wifi
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
     }
@@ -640,8 +640,8 @@ public struct SubscriberPurchase : Swift.Codable {
   public let type: Swift.String
   public let time: Foundation.Date
   public let isActive: Swift.Bool
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct Subscriber : Swift.Codable {
   public let subscriberID: Swift.Int
@@ -663,15 +663,15 @@ public struct Bundle : Swift.Codable {
   public let devicesLimit: Swift.Int
   public let sessionsLimit: Swift.Int
   public init(licenseName: Swift.String, bundleID: Swift.Int, devicesLimit: Swift.Int, sessionsLimit: Swift.Int)
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct User : Swift.Codable {
   public let accessToken: Swift.String?
   public let subscriber: VPNApplicationSDK.Subscriber
   public init(accessToken: Swift.String?, subscriber: VPNApplicationSDK.Subscriber)
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc public class AFBundle : ObjectiveC.NSObject, Foundation.NSCoding {
   @objc public var licenseName: Swift.String {
@@ -688,8 +688,8 @@ public struct User : Swift.Codable {
   }
   @objc required public init?(coder aDecoder: Foundation.NSCoder)
   @objc public func encode(with aCoder: Foundation.NSCoder)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class AFSubscriber : ObjectiveC.NSObject, Foundation.NSCoding {
   @objc public var subscriberID: Swift.Int {
@@ -721,8 +721,8 @@ public struct User : Swift.Codable {
   }
   @objc required public init?(coder aDecoder: Foundation.NSCoder)
   @objc public func encode(with aCoder: Foundation.NSCoder)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class AFUser : ObjectiveC.NSObject, Foundation.NSCoding {
   @objc public var accessToken: Swift.String? {
@@ -751,8 +751,8 @@ public struct User : Swift.Codable {
   }
   @objc required public init?(coder aDecoder: Foundation.NSCoder)
   @objc public func encode(with aCoder: Foundation.NSCoder)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public struct FireshieldRule {
   public let filePath: Swift.String
@@ -762,8 +762,8 @@ public struct FireshieldRule {
 }
 @_hasMissingDesignatedInitializers @objc public class AFFireshieldRule : ObjectiveC.NSObject {
   @objc public static func rule(withFileName fileName: Swift.String, category: VPNApplicationSDK.AFCategoryType) throws -> VPNApplicationSDK.AFFireshieldRule
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public enum VPNState : Swift.Int {
   case invalid
@@ -772,8 +772,8 @@ public struct FireshieldRule {
   case disconnecting
   case disconnected
   case idle
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }

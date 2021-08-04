@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VPNTunnelProviderSDK
 import SystemConfiguration.CaptiveNetwork
 import Foundation
@@ -10,8 +10,8 @@ import UIKit
 @_exported import VPNTunnelProviderSDK
 @_hasMissingDesignatedInitializers @objc public class StartupOptions : ObjectiveC.NSObject {
   @objc final public let isBypassEnabled: Swift.Bool
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public enum PartnerAPI {
 }
@@ -33,12 +33,12 @@ extension PartnerAPI {
   }
 }
 public struct ServerNode : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct ServerCredentials : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct FireshieldCategory {
   public enum CategoryType {
@@ -58,10 +58,10 @@ extension FireshieldCategory : Swift.Decodable {
 }
 extension FireshieldCategory.CategoryType : Swift.Hashable {
   public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: VPNTunnelProviderSDK.FireshieldCategory.CategoryType, b: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
-  public static func == (a: VPNTunnelProviderSDK.FireshieldCategory.CategoryType, b: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) -> Swift.Bool
 }
 @_hasMissingDesignatedInitializers @objc public class AFCategoryType : ObjectiveC.NSObject {
   @objc public static var safe: VPNTunnelProviderSDK.AFCategoryType {
@@ -75,14 +75,14 @@ extension FireshieldCategory.CategoryType : Swift.Hashable {
   }
   @objc public init(custom: Swift.String)
   @objc public init(unsafeCustom: Swift.String)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class AFFireshieldCategory : ObjectiveC.NSObject {
   @objc public enum Action : Swift.Int {
     case proxy, bypass, block, alert
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -92,8 +92,8 @@ extension FireshieldCategory.CategoryType : Swift.Hashable {
   @objc public static func bypass(category: VPNTunnelProviderSDK.AFCategoryType) -> VPNTunnelProviderSDK.AFFireshieldCategory
   @objc public static func alert(category: VPNTunnelProviderSDK.AFCategoryType) -> VPNTunnelProviderSDK.AFFireshieldCategory
   @objc public static func categoryName(from category: VPNTunnelProviderSDK.AFCategoryType) -> Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class AFClientNetworkList : ObjectiveC.NSObject {
   @objc public var configurations: [VPNTunnelProviderSDK.AFClientNetworkConfiguration] {
@@ -106,8 +106,8 @@ extension FireshieldCategory.CategoryType : Swift.Hashable {
 @_hasMissingDesignatedInitializers @objc public class AFClientNetworkConfiguration : ObjectiveC.NSObject {
   @objc public enum AFClientNetworkConfigurationAction : Swift.Int {
     case enable, disable, empty
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -124,8 +124,8 @@ extension FireshieldCategory.CategoryType : Swift.Hashable {
   @objc public var bssid: [Swift.String]? {
     @objc get
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public struct ClientNetworkList : Swift.Encodable {
   public var configurations: [VPNTunnelProviderSDK.ClientNetworkConfiguration]
@@ -138,8 +138,8 @@ public struct ClientNetworkConfiguration : Swift.Codable {
     case enable
     case disable
     case empty
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
     }
@@ -148,8 +148,8 @@ public struct ClientNetworkConfiguration : Swift.Codable {
     case wwan
     case lan
     case wifi
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
     }

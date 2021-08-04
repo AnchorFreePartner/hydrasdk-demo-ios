@@ -62,47 +62,43 @@
 		</data>
 		<key>Headers/VPNTunnelProviderSDK-Swift.h</key>
 		<data>
-		R5zGkfOR2FqhmHHpTTOCI/uKbps=
+		ADDqkPmB0xZgz4GKeSfEHGADeHA=
 		</data>
 		<key>Headers/VPNTunnelProviderSDK.h</key>
 		<data>
-		hq4zYAQdH8GpIKC89p9EIKbPV0o=
+		H5eP+hhWSyu+ZWNgJ645yt9DWhc=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		bEYC38KfKK5G1LespZYRCLxRxxQ=
+		aJGxuwVm5+cRX45patZEI8G4AA4=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		rArv0KahgTpCAgzoiRImtUaKFx0=
+		nVoPPFLyOr0VhS/W3C/WB11TLqA=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		BZq/U9oKkH91p5NmfPqBO7Hgrx0=
+		YUQITNqVN/6t6gfRXRk81JVsmhE=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		lzC/0nl/S5Qmt6AxDxIAgB+6leY=
+		rdp0yg5x9UT22YDRYNwzfLE9EN8=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		rArv0KahgTpCAgzoiRImtUaKFx0=
+		nVoPPFLyOr0VhS/W3C/WB11TLqA=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		BZq/U9oKkH91p5NmfPqBO7Hgrx0=
+		YUQITNqVN/6t6gfRXRk81JVsmhE=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		lzC/0nl/S5Qmt6AxDxIAgB+6leY=
+		rdp0yg5x9UT22YDRYNwzfLE9EN8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		qLlVMoG+CR+TkfLQhjzfD9tNWn0=
-		</data>
-		<key>strip-frameworks.sh</key>
-		<data>
-		RkekhAREbYk0Uzfte8IdEjOiUpU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -265,88 +261,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			R5zGkfOR2FqhmHHpTTOCI/uKbps=
+			ADDqkPmB0xZgz4GKeSfEHGADeHA=
 			</data>
 			<key>hash2</key>
 			<data>
-			+cR7i9eH19y1qKbKTbw59pumdbokhMbnQcOA749o9mk=
+			leMZa+Nu/RBR/YdfhTPg7t1J/ce5DdVVSNVx6s6rQHM=
 			</data>
 		</dict>
 		<key>Headers/VPNTunnelProviderSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hq4zYAQdH8GpIKC89p9EIKbPV0o=
+			H5eP+hhWSyu+ZWNgJ645yt9DWhc=
 			</data>
 			<key>hash2</key>
 			<data>
-			4Jskh+z0UCodepFP5uRRvsliI+MCl1BPOsEC4OG+QRY=
+			uAe/DCFV4dDMVTz76bDr3S3nx1Hczz7EoiLxo7INgj0=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rArv0KahgTpCAgzoiRImtUaKFx0=
+			nVoPPFLyOr0VhS/W3C/WB11TLqA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ND6mk3CyRjQAKYo/ReTVR/yTa+iiUBoAaysRvZdOgnA=
+			KR0wcqgd3BH+lBsyXSOL7xTtx0Tgf7Mh0KvM74L39ug=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BZq/U9oKkH91p5NmfPqBO7Hgrx0=
+			YUQITNqVN/6t6gfRXRk81JVsmhE=
 			</data>
 			<key>hash2</key>
 			<data>
-			PyjKY/8T+z9HB1xrzrVI3L53j3PyJzQk8du9cghWrlI=
+			qxr+rj8vNgNiy9ElofBUp72MGjwzNVx0YqMsOU3Xl1k=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lzC/0nl/S5Qmt6AxDxIAgB+6leY=
+			rdp0yg5x9UT22YDRYNwzfLE9EN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			3q+nnyQ3V2o8tUIkY7RDSnLxaw36svhPOk3O+7y96w8=
+			J3tKVbSiNkFaIF8141TU85psXCgIORYtS6wFxt0UpA4=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rArv0KahgTpCAgzoiRImtUaKFx0=
+			nVoPPFLyOr0VhS/W3C/WB11TLqA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ND6mk3CyRjQAKYo/ReTVR/yTa+iiUBoAaysRvZdOgnA=
+			KR0wcqgd3BH+lBsyXSOL7xTtx0Tgf7Mh0KvM74L39ug=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BZq/U9oKkH91p5NmfPqBO7Hgrx0=
+			YUQITNqVN/6t6gfRXRk81JVsmhE=
 			</data>
 			<key>hash2</key>
 			<data>
-			PyjKY/8T+z9HB1xrzrVI3L53j3PyJzQk8du9cghWrlI=
+			qxr+rj8vNgNiy9ElofBUp72MGjwzNVx0YqMsOU3Xl1k=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lzC/0nl/S5Qmt6AxDxIAgB+6leY=
+			rdp0yg5x9UT22YDRYNwzfLE9EN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			3q+nnyQ3V2o8tUIkY7RDSnLxaw36svhPOk3O+7y96w8=
+			J3tKVbSiNkFaIF8141TU85psXCgIORYtS6wFxt0UpA4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -358,17 +354,6 @@
 			<key>hash2</key>
 			<data>
 			fktGy+kp2/oUgxrTValZt318UaDFL2lSyqx4Se2T9Hc=
-			</data>
-		</dict>
-		<key>strip-frameworks.sh</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			RkekhAREbYk0Uzfte8IdEjOiUpU=
-			</data>
-			<key>hash2</key>
-			<data>
-			U2NLNUfSubHQ9xH51SOpJyMApwBLADdXnaLWp4/wnrM=
 			</data>
 		</dict>
 	</dict>
