@@ -14,17 +14,8 @@ FOUNDATION_EXPORT double VPNTunnelProviderSDKVersionNumber;
 //! Project version string for VPNTunnelProviderSDK.
 FOUNDATION_EXPORT const unsigned char VPNTunnelProviderSDKVersionString[];
 
-static NSString *const _Nonnull AFTunnelProviderVersion = @"3.2.1";
+static NSString *const _Nonnull AFTunnelProviderVersion = @"4.0.0";
 
 // In this header, you should import all the public headers of your framework using statements like #import <VPNTunnelProviderSDK/PublicHeader.h>
 
-#import "AFHydraConfiguration.h"
-#import "AFHydraCategorization.h"
-#import "AFHydraTunnelProviderDelegate.h"
-#import "AFHydraTunnelProviderInfo.h"
-#import "AFHydraTunnelProviderConstants.h"
-#import "AFNetworkExtensionDelegate.h"
-#import "AFHydraNetworkInfo.h"
-#import "AFResolver.h"
-#import "AFFireshieldController.h"
-#import "AFHydraDataCounter.h"
+static NSString *const _Nonnull AFTunnelErrorDomain = @"VPNSDK.TunnelError";

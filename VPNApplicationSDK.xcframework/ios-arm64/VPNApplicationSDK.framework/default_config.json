@@ -84,6 +84,7 @@
         },
         "viper": {
             "dns-proxy": {
+                "disable-nr-ip": 1,
                 "port": "1053",
                 "session-table-inactivity-timeout-udp": "30",
                 "io-timeout": "15",

@@ -4,97 +4,65 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/AFHydraCategorization.h</key>
-		<data>
-		BllNTvlvygBJz6r335kGWNHJrcc=
-		</data>
-		<key>Headers/AFHydraConfiguration.h</key>
-		<data>
-		3Q9YC67TXfSXbLYgmcfpONB8mNs=
-		</data>
-		<key>Headers/AFHydraDataCounter.h</key>
-		<data>
-		yhfjkSUFV2wNRwaq6NRG1Nwu1Ds=
-		</data>
-		<key>Headers/AFHydraNetworkInfo.h</key>
-		<data>
-		ELHyCGzrnInKacagf2wfehnUeJw=
-		</data>
-		<key>Headers/AFHydraSDK.h</key>
-		<data>
-		DIP0HtM2q8oGjEFfg9FK7As5NPY=
-		</data>
-		<key>Headers/AFHydraTunnelProviderConstants.h</key>
-		<data>
-		fodoLMukSqD4Je3uqh1NK2Uy5bw=
-		</data>
-		<key>Headers/AFHydraVPNManager.h</key>
-		<data>
-		GMNu//4K8S7d4aKl7OOe9yLlx0Q=
-		</data>
-		<key>Headers/AFResolver.h</key>
-		<data>
-		w53V2Y+2Lzhut+2+vMu4O8QZAU8=
-		</data>
 		<key>Headers/VPNApplicationSDK-iOS-Swift.h</key>
 		<data>
-		a4uhRFIL8Gn1TTfCewGpePQ2Mh8=
+		kiqhJ+3BTy9Eq1xSfpJoRh/LLTQ=
 		</data>
 		<key>Headers/VPNApplicationSDK.h</key>
 		<data>
-		lF9I5wlf9Aa8Rb7xajDhmmpvXPo=
+		v0udIq2eGBCbI4D6C+GAUdGlGJQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Hi+RiSZvPLtdtMv4J5NdOs8FM+E=
+		j5ZMTomlcHxlKJ/IBMTrpuyOUs4=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Mb/NeSVGaL8o27+gKKXFwQvb5NE=
+		U4c3d6NUJshfAa93UR2yDgeW0c4=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		6nHSJ8WjHtpP7qIfbDryh06+yoE=
+		9qZL/sJ+EVRtruQaYfawQQdi3JM=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		aUeasQb3Ut8nL2CdIsdfbF7AVNc=
+		esEcbDWC0Z6Y8t5gwJtFysQR4ko=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		Mb/NeSVGaL8o27+gKKXFwQvb5NE=
+		U4c3d6NUJshfAa93UR2yDgeW0c4=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		6nHSJ8WjHtpP7qIfbDryh06+yoE=
+		9qZL/sJ+EVRtruQaYfawQQdi3JM=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		aUeasQb3Ut8nL2CdIsdfbF7AVNc=
+		esEcbDWC0Z6Y8t5gwJtFysQR4ko=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		wCut48w2sjP/2wmEPj3/IXmhVKA=
+		FbkPTib1fXl8q23I+RyvGa8mNqM=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		1KAK/bEB8fjH/SDctzi+yYRLeEM=
+		HWZXnAmIAQaQp/FdZtZcAPxmfXg=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		pKFDNfPFDr/XORrN5vTHBjS1mOY=
+		RpHtfwPEP2k/NZ6DzdTNyYla/tw=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		wCut48w2sjP/2wmEPj3/IXmhVKA=
+		FbkPTib1fXl8q23I+RyvGa8mNqM=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		1KAK/bEB8fjH/SDctzi+yYRLeEM=
+		HWZXnAmIAQaQp/FdZtZcAPxmfXg=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		pKFDNfPFDr/XORrN5vTHBjS1mOY=
+		RpHtfwPEP2k/NZ6DzdTNyYla/tw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -102,163 +70,107 @@
 		</data>
 		<key>default_config.json</key>
 		<data>
-		TiklF6wL3JC4ZBvnCrcq4yw77SM=
+		9rZ1fqMw78Se4JGvvEefUUzDYlk=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/AFHydraCategorization.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			SCFJVsbXDe3anFSFfuDJUb3Fgb1V4+g1RGEhgnOXKFE=
-			</data>
-		</dict>
-		<key>Headers/AFHydraConfiguration.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			RZoTdpbFPnBS1Rn6CiFglm2ahMx9UFC8MYC9BkCb+UM=
-			</data>
-		</dict>
-		<key>Headers/AFHydraDataCounter.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Rz3GhRt6gtX9RaPpZRTgL69ILZCnoQrWrfLLHPDPxRo=
-			</data>
-		</dict>
-		<key>Headers/AFHydraNetworkInfo.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			8rWSLhlC90Uj/qQ3zef3zOa+6mITYJaDO4OuZxBrNLI=
-			</data>
-		</dict>
-		<key>Headers/AFHydraSDK.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			dxDUyvXaCh8bkANILMyW0vV9/H0KJ4gk+LaX8EVEWCw=
-			</data>
-		</dict>
-		<key>Headers/AFHydraTunnelProviderConstants.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			x0+F5dfBj/7a3N6SDDRkCmdaedP+7Ac2bSEDLqXUUW0=
-			</data>
-		</dict>
-		<key>Headers/AFHydraVPNManager.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			tcqlXdt3rdwIocFn0GLJKZ4VCjHVSGj3jDJsh1ILv90=
-			</data>
-		</dict>
-		<key>Headers/AFResolver.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			lbxNgEI2vnSrhSHokG9a5bgeTzw1kSRLKw8dT3mJTEE=
-			</data>
-		</dict>
 		<key>Headers/VPNApplicationSDK-iOS-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iaxdJCTIhF3XyjOK2e6SxL1XDxzTM3kzw+cK75IQawo=
+			WHxxXNhjHo3hwYmujSYzbvJ97wGLIoBDyKFsVTlxwDU=
 			</data>
 		</dict>
 		<key>Headers/VPNApplicationSDK.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			taZ+6DsKQEItimm5kMYdQzyuENU6mAmgZuCA67zQM80=
+			HHxIhPhCgfOKoZEt12fjj1n5OlGsNv702OigwBlLU5c=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2kiP99onD3rGpkQCjbBG5Gdco9zPUvM+dzx9IivuyjI=
+			xeNZzaR0KKt4s3rHjEURxxQEZX+jXWDGHxSz9ytrHR0=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2xPOyA6gH76ukzbXusdkEAiYh52Coya+RrzjjiUecgo=
+			HT8or3aPOTDED+Cvjbr9v8MbK9z3z3a+eaKqFQUiZdg=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IJpkgs4U5D+irNd7roZhVGjRBzHCptxRMRe+3xx0ksw=
+			yV0B8tcnupyJbyp1Pjk8cwTGi6GAP1Owjbi7M6SYgT0=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2kiP99onD3rGpkQCjbBG5Gdco9zPUvM+dzx9IivuyjI=
+			xeNZzaR0KKt4s3rHjEURxxQEZX+jXWDGHxSz9ytrHR0=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2xPOyA6gH76ukzbXusdkEAiYh52Coya+RrzjjiUecgo=
+			HT8or3aPOTDED+Cvjbr9v8MbK9z3z3a+eaKqFQUiZdg=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IJpkgs4U5D+irNd7roZhVGjRBzHCptxRMRe+3xx0ksw=
+			yV0B8tcnupyJbyp1Pjk8cwTGi6GAP1Owjbi7M6SYgT0=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B9VmhBxUZosmOG016wIYHvYbZs1srb3Kb6uOTAFzvFM=
+			hprh5UhtVGgyi/AEwi+z9TG72GPONyteyCLN6w158l4=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B+uownpT5pEeHX/atd/pYzu47Ky/rHfmrcYhlJxko0Q=
+			S5zBvH0KDlCU5o6nDdZuEHSPVFwDKvQlYlLZNC4zug4=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xpuR2GqywfA+zxBNTppYw0f9rZXGqE5TkhYoGOihG2Q=
+			uOACXgw/iQZcefHZx7sLPElKyb/EiSWPIUorqumSXt8=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B9VmhBxUZosmOG016wIYHvYbZs1srb3Kb6uOTAFzvFM=
+			hprh5UhtVGgyi/AEwi+z9TG72GPONyteyCLN6w158l4=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B+uownpT5pEeHX/atd/pYzu47Ky/rHfmrcYhlJxko0Q=
+			S5zBvH0KDlCU5o6nDdZuEHSPVFwDKvQlYlLZNC4zug4=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xpuR2GqywfA+zxBNTppYw0f9rZXGqE5TkhYoGOihG2Q=
+			uOACXgw/iQZcefHZx7sLPElKyb/EiSWPIUorqumSXt8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -272,7 +184,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dNZh++RM6kHCN9nC3x6YJ32+UpFfzEk6szsuEi6c/Ac=
+			lH2p912OfRCKjG8PFhZuW5hqxeaMXp91l3RhcyigM4A=
 			</data>
 		</dict>
 	</dict>

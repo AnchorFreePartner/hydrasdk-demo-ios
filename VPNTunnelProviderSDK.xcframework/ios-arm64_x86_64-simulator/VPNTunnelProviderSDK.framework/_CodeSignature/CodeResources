@@ -4,446 +4,236 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/AFFireshieldCategory.h</key>
+		<key>Headers/VPNTunnelProviderSDK-iOS-Swift.h</key>
 		<data>
-		RwGTneg/cNKB24UOVD8W4+VAMcM=
-		</data>
-		<key>Headers/AFFireshieldController.h</key>
-		<data>
-		oJQv2Ln0kgxs+zntItY7R3SyPNE=
-		</data>
-		<key>Headers/AFHydraCategorization.h</key>
-		<data>
-		BllNTvlvygBJz6r335kGWNHJrcc=
-		</data>
-		<key>Headers/AFHydraConfiguration.h</key>
-		<data>
-		3Q9YC67TXfSXbLYgmcfpONB8mNs=
-		</data>
-		<key>Headers/AFHydraDataCounter.h</key>
-		<data>
-		yhfjkSUFV2wNRwaq6NRG1Nwu1Ds=
-		</data>
-		<key>Headers/AFHydraDelegate.h</key>
-		<data>
-		2755HtQQaXH7kxV+mWk6yL1apsM=
-		</data>
-		<key>Headers/AFHydraNetworkInfo.h</key>
-		<data>
-		ELHyCGzrnInKacagf2wfehnUeJw=
-		</data>
-		<key>Headers/AFHydraTunnelProviderConstants.h</key>
-		<data>
-		fodoLMukSqD4Je3uqh1NK2Uy5bw=
-		</data>
-		<key>Headers/AFHydraTunnelProviderDelegate.h</key>
-		<data>
-		6N5z3TtPpDr9s8YE6EidQreqcmM=
-		</data>
-		<key>Headers/AFHydraTunnelProviderFireshieldController.h</key>
-		<data>
-		udbcFXIxbNQzaFmD7F/0FwReSwI=
-		</data>
-		<key>Headers/AFHydraTunnelProviderInfo.h</key>
-		<data>
-		9tWA2r1XKxMZX8xr45eaZ7fxxPM=
-		</data>
-		<key>Headers/AFHydraTunnelProviderSDK.h</key>
-		<data>
-		j639fIUjL9AhdKInvLs2VkbXJaM=
-		</data>
-		<key>Headers/AFNetworkExtensionDelegate.h</key>
-		<data>
-		yhj7TBaccJxaM44qXkcTCWams+4=
-		</data>
-		<key>Headers/AFResolver.h</key>
-		<data>
-		w53V2Y+2Lzhut+2+vMu4O8QZAU8=
-		</data>
-		<key>Headers/VPNTunnelProviderSDK-Swift.h</key>
-		<data>
-		NP7CM1bEwk5DasL1IMPFrFjX9WM=
+		LanKhFgjOrwThPEiGnFcs6CE3fY=
 		</data>
 		<key>Headers/VPNTunnelProviderSDK.h</key>
 		<data>
-		H5eP+hhWSyu+ZWNgJ645yt9DWhc=
+		1O6oZO9wEx+jo51SdLEkmMuS9y8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		hc99olgpXnVMVHGZ1aqqMgCjBG4=
+		Hm6zOk+NkeGns4ceh6eAHcH66/c=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		5fggYGEViSaCwS7PiVHJKfgii0E=
+		FvE6cgaPdBziYWGOd4wGjWur9Jk=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		dPBxLR98fZVsaaivlOtS4CjjqgI=
+		1jJ5ihlX95oJa+mt5BdcU422EdI=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		+uObGoMBjp5seQWhSIZcLbux+Us=
+		ERR/ZVo2nZgq3qJ01GEF0xMppc4=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		5fggYGEViSaCwS7PiVHJKfgii0E=
+		FvE6cgaPdBziYWGOd4wGjWur9Jk=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		dPBxLR98fZVsaaivlOtS4CjjqgI=
+		1jJ5ihlX95oJa+mt5BdcU422EdI=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		+uObGoMBjp5seQWhSIZcLbux+Us=
+		ERR/ZVo2nZgq3qJ01GEF0xMppc4=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Agj7Tf+T0HDd6sy5tLFfX6LNFh0=
+		kTRLhnhMJfQwo2t/P+GnVcfY8J4=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		vRLo5C6Eood6niCEXK9yein1gHk=
+		L/pDA2xwms26HJ0XWgAIDGRn8vo=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		tb1yl0Gnlq/lBzedZoyttnoK39c=
+		VSgrK/Xl7jzHoEQ5WwKGSCc9iOQ=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		Agj7Tf+T0HDd6sy5tLFfX6LNFh0=
+		kTRLhnhMJfQwo2t/P+GnVcfY8J4=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		vRLo5C6Eood6niCEXK9yein1gHk=
+		L/pDA2xwms26HJ0XWgAIDGRn8vo=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		tb1yl0Gnlq/lBzedZoyttnoK39c=
+		VSgrK/Xl7jzHoEQ5WwKGSCc9iOQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		qLlVMoG+CR+TkfLQhjzfD9tNWn0=
+		xTvKHVw/nm2YFLPdUX6EuaEtIA8=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/AFFireshieldCategory.h</key>
+		<key>Headers/VPNTunnelProviderSDK-iOS-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			RwGTneg/cNKB24UOVD8W4+VAMcM=
+			LanKhFgjOrwThPEiGnFcs6CE3fY=
 			</data>
 			<key>hash2</key>
 			<data>
-			+YTaLkQubSBUzG9uaQg0ZZYIJvRG2ADlWX20q7xGVzs=
-			</data>
-		</dict>
-		<key>Headers/AFFireshieldController.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			oJQv2Ln0kgxs+zntItY7R3SyPNE=
-			</data>
-			<key>hash2</key>
-			<data>
-			1Uy4XKIHZVlPGXckLiXfngrBGCTocxGENJLoXiXJ7U0=
-			</data>
-		</dict>
-		<key>Headers/AFHydraCategorization.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			BllNTvlvygBJz6r335kGWNHJrcc=
-			</data>
-			<key>hash2</key>
-			<data>
-			SCFJVsbXDe3anFSFfuDJUb3Fgb1V4+g1RGEhgnOXKFE=
-			</data>
-		</dict>
-		<key>Headers/AFHydraConfiguration.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			3Q9YC67TXfSXbLYgmcfpONB8mNs=
-			</data>
-			<key>hash2</key>
-			<data>
-			RZoTdpbFPnBS1Rn6CiFglm2ahMx9UFC8MYC9BkCb+UM=
-			</data>
-		</dict>
-		<key>Headers/AFHydraDataCounter.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			yhfjkSUFV2wNRwaq6NRG1Nwu1Ds=
-			</data>
-			<key>hash2</key>
-			<data>
-			Rz3GhRt6gtX9RaPpZRTgL69ILZCnoQrWrfLLHPDPxRo=
-			</data>
-		</dict>
-		<key>Headers/AFHydraDelegate.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2755HtQQaXH7kxV+mWk6yL1apsM=
-			</data>
-			<key>hash2</key>
-			<data>
-			9bj4WBNgJh+ohSHmX6VaYZvJfwo212Bn6B1Ur2xHv8I=
-			</data>
-		</dict>
-		<key>Headers/AFHydraNetworkInfo.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ELHyCGzrnInKacagf2wfehnUeJw=
-			</data>
-			<key>hash2</key>
-			<data>
-			8rWSLhlC90Uj/qQ3zef3zOa+6mITYJaDO4OuZxBrNLI=
-			</data>
-		</dict>
-		<key>Headers/AFHydraTunnelProviderConstants.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fodoLMukSqD4Je3uqh1NK2Uy5bw=
-			</data>
-			<key>hash2</key>
-			<data>
-			x0+F5dfBj/7a3N6SDDRkCmdaedP+7Ac2bSEDLqXUUW0=
-			</data>
-		</dict>
-		<key>Headers/AFHydraTunnelProviderDelegate.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			6N5z3TtPpDr9s8YE6EidQreqcmM=
-			</data>
-			<key>hash2</key>
-			<data>
-			nuzBeIkng8Uk4xDLlKNRlq01Aqjwxx3Ad4zOYSzDFAA=
-			</data>
-		</dict>
-		<key>Headers/AFHydraTunnelProviderFireshieldController.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			udbcFXIxbNQzaFmD7F/0FwReSwI=
-			</data>
-			<key>hash2</key>
-			<data>
-			sybd/FCeEeoI+jLkzLsJyG/vE17eLjXvmcj3Ep3qCiw=
-			</data>
-		</dict>
-		<key>Headers/AFHydraTunnelProviderInfo.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			9tWA2r1XKxMZX8xr45eaZ7fxxPM=
-			</data>
-			<key>hash2</key>
-			<data>
-			yTFtgo0oSBDB9MVXH9gpfBM+jTQysgYmwTUxnvsudAI=
-			</data>
-		</dict>
-		<key>Headers/AFHydraTunnelProviderSDK.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			j639fIUjL9AhdKInvLs2VkbXJaM=
-			</data>
-			<key>hash2</key>
-			<data>
-			e++jXyO/TWi0zrMG3mGY5p6XHOQKCsWUQJdoXtMRxiY=
-			</data>
-		</dict>
-		<key>Headers/AFNetworkExtensionDelegate.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			yhj7TBaccJxaM44qXkcTCWams+4=
-			</data>
-			<key>hash2</key>
-			<data>
-			JA8QcDzodqXEcYg6jDN0ys6aJIkoRCVVc5t8D6dM6/4=
-			</data>
-		</dict>
-		<key>Headers/AFResolver.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			w53V2Y+2Lzhut+2+vMu4O8QZAU8=
-			</data>
-			<key>hash2</key>
-			<data>
-			lbxNgEI2vnSrhSHokG9a5bgeTzw1kSRLKw8dT3mJTEE=
-			</data>
-		</dict>
-		<key>Headers/VPNTunnelProviderSDK-Swift.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			NP7CM1bEwk5DasL1IMPFrFjX9WM=
-			</data>
-			<key>hash2</key>
-			<data>
-			3bxIGEY6OwgFTBXDxNI8O0o3efAwPRxju8ymKs2Bcvw=
+			/eSVSKfYE+E9iPX3yqLe/sWpYqgpMYmhRKYfPjqIkLA=
 			</data>
 		</dict>
 		<key>Headers/VPNTunnelProviderSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			H5eP+hhWSyu+ZWNgJ645yt9DWhc=
+			1O6oZO9wEx+jo51SdLEkmMuS9y8=
 			</data>
 			<key>hash2</key>
 			<data>
-			uAe/DCFV4dDMVTz76bDr3S3nx1Hczz7EoiLxo7INgj0=
+			uPI/EpM3zPOdlQKqeOhZBaXov9/S5il9oXebe+UefiY=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5fggYGEViSaCwS7PiVHJKfgii0E=
+			FvE6cgaPdBziYWGOd4wGjWur9Jk=
 			</data>
 			<key>hash2</key>
 			<data>
-			YeTntyHoLqkJCHc9HqP3XJpwpTvl1hDQv5rMvZbpn4s=
+			Xo6eD6GRtQG3SlY4pjBB7BdV8gDnhYgT0g/NfD/lu10=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dPBxLR98fZVsaaivlOtS4CjjqgI=
+			1jJ5ihlX95oJa+mt5BdcU422EdI=
 			</data>
 			<key>hash2</key>
 			<data>
-			/dDh9ji1GSuKy/frnNt4UER3/ecc+04CNEy7HVgya3s=
+			+fId/tI4m4yQlQ2Qt3ukQjEa6s4iYn4BwBxp7z3R5NA=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+uObGoMBjp5seQWhSIZcLbux+Us=
+			ERR/ZVo2nZgq3qJ01GEF0xMppc4=
 			</data>
 			<key>hash2</key>
 			<data>
-			xme/NsjXU+cWfmBzkbR4HHc51iVIcpDBLFS4CeF4Vc4=
+			78bXD8NNzPDXfvrYXW7Mfs6vgE2guiTNRpPh9nuUM0k=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5fggYGEViSaCwS7PiVHJKfgii0E=
+			FvE6cgaPdBziYWGOd4wGjWur9Jk=
 			</data>
 			<key>hash2</key>
 			<data>
-			YeTntyHoLqkJCHc9HqP3XJpwpTvl1hDQv5rMvZbpn4s=
+			Xo6eD6GRtQG3SlY4pjBB7BdV8gDnhYgT0g/NfD/lu10=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dPBxLR98fZVsaaivlOtS4CjjqgI=
+			1jJ5ihlX95oJa+mt5BdcU422EdI=
 			</data>
 			<key>hash2</key>
 			<data>
-			/dDh9ji1GSuKy/frnNt4UER3/ecc+04CNEy7HVgya3s=
+			+fId/tI4m4yQlQ2Qt3ukQjEa6s4iYn4BwBxp7z3R5NA=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+uObGoMBjp5seQWhSIZcLbux+Us=
+			ERR/ZVo2nZgq3qJ01GEF0xMppc4=
 			</data>
 			<key>hash2</key>
 			<data>
-			xme/NsjXU+cWfmBzkbR4HHc51iVIcpDBLFS4CeF4Vc4=
+			78bXD8NNzPDXfvrYXW7Mfs6vgE2guiTNRpPh9nuUM0k=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Agj7Tf+T0HDd6sy5tLFfX6LNFh0=
+			kTRLhnhMJfQwo2t/P+GnVcfY8J4=
 			</data>
 			<key>hash2</key>
 			<data>
-			kfcMB/tAdBe5nrkY4Wq+XEn+9xuPymDXYRtSCW3MpRI=
+			9BspGGH81HkWdfRE1MlNop4m+nydsnnTGPGZw4R226k=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vRLo5C6Eood6niCEXK9yein1gHk=
+			L/pDA2xwms26HJ0XWgAIDGRn8vo=
 			</data>
 			<key>hash2</key>
 			<data>
-			jIIG/XTxR8Pv6TW1RCQdaZi2Vnm/wqizReGZc5PySGc=
+			qqb0KI1Qg8Lv5XmWoP3Fj6LmYrrtn3iulsQaf/BmYHk=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tb1yl0Gnlq/lBzedZoyttnoK39c=
+			VSgrK/Xl7jzHoEQ5WwKGSCc9iOQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			mmTEK7ltha8tL+oSaaRFm5Dyj8NKdFz3uLyeIQLT894=
+			1gYvx2FncwTIL+PU6q3DJcprJ8oCnSYHWb79Jzc3osg=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Agj7Tf+T0HDd6sy5tLFfX6LNFh0=
+			kTRLhnhMJfQwo2t/P+GnVcfY8J4=
 			</data>
 			<key>hash2</key>
 			<data>
-			kfcMB/tAdBe5nrkY4Wq+XEn+9xuPymDXYRtSCW3MpRI=
+			9BspGGH81HkWdfRE1MlNop4m+nydsnnTGPGZw4R226k=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vRLo5C6Eood6niCEXK9yein1gHk=
+			L/pDA2xwms26HJ0XWgAIDGRn8vo=
 			</data>
 			<key>hash2</key>
 			<data>
-			jIIG/XTxR8Pv6TW1RCQdaZi2Vnm/wqizReGZc5PySGc=
+			qqb0KI1Qg8Lv5XmWoP3Fj6LmYrrtn3iulsQaf/BmYHk=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tb1yl0Gnlq/lBzedZoyttnoK39c=
+			VSgrK/Xl7jzHoEQ5WwKGSCc9iOQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			mmTEK7ltha8tL+oSaaRFm5Dyj8NKdFz3uLyeIQLT894=
+			1gYvx2FncwTIL+PU6q3DJcprJ8oCnSYHWb79Jzc3osg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qLlVMoG+CR+TkfLQhjzfD9tNWn0=
+			xTvKHVw/nm2YFLPdUX6EuaEtIA8=
 			</data>
 			<key>hash2</key>
 			<data>
-			fktGy+kp2/oUgxrTValZt318UaDFL2lSyqx4Se2T9Hc=
+			A+GekKhKNuzpYlqQuxBHqap2KVOrdNRmM2FPqpXKjLg=
 			</data>
 		</dict>
 	</dict>

@@ -6,6 +6,6 @@ framework module VPNTunnelProviderSDK {
 }
 
 module VPNTunnelProviderSDK.Swift {
-    header "VPNTunnelProviderSDK-Swift.h"
+    header "VPNTunnelProviderSDK-iOS-Swift.h"
     requires objc
 }
