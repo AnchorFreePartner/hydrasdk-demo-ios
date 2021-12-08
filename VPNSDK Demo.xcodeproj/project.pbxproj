@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		652A2DF125C6E5E500DE31EF /* FireshieldCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A2DF025C6E5E500DE31EF /* FireshieldCells.swift */; };
+		652A2DF325C6ECED00DE31EF /* HydraConfigCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A2DF225C6ECED00DE31EF /* HydraConfigCells.swift */; };
+		652A2DF525C6F51000DE31EF /* CategorizationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A2DF425C6F51000DE31EF /* CategorizationProcessor.swift */; };
+		652A2DF725C6F54D00DE31EF /* LocalNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A2DF625C6F54D00DE31EF /* LocalNotificationSender.swift */; };
+		658E648D25C6C5A200A3A679 /* ComposedTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658E648C25C6C5A200A3A679 /* ComposedTypeCell.swift */; };
+		658E648F25C6C8C100A3A679 /* VPNConfigurator+Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658E648E25C6C8C100A3A679 /* VPNConfigurator+Mode.swift */; };
+		6590558125C031DE00DEDB89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6590558025C031DE00DEDB89 /* AppDelegate.swift */; };
+		6590558525C031DE00DEDB89 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6590558425C031DE00DEDB89 /* RootViewController.swift */; };
+		6590558825C031DE00DEDB89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6590558625C031DE00DEDB89 /* Main.storyboard */; };
+		6590558A25C031DE00DEDB89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6590558925C031DE00DEDB89 /* Assets.xcassets */; };
+		6590558D25C031DE00DEDB89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6590558B25C031DE00DEDB89 /* LaunchScreen.storyboard */; };
+		659055A725C0464F00DEDB89 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6590559D25C042AB00DEDB89 /* NetworkExtension.framework */; };
+		659055AD25C0724400DEDB89 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6590559D25C042AB00DEDB89 /* NetworkExtension.framework */; };
+		659055B025C0724400DEDB89 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659055AF25C0724400DEDB89 /* PacketTunnelProvider.swift */; };
+		659055B525C0724400DEDB89 /* VPNSDK Demo Hydra Provider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 659055AC25C0724400DEDB89 /* VPNSDK Demo Hydra Provider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		659055C425C072D800DEDB89 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 659055C325C072D000DEDB89 /* libz.tbd */; };
+		659055C625C072E400DEDB89 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 659055C525C072DE00DEDB89 /* libresolv.tbd */; };
+		659055C925C0AB1B00DEDB89 /* VPNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659055C825C0AB1B00DEDB89 /* VPNService.swift */; };
+		659055CB25C0AD9A00DEDB89 /* VPNConfigurationPreserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659055CA25C0AD9A00DEDB89 /* VPNConfigurationPreserver.swift */; };
+		659055CD25C0AEED00DEDB89 /* VPNConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659055CC25C0AEED00DEDB89 /* VPNConfigurator.swift */; };
+		65977F3425C1D21D00A7505C /* VPNStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65977F3325C1D21D00A7505C /* VPNStateCell.swift */; };
+		65977F3625C1DE6F00A7505C /* IPSecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65977F3525C1DE6F00A7505C /* IPSecViewController.swift */; };
+		65977F3825C1DEFE00A7505C /* SDKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65977F3725C1DEFE00A7505C /* SDKViewController.swift */; };
+		65977F3A25C1DFFB00A7505C /* HydraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65977F3925C1DFFB00A7505C /* HydraViewController.swift */; };
+		65977F3C25C1E09600A7505C /* VPNViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65977F3B25C1E09600A7505C /* VPNViewProtocol.swift */; };
+		65977F3F25C1EE9200A7505C /* VPNCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65977F3E25C1EE9200A7505C /* VPNCell.swift */; };
+		65977F4225C1F16100A7505C /* ComposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65977F4125C1F16100A7505C /* ComposedViewController.swift */; };
+		8918237DF228E1E669BA1EB4 /* Pods_VPNSDK_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41790D30DC938DFDEC1BAD1D /* Pods_VPNSDK_Demo.framework */; };
+		BB527AEBD5E09C6D52C7EEC5 /* Pods_VPNSDK_Demo_Hydra_Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B627EF92A9112D31B065566 /* Pods_VPNSDK_Demo_Hydra_Provider.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		659055B325C0724400DEDB89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6590557525C031DE00DEDB89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 659055AB25C0724400DEDB89;
+			remoteInfo = "VPNSDK Demo Hydra Provider";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		659055B625C0724400DEDB89 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				659055B525C0724400DEDB89 /* VPNSDK Demo Hydra Provider.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1A2A616D9510D1228FD67642 /* Pods-VPNSDK Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VPNSDK Demo.debug.xcconfig"; path = "Target Support Files/Pods-VPNSDK Demo/Pods-VPNSDK Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		41790D30DC938DFDEC1BAD1D /* Pods_VPNSDK_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VPNSDK_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		652A2DF025C6E5E500DE31EF /* FireshieldCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireshieldCells.swift; sourceTree = "<group>"; };
+		652A2DF225C6ECED00DE31EF /* HydraConfigCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydraConfigCells.swift; sourceTree = "<group>"; };
+		652A2DF425C6F51000DE31EF /* CategorizationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorizationProcessor.swift; sourceTree = "<group>"; };
+		652A2DF625C6F54D00DE31EF /* LocalNotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationSender.swift; sourceTree = "<group>"; };
+		658E648C25C6C5A200A3A679 /* ComposedTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedTypeCell.swift; sourceTree = "<group>"; };
+		658E648E25C6C8C100A3A679 /* VPNConfigurator+Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VPNConfigurator+Mode.swift"; sourceTree = "<group>"; };
+		6590557D25C031DE00DEDB89 /* VPNSDK Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VPNSDK Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6590558025C031DE00DEDB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6590558425C031DE00DEDB89 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		6590558725C031DE00DEDB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6590558925C031DE00DEDB89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6590558C25C031DE00DEDB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6590558E25C031DE00DEDB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6590559C25C042AB00DEDB89 /* VPNSDK Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VPNSDK Demo.entitlements"; sourceTree = "<group>"; };
+		6590559D25C042AB00DEDB89 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		659055A225C0460B00DEDB89 /* VPNApplicationSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = VPNApplicationSDK.xcframework; sourceTree = "<group>"; };
+		659055AC25C0724400DEDB89 /* VPNSDK Demo Hydra Provider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "VPNSDK Demo Hydra Provider.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		659055AF25C0724400DEDB89 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		659055B125C0724400DEDB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		659055B225C0724400DEDB89 /* VPNSDK_Demo_Hydra_Provider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VPNSDK_Demo_Hydra_Provider.entitlements; sourceTree = "<group>"; };
+		659055BB25C072A600DEDB89 /* VPNTunnelProviderSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = VPNTunnelProviderSDK.xcframework; sourceTree = "<group>"; };
+		659055C325C072D000DEDB89 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		659055C525C072DE00DEDB89 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		659055C825C0AB1B00DEDB89 /* VPNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNService.swift; sourceTree = "<group>"; };
+		659055CA25C0AD9A00DEDB89 /* VPNConfigurationPreserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNConfigurationPreserver.swift; sourceTree = "<group>"; };
+		659055CC25C0AEED00DEDB89 /* VPNConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNConfigurator.swift; sourceTree = "<group>"; };
+		65977F3325C1D21D00A7505C /* VPNStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNStateCell.swift; sourceTree = "<group>"; };
+		65977F3525C1DE6F00A7505C /* IPSecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSecViewController.swift; sourceTree = "<group>"; };
+		65977F3725C1DEFE00A7505C /* SDKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKViewController.swift; sourceTree = "<group>"; };
+		65977F3925C1DFFB00A7505C /* HydraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydraViewController.swift; sourceTree = "<group>"; };
+		65977F3B25C1E09600A7505C /* VPNViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNViewProtocol.swift; sourceTree = "<group>"; };
+		65977F3E25C1EE9200A7505C /* VPNCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNCell.swift; sourceTree = "<group>"; };
+		65977F4125C1F16100A7505C /* ComposedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedViewController.swift; sourceTree = "<group>"; };
+		6B627EF92A9112D31B065566 /* Pods_VPNSDK_Demo_Hydra_Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VPNSDK_Demo_Hydra_Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		796874D000711416DA5D5C6F /* Pods-VPNSDK Demo Hydra Provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VPNSDK Demo Hydra Provider.debug.xcconfig"; path = "Target Support Files/Pods-VPNSDK Demo Hydra Provider/Pods-VPNSDK Demo Hydra Provider.debug.xcconfig"; sourceTree = "<group>"; };
+		811840466EE3DA1333990ADC /* Pods-VPNSDK Demo Hydra Provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VPNSDK Demo Hydra Provider.release.xcconfig"; path = "Target Support Files/Pods-VPNSDK Demo Hydra Provider/Pods-VPNSDK Demo Hydra Provider.release.xcconfig"; sourceTree = "<group>"; };
+		F077F55B2B1E0E4EA0D0E851 /* Pods-VPNSDK Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VPNSDK Demo.release.xcconfig"; path = "Target Support Files/Pods-VPNSDK Demo/Pods-VPNSDK Demo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6590557A25C031DE00DEDB89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				659055A725C0464F00DEDB89 /* NetworkExtension.framework in Frameworks */,
+				8918237DF228E1E669BA1EB4 /* Pods_VPNSDK_Demo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659055A925C0724400DEDB89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				659055C425C072D800DEDB89 /* libz.tbd in Frameworks */,
+				659055AD25C0724400DEDB89 /* NetworkExtension.framework in Frameworks */,
+				659055C625C072E400DEDB89 /* libresolv.tbd in Frameworks */,
+				BB527AEBD5E09C6D52C7EEC5 /* Pods_VPNSDK_Demo_Hydra_Provider.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19D74CBCD408920B5EDE7FB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A2A616D9510D1228FD67642 /* Pods-VPNSDK Demo.debug.xcconfig */,
+				F077F55B2B1E0E4EA0D0E851 /* Pods-VPNSDK Demo.release.xcconfig */,
+				796874D000711416DA5D5C6F /* Pods-VPNSDK Demo Hydra Provider.debug.xcconfig */,
+				811840466EE3DA1333990ADC /* Pods-VPNSDK Demo Hydra Provider.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6590557425C031DE00DEDB89 = {
+			isa = PBXGroup;
+			children = (
+				6590557F25C031DE00DEDB89 /* VPNSDK Demo */,
+				659055AE25C0724400DEDB89 /* VPNSDK Demo Hydra Provider */,
+				6590557E25C031DE00DEDB89 /* Products */,
+				6E36F7FE04C424327A429DFD /* Frameworks */,
+				19D74CBCD408920B5EDE7FB5 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		6590557E25C031DE00DEDB89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6590557D25C031DE00DEDB89 /* VPNSDK Demo.app */,
+				659055AC25C0724400DEDB89 /* VPNSDK Demo Hydra Provider.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6590557F25C031DE00DEDB89 /* VPNSDK Demo */ = {
+			isa = PBXGroup;
+			children = (
+				6590559C25C042AB00DEDB89 /* VPNSDK Demo.entitlements */,
+				6590558025C031DE00DEDB89 /* AppDelegate.swift */,
+				659055C725C0AAF000DEDB89 /* Configuration */,
+				659055CE25C0B15F00DEDB89 /* Views */,
+				6590558925C031DE00DEDB89 /* Assets.xcassets */,
+				6590558E25C031DE00DEDB89 /* Info.plist */,
+			);
+			path = "VPNSDK Demo";
+			sourceTree = "<group>";
+		};
+		659055AE25C0724400DEDB89 /* VPNSDK Demo Hydra Provider */ = {
+			isa = PBXGroup;
+			children = (
+				659055AF25C0724400DEDB89 /* PacketTunnelProvider.swift */,
+				652A2DF425C6F51000DE31EF /* CategorizationProcessor.swift */,
+				652A2DF625C6F54D00DE31EF /* LocalNotificationSender.swift */,
+				659055B125C0724400DEDB89 /* Info.plist */,
+				659055B225C0724400DEDB89 /* VPNSDK_Demo_Hydra_Provider.entitlements */,
+			);
+			path = "VPNSDK Demo Hydra Provider";
+			sourceTree = "<group>";
+		};
+		659055C725C0AAF000DEDB89 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				659055CC25C0AEED00DEDB89 /* VPNConfigurator.swift */,
+				658E648E25C6C8C100A3A679 /* VPNConfigurator+Mode.swift */,
+				659055CA25C0AD9A00DEDB89 /* VPNConfigurationPreserver.swift */,
+				659055C825C0AB1B00DEDB89 /* VPNService.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		659055CE25C0B15F00DEDB89 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6590558B25C031DE00DEDB89 /* LaunchScreen.storyboard */,
+				6590558625C031DE00DEDB89 /* Main.storyboard */,
+				65977F3B25C1E09600A7505C /* VPNViewProtocol.swift */,
+				65977F4025C1EF3C00A7505C /* ViewControllers */,
+				65977F3D25C1EE8600A7505C /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		65977F3D25C1EE8600A7505C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				65977F3E25C1EE9200A7505C /* VPNCell.swift */,
+				65977F3325C1D21D00A7505C /* VPNStateCell.swift */,
+				658E648C25C6C5A200A3A679 /* ComposedTypeCell.swift */,
+				652A2DF225C6ECED00DE31EF /* HydraConfigCells.swift */,
+				652A2DF025C6E5E500DE31EF /* FireshieldCells.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		65977F4025C1EF3C00A7505C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6590558425C031DE00DEDB89 /* RootViewController.swift */,
+				65977F3725C1DEFE00A7505C /* SDKViewController.swift */,
+				65977F3925C1DFFB00A7505C /* HydraViewController.swift */,
+				65977F3525C1DE6F00A7505C /* IPSecViewController.swift */,
+				65977F4125C1F16100A7505C /* ComposedViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6E36F7FE04C424327A429DFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				659055C525C072DE00DEDB89 /* libresolv.tbd */,
+				659055C325C072D000DEDB89 /* libz.tbd */,
+				659055BB25C072A600DEDB89 /* VPNTunnelProviderSDK.xcframework */,
+				659055A225C0460B00DEDB89 /* VPNApplicationSDK.xcframework */,
+				6590559D25C042AB00DEDB89 /* NetworkExtension.framework */,
+				41790D30DC938DFDEC1BAD1D /* Pods_VPNSDK_Demo.framework */,
+				6B627EF92A9112D31B065566 /* Pods_VPNSDK_Demo_Hydra_Provider.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6590557C25C031DE00DEDB89 /* VPNSDK Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6590559125C031DE00DEDB89 /* Build configuration list for PBXNativeTarget "VPNSDK Demo" */;
+			buildPhases = (
+				D748415779D30793A6252AB5 /* [CP] Check Pods Manifest.lock */,
+				6590557925C031DE00DEDB89 /* Sources */,
+				6590557A25C031DE00DEDB89 /* Frameworks */,
+				6590557B25C031DE00DEDB89 /* Resources */,
+				659055B625C0724400DEDB89 /* Embed App Extensions */,
+				C962A6CE4E09893C7B6EC00A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				659055B425C0724400DEDB89 /* PBXTargetDependency */,
+			);
+			name = "VPNSDK Demo";
+			productName = "VPNSDK Demo";
+			productReference = 6590557D25C031DE00DEDB89 /* VPNSDK Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		659055AB25C0724400DEDB89 /* VPNSDK Demo Hydra Provider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 659055B925C0724400DEDB89 /* Build configuration list for PBXNativeTarget "VPNSDK Demo Hydra Provider" */;
+			buildPhases = (
+				9FBF0C636E8E8A6D179D6C80 /* [CP] Check Pods Manifest.lock */,
+				659055A825C0724400DEDB89 /* Sources */,
+				659055A925C0724400DEDB89 /* Frameworks */,
+				659055AA25C0724400DEDB89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VPNSDK Demo Hydra Provider";
+			productName = "VPNSDK Demo Hydra Provider";
+			productReference = 659055AC25C0724400DEDB89 /* VPNSDK Demo Hydra Provider.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6590557525C031DE00DEDB89 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					6590557C25C031DE00DEDB89 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					659055AB25C0724400DEDB89 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 6590557825C031DE00DEDB89 /* Build configuration list for PBXProject "VPNSDK Demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6590557425C031DE00DEDB89;
+			productRefGroup = 6590557E25C031DE00DEDB89 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6590557C25C031DE00DEDB89 /* VPNSDK Demo */,
+				659055AB25C0724400DEDB89 /* VPNSDK Demo Hydra Provider */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6590557B25C031DE00DEDB89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6590558D25C031DE00DEDB89 /* LaunchScreen.storyboard in Resources */,
+				6590558A25C031DE00DEDB89 /* Assets.xcassets in Resources */,
+				6590558825C031DE00DEDB89 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659055AA25C0724400DEDB89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9FBF0C636E8E8A6D179D6C80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VPNSDK Demo Hydra Provider-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C962A6CE4E09893C7B6EC00A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VPNSDK Demo/Pods-VPNSDK Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VPNSDK Demo/Pods-VPNSDK Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VPNSDK Demo/Pods-VPNSDK Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D748415779D30793A6252AB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VPNSDK Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6590557925C031DE00DEDB89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65977F4225C1F16100A7505C /* ComposedViewController.swift in Sources */,
+				658E648D25C6C5A200A3A679 /* ComposedTypeCell.swift in Sources */,
+				652A2DF325C6ECED00DE31EF /* HydraConfigCells.swift in Sources */,
+				658E648F25C6C8C100A3A679 /* VPNConfigurator+Mode.swift in Sources */,
+				65977F3625C1DE6F00A7505C /* IPSecViewController.swift in Sources */,
+				65977F3425C1D21D00A7505C /* VPNStateCell.swift in Sources */,
+				6590558525C031DE00DEDB89 /* RootViewController.swift in Sources */,
+				6590558125C031DE00DEDB89 /* AppDelegate.swift in Sources */,
+				659055CD25C0AEED00DEDB89 /* VPNConfigurator.swift in Sources */,
+				65977F3C25C1E09600A7505C /* VPNViewProtocol.swift in Sources */,
+				652A2DF125C6E5E500DE31EF /* FireshieldCells.swift in Sources */,
+				65977F3825C1DEFE00A7505C /* SDKViewController.swift in Sources */,
+				65977F3A25C1DFFB00A7505C /* HydraViewController.swift in Sources */,
+				659055C925C0AB1B00DEDB89 /* VPNService.swift in Sources */,
+				659055CB25C0AD9A00DEDB89 /* VPNConfigurationPreserver.swift in Sources */,
+				65977F3F25C1EE9200A7505C /* VPNCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659055A825C0724400DEDB89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				659055B025C0724400DEDB89 /* PacketTunnelProvider.swift in Sources */,
+				652A2DF525C6F51000DE31EF /* CategorizationProcessor.swift in Sources */,
+				652A2DF725C6F54D00DE31EF /* LocalNotificationSender.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		659055B425C0724400DEDB89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 659055AB25C0724400DEDB89 /* VPNSDK Demo Hydra Provider */;
+			targetProxy = 659055B325C0724400DEDB89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6590558625C031DE00DEDB89 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6590558725C031DE00DEDB89 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6590558B25C031DE00DEDB89 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6590558C25C031DE00DEDB89 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6590558F25C031DE00DEDB89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6590559025C031DE00DEDB89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6590559225C031DE00DEDB89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A2A616D9510D1228FD67642 /* Pods-VPNSDK Demo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VPNSDK Demo/VPNSDK Demo.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 55M8MNVL6L;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "VPNSDK Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pango.vpnsdk-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "VPNSDK Demo Development";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6590559325C031DE00DEDB89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F077F55B2B1E0E4EA0D0E851 /* Pods-VPNSDK Demo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VPNSDK Demo/VPNSDK Demo.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 55M8MNVL6L;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "VPNSDK Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pango.vpnsdk-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "VPNSDK Demo Development";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		659055B725C0724400DEDB89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 796874D000711416DA5D5C6F /* Pods-VPNSDK Demo Hydra Provider.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "VPNSDK Demo Hydra Provider/VPNSDK_Demo_Hydra_Provider.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 55M8MNVL6L;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "VPNSDK Demo Hydra Provider/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pango.vpnsdk-demo.neprovider";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "VPNSDK Demo Provider Development";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		659055B825C0724400DEDB89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 811840466EE3DA1333990ADC /* Pods-VPNSDK Demo Hydra Provider.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "VPNSDK Demo Hydra Provider/VPNSDK_Demo_Hydra_Provider.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 55M8MNVL6L;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "VPNSDK Demo Hydra Provider/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pango.vpnsdk-demo.neprovider";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "VPNSDK Demo Provider Development";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6590557825C031DE00DEDB89 /* Build configuration list for PBXProject "VPNSDK Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6590558F25C031DE00DEDB89 /* Debug */,
+				6590559025C031DE00DEDB89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6590559125C031DE00DEDB89 /* Build configuration list for PBXNativeTarget "VPNSDK Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6590559225C031DE00DEDB89 /* Debug */,
+				6590559325C031DE00DEDB89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		659055B925C0724400DEDB89 /* Build configuration list for PBXNativeTarget "VPNSDK Demo Hydra Provider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				659055B725C0724400DEDB89 /* Debug */,
+				659055B825C0724400DEDB89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6590557525C031DE00DEDB89 /* Project object */;
+}

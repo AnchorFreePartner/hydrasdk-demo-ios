@@ -1,0 +1,367 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-module-flags: -target arm64-apple-macos10.12 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VPNTunnelProviderSDK
+import SystemConfiguration.CaptiveNetwork
+import Cocoa
+import Foundation
+import HydraTunnelProvider
+import NetworkExtension
+import Swift
+import SystemConfiguration
+import UCRTrackerSwift
+@_exported import VPNTunnelProviderSDK
+import _Concurrency
+public struct ServerNode : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ServerCredentials : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum PartnerAPI {
+}
+public struct TrafficCounters : Swift.Decodable {
+  public let received: Swift.UInt64
+  public let transmitted: Swift.UInt64
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc public class AFTrafficCounters : ObjectiveC.NSObject {
+  @objc public var received: Swift.UInt64 {
+    @objc get
+  }
+  @objc public var transmitted: Swift.UInt64 {
+    @objc get
+  }
+  @objc deinit
+}
+public protocol NetworkExtensionDelegate : ObjectiveC.NSObject {
+  var fireshieldManager: VPNTunnelProviderSDK.FireshieldManager? { get set }
+  func vpnWillStart(with options: VPNTunnelProviderSDK.StartupOptions)
+  func vpnDidStart()
+  func vpnWillStop(availableRestartCompletion: ((_ shouldRestart: Swift.Bool) -> Swift.Void)?)
+  func vpnWillGoToSleep()
+  func vpnWillWakeUpFromSleep()
+  func vpnDidReceiveError(_ error: VPNTunnelProviderSDK.VPNTunnelError)
+  func vpnDidHandleCategorization(_ categorization: VPNTunnelProviderSDK.VPNCategorization)
+  func vpnDidReceiveTrafficCounters(_ counters: VPNTunnelProviderSDK.TrafficCounters)
+}
+extension VPNTunnelProviderSDK.NetworkExtensionDelegate {
+  public func vpnWillStart(with options: VPNTunnelProviderSDK.StartupOptions)
+  public func vpnDidStart()
+  public func vpnWillStop(availableRestartCompletion: ((_ shouldRestart: Swift.Bool) -> Swift.Void)?)
+  public func vpnWillGoToSleep()
+  public func vpnWillWakeUpFromSleep()
+  public func vpnDidReceiveError(_ error: VPNTunnelProviderSDK.VPNTunnelError)
+  public func vpnDidHandleCategorization(_ categorization: VPNTunnelProviderSDK.VPNCategorization)
+  public func vpnDidReceiveTrafficCounters(_ counters: VPNTunnelProviderSDK.TrafficCounters)
+}
+public enum VPNTunnelError : Swift.Error {
+  case notConfigured
+  case interfaceChange
+  case tunInterfaceFailure
+  case systemCalledStop(isUserInitiated: Swift.Bool)
+  case systemCalledSleep
+  case badConfiguration
+  case connectionTimeout
+  case connectionCanceled
+  case hydraInternalError(code: Swift.Int, name: Swift.String?)
+  case failedToSetNetworkSettings
+  case delegateRestrictsConnect
+  case failedToReconfigureHydra
+  case unknown
+}
+extension VPNTunnelProviderSDK.VPNTunnelError {
+  public enum HydraInternalErrorCode {
+    public static let connectionDisrupted: Swift.Int
+    public static let connectionNotEstablished: Swift.Int
+    public static let tokenInvalid: Swift.Int
+    public static let trafficExceed: Swift.Int
+  }
+}
+extension VPNTunnelProviderSDK.VPNTunnelError : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+}
+extension VPNTunnelProviderSDK.VPNTunnelError : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class StartupOptions : ObjectiveC.NSObject {
+  @objc final public let isBypassEnabled: Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class AFClientNetworkList : ObjectiveC.NSObject {
+  @objc public var configurations: [VPNTunnelProviderSDK.AFClientNetworkConfiguration] {
+    @objc get
+  }
+  @objc public func find(ssid: Swift.String) -> VPNTunnelProviderSDK.AFClientNetworkConfiguration?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class AFClientNetworkConfiguration : ObjectiveC.NSObject {
+  @objc public enum AFClientNetworkConfigurationAction : Swift.Int {
+    case enable, disable, empty
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public var action: VPNTunnelProviderSDK.AFClientNetworkConfiguration.AFClientNetworkConfigurationAction {
+    @objc get
+  }
+  @objc public var networkType: Swift.String? {
+    @objc get
+  }
+  @objc public var ssid: [Swift.String]? {
+    @objc get
+  }
+  @objc public var bssid: [Swift.String]? {
+    @objc get
+  }
+  @objc deinit
+}
+public struct ClientNetworkList : Swift.Encodable {
+  public var configurations: [VPNTunnelProviderSDK.ClientNetworkConfiguration]
+  public init(from decoder: Swift.Decoder) throws
+  public func find(ssid: Swift.String, bssid: Swift.String) -> VPNTunnelProviderSDK.ClientNetworkConfiguration?
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct ClientNetworkConfiguration : Swift.Codable {
+  public enum Action : Swift.String, Swift.Codable {
+    case enable
+    case disable
+    case empty
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum NetworkType : Swift.String, Swift.Codable {
+    case wwan
+    case lan
+    case wifi
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let action: VPNTunnelProviderSDK.ClientNetworkConfiguration.Action
+  public let networkType: VPNTunnelProviderSDK.ClientNetworkConfiguration.NetworkType?
+  public let ssid: [Swift.String]?
+  public let bssid: [Swift.String]?
+  public var isCommonConfig: Swift.Bool {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public enum VPNProtocolType : Swift.Int {
+  case hydra
+  case ipsec
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct VPNCategorization {
+  @objc public enum CategorizationType : Swift.Int {
+    case none
+    case url
+    case ip
+    case domain
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public enum CategorizationAction : Swift.Int {
+    case proxy
+    case vpn
+    case bypass
+    case block
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public let resource: Swift.String
+  public let type: VPNTunnelProviderSDK.VPNCategorization.CategorizationType
+  public let action: VPNTunnelProviderSDK.VPNCategorization.CategorizationAction
+  public let categoryLabel: Swift.String
+  public let categoryID: Swift.Int
+  public let sources: [Swift.String]
+  public let customLabels: [Swift.String]
+  public let proto: Swift.Int
+  public let port: Swift.Int
+  public let timestamp: Foundation.Date
+}
+@_hasMissingDesignatedInitializers @objc public class AFVPNCategorization : ObjectiveC.NSObject {
+  @objc public var resource: Swift.String {
+    @objc get
+  }
+  @objc public var type: VPNTunnelProviderSDK.VPNCategorization.CategorizationType {
+    @objc get
+  }
+  @objc public var action: VPNTunnelProviderSDK.VPNCategorization.CategorizationAction {
+    @objc get
+  }
+  @objc public var categoryLabel: Swift.String {
+    @objc get
+  }
+  @objc public var categoryID: Swift.Int {
+    @objc get
+  }
+  @objc public var sources: [Swift.String] {
+    @objc get
+  }
+  @objc public var customLabels: [Swift.String] {
+    @objc get
+  }
+  @objc public var proto: Swift.Int {
+    @objc get
+  }
+  @objc public var port: Swift.Int {
+    @objc get
+  }
+  @objc public var timestamp: Foundation.Date {
+    @objc get
+  }
+  @objc deinit
+}
+public struct FireshieldCategory {
+  public enum CategoryType {
+    case safe
+    case unsafe
+    case unsafeCustom(_: Swift.String)
+    case custom(_: Swift.String)
+  }
+  public let type: VPNTunnelProviderSDK.FireshieldCategory.CategoryType
+  public static func block(category: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) -> VPNTunnelProviderSDK.FireshieldCategory
+  public static func proxy(category: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) -> VPNTunnelProviderSDK.FireshieldCategory
+  public static func bypass(category: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) -> VPNTunnelProviderSDK.FireshieldCategory
+  public static func alert(category: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) -> VPNTunnelProviderSDK.FireshieldCategory
+}
+extension VPNTunnelProviderSDK.FireshieldCategory : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+extension VPNTunnelProviderSDK.FireshieldCategory.CategoryType : Swift.Hashable {
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: VPNTunnelProviderSDK.FireshieldCategory.CategoryType, b: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VPNTunnelProviderSDK.FireshieldCategory.CategoryType : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers @objc public class AFCategoryType : ObjectiveC.NSObject {
+  @objc public static var safe: VPNTunnelProviderSDK.AFCategoryType {
+    @objc get
+  }
+  @objc public static var unsafe: VPNTunnelProviderSDK.AFCategoryType {
+    @objc get
+  }
+  @objc public var representation: Swift.String {
+    @objc get
+  }
+  @objc public init(custom: Swift.String)
+  @objc public init(unsafeCustom: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class AFFireshieldCategory : ObjectiveC.NSObject {
+  @objc public enum Action : Swift.Int {
+    case proxy, bypass, block, alert
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public static func block(category: VPNTunnelProviderSDK.AFCategoryType) -> VPNTunnelProviderSDK.AFFireshieldCategory
+  @objc public static func proxy(category: VPNTunnelProviderSDK.AFCategoryType) -> VPNTunnelProviderSDK.AFFireshieldCategory
+  @objc public static func bypass(category: VPNTunnelProviderSDK.AFCategoryType) -> VPNTunnelProviderSDK.AFFireshieldCategory
+  @objc public static func alert(category: VPNTunnelProviderSDK.AFCategoryType) -> VPNTunnelProviderSDK.AFFireshieldCategory
+  @objc public static func categoryName(from category: VPNTunnelProviderSDK.AFCategoryType) -> Swift.String
+  @objc deinit
+}
+@objc public enum FireshieldListResourceType : Swift.Int {
+  case domain
+  case url
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class FireshieldManager : ObjectiveC.NSObject {
+  public func addItems(_ items: [Swift.String], resourceType: VPNTunnelProviderSDK.FireshieldListResourceType, category: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) throws
+  @available(swift, obsoleted: 1.0)
+  @objc(addItems:withResourceType:category:error:) public func objcAddItems(_ items: [Swift.String], resourceType: VPNTunnelProviderSDK.FireshieldListResourceType, category: VPNTunnelProviderSDK.AFCategoryType) throws
+  public func removeItems(_ items: [Swift.String], resourceType: VPNTunnelProviderSDK.FireshieldListResourceType, category: VPNTunnelProviderSDK.FireshieldCategory.CategoryType) throws
+  @available(swift, obsoleted: 1.0)
+  @objc(removeItems:withResourceType:category:error:) public func objcRemoveItems(_ items: [Swift.String], resourceType: VPNTunnelProviderSDK.FireshieldListResourceType, category: VPNTunnelProviderSDK.AFCategoryType) throws
+  @objc deinit
+}
+extension VPNTunnelProviderSDK.PartnerAPI {
+  public enum APIError : Swift.Error {
+    case unauthorized
+    case notAuthorized
+    case vpnServerUnavailable
+    case userSuspended
+    case sessionExceed
+    case trafficExceed
+    case internalServerError
+    case deviceExceed
+    case invalidPurchase
+    case unknownServerResponse
+    case badRequest(message: Swift.String?)
+    case failedResult(resultString: Swift.String)
+    case networkError(Swift.Error)
+    case invalidCredentials
+  }
+}
+extension VPNTunnelProviderSDK.PartnerAPI.APIError : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension VPNTunnelProviderSDK.AFClientNetworkConfiguration.AFClientNetworkConfigurationAction : Swift.Equatable {}
+extension VPNTunnelProviderSDK.AFClientNetworkConfiguration.AFClientNetworkConfigurationAction : Swift.Hashable {}
+extension VPNTunnelProviderSDK.AFClientNetworkConfiguration.AFClientNetworkConfigurationAction : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDK.ClientNetworkList : Swift.Decodable {}
+extension VPNTunnelProviderSDK.ClientNetworkConfiguration.Action : Swift.Equatable {}
+extension VPNTunnelProviderSDK.ClientNetworkConfiguration.Action : Swift.Hashable {}
+extension VPNTunnelProviderSDK.ClientNetworkConfiguration.Action : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDK.ClientNetworkConfiguration.NetworkType : Swift.Equatable {}
+extension VPNTunnelProviderSDK.ClientNetworkConfiguration.NetworkType : Swift.Hashable {}
+extension VPNTunnelProviderSDK.ClientNetworkConfiguration.NetworkType : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDK.VPNProtocolType : Swift.Equatable {}
+extension VPNTunnelProviderSDK.VPNProtocolType : Swift.Hashable {}
+extension VPNTunnelProviderSDK.VPNProtocolType : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDK.VPNCategorization.CategorizationType : Swift.Equatable {}
+extension VPNTunnelProviderSDK.VPNCategorization.CategorizationType : Swift.Hashable {}
+extension VPNTunnelProviderSDK.VPNCategorization.CategorizationType : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDK.VPNCategorization.CategorizationAction : Swift.Equatable {}
+extension VPNTunnelProviderSDK.VPNCategorization.CategorizationAction : Swift.Hashable {}
+extension VPNTunnelProviderSDK.VPNCategorization.CategorizationAction : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDK.AFFireshieldCategory.Action : Swift.Equatable {}
+extension VPNTunnelProviderSDK.AFFireshieldCategory.Action : Swift.Hashable {}
+extension VPNTunnelProviderSDK.AFFireshieldCategory.Action : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDK.FireshieldListResourceType : Swift.Equatable {}
+extension VPNTunnelProviderSDK.FireshieldListResourceType : Swift.Hashable {}
+extension VPNTunnelProviderSDK.FireshieldListResourceType : Swift.RawRepresentable {}

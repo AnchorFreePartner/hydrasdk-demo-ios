@@ -1,0 +1,226 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-module-flags: -target arm64-apple-macos10.12 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HydraClient
+import Foundation
+import HydraClientObjc
+import NetworkExtension
+import Swift
+import _Concurrency
+import os.log
+import os
+@objc public class Configuration : ObjectiveC.NSObject, Foundation.NSSecureCoding, Swift.Codable {
+  public var groupID: Swift.String
+  public var serverDisplayName: Swift.String
+  public var tunBypassMode: Swift.Bool
+  public var dnsOnlyMode: Swift.Bool
+  public var timeoutSeconds: Swift.Int
+  public var onDemandRules: [NetworkExtension.NEOnDemandRule]?
+  public var hydraCert: Swift.String?
+  public var stayConnectedDuringDeviceSleep: Swift.Bool
+  public var remoteTunEnabled: Swift.Bool
+  public var enableVPNIconFix: Swift.Bool
+  public var fireshieldInvisibleMode: Swift.Bool
+  public var isDebugLoggingEnabled: Swift.Bool
+  public var hydraConfig: [Swift.String : Any]?
+  public var tunDNSServers: [Swift.String]?
+  public init?(dictionary: [Swift.String : Any])
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
+  public var sessionId: Swift.String? {
+    get
+    set
+  }
+  public var bypassDNSServer: Swift.String? {
+    get
+    set
+  }
+  @objc deinit
+}
+public struct Payload {
+}
+public enum VPNManagerError : Swift.Error {
+  case statusChangedToInvalid
+  case canceled
+  case unknown
+  case connectFailed
+  case startInProgress
+  case stopInProgress
+  case timeout
+  case wrapped(Swift.Error)
+  case tunnelError(HydraClient.TunnelError)
+  case rateLimit
+  case notConnected
+  case notReady
+  case unableToEncodeMessage
+  case emptyData
+  case unableToDecodeResponse
+  case appMessageFailureResult(reason: Swift.String)
+}
+extension HydraClient.VPNManagerError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension HydraClient.VPNManagerError : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+}
+public enum NetworkInfo {
+  public static func currentInterfaceName() -> Swift.String?
+}
+public class VPNManager {
+  public var status: NetworkExtension.NEVPNStatus {
+    get
+  }
+  public var lastCategorization: HydraClient.Categorization? {
+    get
+  }
+  public var lastTunnelError: HydraClient.TunnelError? {
+    get
+  }
+  public var lastConfiguration: HydraClient.Configuration? {
+    get
+  }
+  public var dataCounter: HydraClient.DataCounter? {
+    get
+  }
+  public var connectedDate: Foundation.Date? {
+    get
+  }
+  @objc deinit
+  public init(extensionBundleID: Swift.String, extensionDescription: Swift.String, groupID: Swift.String)
+  public func registerCategorizationCallback(_ callback: ((HydraClient.Categorization) -> Swift.Void)?)
+  public func registerDebugLoggingCallback(_ callback: ((Swift.String) -> Swift.Void)?)
+  public func installProfile(completion: ((Swift.Error?) -> Swift.Void)?)
+  public func removeProfile(completion: ((Swift.Error?) -> Swift.Void)?)
+  public func start(with configuration: HydraClient.Configuration, completion: @escaping (Swift.Error?) -> Swift.Void)
+  public func stop(completion: ((Swift.Error?) -> Swift.Void)?)
+}
+extension HydraClient.VPNManager {
+  public func scannedConnections(completion: @escaping (Swift.Int?, Swift.Error?) -> Swift.Void)
+  public func reconfigureHydra(with configuration: HydraClient.Configuration, completion: @escaping (Swift.Error?) -> Swift.Void)
+}
+extension NetworkExtension.NEVPNStatus {
+  public var description: Swift.String {
+    get
+  }
+}
+public struct DataCounter {
+  public let transmitted: Swift.UInt64
+  public let received: Swift.UInt64
+  public let date: Foundation.Date
+}
+extension HydraClient.DataCounter : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension HydraClient.DataCounter : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension Foundation.NSNotification.Name {
+  public static var HydraVPNStatusDidChange: Foundation.Notification.Name
+}
+public enum TunnelError : Swift.Error {
+  case notConfigured
+  case interfaceChange
+  case tunInterfaceFailure
+  case systemCalledStop(isUserInitiated: Swift.Bool)
+  case systemCalledSleep
+  case badConfiguration
+  case connectionTimeout
+  case connectionCanceled
+  case hydraInternalError(code: Swift.Int, name: Swift.String?)
+  case failedToSetNetworkSettings
+  case delegateRestrictsConnect
+  case failedToReconfigureHydra
+  case unknown
+}
+extension HydraClient.TunnelError : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension HydraClient.TunnelError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension HydraClient.TunnelError : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+}
+extension Swift.KeyedEncodingContainer {
+  public mutating func encode(_ value: [Swift.String : Any], forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
+  public mutating func encode(_ value: [Any], forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
+  public mutating func encodeIfPresent(_ value: [Swift.String : Any]?, forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
+  public mutating func encodeIfPresent(_ value: [Any]?, forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
+}
+public struct Categorization : Swift.Codable {
+  public enum CategorizationType : Swift.Int {
+    case none
+    case url
+    case ip
+    case domain
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum Action : Swift.Int {
+    case proxy
+    case vpn
+    case bypass
+    case block
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public let resource: Swift.String
+  public let type: HydraClient.Categorization.CategorizationType
+  public let action: HydraClient.Categorization.Action
+  public let categoryLabel: Swift.String
+  public let categoryID: Swift.Int
+  public let sources: [Swift.String]
+  public let customLabels: [Swift.String]
+  public let proto: Swift.Int
+  public let port: Swift.Int
+  public let timestamp: Foundation.Date
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension HydraClient.Categorization : Swift.Equatable {
+  public static func == (lhs: HydraClient.Categorization, rhs: HydraClient.Categorization) -> Swift.Bool
+}
+extension HydraClient.Categorization.CategorizationType : Swift.Codable {
+}
+extension HydraClient.Categorization.Action : Swift.Codable {
+}
+extension HydraClient.Categorization.CategorizationType : Swift.Equatable {}
+extension HydraClient.Categorization.CategorizationType : Swift.Hashable {}
+extension HydraClient.Categorization.CategorizationType : Swift.RawRepresentable {}
+extension HydraClient.Categorization.Action : Swift.Equatable {}
+extension HydraClient.Categorization.Action : Swift.Hashable {}
+extension HydraClient.Categorization.Action : Swift.RawRepresentable {}

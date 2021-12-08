@@ -1,0 +1,20 @@
+PODS:
+  - VPNApplicationSDK (4.0.0)
+  - VPNTunnelProviderSDK (4.0.0)
+
+DEPENDENCIES:
+  - VPNApplicationSDK (= 4.0.0)
+  - VPNTunnelProviderSDK (= 4.0.0)
+
+SPEC REPOS:
+  trunk:
+    - VPNApplicationSDK
+    - VPNTunnelProviderSDK
+
+SPEC CHECKSUMS:
+  VPNApplicationSDK: 1fd1eb6f38218361c2730ed49e53e8cef33eaee5
+  VPNTunnelProviderSDK: 533a14f5f4fab6a1536b406055daab6f3aeac42c
+
+PODFILE CHECKSUM: 649bad7297979100be16d709311188eb16b8a971
+
+COCOAPODS: 1.10.1

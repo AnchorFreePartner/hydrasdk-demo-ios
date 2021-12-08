@@ -1,0 +1,6 @@
+framework module Pods_VPNSDK_Demo_Hydra_Provider {
+  umbrella header "Pods-VPNSDK Demo Hydra Provider-umbrella.h"
+
+  export *
+  module * { export * }
+}

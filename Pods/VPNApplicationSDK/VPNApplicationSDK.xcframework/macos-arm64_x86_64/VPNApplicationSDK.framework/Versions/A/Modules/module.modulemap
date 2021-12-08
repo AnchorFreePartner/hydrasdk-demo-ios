@@ -1,0 +1,11 @@
+framework module VPNApplicationSDK {
+  umbrella header "VPNApplicationSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module VPNApplicationSDK.Swift {
+    header "VPNApplicationSDK-macOS-Swift.h"
+    requires objc
+}

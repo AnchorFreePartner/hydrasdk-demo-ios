@@ -1,0 +1,59 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-module-flags: -target x86_64-apple-macos10.12 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name UCRTrackerSwift
+import AppKit
+import Cocoa
+import Foundation
+import Swift
+import os.log
+import os
+@objc public class UCRTracker : ObjectiveC.NSObject {
+  public init(configuration: UCRTrackerSwift.UCRTracker.Configuration)
+  @available(swift, obsoleted: 1.0)
+  @objc convenience public init(configuration: UCRTrackerSwift.UCRConfiguration)
+  @objc public func registerAppName(_ newValue: Swift.String)
+  @objc public func registerServerProtocol(_ newValue: Swift.String)
+  @objc public func registerServerToken(_ newValue: Swift.String)
+  @objc public func registerProperties(_ newValue: UCRTrackerSwift.UCRTracker.Properties?)
+  @objc public func registerEventLoggingCallback(_ callback: UCRTrackerSwift.UCRTracker.EventLoggingCallback?)
+  @objc public func setSendEventsInterval(_ newValue: Foundation.TimeInterval)
+  @objc public func setShouldSendEventsOnBackground(_ newValue: Swift.Bool)
+  public func trackEvent(_ event: Swift.String, with properties: UCRTrackerSwift.UCRTracker.Properties? = nil, completion: UCRTrackerSwift.UCRTracker.Completion<Swift.Void>? = nil)
+  @available(swift, obsoleted: 1.0)
+  @objc(trackEvent:withProperties:completion:) public func trackEvent(_ event: Swift.String, with properties: UCRTrackerSwift.UCRTracker.Properties? = nil, completion: ((Swift.Error?) -> Swift.Void)? = nil)
+  public func trackEvents(_ events: [UCRTrackerSwift.UCRTracker.Event], completion: UCRTrackerSwift.UCRTracker.Completion<Swift.Void>? = nil)
+  @available(swift, obsoleted: 1.0)
+  @objc(trackEvents:withCompletion:) public func trackEvents(_ events: [UCRTrackerSwift.UCREvent], completion: ((Swift.Error?) -> Swift.Void)? = nil)
+  public func sendEvents(completion: UCRTrackerSwift.UCRTracker.Completion<Swift.Int>? = nil)
+  @available(swift, obsoleted: 1.0)
+  @objc(sendEventsWithCompletion:) public func sendEvents(completion: ((Swift.Int, Swift.Error?) -> Swift.Void)? = nil)
+  @objc public func cancelEventsSending()
+  @objc deinit
+}
+extension UCRTrackerSwift.UCRTracker {
+  public static func configureShared(with config: UCRTrackerSwift.UCRTracker.Configuration)
+  @available(swift, obsoleted: 1.0)
+  @objc(configureSharedWithConfiguration:) public static func configureShared(with config: UCRTrackerSwift.UCRConfiguration)
+  @objc public static let shared: UCRTrackerSwift.UCRTracker
+}
+extension UCRTrackerSwift.UCRTracker {
+  public typealias Properties = [Swift.String : Any]
+  public typealias Completion<T> = (Swift.Result<T, Swift.Error>) -> Swift.Void
+  public typealias EventLoggingCallback = (_ name: Swift.String, _ date: Foundation.Date, _ constructedJSON: [Swift.String : Any]) -> Swift.Void
+  public struct Configuration {
+    public init(reportName: Swift.String, cacheName: Swift.String? = nil, appGroup: Swift.String?, keychainAccessGroup: Swift.String? = nil, isLoggingEnabled: Swift.Bool = false)
+  }
+  public struct Event {
+    public init(name: Swift.String, properties: UCRTrackerSwift.UCRTracker.Properties? = nil)
+  }
+}
+@objc public class UCRConfiguration : ObjectiveC.NSObject {
+  @available(swift, obsoleted: 1.0)
+  @objc public init(reportName: Swift.String, cacheName: Swift.String?, appGroup: Swift.String?, keychainAccessGroup: Swift.String?, isLoggingEnabled: Swift.Bool)
+  @objc deinit
+}
+@objc public class UCREvent : ObjectiveC.NSObject {
+  @available(swift, obsoleted: 1.0)
+  @objc public init(name: Swift.String, properties: UCRTrackerSwift.UCRTracker.Properties?)
+  @objc deinit
+}

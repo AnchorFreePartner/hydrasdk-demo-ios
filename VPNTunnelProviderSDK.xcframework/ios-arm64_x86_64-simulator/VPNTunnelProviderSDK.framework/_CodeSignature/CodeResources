@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ERR/ZVo2nZgq3qJ01GEF0xMppc4=
+		Sa3hQ+75HC8ObjwWMNVh2bVBzYo=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		ERR/ZVo2nZgq3qJ01GEF0xMppc4=
+		Sa3hQ+75HC8ObjwWMNVh2bVBzYo=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		VSgrK/Xl7jzHoEQ5WwKGSCc9iOQ=
+		tR3jNjU0fGqFkRdsbyD8rt7x2js=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		VSgrK/Xl7jzHoEQ5WwKGSCc9iOQ=
+		tR3jNjU0fGqFkRdsbyD8rt7x2js=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -119,11 +119,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ERR/ZVo2nZgq3qJ01GEF0xMppc4=
+			Sa3hQ+75HC8ObjwWMNVh2bVBzYo=
 			</data>
 			<key>hash2</key>
 			<data>
-			78bXD8NNzPDXfvrYXW7Mfs6vgE2guiTNRpPh9nuUM0k=
+			uEpSLyCenzCfNWzOy0nI3ujN73EysaqfgiW0FuyCRVw=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64.swiftdoc</key>
@@ -152,11 +152,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ERR/ZVo2nZgq3qJ01GEF0xMppc4=
+			Sa3hQ+75HC8ObjwWMNVh2bVBzYo=
 			</data>
 			<key>hash2</key>
 			<data>
-			78bXD8NNzPDXfvrYXW7Mfs6vgE2guiTNRpPh9nuUM0k=
+			uEpSLyCenzCfNWzOy0nI3ujN73EysaqfgiW0FuyCRVw=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -185,11 +185,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VSgrK/Xl7jzHoEQ5WwKGSCc9iOQ=
+			tR3jNjU0fGqFkRdsbyD8rt7x2js=
 			</data>
 			<key>hash2</key>
 			<data>
-			1gYvx2FncwTIL+PU6q3DJcprJ8oCnSYHWb79Jzc3osg=
+			+cuMr5SiaTUZqypsmSIgKkwg2BrjJOty3RPTV69iKuk=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -218,11 +218,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VSgrK/Xl7jzHoEQ5WwKGSCc9iOQ=
+			tR3jNjU0fGqFkRdsbyD8rt7x2js=
 			</data>
 			<key>hash2</key>
 			<data>
-			1gYvx2FncwTIL+PU6q3DJcprJ8oCnSYHWb79Jzc3osg=
+			+cuMr5SiaTUZqypsmSIgKkwg2BrjJOty3RPTV69iKuk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

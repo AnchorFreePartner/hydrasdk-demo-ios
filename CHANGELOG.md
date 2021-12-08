@@ -6,6 +6,35 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
+## [4.0.0] - WIP
+## Updated
+
+- Added IPSec protocol.
+- Added Auto switcher between VPN protocols.
+- Added option for setting DNS for tunnel provider.
+- Fixed issue with memory usage in network extension.
+- Fixed several crashes in network extension.
+
+## [3.2.2] - 2021-10-09
+## Implemented
+
+- Implemented city support of virtual location.
+
+## [3.2.1] - 2021-15-07
+## Fixed
+
+- Fixed connection issue which can occur between switching networks with enabled killswitch.
+
+## [3.2.0] - 2021-26-04
+##Updated 
+
+- Added macOS arm64 architecture.
+- Subscription extref field set as optional.
+
+## Fixed
+
+- Fixed bypassing issue when domains set to bypass as bypassDomains config value.
+
 ## [3.1.9] - 2021-18-01
 ## Fixed
 

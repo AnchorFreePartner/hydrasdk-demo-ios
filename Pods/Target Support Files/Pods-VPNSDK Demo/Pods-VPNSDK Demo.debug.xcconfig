@@ -1,0 +1,12 @@
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/VPNApplicationSDK" "${PODS_ROOT}/VPNTunnelProviderSDK" "${PODS_XCFRAMEWORKS_BUILD_DIR}/VPNApplicationSDK" "${PODS_XCFRAMEWORKS_BUILD_DIR}/VPNTunnelProviderSDK"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_LDFLAGS = $(inherited) -ObjC -l"resolv" -l"z" -framework "NetworkExtension" -framework "SystemConfiguration" -framework "VPNApplicationSDK" -framework "VPNTunnelProviderSDK"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
+PODS_XCFRAMEWORKS_BUILD_DIR = $(PODS_CONFIGURATION_BUILD_DIR)/XCFrameworkIntermediates
+SWIFT_INCLUDE_PATHS = $(inherited) ${PODS_ROOT}/VPNApplicationSDK/VPNApplicationSDK.xcframework/AdditionalModules/ios/** ${PODS_ROOT}/VPNApplicationSDK/VPNApplicationSDK.xcframework/AdditionalModules/ios-simulator/** ${PODS_ROOT}/VPNApplicationSDK/VPNApplicationSDK.xcframework/AdditionalModules/objc/** ${PODS_ROOT}/VPNTunnelProviderSDK/VPNTunnelProviderSDK.xcframework/AdditionalModules/ios/** ${PODS_ROOT}/VPNTunnelProviderSDK/VPNTunnelProviderSDK.xcframework/AdditionalModules/ios-simulator/** ${PODS_ROOT}/VPNTunnelProviderSDK/VPNTunnelProviderSDK.xcframework/AdditionalModules/objc/**
+USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES
