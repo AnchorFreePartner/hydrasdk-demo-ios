@@ -1,19 +1,19 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VPNApplicationSDK
 import SystemConfiguration.CaptiveNetwork
 import CoreTelephony
 import Darwin
 import Dispatch
 import Foundation
-import HydraClient
 import NetworkExtension
 import Swift
 import SystemConfiguration
-import UCRTrackerSwift
 import UIKit
 @_exported import VPNApplicationSDK
 import _Concurrency
+import os.log
+import os
 public struct Purchase {
   public let result: [Swift.String : Any]
   public init(result: [Swift.String : Any])
@@ -295,23 +295,12 @@ extension VPNApplicationSDK.PartnerAPI.APIError : Foundation.LocalizedError, Fou
     get
   }
 }
-extension Swift.Bool {
-  public var intValue: Swift.Int {
-    get
-  }
-}
 @objc public class AutoSwitchingVPNSDK : VPNApplicationSDK.ComposedVPNSDK {
   public typealias PriorityProvider = () -> [VPNApplicationSDK.VPNProtocolType]
   public init(manualSwitchingSDK: VPNApplicationSDK.ManualSwitchingVPNSDK, priorityProvider: @escaping VPNApplicationSDK.AutoSwitchingVPNSDK.PriorityProvider)
   @available(swift, obsoleted: 1.0)
   @objc convenience public init(manualSwitchingSDK: VPNApplicationSDK.ManualSwitchingVPNSDK, rawProtocolPriorityProvider: @escaping () -> [Foundation.NSNumber])
   @objc deinit
-}
-extension Swift.KeyedEncodingContainer {
-  public mutating func encode(_ value: [Swift.String : Any], forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
-  public mutating func encode(_ value: [Any], forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
-  public mutating func encodeIfPresent(_ value: [Swift.String : Any]?, forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
-  public mutating func encodeIfPresent(_ value: [Any]?, forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
 }
 @_hasMissingDesignatedInitializers @objc public class IPSecSDK : VPNApplicationSDK.VPNSDK {
   public init(configuration: VPNApplicationSDK.IPSecConfiguration)
@@ -381,27 +370,31 @@ public struct ServerCredentials : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct ComposedConfiguration {
-  public init(hostURL: Swift.String?, carrierID: Swift.String, extensionBundleID: Swift.String, groupID: Swift.String, profileName: Swift.String = "VPNApplicationSDK", debugLogging: Swift.Bool = false, fireshieldConfig: VPNApplicationSDK.FireshieldConfig, serverAddressDisplayName: Swift.String? = nil, bypassDNSServer: Swift.String? = nil, bypassDomains: [Swift.String]? = nil, isBypassEnabled: Swift.Bool = false, isVPNIconFixEnabled: Swift.Bool = false, isOnDemandEnabled: Swift.Bool = false, onDemandRules: [NetworkExtension.NEOnDemandRule]? = nil, isClientListEnabled: Swift.Bool = false, deviceType: Swift.String? = nil, tunnelDNSServers: [Swift.String]? = nil)
+  public init(hostURL: Swift.String?, carrierID: Swift.String, extensionBundleID: Swift.String, groupID: Swift.String, trafficCountersFetchInterval: Foundation.TimeInterval?, profileName: Swift.String = "VPNApplicationSDK", debugLogging: Swift.Bool = false, fireshieldConfig: VPNApplicationSDK.FireshieldConfig, serverAddressDisplayName: Swift.String? = nil, bypassDNSServer: Swift.String? = nil, bypassDomains: [Swift.String]? = nil, isBypassEnabled: Swift.Bool = false, isVPNIconFixEnabled: Swift.Bool = false, isOnDemandEnabled: Swift.Bool = false, onDemandRules: [NetworkExtension.NEOnDemandRule]? = nil, isClientListEnabled: Swift.Bool = false, deviceType: Swift.String? = nil, tunnelDNSServers: [Swift.String]? = nil)
 }
 @objc public class ComposedSDKConfiguration : ObjectiveC.NSObject {
-  @objc public init(hostURL: Foundation.NSString?, carrierID: Foundation.NSString, extensionBundleID: Foundation.NSString, groupID: Foundation.NSString, profileName: Foundation.NSString = "VPNApplicationSDK", debugLogging: Swift.Bool = false, fireshieldConfig: VPNApplicationSDK.FireshieldConfig, serverAddressDisplayName: Foundation.NSString? = nil, bypassDNSServer: Foundation.NSString? = nil, bypassDomains: [Foundation.NSString]? = nil, isBypassEnabled: Swift.Bool = false, isVPNIconFixEnabled: Swift.Bool = false, isOnDemandEnabled: Swift.Bool = false, onDemandRules: [NetworkExtension.NEOnDemandRule]? = nil, isClientListEnabled: Swift.Bool = false, deviceType: Foundation.NSString? = nil, tunnelDNSServers: [Foundation.NSString]? = nil)
+  @objc public init(hostURL: Foundation.NSString?, carrierID: Foundation.NSString, extensionBundleID: Foundation.NSString, groupID: Foundation.NSString, trafficCountersFetchInterval: Foundation.NSNumber?, profileName: Foundation.NSString = "VPNApplicationSDK", debugLogging: Swift.Bool = false, fireshieldConfig: VPNApplicationSDK.FireshieldConfig, serverAddressDisplayName: Foundation.NSString? = nil, bypassDNSServer: Foundation.NSString? = nil, bypassDomains: [Foundation.NSString]? = nil, isBypassEnabled: Swift.Bool = false, isVPNIconFixEnabled: Swift.Bool = false, isOnDemandEnabled: Swift.Bool = false, onDemandRules: [NetworkExtension.NEOnDemandRule]? = nil, isClientListEnabled: Swift.Bool = false, deviceType: Foundation.NSString? = nil, tunnelDNSServers: [Foundation.NSString]? = nil)
   @objc deinit
 }
 public struct IPSecConfiguration {
   public let hostURL: Swift.String?
   public let carrierID: Swift.String
+  public let trafficCountersFetchInterval: Foundation.TimeInterval?
   public let debugLoggingEnabled: Swift.Bool
   public let isOnDemandEnabled: Swift.Bool
   public let onDemandRules: [NetworkExtension.NEOnDemandRule]
   public let profileName: Swift.String
   public let deviceType: Swift.String
-  public init(hostURL: Swift.String?, carrierID: Swift.String, debugLogging: Swift.Bool = false, isOnDemandEnabled: Swift.Bool = false, onDemandRules: [NetworkExtension.NEOnDemandRule]? = nil, profileName: Swift.String = "VPNApplicationSDK", deviceType: Swift.String? = nil)
+  public init(hostURL: Swift.String?, carrierID: Swift.String, trafficCountersFetchInterval: Foundation.TimeInterval?, debugLogging: Swift.Bool = false, isOnDemandEnabled: Swift.Bool = false, onDemandRules: [NetworkExtension.NEOnDemandRule]? = nil, profileName: Swift.String = "VPNApplicationSDK", deviceType: Swift.String? = nil)
 }
 @_hasMissingDesignatedInitializers @objc public class IPSecSDKConfiguration : ObjectiveC.NSObject {
   public var hostURL: Foundation.NSString? {
     get
   }
   public var carrierID: Foundation.NSString {
+    get
+  }
+  public var trafficCountersFetchInterval: Foundation.TimeInterval? {
     get
   }
   public var debugLoggingEnabled: Swift.Bool {
@@ -419,7 +412,7 @@ public struct IPSecConfiguration {
   public var deviceType: Foundation.NSString {
     get
   }
-  @objc public init(hostURL: Foundation.NSString?, carrierID: Foundation.NSString, debugLogging: Swift.Bool = false, isOnDemandEnabled: Swift.Bool = true, onDemandRules: [NetworkExtension.NEOnDemandRule]? = nil, profileName: Foundation.NSString = "VPNApplicationSDK", deviceType: Foundation.NSString? = nil)
+  @objc public init(hostURL: Foundation.NSString?, carrierID: Foundation.NSString, trafficCountersFetchInterval: Foundation.NSNumber?, debugLogging: Swift.Bool = false, isOnDemandEnabled: Swift.Bool = true, onDemandRules: [NetworkExtension.NEOnDemandRule]? = nil, profileName: Foundation.NSString = "VPNApplicationSDK", deviceType: Foundation.NSString? = nil)
   @objc deinit
 }
 public struct FireshieldRule {
@@ -483,6 +476,13 @@ extension VPNApplicationSDK.VPNSDK {
   @objc(remoteConfig) dynamic public var objcRemoteConfig: VPNApplicationSDK.AFRemoteConfig? {
     @objc get
   }
+  public var trafficCounters: VPNApplicationSDK.TrafficCounters? {
+    get
+  }
+  @available(swift, obsoleted: 1.0)
+  @objc(trafficCounters) dynamic public var objcTrafficCounters: VPNApplicationSDK.AFTrafficCounters? {
+    @objc get
+  }
   public func login(method: VPNApplicationSDK.AuthMethod, completion: @escaping VPNApplicationSDK.UserCompletion)
   @available(swift, obsoleted: 1.0)
   @objc(loginWithMethod:completion:) dynamic public func objcLogin(method: VPNApplicationSDK.AFAuthMethod, completion: @escaping (_ error: Swift.Error?, _ user: VPNApplicationSDK.AFUser?) -> Swift.Void)
@@ -540,13 +540,6 @@ extension VPNApplicationSDK.HydraSDK {
     @objc get
   }
   @objc dynamic public var isBypassEnabled: Swift.Bool {
-    @objc get
-  }
-  public var trafficCounters: VPNApplicationSDK.TrafficCounters? {
-    get
-  }
-  @available(swift, obsoleted: 1.0)
-  @objc(trafficCounters) dynamic public var objcTrafficCounters: VPNApplicationSDK.AFTrafficCounters? {
     @objc get
   }
   public var clientNetworkList: VPNApplicationSDK.ClientNetworkList? {
@@ -623,6 +616,13 @@ extension VPNApplicationSDK.ComposedVPNSDK {
   @objc(remoteConfig) dynamic public var objcRemoteConfig: VPNApplicationSDK.AFRemoteConfig? {
     @objc get
   }
+  public var trafficCounters: VPNApplicationSDK.TrafficCounters? {
+    get
+  }
+  @available(swift, obsoleted: 1.0)
+  @objc(trafficCounters) dynamic public var objcTrafficCounters: VPNApplicationSDK.AFTrafficCounters? {
+    @objc get
+  }
   public var hydraConfiguration: VPNApplicationSDK.HydraConfiguration? {
     get
   }
@@ -631,13 +631,6 @@ extension VPNApplicationSDK.ComposedVPNSDK {
     @objc get
   }
   @objc dynamic public var isHydraBypassEnabled: Swift.Bool {
-    @objc get
-  }
-  public var hydraTrafficCounters: VPNApplicationSDK.TrafficCounters? {
-    get
-  }
-  @available(swift, obsoleted: 1.0)
-  @objc(hydraTrafficCounters) dynamic public var objcHydraTrafficCounters: VPNApplicationSDK.AFTrafficCounters? {
     @objc get
   }
   public var hydraClientNetworkList: VPNApplicationSDK.ClientNetworkList? {

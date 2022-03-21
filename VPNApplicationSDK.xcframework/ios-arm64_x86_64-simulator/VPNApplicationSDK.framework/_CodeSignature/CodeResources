@@ -4,65 +4,49 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/AFHydraNetworkInfo.h</key>
+		<data>
+		dR/NKUbOS2gAHIiNRJH+mikTlz0=
+		</data>
+		<key>Headers/NSData+Encryption.h</key>
+		<data>
+		Jp/0OiUr93kBdercSZOnhm1fSYo=
+		</data>
 		<key>Headers/VPNApplicationSDK-iOS-Swift.h</key>
 		<data>
-		kiqhJ+3BTy9Eq1xSfpJoRh/LLTQ=
+		Bf5YNXqk39GFp9/yspdB3HgNY2g=
 		</data>
 		<key>Headers/VPNApplicationSDK.h</key>
 		<data>
-		v0udIq2eGBCbI4D6C+GAUdGlGJQ=
+		dbqbNmrmpe2ONLZ9fxW6I2eDMrA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		j5ZMTomlcHxlKJ/IBMTrpuyOUs4=
+		E8fOqZBK7R6K7f2KDcqaLIIKkG8=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		U4c3d6NUJshfAa93UR2yDgeW0c4=
+		SXbguO7neidbWqDKD+/Ph/voRD4=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		9qZL/sJ+EVRtruQaYfawQQdi3JM=
+		kcFx5OVfuzV903xPVF06K6ZrqTY=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		rkCMMswsgn48nbSRN1gd8Xh3WAc=
-		</data>
-		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		U4c3d6NUJshfAa93UR2yDgeW0c4=
-		</data>
-		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		9qZL/sJ+EVRtruQaYfawQQdi3JM=
-		</data>
-		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		rkCMMswsgn48nbSRN1gd8Xh3WAc=
+		/UXlJC709BiISzFEpwUBEHv7jes=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		FbkPTib1fXl8q23I+RyvGa8mNqM=
+		etII4lPxMyKrXLMZkDgKf8QaXBw=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		HWZXnAmIAQaQp/FdZtZcAPxmfXg=
+		J9MhGqkxjVY/EHfz5GiUvsAu9bM=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		KWiF7H47kZZVqPtaTIS/pXZfXgM=
-		</data>
-		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		FbkPTib1fXl8q23I+RyvGa8mNqM=
-		</data>
-		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		HWZXnAmIAQaQp/FdZtZcAPxmfXg=
-		</data>
-		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		KWiF7H47kZZVqPtaTIS/pXZfXgM=
+		ziVIsQe9sSO+67E2NtK2tI4CoqE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,102 +59,74 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/AFHydraNetworkInfo.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kb/60aZ2FAbei0/1fVB4WsBTAcCLFJSS4UX+9ct+u8Q=
+			</data>
+		</dict>
+		<key>Headers/NSData+Encryption.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			y9WYxpffV1GHpC+3pvLmWzjeP1QfljC5ctvtxkZ6G9Y=
+			</data>
+		</dict>
 		<key>Headers/VPNApplicationSDK-iOS-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WHxxXNhjHo3hwYmujSYzbvJ97wGLIoBDyKFsVTlxwDU=
+			cnRGwhFQkr1kOHnn8B+7PgY+fbdNIPfeaosY0/pnFwE=
 			</data>
 		</dict>
 		<key>Headers/VPNApplicationSDK.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HHxIhPhCgfOKoZEt12fjj1n5OlGsNv702OigwBlLU5c=
+			6T/kC8h5RAwS+X07fUiXEe96f4DePs4LXkjUhAIA5V0=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xeNZzaR0KKt4s3rHjEURxxQEZX+jXWDGHxSz9ytrHR0=
+			qPcpv4F6XuZNhTgMMmYtpEdEbTTmwZmZ6vTJFkdSOd8=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HT8or3aPOTDED+Cvjbr9v8MbK9z3z3a+eaKqFQUiZdg=
+			sr9zl1RmZgkRmKxMe/hUK09WNXzNJQCh228BBaXVNgU=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U+tSAEBZS+3yXuIV1vOw5HUh0oqVAoLzjykHnCXtKfs=
-			</data>
-		</dict>
-		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			xeNZzaR0KKt4s3rHjEURxxQEZX+jXWDGHxSz9ytrHR0=
-			</data>
-		</dict>
-		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			HT8or3aPOTDED+Cvjbr9v8MbK9z3z3a+eaKqFQUiZdg=
-			</data>
-		</dict>
-		<key>Modules/VPNApplicationSDK.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			U+tSAEBZS+3yXuIV1vOw5HUh0oqVAoLzjykHnCXtKfs=
+			8X28GFoiJ5NKKJB1nRTqEdxrqXGWrif9mas1Hg2j+zs=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hprh5UhtVGgyi/AEwi+z9TG72GPONyteyCLN6w158l4=
+			vnOo/iH5fgaCioI5nabjBP5zM8OUA0ekQZamlTs83Lk=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S5zBvH0KDlCU5o6nDdZuEHSPVFwDKvQlYlLZNC4zug4=
+			v0WmG0CN7uS6H/ead6WZzQHBPlRPWQYmIlWnZ1dXoSk=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			agn8dZvCWMrwpQqrDPWbPCkGXpM+qKliBgli0vwEHmM=
-			</data>
-		</dict>
-		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			hprh5UhtVGgyi/AEwi+z9TG72GPONyteyCLN6w158l4=
-			</data>
-		</dict>
-		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			S5zBvH0KDlCU5o6nDdZuEHSPVFwDKvQlYlLZNC4zug4=
-			</data>
-		</dict>
-		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			agn8dZvCWMrwpQqrDPWbPCkGXpM+qKliBgli0vwEHmM=
+			khwkOp846DGF6FwgOBkX2HRBHEm7FlsrZdzIPPSmZKw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
