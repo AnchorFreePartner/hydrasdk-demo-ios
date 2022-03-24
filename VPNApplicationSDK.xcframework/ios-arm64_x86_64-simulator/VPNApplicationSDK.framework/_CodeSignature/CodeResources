@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/UXlJC709BiISzFEpwUBEHv7jes=
+		gqdVov/kNfMqY5oZ2UpUTRGbeIg=
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ziVIsQe9sSO+67E2NtK2tI4CoqE=
+		TVMLfL9pfsdWiC0Mhau0pz3yFYI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -105,7 +105,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8X28GFoiJ5NKKJB1nRTqEdxrqXGWrif9mas1Hg2j+zs=
+			duRUgpP4Bo9Ft5Atr0EvchP/+Yj+cu1wpZo6yeeIPec=
 			</data>
 		</dict>
 		<key>Modules/VPNApplicationSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -126,7 +126,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			khwkOp846DGF6FwgOBkX2HRBHEm7FlsrZdzIPPSmZKw=
+			SYspqUwTwAI39Kk0tqDpI80eDU27cAjuHDIc9aNdrxE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

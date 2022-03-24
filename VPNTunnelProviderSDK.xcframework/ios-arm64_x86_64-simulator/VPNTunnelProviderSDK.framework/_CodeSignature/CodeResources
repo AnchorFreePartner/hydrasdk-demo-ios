@@ -90,7 +90,7 @@
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		2xQJXb0yuXU1bz3zs4roF7agDcg=
+		D72EacDxfWP6vXAWvVEjoh2t9d4=
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		zbLb7FqCl5wCqhxiOWF5aktc7Pk=
+		XQytudrJvCclzVvgLXYfj7eTPZ4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -367,11 +367,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2xQJXb0yuXU1bz3zs4roF7agDcg=
+			D72EacDxfWP6vXAWvVEjoh2t9d4=
 			</data>
 			<key>hash2</key>
 			<data>
-			aicWgm62fNSEhXYO2vsB/n2qgpLo71NwAvg5rMAhEcM=
+			xoHQ9DqV1HKaVZpnlRjkUzP1ls0/dOA04oR+zEExrI8=
 			</data>
 		</dict>
 		<key>Modules/VPNTunnelProviderSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -400,11 +400,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zbLb7FqCl5wCqhxiOWF5aktc7Pk=
+			XQytudrJvCclzVvgLXYfj7eTPZ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			YsJe8A3mixj0eGPrn64O7bnSFXNvStGQX8/mtR9o990=
+			/D2pfkvgEpDHAtBu5nQ7+rD0qN2O7SDVz84ok5YVeJo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
