@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'VPNApplicationSDK'
-  spec.version      = '4.0.0'
+  spec.version      = '4.0.3'
   spec.license      = { :type => 'BSD' }
   spec.homepage     = 'https://github.com/AnchorFreePartner/hydrasdk-demo-ios'
   spec.authors      = { 'Dmitry Denyak' => 'dmitrydenyak@gmail.com' }

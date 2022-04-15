@@ -19,10 +19,4 @@ Pod::Spec.new do |spec|
 
   spec.osx.deployment_target = '10.12'
   spec.osx.user_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC', 'SWIFT_INCLUDE_PATHS' => '${PODS_ROOT}/VPNTunnelProviderSDK/VPNTunnelProviderSDK.xcframework/AdditionalModules/macos/** ${PODS_ROOT}/VPNTunnelProviderSDK/VPNTunnelProviderSDK.xcframework/AdditionalModules/objc/**' }
-
-# Adding tests with a swift dependency is a workaround in order to make pod lib lint work
-# See: https://github.com/CocoaPods/CocoaPods/issues/8649
-  spec.test_spec 'Tests' do |spec|
-    spec.dependency 'Result', '~> 5.0'
-  end  
 end
