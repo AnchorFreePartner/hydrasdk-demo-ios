@@ -6,7 +6,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 # [Unreleased]
 
-## [4.0.0] - WIP
+## [4.0.3] - 2021-04-11
+## Updated
+
+- Added missed Objc initializer in TrafficCounter.
+- Updated Hydra library with OpenSSL 1.1.1n 
+
+## [4.0.2] - 2021-03-23
+## Updated
+
+- Added missed Objc error codes.
+- Fixed reconnecting issue while switching between protocols.
+
+## [4.0.1] - 2021-03-23
+## Implemented
+
+- Implemented performance test.
+
+- Added missed Objc error codes.
+- Fixed reconnecting issue while switching between protocols.
+
+## [4.0.0] - 2021-12-21
 ## Updated
 
 - Added IPSec protocol.

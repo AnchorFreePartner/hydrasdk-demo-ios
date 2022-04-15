@@ -1,16 +1,18 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VPNTunnelProviderSDK
 import SystemConfiguration.CaptiveNetwork
+import CoreTelephony
+import Darwin
 import Foundation
-import HydraTunnelProvider
 import NetworkExtension
 import Swift
 import SystemConfiguration
-import UCRTrackerSwift
 import UIKit
 @_exported import VPNTunnelProviderSDK
 import _Concurrency
+import os.log
+import os
 public enum PartnerAPI {
 }
 extension VPNTunnelProviderSDK.PartnerAPI {
@@ -41,13 +43,19 @@ public struct TrafficCounters : Swift.Decodable {
   public let transmitted: Swift.UInt64
   public init(from decoder: Swift.Decoder) throws
 }
-@_hasMissingDesignatedInitializers @objc public class AFTrafficCounters : ObjectiveC.NSObject {
+@objc public class AFTrafficCounters : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
   @objc public var received: Swift.UInt64 {
     @objc get
   }
   @objc public var transmitted: Swift.UInt64 {
     @objc get
   }
+  public init(counters: VPNTunnelProviderSDK.TrafficCounters)
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public struct ServerNode : Swift.Codable {
@@ -154,6 +162,37 @@ public enum VPNTunnelError : Swift.Error {
   case delegateRestrictsConnect
   case failedToReconfigureHydra
   case unknown
+}
+@objc public enum AFTunnelError : Swift.Int {
+  case notConfigured = 1
+  case interfaceChange
+  case tunInterfaceFailure
+  case systemCalledStop
+  case systemCalledSleep
+  case badConfiguration
+  case connectionTimeout
+  case connectionCanceled
+  case hydraInternalError
+  case failedToSetNetworkSettings
+  case delegateRestrictsConnect
+  case failedToReconfigureHydra
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum AFTunnelHydraInternalError : Swift.Int {
+  case connectionDisrupted = 181
+  case connectionNotEstablished = 182
+  case tokenInvalid = 186
+  case trafficExceed = 191
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 extension VPNTunnelProviderSDK.VPNTunnelError {
   public enum HydraInternalErrorCode {
@@ -343,6 +382,12 @@ public struct ClientNetworkConfiguration : Swift.Codable {
 extension VPNTunnelProviderSDK.AFFireshieldCategory.Action : Swift.Equatable {}
 extension VPNTunnelProviderSDK.AFFireshieldCategory.Action : Swift.Hashable {}
 extension VPNTunnelProviderSDK.AFFireshieldCategory.Action : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDK.AFTunnelError : Swift.Equatable {}
+extension VPNTunnelProviderSDK.AFTunnelError : Swift.Hashable {}
+extension VPNTunnelProviderSDK.AFTunnelError : Swift.RawRepresentable {}
+extension VPNTunnelProviderSDK.AFTunnelHydraInternalError : Swift.Equatable {}
+extension VPNTunnelProviderSDK.AFTunnelHydraInternalError : Swift.Hashable {}
+extension VPNTunnelProviderSDK.AFTunnelHydraInternalError : Swift.RawRepresentable {}
 extension VPNTunnelProviderSDK.VPNProtocolType : Swift.Equatable {}
 extension VPNTunnelProviderSDK.VPNProtocolType : Swift.Hashable {}
 extension VPNTunnelProviderSDK.VPNProtocolType : Swift.RawRepresentable {}
